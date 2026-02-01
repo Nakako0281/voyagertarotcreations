@@ -1,0 +1,53 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import { getNews, getNewsDetail } from '../../library/microcms';
+import { format } from 'date-fns';
+
+export async function getStaticPaths() {
+  const response = await getNews({ fields: ["id"] });
+  return response.contents.map((content: any) => ({
+    params: {
+      id: content.id,
+    },
+  }));
+}
+
+const { id } = Astro.params;
+const news = await getNewsDetail(id as string);
+
+function formatDate(dateString: string) {
+    return format(new Date(dateString), 'yyyy.MM.dd');
+}
+---
+
+<Layout title={news.title}>
+    <article class="max-w-3xl mx-auto bg-white p-8 md:p-12 rounded-3xl shadow-sm border border-gray-100">
+        <header class="mb-8 pb-8 border-b border-gray-100">
+            <div class="flex items-center gap-3 mb-4">
+                <time class="text-gray-500 font-sans">{formatDate(news.publishedAt)}</time>
+                {news.category.map(cat => (
+                    <span class="text-xs text-sakura-pink font-bold border border-sakura-pink/30 px-2 py-0.5 rounded-full">
+                        {cat.name}
+                    </span>
+                ))}
+            </div>
+            <h1 class="text-2xl md:text-3xl font-mincho font-bold text-gray-800 leading-relaxed">
+                {news.title}
+            </h1>
+        </header>
+
+        {news.eyecatch && (
+            <div class="mb-10 rounded-xl overflow-hidden shadow-md">
+                <img src={news.eyecatch.url} alt={news.title} class="w-full h-auto" />
+            </div>
+        )}
+
+        <div class="prose prose-p:text-gray-700 prose-headings:font-mincho prose-headings:text-tarot-blue prose-a:text-sakura-pink max-w-none" set:html={news.content} />
+
+        <div class="mt-12 pt-8 border-t border-gray-100 text-center">
+            <a href="/news" class="inline-flex items-center text-gray-500 hover:text-sakura-pink transition-colors">
+                <span class="mr-2">&larr;</span> お知らせ一覧に戻る
+            </a>
+        </div>
+    </article>
+</Layout>

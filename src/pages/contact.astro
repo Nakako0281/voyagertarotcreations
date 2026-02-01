@@ -1,0 +1,56 @@
+---
+import Layout from '../layouts/Layout.astro';
+---
+
+<Layout title="Contact">
+    <div class="max-w-2xl mx-auto">
+        <header class="text-center mb-12">
+            <h1 class="text-3xl md:text-4xl font-mincho text-tarot-blue mb-4">Contact</h1>
+            <p class="text-gray-500">お問い合わせ</p>
+        </header>
+
+        <div class="bg-white p-8 md:p-12 rounded-3xl shadow-sm border border-gray-100">
+            <p class="text-gray-700 leading-relaxed mb-8 text-center">
+                講座に関するご質問、セッションのご依頼など、<br/>
+                お気軽にお問い合わせください。
+            </p>
+
+            <div class="space-y-6">
+                <!-- Google Form Placeholder / Link -->
+                <div class="text-center">
+                    <a href="https://docs.google.com/forms/..." target="_blank" rel="noopener noreferrer" class="block w-full bg-tarot-blue text-white font-bold py-4 rounded-xl hover:bg-blue-900 transition-colors shadow-lg shadow-blue-900/10">
+                        お問い合わせフォームへ
+                        <span class="text-xs block font-normal opacity-70 mt-1">(Googleフォームが開きます)</span>
+                    </a>
+                </div>
+
+                <div class="relative py-4">
+                    <div class="absolute inset-0 flex items-center">
+                        <div class="w-full border-t border-gray-200"></div>
+                    </div>
+                    <div class="relative flex justify-center text-sm">
+                        <span class="px-2 bg-white text-gray-400">または</span>
+                    </div>
+                </div>
+
+                <!-- Reservation System Link -->
+                <div class="text-center">
+                    <h3 class="font-bold text-gray-800 mb-4">個人セッションのご予約</h3>
+                    <a href="https://reservia.jp/shop/reserve/..." target="_blank" rel="noopener noreferrer" class="block w-full bg-white text-sakura-pink border-2 border-sakura-pink font-bold py-4 rounded-xl hover:bg-sakura-pink hover:text-white transition-colors">
+                        予約サイトへ移動する
+                    </a>
+                    <p class="text-xs text-gray-400 mt-2">※外部予約システム(Freee予約)に移動します</p>
+                </div>
+            </div>
+
+            <div class="mt-12 pt-8 border-t border-gray-100">
+                <h3 class="font-bold text-gray-800 mb-4 text-center">ACCESS</h3>
+                <address class="not-italic text-center text-gray-600 leading-looose">
+                    <p class="font-bold">Voyager Tarot Creations</p>
+                    <p>〒000-0000<br/>東京都渋谷区XX-XX</p>
+                    <p>Email: info@voyagertarotcreations.com</p>
+                </address>
+            </div>
+        </div>
+    </div>
+</Layout>

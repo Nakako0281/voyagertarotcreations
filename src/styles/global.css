@@ -1,0 +1,21 @@
+@import "tailwindcss";
+
+@theme {
+  --color-off-white: #fcfcfc;
+  --color-dark-gray: #333333;
+  --color-sakura-pink: #FF99CC; /* Hotter pink as per typical tarot/spiritual aesthetics or existing site likely */
+  --color-tarot-blue: #003366; /* Deep rich blue */
+
+  --font-mincho: "Times New Roman", "YuMincho", "Hiragino Mincho ProN", "Yu Mincho", "MS PMincho", serif;
+  --font-gothic: "Helvetica", "Arial", "Hiragino Kaku Gothic ProN", "Hiragino Sans", "Meiryo", sans-serif;
+}
+
+body {
+    font-family: var(--font-gothic); /* Default to Gothic for readability, Mincho for headings */
+    color: var(--color-dark-gray);
+    background-color: var(--color-off-white);
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-family: var(--font-mincho);
+}
