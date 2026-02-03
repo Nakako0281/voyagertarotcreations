@@ -42,10 +42,22 @@ function formatDate(dateString: string) {
 					>Creations</span
 				>
 			</h1>
+
+			<div class="mb-8 flex justify-center">
+				<p
+					class="text-tarot-blue font-mincho text-xl md:text-2xl tracking-widest font-bold opacity-80"
+				>
+					ボイジャータロットクリエイションズ
+				</p>
+			</div>
+
 			<p
 				class="text-lg md:text-xl text-gray-600 mb-12 font-mincho tracking-wider bg-white/40 inline-block px-6 py-2 rounded-full backdrop-blur-sm"
 			>
-				あなたの人生を創造する、<br class="md:hidden" />魔法のカード。
+				認定ティーチャーとして10年以上の経験を持つ青木咲羅が、<br />
+				ボイジャータロットの作者、ジェームズ・ワンレスの源流を受け継ぎ、<br
+				/>
+				魅力的で実力あるリーダー、コーチ、ティーチャーの育成を目指して新たに設立した団体です。
 			</p>
 			<div class="flex flex-col sm:flex-row justify-center gap-6 px-4">
 				<a
@@ -56,7 +68,7 @@ function formatDate(dateString: string) {
 				</a>
 				<a
 					href="/course"
-					class="bg-white/90 backdrop-blur text-tarot-blue border border-indigo-100 px-10 py-4 rounded-full shadow-md hover:bg-white hover:text-sakura-vivid hover:border-sakura-vivid hover:shadow-lg transition-all duration-300 font-bold tracking-wide text-lg"
+					class="bg-white/90 backdrop-blur text-tarot-blue border border-indigo-100 px-10 py-4 rounded-full backdrop-blur shadow-md hover:bg-white hover:text-sakura-vivid hover:border-sakura-vivid hover:shadow-lg transition-all duration-300 font-bold tracking-wide text-lg"
 				>
 					講座を見る
 				</a>
@@ -156,26 +168,193 @@ function formatDate(dateString: string) {
 				魅力的で実力あるリーダー、コーチ、ティーチャーの育成を目指して新たに設立した団体です。
 			</p>
 
-			<div
-				class="inline-block p-[2px] rounded-2xl bg-gradient-to-r from-gold-light to-white shadow-sm"
-			>
-				<div
-					class="bg-white/80 backdrop-blur px-12 py-10 rounded-2xl border border-white"
-				>
-					<h3
-						class="text-2xl font-bold mb-6 text-tarot-blue flex justify-center items-center gap-3"
+			<div class="mb-16">
+				<img
+					src="/images/top_1.jpg"
+					alt="Who We Are"
+					class="w-full h-auto rounded-xl shadow-lg"
+				/>
+			</div>
+
+			<!-- Course Section -->
+			<div class="mb-32 mt-24">
+				<div class="text-center mb-12">
+					<span
+						class="text-gold-main font-bold tracking-widest text-sm mb-2 block"
+						>COURSE</span
 					>
-						<span class="text-2xl">✨</span> OUR MISSION
-					</h3>
-					<p class="leading-[2.2] text-gray-700">
+					<h2 class="text-4xl font-mincho text-tarot-blue">
+						講座紹介
+					</h2>
+				</div>
+
+				<div class="mb-12 flex justify-center">
+					<div class="mb-12">
+						<div
+							class="flex flex-col md:flex-row justify-center items-center gap-4 text-tarot-blue font-bold font-mincho"
+						>
+							<div
+								class="bg-white/50 px-6 py-3 rounded-full border border-tarot-blue/20 shadow-sm flex items-center gap-2"
+							>
+								<span
+									class="w-6 h-6 bg-sakura-vivid text-white rounded-full flex items-center justify-center text-xs"
+									>1</span
+								>
+								リーダー認定
+							</div>
+							<div
+								class="hidden md:block text-gold-main text-2xl"
+							>
+								→
+							</div>
+							<div class="md:hidden text-gold-main text-2xl">
+								↓
+							</div>
+							<div
+								class="bg-white/50 px-6 py-3 rounded-full border border-tarot-blue/20 shadow-sm flex items-center gap-2"
+							>
+								<span
+									class="w-6 h-6 bg-sakura-vivid text-white rounded-full flex items-center justify-center text-xs"
+									>2</span
+								>
+								コーチ認定
+							</div>
+							<div
+								class="hidden md:block text-gold-main text-2xl"
+							>
+								→
+							</div>
+							<div class="md:hidden text-gold-main text-2xl">
+								↓
+							</div>
+							<div
+								class="bg-white/50 px-6 py-3 rounded-full border border-tarot-blue/20 shadow-sm flex items-center gap-2"
+							>
+								<span
+									class="w-6 h-6 bg-sakura-vivid text-white rounded-full flex items-center justify-center text-xs"
+									>3</span
+								>
+								ティーチャー認定
+							</div>
+						</div>
+					</div>
+				</div>
+
+				<div class="grid md:grid-cols-3 gap-8">
+					<a href="/course#course_1" class="group block">
+						<div
+							class="overflow-hidden rounded-2xl mb-4 shadow-lg border border-white/50"
+						>
+							<img
+								src="/images/top_2-1.jpg"
+								alt="リーダー認定講座"
+								class="w-full h-auto group-hover:scale-110 transition-transform duration-500"
+							/>
+						</div>
+						<h3
+							class="font-bold text-center text-lg text-tarot-blue group-hover:text-sakura-vivid transition-colors"
+						>
+							リーダー認定講座
+						</h3>
+						<div
+							class="text-center text-sm text-gray-500 mt-2 flex justify-center items-center gap-1"
+						>
+							詳細はこちら <img
+								src="/images/link_icon.svg"
+								alt=""
+								class="w-4 h-4 inline"
+							/>
+						</div>
+					</a>
+					<a href="/course#course_2" class="group block">
+						<div
+							class="overflow-hidden rounded-2xl mb-4 shadow-lg border border-white/50"
+						>
+							<img
+								src="/images/top_2-2.jpg"
+								alt="コーチ認定講座"
+								class="w-full h-auto group-hover:scale-110 transition-transform duration-500"
+							/>
+						</div>
+						<h3
+							class="font-bold text-center text-lg text-tarot-blue group-hover:text-sakura-vivid transition-colors"
+						>
+							コーチ認定講座
+						</h3>
+						<div
+							class="text-center text-sm text-gray-500 mt-2 flex justify-center items-center gap-1"
+						>
+							詳細はこちら <img
+								src="/images/link_icon.svg"
+								alt=""
+								class="w-4 h-4 inline"
+							/>
+						</div>
+					</a>
+					<a href="/course2#course_1" class="group block">
+						<div
+							class="overflow-hidden rounded-2xl mb-4 shadow-lg border border-white/50"
+						>
+							<img
+								src="/images/top_2-3.jpg"
+								alt="ティーチャー認定講座"
+								class="w-full h-auto group-hover:scale-110 transition-transform duration-500"
+							/>
+						</div>
+						<h3
+							class="font-bold text-center text-lg text-tarot-blue group-hover:text-sakura-vivid transition-colors"
+						>
+							ティーチャー認定講座
+						</h3>
+						<div
+							class="text-center text-sm text-gray-500 mt-2 flex justify-center items-center gap-1"
+						>
+							詳細はこちら <img
+								src="/images/link_icon.svg"
+								alt=""
+								class="w-4 h-4 inline"
+							/>
+						</div>
+					</a>
+				</div>
+			</div>
+
+			<div class="mb-24">
+				<div class="text-center mb-8">
+					<span
+						class="text-gold-main font-bold tracking-widest text-sm mb-2 block"
+						>OUR MISSION</span
+					>
+					<h2 class="text-4xl font-mincho text-tarot-blue mb-6">
+						ボイジャータロットクリエイションズの使命
+					</h2>
+					<div class="flex justify-center mb-8">
+						<h3
+							class="text-2xl md:text-3xl font-mincho text-tarot-blue/80 tracking-widest font-bold border-b-2 border-gold-light pb-2"
+						>
+							未来を創造する力を、あなたに。
+						</h3>
+					</div>
+					<p class="leading-[2.5] text-gray-700 font-mincho text-lg">
 						ボイジャータロットを通じて、皆さまの成長と可能性を広げること。<br
-							class="hidden md:inline"
 						/>
-						創造性・成長・実現化をテーマに、<br
-							class="hidden md:inline"
+						創造性・成長・実現化をテーマに、魅力的、かつ実力あるボイジャータロットリーダー、<br
 						/>
-						魅力的、かつ実力あるボイジャータロットリーダー、コーチ、ティーチャーの育成に取り組んでまいります。
+						コーチ、ティーチャーの育成に取り組んでまいります。
 					</p>
+				</div>
+
+				<div class="grid grid-cols-2 gap-4 md:gap-8">
+					<img
+						src="/images/top_3_bottom_photos_item-1.jpg"
+						alt="Mission Photo 1"
+						class="rounded-2xl shadow-lg w-full h-auto hover:scale-[1.02] transition-transform duration-500"
+					/>
+					<img
+						src="/images/top_3_bottom_photos_item-2.jpg"
+						alt="Mission Photo 2"
+						class="rounded-2xl shadow-lg w-full h-auto hover:scale-[1.02] transition-transform duration-500"
+					/>
 				</div>
 			</div>
 		</div>
@@ -267,70 +446,78 @@ function formatDate(dateString: string) {
 	</section>
 
 	<!-- Change Section -->
-	<section class="mb-32 px-4">
-		<h2 class="text-3xl font-mincho text-center text-tarot-blue mb-16">
-			ボイジャータロットがもたらす変化
-		</h2>
-		<div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-8">
-			<!-- Card 1 -->
-			<div
-				class="bg-white/70 backdrop-blur p-8 rounded-3xl shadow-glass border border-white hover:shadow-crystal hover:-translate-y-2 transition-all duration-300 relative overflow-hidden group"
+	<section class="mb-32 px-4 max-w-6xl mx-auto">
+		<div class="text-center mb-12">
+			<span
+				class="text-gold-main font-bold tracking-widest text-sm mb-2 block"
+				>CHANGE</span
 			>
-				<div
-					class="absolute -right-4 -top-4 w-20 h-20 bg-sakura-light/30 rounded-full blur-xl group-hover:scale-150 transition-transform duration-500"
-				>
+			<h2 class="text-3xl font-mincho text-tarot-blue">
+				ボイジャータロットがもたらす変化
+			</h2>
+		</div>
+
+		<div class="mb-12 text-center text-gray-600 font-mincho">
+			<p>
+				ボイジャータロットを使うことで、人生に次のような変化が訪れます
+			</p>
+		</div>
+
+		<div
+			class="bg-white/80 backdrop-blur rounded-[3rem] shadow-glass border border-white p-6 md:p-12"
+		>
+			<div class="flex flex-col md:flex-row gap-12 items-center">
+				<div class="md:w-1/2">
+					<img
+						src="/images/top_5.jpg"
+						alt="Change"
+						class="rounded-2xl shadow-xl w-full h-auto"
+					/>
 				</div>
-				<h3 class="font-bold text-xl mb-4 text-gray-800 relative z-10">
-					内面のクリアリング
-				</h3>
-				<p class="text-sm text-gray-600 leading-loose relative z-10">
-					自分の本音を知り、迷いや不安を解消します。
-				</p>
-			</div>
-			<!-- Card 2 -->
-			<div
-				class="bg-white/70 backdrop-blur p-8 rounded-3xl shadow-glass border border-white hover:shadow-crystal hover:-translate-y-2 transition-all duration-300 relative overflow-hidden group"
-			>
-				<div
-					class="absolute -right-4 -top-4 w-20 h-20 bg-blue-100/40 rounded-full blur-xl group-hover:scale-150 transition-transform duration-500"
-				>
+				<div class="md:w-1/2">
+					<ul class="space-y-8">
+						<li class="flex flex-col gap-2">
+							<h3
+								class="font-bold text-xl text-tarot-blue border-b border-sakura-light/50 pb-2 inline-block"
+							>
+								内面のクリアリング
+							</h3>
+							<p class="text-gray-600 leading-relaxed">
+								自分の本音を知り、迷いや不安を解消。
+							</p>
+						</li>
+						<li class="flex flex-col gap-2">
+							<h3
+								class="font-bold text-xl text-tarot-blue border-b border-sakura-light/50 pb-2 inline-block"
+							>
+								具体的な行動へのヒント
+							</h3>
+							<p class="text-gray-600 leading-relaxed">
+								次の一歩が明確になり、行動するモチベーションが高まります。
+							</p>
+						</li>
+						<li class="flex flex-col gap-2">
+							<h3
+								class="font-bold text-xl text-tarot-blue border-b border-sakura-light/50 pb-2 inline-block"
+							>
+								意識の拡大
+							</h3>
+							<p class="text-gray-600 leading-relaxed">
+								直感を刺激され、新しい視点に気づけるようになります。
+							</p>
+						</li>
+						<li class="flex flex-col gap-2">
+							<h3
+								class="font-bold text-xl text-tarot-blue border-b border-sakura-light/50 pb-2 inline-block"
+							>
+								現実創造の加速
+							</h3>
+							<p class="text-gray-600 leading-relaxed">
+								行動が変わることで、目標達成や自己実現がスピーディに進みます。
+							</p>
+						</li>
+					</ul>
 				</div>
-				<h3 class="font-bold text-xl mb-4 text-gray-800 relative z-10">
-					具体的な行動へ
-				</h3>
-				<p class="text-sm text-gray-600 leading-loose relative z-10">
-					次の一歩が明確になり、行動するモチベーションが高まります。
-				</p>
-			</div>
-			<!-- Card 3 -->
-			<div
-				class="bg-white/70 backdrop-blur p-8 rounded-3xl shadow-glass border border-white hover:shadow-crystal hover:-translate-y-2 transition-all duration-300 relative overflow-hidden group"
-			>
-				<div
-					class="absolute -right-4 -top-4 w-20 h-20 bg-sakura-light/30 rounded-full blur-xl group-hover:scale-150 transition-transform duration-500"
-				>
-				</div>
-				<h3 class="font-bold text-xl mb-4 text-gray-800 relative z-10">
-					意識の拡大
-				</h3>
-				<p class="text-sm text-gray-600 leading-loose relative z-10">
-					直感を刺激され、新しい視点に気づけるようになります。
-				</p>
-			</div>
-			<!-- Card 4 -->
-			<div
-				class="bg-white/70 backdrop-blur p-8 rounded-3xl shadow-glass border border-white hover:shadow-crystal hover:-translate-y-2 transition-all duration-300 relative overflow-hidden group"
-			>
-				<div
-					class="absolute -right-4 -top-4 w-20 h-20 bg-blue-100/40 rounded-full blur-xl group-hover:scale-150 transition-transform duration-500"
-				>
-				</div>
-				<h3 class="font-bold text-xl mb-4 text-gray-800 relative z-10">
-					現実創造の加速
-				</h3>
-				<p class="text-sm text-gray-600 leading-loose relative z-10">
-					行動が変わることで、目標達成や自己実現がスピーディに進みます。
-				</p>
 			</div>
 		</div>
 	</section>

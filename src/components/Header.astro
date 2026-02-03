@@ -1,9 +1,17 @@
 ---
+
 ---
+
 <header class="w-full bg-white shadow-sm md:hidden sticky top-0 z-50">
     <div class="container mx-auto px-4 py-3 flex items-center justify-between">
-        <a href="/" class="font-mincho text-xl tracking-wider text-tarot-blue"> Voyager Tarot Creations </a>
-        
+        <a href="/" class="block w-40">
+            <img
+                src="/images/logo.svg"
+                alt="Voyager Tarot Creations"
+                class="w-full h-auto"
+            />
+        </a>
+
         <button id="menu-btn" class="p-2 space-y-1.5 focus:outline-none">
             <span class="block w-6 h-0.5 bg-gray-600"></span>
             <span class="block w-6 h-0.5 bg-gray-600"></span>
@@ -12,20 +20,43 @@
     </div>
 
     <!-- Mobile Menu (Hidden by default) -->
-    <nav id="mobile-menu" class="hidden absolute top-full left-0 w-full bg-white border-t border-gray-100 shadow-md flex-col">
-        <a href="/" class="block py-3 px-6 border-b border-gray-100 hover:bg-gray-50">HOME</a>
-        <a href="/profile" class="block py-3 px-6 border-b border-gray-100 hover:bg-gray-50">プロフィール</a>
-        <a href="/course" class="block py-3 px-6 border-b border-gray-100 hover:bg-gray-50">講座案内</a>
-        <a href="/news" class="block py-3 px-6 border-b border-gray-100 hover:bg-gray-50">お知らせ</a>
-        <a href="/contact" class="block py-3 px-6 hover:bg-gray-50 text-sakura-pink font-bold">お問い合わせ</a>
+    <nav
+        id="mobile-menu"
+        class="hidden absolute top-full left-0 w-full bg-white border-t border-gray-100 shadow-md flex-col"
+    >
+        <a
+            href="/"
+            class="block py-3 px-6 border-b border-gray-100 hover:bg-gray-50"
+            >HOME</a
+        >
+        <a
+            href="/profile"
+            class="block py-3 px-6 border-b border-gray-100 hover:bg-gray-50"
+            >プロフィール</a
+        >
+        <a
+            href="/course"
+            class="block py-3 px-6 border-b border-gray-100 hover:bg-gray-50"
+            >講座案内</a
+        >
+        <a
+            href="/news"
+            class="block py-3 px-6 border-b border-gray-100 hover:bg-gray-50"
+            >お知らせ</a
+        >
+        <a
+            href="/contact"
+            class="block py-3 px-6 hover:bg-gray-50 text-sakura-pink font-bold"
+            >お問い合わせ</a
+        >
     </nav>
 </header>
 
 <script>
-    const menuBtn = document.getElementById('menu-btn');
-    const mobileMenu = document.getElementById('mobile-menu');
+    const menuBtn = document.getElementById("menu-btn");
+    const mobileMenu = document.getElementById("mobile-menu");
 
-    menuBtn?.addEventListener('click', () => {
-        mobileMenu?.classList.toggle('hidden');
+    menuBtn?.addEventListener("click", () => {
+        mobileMenu?.classList.toggle("hidden");
     });
 </script>
