@@ -1,10 +1,12 @@
-// import { createClient } from "microcms-js-sdk";
+import { createClient, type MicroCMSQueries } from "microcms-js-sdk";
 
-// To be used when API keys are available
-// export const client = createClient({
-//   serviceDomain: import.meta.env.MICROCMS_SERVICE_DOMAIN,
-//   apiKey: import.meta.env.MICROCMS_API_KEY,
-// });
+// Client will be initialized if keys are present
+export const client = import.meta.env.MICROCMS_SERVICE_DOMAIN && import.meta.env.MICROCMS_API_KEY
+    ? createClient({
+        serviceDomain: import.meta.env.MICROCMS_SERVICE_DOMAIN,
+        apiKey: import.meta.env.MICROCMS_API_KEY,
+    })
+    : null;
 
 export interface News {
     id: string;
@@ -63,8 +65,21 @@ const mockNews: News[] = [
     }
 ];
 
-export const getNews = async (queries?: any): Promise<NewsResponse> => {
-    // Simulate API call
+export const getNews = async (queries?: MicroCMSQueries): Promise<NewsResponse> => {
+    if (client) {
+        try {
+            return await client.get({
+                endpoint: "news",
+                queries,
+            });
+        } catch (error) {
+            console.error("MicroCMS fetch error:", error);
+            // Fallback to mock data on error? Or rethrow? 
+            // For now, let's fall back to mock data if API fails to avoid breaking dev
+        }
+    }
+
+    // Fallback Mock Data
     return new Promise((resolve) => {
         setTimeout(() => {
             resolve({
@@ -79,8 +94,20 @@ export const getNews = async (queries?: any): Promise<NewsResponse> => {
 
 export const getNewsDetail = async (
     contentId: string,
-    queries?: any
+    queries?: MicroCMSQueries
 ): Promise<News> => {
+    if (client) {
+        try {
+            return await client.get({
+                endpoint: "news",
+                contentId,
+                queries,
+            });
+        } catch (error) {
+            console.error("MicroCMS detail fetch error:", error);
+        }
+    }
+
     return new Promise((resolve, reject) => {
         setTimeout(() => {
             const news = mockNews.find(n => n.id === contentId);
