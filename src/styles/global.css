@@ -24,8 +24,39 @@
   --font-mincho: "Times New Roman", "YuMincho", "Hiragino Mincho ProN", "Yu Mincho", "MS PMincho", serif;
   --font-gothic: "Helvetica", "Arial", "Hiragino Kaku Gothic ProN", "Hiragino Sans", "Meiryo", sans-serif;
 
-  --shadow-crystal: 0 8px 32px 0 rgba(255, 133, 179, 0.15);
-  --shadow-glass: 0 4px 30px rgba(0, 0, 0, 0.05);
+  --shadow-crystal: 0 10px 40px -10px rgba(0, 0, 0, 0.08);
+  /* More neutral, sophisticated shadow */
+  --shadow-glass: 0 8px 32px 0 rgba(31, 38, 135, 0.05);
+
+  --animate-pulse-slow: pulse 6s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-fade-in-up {
+  animation: fadeInUp 0.8s ease-out forwards;
+}
+
+.delay-100 {
+  animation-delay: 100ms;
+}
+
+.delay-200 {
+  animation-delay: 200ms;
+}
+
+.delay-300 {
+  animation-delay: 300ms;
 }
 
 body {
