@@ -3,66 +3,56 @@
 ---
 
 <header
+    class="fixed w-full top-0 z-50 transition-all duration-300 pointer-events-none"
     id="main-header"
-    class="w-full fixed top-0 left-0 z-50 transition-all duration-500 text-white"
 >
-    <div class="container mx-auto px-6 py-4 flex items-center justify-between">
-        <a
-            href="/"
-            class="flex flex-col items-start font-mincho hover:opacity-80 transition-opacity"
-        >
-            <span class="text-xl font-bold tracking-wider leading-none"
-                >Voyager Tarot</span
-            >
+    <div
+        class="absolute inset-0 bg-white/90 backdrop-blur-md -z-10 transition-opacity duration-300 opacity-0 shadow-sm"
+        id="header-bg"
+    >
+    </div>
+
+    <div
+        class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between pointer-events-auto transition-all duration-300"
+        id="header-container"
+    >
+        <!-- Logo -->
+        <a href="/" class="group flex flex-col justify-center">
             <span
-                class="text-[0.6rem] font-bold tracking-[0.3em] uppercase opacity-80 leading-none mt-1 ml-0.5"
-                >Creations</span
+                class="text-2xl font-rounded font-bold text-white tracking-widest drop-shadow-md group-hover:text-gold-light transition-colors"
+                id="header-logo-text"
             >
+                Voyager Tarot
+            </span>
+            <span
+                class="text-[0.6rem] font-rounded text-white/80 tracking-[0.3em] uppercase group-hover:text-white transition-colors"
+                id="header-logo-sub"
+            >
+                Creations
+            </span>
         </a>
 
-        <!-- Desktop Navigation -->
-        <nav
-            class="hidden md:flex items-center gap-8 font-mincho tracking-widest"
-        >
-            <a
-                href="/"
-                class="text-sm font-bold opacity-90 hover:opacity-100 hover:text-sakura-vivid transition-colors relative group"
-            >
-                HOME
-                <span
-                    class="absolute -bottom-1 left-0 w-0 h-0.5 bg-sakura-vivid transition-all group-hover:w-full"
-                ></span>
-            </a>
-            <a
-                href="/profile"
-                class="text-sm font-bold opacity-90 hover:opacity-100 hover:text-sakura-vivid transition-colors relative group"
-            >
-                PROFILE
-                <span
-                    class="absolute -bottom-1 left-0 w-0 h-0.5 bg-sakura-vivid transition-all group-hover:w-full"
-                ></span>
-            </a>
-            <a
-                href="/course"
-                class="text-sm font-bold opacity-90 hover:opacity-100 hover:text-sakura-vivid transition-colors relative group"
-            >
-                COURSE
-                <span
-                    class="absolute -bottom-1 left-0 w-0 h-0.5 bg-sakura-vivid transition-all group-hover:w-full"
-                ></span>
-            </a>
-            <a
-                href="/news"
-                class="text-sm font-bold opacity-90 hover:opacity-100 hover:text-sakura-vivid transition-colors relative group"
-            >
-                NEWS
-                <span
-                    class="absolute -bottom-1 left-0 w-0 h-0.5 bg-sakura-vivid transition-all group-hover:w-full"
-                ></span>
-            </a>
+        <!-- Desktop Nav -->
+        <nav class="hidden md:flex items-center space-x-8">
+            {
+                [
+                    { name: "HOME", href: "/" },
+                    { name: "PROFILE", href: "/profile" },
+                    { name: "COURSE", href: "/course" },
+                    { name: "NEWS", href: "/news" },
+                ].map((item) => (
+                    <a
+                        href={item.href}
+                        class="nav-link text-white font-rounded font-bold text-sm tracking-widest hover:text-gold-light transition-colors drop-shadow-sm relative group py-2"
+                    >
+                        {item.name}
+                        <span class="absolute bottom-0 left-0 w-0 h-0.5 bg-gold-light transition-all duration-300 group-hover:w-full" />
+                    </a>
+                ))
+            }
             <a
                 href="/contact"
-                class="px-6 py-2 rounded-full border border-white/40 hover:bg-white hover:text-tarot-blue hover:border-transparent transition-all text-sm font-bold tracking-wide"
+                class="nav-btn ml-4 px-6 py-2 rounded-full border border-white/60 text-white font-rounded font-bold text-sm tracking-widest hover:bg-white hover:text-tarot-blue transition-all duration-300 backdrop-blur-sm shadow-sm hover:shadow-lg hover:shadow-indigo-500/30"
             >
                 CONTACT
             </a>
@@ -70,120 +60,137 @@
 
         <!-- Mobile Menu Button -->
         <button
-            id="menu-btn"
-            class="md:hidden p-2 space-y-1.5 focus:outline-none z-50 relative group"
+            id="mobile-menu-btn"
+            class="md:hidden text-white p-2 focus:outline-none"
         >
-            <span
-                class="block w-6 h-0.5 bg-current transition-transform origin-center group-[.active]:rotate-45 group-[.active]:translate-y-2"
-            ></span>
-            <span
-                class="block w-6 h-0.5 bg-current transition-opacity group-[.active]:opacity-0"
-            ></span>
-            <span
-                class="block w-6 h-0.5 bg-current transition-transform origin-center group-[.active]:-rotate-45 group-[.active]:-translate-y-2"
-            ></span>
+            <svg
+                xmlns="http://www.w3.org/2000/svg"
+                class="h-6 w-6"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke="currentColor"
+            >
+                <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="2"
+                    d="M4 6h16M4 12h16M4 18h16"></path>
+            </svg>
         </button>
     </div>
-
-    <!-- Mobile Menu Overlay -->
-    <nav
-        id="mobile-menu"
-        class="fixed inset-0 bg-white/95 backdrop-blur-xl z-40 flex flex-col items-center justify-center gap-8 opacity-0 pointer-events-none transition-opacity duration-300 text-tarot-blue"
-    >
-        <a
-            href="/"
-            class="text-2xl font-mincho font-bold hover:text-sakura-vivid transition-colors"
-            >HOME</a
-        >
-        <a
-            href="/profile"
-            class="text-2xl font-mincho font-bold hover:text-sakura-vivid transition-colors"
-            >PROFILE</a
-        >
-        <a
-            href="/course"
-            class="text-2xl font-mincho font-bold hover:text-sakura-vivid transition-colors"
-            >COURSE</a
-        >
-        <a
-            href="/news"
-            class="text-2xl font-mincho font-bold hover:text-sakura-vivid transition-colors"
-            >NEWS</a
-        >
-        <a
-            href="/contact"
-            class="text-2xl font-mincho font-bold text-sakura-vivid hover:text-pink-600 transition-colors"
-            >CONTACT</a
-        >
-    </nav>
 </header>
 
+<!-- Mobile Menu Overlay -->
+<nav
+    id="mobile-menu"
+    class="fixed inset-0 bg-white/95 backdrop-blur-xl z-40 flex flex-col items-center justify-center gap-8 opacity-0 pointer-events-none transition-opacity duration-300 text-text-main font-rounded"
+>
+    <a
+        href="/"
+        class="text-2xl font-bold hover:text-sakura-vivid transition-colors"
+        >HOME</a
+    >
+    <a
+        href="/profile"
+        class="text-2xl font-bold hover:text-sakura-vivid transition-colors"
+        >PROFILE</a
+    >
+    <a
+        href="/course"
+        class="text-2xl font-bold hover:text-sakura-vivid transition-colors"
+        >COURSE</a
+    >
+    <a
+        href="/news"
+        class="text-2xl font-bold hover:text-sakura-vivid transition-colors"
+        >NEWS</a
+    >
+    <a
+        href="/contact"
+        class="text-2xl font-bold text-sakura-vivid hover:text-pink-600 transition-colors"
+        >CONTACT</a
+    >
+</nav>
+
 <script>
-    const header = document.getElementById("main-header");
-    // const logo = document.getElementById("header-logo") as HTMLImageElement; // Replaced with text, no longer needed
-    const menuBtn = document.getElementById("menu-btn");
+    const headerBg = document.getElementById("header-bg");
+    const logoText = document.getElementById("header-logo-text");
+    const logoSub = document.getElementById("header-logo-sub");
+    const navLinks = document.querySelectorAll(".nav-link");
+    const navBtn = document.querySelector(".nav-btn");
+    const mobileBtn = document.getElementById("mobile-menu-btn");
     const mobileMenu = document.getElementById("mobile-menu");
 
-    // Scroll Effect
-    window.addEventListener("scroll", () => {
-        if (window.scrollY > 50) {
-            header?.classList.add(
-                "bg-white/90",
-                "backdrop-blur-md",
-                "shadow-sm",
-                "py-2",
-                "text-tarot-blue",
-            );
-            header?.classList.remove("text-white", "py-4");
+    // Scroll Listener
+    const handleScroll = () => {
+        if (window.scrollY > 20) {
+            // Scrolled state: White background, Blue text
+            headerBg?.classList.remove("opacity-0");
+            headerBg?.classList.add("opacity-100");
 
-            // Allow logo swapping if attributes exist
-            // if(logo && logo.dataset.logoColor) logo.src = logo.dataset.logoColor;
+            logoText?.classList.remove("text-white");
+            logoText?.classList.add("text-text-main");
+            logoSub?.classList.remove("text-white/80");
+            logoSub?.classList.add("text-text-main/80");
+
+            navLinks.forEach((link) => {
+                link.classList.remove("text-white");
+                link.classList.add("text-text-main");
+            });
+
+            navBtn?.classList.remove("text-white", "border-white/60");
+            navBtn?.classList.add("text-text-main", "border-text-main/30");
+
+            mobileBtn?.classList.remove("text-white");
+            mobileBtn?.classList.add("text-text-main");
         } else {
-            header?.classList.remove(
-                "bg-white/90",
-                "backdrop-blur-md",
-                "shadow-sm",
-                "py-2",
-                "text-tarot-blue",
-            );
-            header?.classList.add("text-white", "py-4");
+            // Top state: Transparent background, White text
+            headerBg?.classList.add("opacity-0");
+            headerBg?.classList.remove("opacity-100");
 
-            // if(logo && logo.dataset.logoWhite) logo.src = logo.dataset.logoWhite;
-            // fallback: if no white logo, we might just keep the color one or handle it with CSS filter
+            logoText?.classList.add("text-white");
+            logoText?.classList.remove("text-text-main");
+            logoSub?.classList.add("text-white/80");
+            logoSub?.classList.remove("text-text-main/80");
+
+            navLinks.forEach((link) => {
+                link.classList.add("text-white");
+                link.classList.remove("text-text-main");
+            });
+
+            navBtn?.classList.add("text-white", "border-white/60");
+            navBtn?.classList.remove("text-text-main", "border-text-main/30");
+
+            mobileBtn?.classList.add("text-white");
+            mobileBtn?.classList.remove("text-text-main");
         }
-    });
+    };
 
-    // Mobile Menu
-    menuBtn?.addEventListener("click", () => {
-        menuBtn.classList.toggle("active");
+    window.addEventListener("scroll", handleScroll);
+    // Init check
+    handleScroll();
 
-        // Toggle header text color for visibility on white menu
-        if (menuBtn.classList.contains("active")) {
-            header?.classList.remove("text-white");
-            header?.classList.add("text-gray-800");
-        } else if (window.scrollY <= 50) {
-            header?.classList.add("text-white");
-            header?.classList.remove("text-gray-800");
-        }
-
+    // Mobile Menu Logic
+    mobileBtn?.addEventListener("click", () => {
         if (mobileMenu?.classList.contains("opacity-0")) {
             mobileMenu.classList.remove("opacity-0", "pointer-events-none");
             document.body.style.overflow = "hidden";
+            // Ensure button is visible/colored for contrast if needed, or maybe add a close icon logic
+            mobileBtn.classList.add("text-text-main"); // force blue on white menu
+            mobileBtn.classList.remove("text-white");
         } else {
-            mobileMenu?.classList.add("opacity-0", "pointer-events-none");
+            mobileMenu.classList.add("opacity-0", "pointer-events-none");
             document.body.style.overflow = "";
+            handleScroll(); // Restore correct color based on scroll
         }
     });
 
+    // Close mobile menu on link click
     mobileMenu?.querySelectorAll("a").forEach((link) => {
         link.addEventListener("click", () => {
-            menuBtn?.classList.remove("active");
-            mobileMenu?.classList.add("opacity-0", "pointer-events-none");
+            mobileMenu.classList.add("opacity-0", "pointer-events-none");
             document.body.style.overflow = "";
-            if (window.scrollY <= 50) {
-                header?.classList.add("text-white");
-                header?.classList.remove("text-gray-800");
-            }
+            handleScroll();
         });
     });
 </script>

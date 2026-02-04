@@ -107,14 +107,14 @@ const courseCategories = [
 		<!-- Hero Content -->
 		<div class="relative z-20 text-center text-white px-4">
 			<h1
-				class="text-6xl md:text-8xl font-mincho font-bold mb-6 tracking-wide drop-shadow-lg leading-tight animate-fade-in-up delay-100"
+				class="text-6xl md:text-8xl font-rounded font-bold mb-6 tracking-wide drop-shadow-lg leading-tight animate-fade-in-up delay-100"
 			>
 				Voyager Tarot<br />
 				<span class="text-gold-light">Creations</span>
 			</h1>
 
 			<p
-				class="text-lg md:text-2xl font-mincho tracking-widest opacity-90 mb-12 animate-fade-in-up delay-200"
+				class="text-lg md:text-2xl font-rounded tracking-widest opacity-90 mb-12 animate-fade-in-up delay-200"
 			>
 				未来を創造する力を、あなたに。
 			</p>
@@ -124,7 +124,7 @@ const courseCategories = [
 			>
 				<a
 					href="#tarot-draw"
-					class="bg-white/10 backdrop-blur-md border border-white/50 text-white px-10 py-4 rounded-full hover:bg-white hover:text-tarot-blue transition-all duration-300 font-bold tracking-wide"
+					class="bg-gradient-to-r from-sakura-vivid to-sunshine text-white px-10 py-4 rounded-full hover:scale-105 transition-all duration-300 font-bold tracking-wide shadow-lg shadow-pink-200"
 				>
 					今日の1枚を引く
 				</a>
@@ -139,7 +139,7 @@ const courseCategories = [
 			<div class="max-w-7xl mx-auto">
             <div class="card">
                 <div class="card-header">
-                    <h2 class="text-white font-mincho font-bold text-2xl md:text-3xl drop-shadow-md">
+                    <h2 class="text-white font-rounded font-bold text-2xl md:text-3xl drop-shadow-md">
                         News
                     </h2>
                     <a
@@ -148,7 +148,7 @@ const courseCategories = [
                     >
                         VIEW ALL
                         <span
-                            class="w-8 h-8 rounded-full bg-white/20 border border-white/50 flex items-center justify-center group-hover:bg-white group-hover:text-sakura-vivid transition-all shadow-sm"
+                            class="w-8 h-8 rounded-full bg-white/30 flex items-center justify-center group-hover:bg-white group-hover:text-sunshine transition-all shadow-sm"
                             >&rarr;</span
                         >
                     </a>
@@ -209,7 +209,7 @@ const courseCategories = [
 			<div class="max-w-7xl mx-auto">
                 <div class="card">
                     <div class="card-header">
-                        <h2 class="text-white font-mincho font-bold text-2xl md:text-3xl drop-shadow-md">
+                        <h2 class="text-white font-rounded font-bold text-2xl md:text-3xl drop-shadow-md">
                             ボイジャータロット<br />クリエイションズについて
                         </h2>
                     </div>
@@ -237,7 +237,7 @@ const courseCategories = [
                             <span class="text-gold-main font-bold tracking-widest text-sm mb-4 block">WHO WE ARE</span>
 
                             <div
-                                class="space-y-6 text-gray-600 leading-loose font-mincho"
+                                class="space-y-6 text-gray-600 leading-loose font-rounded"
                             >
                                 <p class="text-lg font-bold text-text-main">
                                     認定ティーチャーとして10年以上の経験を持つ<br
@@ -274,7 +274,7 @@ const courseCategories = [
 				<div class="max-w-7xl mx-auto">
                 <div class="card">
                     <div class="card-header">
-                        <h2 class="text-white font-mincho font-bold text-2xl md:text-3xl drop-shadow-md">
+                        <h2 class="text-white font-rounded font-bold text-2xl md:text-3xl drop-shadow-md">
                             講座紹介
                         </h2>
                     </div>
@@ -292,8 +292,8 @@ const courseCategories = [
                                             class:list={[
                                                 "course-tab text-left px-6 py-4 rounded-xl transition-all duration-300 font-bold tracking-wide flex items-center justify-between group",
                                                 index === 0 
-                                                    ? "bg-tarot-blue text-white shadow-lg shadow-indigo-200 ring-2 ring-tarot-blue ring-offset-2" 
-                                                    : "bg-white text-gray-500 hover:text-tarot-blue hover:bg-indigo-50"
+                                                    ? "bg-gradient-to-r from-sky via-tarot-blue to-tarot-blue text-white shadow-lg shadow-sky/30 ring-0" 
+                                                    : "bg-white text-gray-500 hover:text-sky hover:bg-sky/5"
                                             ]}
                                             data-target={`course-content-${cat.id}`}
                                         >
@@ -315,11 +315,11 @@ const courseCategories = [
                                 <!-- Steps Visualization -->
                                 <div class="mb-24">
                                     <h3 class="text-center font-bold text-gray-400 text-sm tracking-widest mb-8">- STEP UP FLOW -</h3>
-                                    <div class="grid grid-cols-1 md:grid-cols-3 gap-6 text-tarot-blue font-bold font-mincho">
+                                    <div class="grid grid-cols-1 md:grid-cols-3 gap-6 text-text-main font-bold font-rounded">
                                         {cat.steps.map((step, i) => (
                                             <div class="relative flex flex-col items-center justify-center">
                                                 <div class="bg-white px-6 py-3 rounded-lg border border-indigo-50 shadow-sm flex items-center justify-center gap-3 w-full relative z-10">
-                                                    <span class="w-6 h-6 bg-sakura-vivid text-white rounded-full flex items-center justify-center text-xs font-sans shadow-sm shrink-0">
+                                                    <span class="w-6 h-6 bg-sunshine text-white rounded-full flex items-center justify-center text-xs font-sans shadow-sm shrink-0">
                                                         {step.step}
                                                     </span>
                                                     <span class="whitespace-nowrap">{step.label}</span>
@@ -429,11 +429,11 @@ const courseCategories = [
                             <!-- Text Side (Left) -->
                             <div class="w-full md:w-1/2 text-left">
                                 <span class="text-gold-main font-bold tracking-widest text-sm mb-4 block">OUR MISSION</span>
-                                <h3 class="text-xl md:text-2xl font-mincho text-tarot-blue/80 font-bold mb-6">
+                                <h3 class="text-xl md:text-2xl font-rounded text-text-main font-bold mb-6">
                                     未来を創造する力を、あなたに。
                                 </h3>
                                 
-                                <div class="space-y-6 text-gray-600 leading-loose font-mincho text-lg">
+                                <div class="space-y-6 text-gray-600 leading-loose font-rounded text-lg">
                                     <p>
                                         ボイジャータロットを通じて、皆さまの成長と可能性を広げること。
                                     </p>
@@ -477,7 +477,7 @@ const courseCategories = [
                             <div class="w-full md:w-1/2">
                                 <div class="h-[500px] bg-gray-100 rounded-[2rem] overflow-hidden relative shadow-2xl shadow-pink-100/50 group">
                                     <!-- Image placeholder with glass overlay -->
-                                    <div class="absolute inset-0 flex items-center justify-center text-gray-400 font-mincho tracking-widest z-0">
+                                    <div class="absolute inset-0 flex items-center justify-center text-gray-400 font-rounded tracking-widest z-0">
                                         <span class="z-10 relative">Voyager Image</span>
                                         <div class="absolute inset-0 bg-gradient-to-tr from-indigo-100/40 to-sakura-light/40 mix-blend-multiply"></div>
                                     </div>
@@ -490,19 +490,19 @@ const courseCategories = [
                             <!-- Text Side (Right) -->
                             <div class="w-full md:w-1/2 text-left">
                                 <span class="text-gold-main font-bold tracking-widest text-sm mb-4 block">ABOUT CARD</span>
-                                <h3 class="text-xl font-bold text-gray-700 mb-6 font-mincho">
+                                <h3 class="text-xl font-bold text-gray-700 mb-6 font-rounded">
                                     「自分の人生を創造するためのツール」
                                 </h3>
-                                <p class="leading-loose text-gray-600 mb-10 font-mincho">
+                                <p class="leading-loose text-gray-600 mb-10 font-rounded">
                                     従来の「占い」という枠を超え、現代の心理学や宇宙論を融合。<br />
                                     78枚のカードには美しいコラージュが描かれ、スピリチュアルなエネルギーと現実的なメッセージが詰まっています。
                                 </p>
 
-                                <div class="space-y-8 font-mincho">
+                                <div class="space-y-8 font-rounded">
                                     <div class="flex gap-5 items-start group">
-                                        <span class="flex-shrink-0 w-12 h-12 rounded-full bg-blue-50 text-tarot-blue flex items-center justify-center font-bold text-xl group-hover:bg-tarot-blue group-hover:text-white transition-colors shadow-sm">01</span>
+                                        <span class="flex-shrink-0 w-12 h-12 rounded-full bg-blue-50 text-text-main flex items-center justify-center font-bold text-xl group-hover:bg-text-main group-hover:text-white transition-colors shadow-sm">01</span>
                                         <div>
-                                            <h4 class="font-bold text-tarot-blue text-lg mb-2">現実創造のサポート</h4>
+                                            <h4 class="font-bold text-text-main text-lg mb-2">現実創造のサポート</h4>
                                             <p class="text-sm text-gray-600 leading-relaxed">
                                                 カードのメッセージを通じて行動を促し、目標達成へと導きます。
                                             </p>
@@ -511,7 +511,7 @@ const courseCategories = [
                                     <div class="flex gap-5 items-start group">
                                         <span class="flex-shrink-0 w-12 h-12 rounded-full bg-pink-50 text-sakura-vivid flex items-center justify-center font-bold text-xl group-hover:bg-sakura-vivid group-hover:text-white transition-colors shadow-sm">02</span>
                                         <div>
-                                            <h4 class="font-bold text-tarot-blue text-lg mb-2">コーチングに最適なツール</h4>
+                                            <h4 class="font-bold text-text-main text-lg mb-2">コーチングに最適なツール</h4>
                                             <p class="text-sm text-gray-600 leading-relaxed">
                                                 スピリチュアルな視点と現実的なアプローチが融合しており、自己発見や成長を強力にサポートします。
                                             </p>
@@ -520,7 +520,7 @@ const courseCategories = [
                                     <div class="flex gap-5 items-start group">
                                         <span class="flex-shrink-0 w-12 h-12 rounded-full bg-yellow-50 text-gold-main flex items-center justify-center font-bold text-xl group-hover:bg-gold-main group-hover:text-white transition-colors shadow-sm">03</span>
                                         <div>
-                                            <h4 class="font-bold text-tarot-blue text-lg mb-2">直感を引き出すデザイン</h4>
+                                            <h4 class="font-bold text-text-main text-lg mb-2">直感を引き出すデザイン</h4>
                                             <p class="text-sm text-gray-600 leading-relaxed">
                                                 美しいビジュアルが潜在意識を刺激し、新しい気づきをもたらします。
                                             </p>
@@ -549,7 +549,7 @@ const courseCategories = [
 		<div class="max-w-7xl mx-auto">
             <div class="card">
                 <div class="card-header">
-                    <h2 class="text-white font-mincho font-bold text-2xl md:text-3xl drop-shadow-md">
+                    <h2 class="text-white font-rounded font-bold text-2xl md:text-3xl drop-shadow-md">
                         ボイジャータロットが<br />もたらす変化
                     </h2>
                 </div>
@@ -558,13 +558,13 @@ const courseCategories = [
                     <!-- Text Side (Left) -->
                     <div class="w-full md:w-1/2 text-left">
                         <span class="text-gold-main font-bold tracking-widest text-sm mb-4 block">CHANGE</span>
-                        <p class="leading-loose text-gray-600 mb-10 font-mincho">
+                        <p class="leading-loose text-gray-600 mb-10 font-rounded">
                             ボイジャータロットを使うことで、人生に次のような変化が訪れます。
                         </p>
 
-                        <ul class="space-y-8 font-mincho">
+                        <ul class="space-y-8 font-rounded">
                             <li class="flex flex-col gap-2">
-                                <h3 class="font-bold text-xl text-tarot-blue border-b border-sakura-light/50 pb-2 inline-block w-fit">
+                                <h3 class="font-bold text-xl text-text-main border-b border-sakura-light/50 pb-2 inline-block w-fit">
                                     内面のクリアリング
                                 </h3>
                                 <p class="text-gray-600 leading-relaxed text-sm">
@@ -572,7 +572,7 @@ const courseCategories = [
                                 </p>
                             </li>
                             <li class="flex flex-col gap-2">
-                                <h3 class="font-bold text-xl text-tarot-blue border-b border-sakura-light/50 pb-2 inline-block w-fit">
+                                <h3 class="font-bold text-xl text-text-main border-b border-sakura-light/50 pb-2 inline-block w-fit">
                                     具体的な行動へのヒント
                                 </h3>
                                 <p class="text-gray-600 leading-relaxed text-sm">
@@ -580,7 +580,7 @@ const courseCategories = [
                                 </p>
                             </li>
                             <li class="flex flex-col gap-2">
-                                <h3 class="font-bold text-xl text-tarot-blue border-b border-sakura-light/50 pb-2 inline-block w-fit">
+                                <h3 class="font-bold text-xl text-text-main border-b border-sakura-light/50 pb-2 inline-block w-fit">
                                     意識の拡大
                                 </h3>
                                 <p class="text-gray-600 leading-relaxed text-sm">
@@ -588,7 +588,7 @@ const courseCategories = [
                                 </p>
                             </li>
                             <li class="flex flex-col gap-2">
-                                <h3 class="font-bold text-xl text-tarot-blue border-b border-sakura-light/50 pb-2 inline-block w-fit">
+                                <h3 class="font-bold text-xl text-text-main border-b border-sakura-light/50 pb-2 inline-block w-fit">
                                     現実創造の加速
                                 </h3>
                                 <p class="text-gray-600 leading-relaxed text-sm">
@@ -622,7 +622,7 @@ const courseCategories = [
 		class="mb-20 py-16 px-4 bg-gradient-to-br from-tarot-blue to-indigo-900 text-white rounded-3xl text-center relative overflow-hidden shadow-2xl shadow-indigo-200"
 	>
 		<div class="relative z-10">
-			<h2 class="text-3xl font-mincho mb-8">Today's Tarot</h2>
+			<h2 class="text-3xl font-rounded mb-8">Today's Tarot</h2>
 			<TarotDraw client:visible />
 		</div>
 		<!-- Decorative bg elements -->
