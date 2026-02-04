@@ -2,33 +2,48 @@
 
 @theme {
   /* Crystal Brightness Palette */
-  --color-bg-base: #fffafb;
-  /* Very faint pinkish white */
-  --color-bg-card: #ffffff;
+  --color-bg-base: #ffffff;
+  /* Pure White for maximum brightness */
+  --color-bg-surface: #f8fafc;
+  /* Very subtle cool gray for surfaces */
 
-  --color-text-main: #4a4a4a;
-  --color-text-muted: #8a8a8a;
+  /* Primary Colors */
+  --color-tarot-blue: #0f4c81;
+  /* Classic Blue - Deep and intellectual */
+  --color-tarot-dark: #0a2e4d;
+  /* Midnight Blue for text/headings */
+  --color-tarot-light: #e0f2fe;
+  /* Light Sky Blue for accents */
 
-  --color-sakura-vivid: #ff85b3;
-  /* Brighter, more saturated pink */
-  --color-sakura-light: #ffcee0;
+  /* Accent Colors */
+  --color-sakura-vivid: #ff80ab;
+  /* Bright Pink for calls to action */
+  --color-sakura-light: #fce4ec;
+  /* Pale Pink for backgrounds */
 
-  --color-tarot-blue: #005694;
-  /* Brighter blue, less black */
-  --color-tarot-dark: #003366;
-  /* Deep blue for text contrast */
+  --color-gold-main: #d4af37;
+  /* Classic Gold */
+  --color-gold-light: #fff8e1;
+  /* Pale Gold for highlights */
 
-  --color-gold-main: #e6c86e;
-  --color-gold-light: #fbf5e1;
+  /* Text Colors */
+  --color-text-main: #334155;
+  /* Slate 700 - Softer than pure black */
+  --color-text-muted: #64748b;
+  /* Slate 500 */
+  --color-text-inverse: #ffffff;
+  /* White text */
 
+  /* Fonts */
   --font-mincho: "Times New Roman", "YuMincho", "Hiragino Mincho ProN", "Yu Mincho", "MS PMincho", serif;
   --font-gothic: "Helvetica", "Arial", "Hiragino Kaku Gothic ProN", "Hiragino Sans", "Meiryo", sans-serif;
 
-  --shadow-crystal: 0 10px 40px -10px rgba(0, 0, 0, 0.08);
-  /* More neutral, sophisticated shadow */
-  --shadow-glass: 0 8px 32px 0 rgba(31, 38, 135, 0.05);
+  /* Effects */
+  --shadow-crystal: 0 8px 32px rgba(15, 76, 129, 0.15);
+  /* Blue-tinted shadow */
+  --shadow-glass: 0 4px 16px 0 rgba(255, 255, 255, 0.3);
 
-  --animate-pulse-slow: pulse 6s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+  --animate-pulse-slow: pulse 8s cubic-bezier(0.4, 0, 0.6, 1) infinite;
 }
 
 @keyframes fadeInUp {
@@ -43,6 +58,30 @@
   }
 }
 
+.card {
+  @apply bg-white rounded-3xl shadow-xl overflow-hidden h-full border border-slate-100;
+}
+
+.card-header {
+  /* Replaced Orange Gradient with Tarot Blue Gradient */
+  @apply bg-gradient-to-r from-tarot-blue to-indigo-600 px-8 py-6 flex items-center justify-between relative overflow-hidden;
+}
+
+/* Add a subtle shine to the header */
+.card-header::after {
+  content: "";
+  @apply absolute top-0 left-0 w-full h-full bg-gradient-to-b from-white/10 to-transparent pointer-events-none;
+}
+
+.card-header h2 {
+  @apply text-white font-mincho font-bold text-2xl md:text-3xl drop-shadow-md tracking-wide;
+}
+
+.card-body {
+  @apply p-8 md:p-12;
+}
+
+/* Animations */
 .animate-fade-in-up {
   animation: fadeInUp 0.8s ease-out forwards;
 }
@@ -63,11 +102,7 @@ body {
   font-family: var(--font-gothic);
   color: var(--color-text-main);
   background-color: var(--color-bg-base);
-  background-image:
-    radial-gradient(at 0% 0%, rgba(255, 206, 224, 0.3) 0px, transparent 50%),
-    radial-gradient(at 100% 0%, rgba(251, 245, 225, 0.4) 0px, transparent 50%),
-    radial-gradient(at 100% 100%, rgba(193, 228, 255, 0.2) 0px, transparent 50%);
-  background-attachment: fixed;
+  /* background-image removed for pure white request */
 }
 
 h1,

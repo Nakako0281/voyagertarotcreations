@@ -25,18 +25,18 @@ const { title, wide = false } = Astro.props;
 	<body
 		class="bg-bg-base text-text-main min-h-screen flex flex-col font-sans relative overflow-x-clip selection:bg-sakura-vivid selection:text-white"
 	>
-		<div class="fixed inset-0 pointer-events-none z-[-1]">
-			<!-- Vivid Blobs -->
+		<!-- Vivid Blobs (Restored for Crystal Depth) -->
+		<div class="fixed inset-0 pointer-events-none z-0 overflow-hidden">
 			<div
-				class="absolute top-[-10%] left-[-10%] w-[60%] h-[60%] bg-gradient-to-br from-sakura-light/40 to-transparent blur-[100px] rounded-full mix-blend-multiply animate-pulse-slow"
+				class="absolute top-[-10%] left-[-10%] w-[70%] h-[70%] bg-gradient-to-br from-sakura-light/30 to-transparent blur-[120px] rounded-full mix-blend-multiply opacity-60 animate-pulse-slow"
 			>
 			</div>
 			<div
-				class="absolute bottom-[-10%] right-[-10%] w-[50%] h-[60%] bg-gradient-to-tl from-gold-light/60 to-transparent blur-[120px] rounded-full mix-blend-multiply"
+				class="absolute bottom-[-10%] right-[-10%] w-[60%] h-[60%] bg-gradient-to-tl from-gold-light/40 to-transparent blur-[130px] rounded-full mix-blend-multiply opacity-60"
 			>
 			</div>
 			<div
-				class="absolute top-[30%] right-[10%] w-[40%] h-[40%] bg-gradient-to-b from-blue-100/40 to-transparent blur-[90px] rounded-full mix-blend-multiply"
+				class="absolute top-[20%] right-[10%] w-[50%] h-[50%] bg-gradient-to-b from-tarot-light/30 to-transparent blur-[100px] rounded-full mix-blend-multiply opacity-50"
 			>
 			</div>
 		</div>

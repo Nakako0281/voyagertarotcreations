@@ -124,7 +124,7 @@ export default function TarotDraw() {
                         animate={{ opacity: 1 }}
                         className="text-white/80 text-lg font-serif"
                     >
-                        心を静めて、カードをタップしてください
+                        カードをタップしてください
                     </motion.p>
                 )}
 
