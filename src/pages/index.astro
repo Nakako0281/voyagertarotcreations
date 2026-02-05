@@ -144,7 +144,7 @@ const courseCategories = [
 		<!-- 1. WHO WE ARE (About Section) - Image Left, Text Right -->
 		<section class="mb-24 pt-32 px-4 relative">
 			<div class="max-w-7xl mx-auto">
-                <div class="card">
+                <div class="card scroll-animation opacity-0 perspective-1000">
                     <div class="card-header">
                         <h2 class="text-white font-rounded font-bold text-2xl md:text-3xl drop-shadow-md">
                             ボイジャータロット<br />クリエイションズについて
@@ -204,7 +204,7 @@ const courseCategories = [
 		<!-- 2. ABOUT CARD - Text Left, Image Right (Flipped for Zigzag) -->
 		<section class="mb-24 px-4 relative">
 			<div class="max-w-7xl mx-auto">
-                <div class="card">
+                <div class="card scroll-animation opacity-0 perspective-1000">
                     <div class="card-header">
                         <h2 class="text-white font-mincho font-bold text-2xl md:text-3xl drop-shadow-md">
                             Voyager Tarot
@@ -280,7 +280,7 @@ const courseCategories = [
 		<!-- 3. CHANGE - Image Left, Text Right (Flipped for Zigzag) -->
 		<section class="mb-32 px-4 relative">
 			<div class="max-w-7xl mx-auto">
-                <div class="card">
+                <div class="card scroll-animation opacity-0 perspective-1000">
                     <div class="card-header">
                         <h2 class="text-white font-rounded font-bold text-2xl md:text-3xl drop-shadow-md">
                             ボイジャータロットが<br />もたらす変化
@@ -351,7 +351,7 @@ const courseCategories = [
 		<!-- 4. MISSION - Text Left, Image Right (Already is) -->
 		<section class="mb-24 px-4 relative">
 			<div class="max-w-7xl mx-auto">
-                <div class="card">
+                <div class="card scroll-animation opacity-0 perspective-1000">
                     <div class="card-header">
                         <h2 class="text-white font-mincho font-bold text-2xl md:text-3xl drop-shadow-md">
                             ボイジャータロット<br />クリエイションズの使命
@@ -396,7 +396,7 @@ const courseCategories = [
 		<!-- 5. COURSE (Scalable Sidebar Layout) -->
 		<section class="mb-24 px-4 relative">
 			<div class="max-w-7xl mx-auto">
-            <div class="card">
+            <div class="card scroll-animation opacity-0 perspective-1000">
                 <div class="card-header">
                     <h2 class="text-white font-rounded font-bold text-2xl md:text-3xl drop-shadow-md">
                         講座紹介
@@ -537,12 +537,33 @@ const courseCategories = [
                     }
                 });
             });
+
+            // Scroll Reveal Animation (Draw Card Effect)
+            const observerOptions = {
+                root: null,
+                rootMargin: '0px',
+                threshold: 0.15
+            };
+
+            const observer = new IntersectionObserver((entries, observer) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.remove('opacity-0');
+                        entry.target.classList.add('animate-draw-card');
+                        observer.unobserve(entry.target); // Draw once per session
+                    }
+                });
+            }, observerOptions);
+
+            document.querySelectorAll('.scroll-animation').forEach(el => {
+                observer.observe(el);
+            });
         </script>
 
 	<!-- 6. NEWS -->
 	<section class="mb-24 px-4 relative">
 		<div class="max-w-7xl mx-auto">
-        <div class="card">
+        <div class="card scroll-animation opacity-0 perspective-1000">
             <div class="card-header">
                 <h2 class="text-white font-rounded font-bold text-2xl md:text-3xl drop-shadow-md">
                     News

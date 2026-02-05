@@ -116,3 +116,24 @@ h5,
 h6 {
   font-family: var(--font-rounded);
 }
+
+/* 3D Card Draw Animation */
+@keyframes drawCard {
+  0% {
+    opacity: 0;
+    transform: translateY(40px) scale(0.95) rotateX(10deg);
+  }
+
+  100% {
+    opacity: 1;
+    transform: translateY(0) scale(1) rotateX(0);
+  }
+}
+
+.animate-draw-card {
+  animation: drawCard 0.8s cubic-bezier(0.2, 0.8, 0.2, 1) forwards;
+}
+
+.perspective-1000 {
+  perspective: 1000px;
+}
