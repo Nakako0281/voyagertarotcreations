@@ -34,7 +34,7 @@ export default function TarotDraw() {
                     {!showResult ? (
                         <motion.div
                             key="deck"
-                            className="w-48 h-80 md:w-64 md:h-96 bg-gradient-to-br from-blue-900 to-black rounded-xl border-2 border-white/20 shadow-2xl flex items-center justify-center cursor-pointer relative"
+                            className="w-48 h-80 md:w-64 md:h-96 rounded-xl border-2 border-white/20 shadow-2xl flex items-center justify-center cursor-pointer relative overflow-hidden bg-tarot-dark"
                             onClick={handleDraw}
                             initial={{ rotateY: 0 }}
                             animate={isShuffling ? {
@@ -47,14 +47,21 @@ export default function TarotDraw() {
                             transition={isShuffling ? { duration: 0.5, repeat: 3 } : { duration: 3, repeat: Infinity, ease: "easeInOut" }}
                             whileHover={{ scale: 1.05, boxShadow: "0 0 25px rgba(59, 130, 246, 0.5)" }}
                         >
-                            <div className="text-white/30 text-6xl font-serif">?</div>
+                            {/* Card Back Image */}
+                            <img
+                                src="/images/cards/tarot_back.webp"
+                                alt="Tarot Back"
+                                className="absolute inset-0 w-full h-full object-cover"
+                            />
+
+                            <div className="relative z-10 text-white/30 text-6xl font-serif">?</div>
 
                             {/* Card Pattern (Decorative) */}
-                            <div className="absolute inset-2 border border-white/10 rounded-lg"></div>
+                            <div className="absolute inset-2 border border-white/10 rounded-lg z-10"></div>
 
                             {isShuffling && (
                                 <motion.div
-                                    className="absolute inset-0 bg-white/20"
+                                    className="absolute inset-0 bg-white/20 z-20"
                                     animate={{ opacity: [0, 0.5, 0] }}
                                     transition={{ duration: 0.2, repeat: Infinity }}
                                 />
