@@ -141,19 +141,21 @@ const courseCategories = [
 
 	<!-- Content Wrapper -->
 	<div class="bg-bg-base relative z-10">
-		<!-- 1. WHO WE ARE (About Section) - Image Left, Text Right -->
-		<section class="mb-24 pt-32 px-4 relative">
+		<!-- 1. WHO WE ARE (About Section) -->
+		<section class="mb-32 pt-24 px-4 relative">
 			<div class="max-w-7xl mx-auto">
-                <div class="card scroll-animation opacity-0 perspective-1000">
-                    <div class="card-header">
-                        <h2 class="text-white font-rounded font-bold text-2xl md:text-3xl drop-shadow-md">
-                            ボイジャータロット<br />クリエイションズについて
+                <div class="scroll-animation opacity-0">
+                    <div class="mb-12 text-center">
+                         <span class="text-gold-main font-bold tracking-widest text-sm mb-2 block">WHO WE ARE</span>
+                        <h2 class="text-tarot-blue font-rounded font-bold text-3xl md:text-4xl inline-block relative">
+                            ボイジャータロット<br class="md:hidden" />クリエイションズについて
                         </h2>
+                        <div class="w-16 h-[2px] bg-gold-main mx-auto mt-6"></div>
                     </div>
-                    <!-- Removed card-body to control padding individually -->
-                    <div class="flex flex-col md:flex-row items-stretch">
-                        <!-- Image Side (Visual Anchor) -->
-                        <div class="w-full md:w-1/2 relative min-h-[300px] bg-gray-100 group">
+
+                    <div class="flex flex-col md:flex-row items-stretch gap-12 md:gap-20">
+                        <!-- Image Side -->
+                        <div class="w-full md:w-1/2 relative min-h-[400px] md:min-h-[500px] rounded-[3rem] overflow-hidden shadow-2xl shadow-blue-100/50 group">
                              <div
                                 class="absolute inset-0 bg-tarot-blue/10 group-hover:bg-transparent transition-colors duration-500 z-10"
                             >
@@ -161,20 +163,18 @@ const courseCategories = [
                             <img
                                 src="/images/top_1.webp"
                                 alt="Voyager Tarot Session"
-                                class="absolute inset-0 w-full h-full object-cover transform group-hover:scale-105 transition-transform duration-700"
+                                class="absolute inset-0 w-full h-full object-cover transform group-hover:scale-105 transition-transform duration-1000"
                             />
                         </div>
 
-                        <!-- Text Side (Content) -->
-                        <div class="w-full md:w-1/2 text-left p-8 md:p-12">
-                            <span class="text-gold-main font-bold tracking-widest text-sm mb-4 block">WHO WE ARE</span>
-
+                        <!-- Text Side -->
+                        <div class="w-full md:w-1/2 flex flex-col justify-center">
                             <div
-                                class="space-y-6 text-gray-600 leading-loose font-rounded"
+                                class="space-y-8 text-gray-600 leading-loose font-rounded text-lg"
                             >
-                                <p class="text-lg font-bold text-text-main">
-                                    認定ティーチャーとして10年以上の経験を持つ<br
-                                    />青木咲羅が主宰する団体です。
+                                <p class="text-xl md:text-2xl font-bold text-tarot-dark leading-relaxed">
+                                    認定ティーチャーとして<br/>10年以上の経験を持つ<br/>
+                                    <span class="text-sakura-vivid">青木咲羅</span>が主宰する団体です。
                                 </p>
                                 <p>
                                     ボイジャータロットの作者、ジェームズ・ワンレス博士の源流を正統に受け継ぎながら、現代に合わせた新しいアプローチを探求しています。
@@ -184,15 +184,13 @@ const courseCategories = [
                                 </p>
                             </div>
 
-                            <div class="mt-10">
+                            <div class="mt-12">
                                 <a
                                     href="/profile"
-                                    class="inline-flex items-center gap-2 text-gold-main font-bold tracking-widest hover:gap-4 transition-all group"
+                                    class="inline-flex items-center gap-3 px-8 py-3 rounded-full border border-gold-main text-gold-main font-bold tracking-widest hover:bg-gold-main hover:text-white transition-all group duration-300"
                                 >
                                     READ MORE
-                                    <span
-                                        class="w-8 h-[1px] bg-gold-main group-hover:w-12 transition-all"
-                                    ></span>
+                                    <span class="transition-transform group-hover:translate-x-1">&rarr;</span>
                                 </a>
                             </div>
                         </div>
@@ -201,95 +199,104 @@ const courseCategories = [
             </div>
 		</section>
 
-		<!-- 2. ABOUT CARD - Text Left, Image Right (Flipped for Zigzag) -->
-		<section class="mb-24 px-4 relative">
+		<!-- 2. ABOUT CARD -->
+		<section class="mb-32 px-4 relative bg-bg-surface py-20">
+            <!-- Decorative background -->
+            <div class="absolute top-0 right-0 w-1/3 h-full bg-gradient-to-l from-blue-50/50 to-transparent -z-10"></div>
+            
 			<div class="max-w-7xl mx-auto">
-                <div class="card scroll-animation opacity-0 perspective-1000">
-                    <div class="card-header">
-                        <h2 class="text-white font-mincho font-bold text-2xl md:text-3xl drop-shadow-md">
+                <div class="scroll-animation opacity-0">
+                     <div class="mb-16 text-center">
+                        <span class="text-gold-main font-bold tracking-widest text-sm mb-2 block">ABOUT CARD</span>
+                        <h2 class="text-tarot-blue font-mincho font-bold text-3xl md:text-4xl">
                             Voyager Tarot
                         </h2>
+                        <div class="w-16 h-[2px] bg-gold-main mx-auto mt-6"></div>
                     </div>
-                    <!-- Removed card-body -->
-                    <div class="flex flex-col md:flex-row items-stretch">
-                        <!-- Text Side (Right -> Moved to Left on Desktop) -->
-                        <div class="w-full md:w-1/2 text-left p-8 md:p-12 order-2 md:order-1">
-                            <span class="text-gold-main font-bold tracking-widest text-sm mb-4 block">ABOUT CARD</span>
-                            <h3 class="text-xl font-bold text-gray-700 mb-6 font-rounded">
-                                「自分の人生を創造するためのツール」
+
+                    <div class="flex flex-col md:flex-row items-center gap-16">
+                        <!-- Text Side -->
+                        <div class="w-full md:w-1/2 order-2 md:order-1">
+                            <h3 class="text-2xl md:text-3xl font-bold text-tarot-dark mb-8 font-rounded leading-snug">
+                                「自分の人生を<br/>創造するためのツール」
                             </h3>
-                            <p class="leading-loose text-gray-600 mb-10 font-rounded">
+                            <p class="leading-loose text-gray-600 mb-12 font-rounded text-lg">
                                 従来の「占い」という枠を超え、現代の心理学や宇宙論を融合。<br />
                                 78枚のカードには美しいコラージュが描かれ、スピリチュアルなエネルギーと現実的なメッセージが詰まっています。
                             </p>
 
-                            <div class="flex flex-col gap-8 font-rounded">
-                                <div class="flex gap-5 items-start group min-h-[100px]">
-                                    <span class="flex-shrink-0 w-12 h-12 rounded-full bg-gradient-to-br from-sky to-blue-400 text-white flex items-center justify-center font-bold text-xl shadow-md group-hover:scale-110 transition-transform">1</span>
+                            <div class="flex flex-col gap-10 font-rounded">
+                                <div class="flex gap-6 items-start group">
+                                    <span class="flex-shrink-0 w-14 h-14 rounded-2xl bg-sky/10 text-sky flex items-center justify-center font-bold text-2xl group-hover:bg-sky group-hover:text-white transition-all duration-300">1</span>
                                     <div>
-                                        <h4 class="font-bold text-text-main text-lg mb-2">現実創造のサポート</h4>
-                                        <p class="text-sm text-gray-600 leading-relaxed">
+                                        <h4 class="font-bold text-tarot-dark text-xl mb-3">現実創造のサポート</h4>
+                                        <p class="text-gray-600 leading-relaxed">
                                             カードのメッセージを通じて行動を促し、目標達成へと導きます。
                                         </p>
                                     </div>
                                 </div>
-                                <div class="flex gap-5 items-start group min-h-[100px]">
-                                    <span class="flex-shrink-0 w-12 h-12 rounded-full bg-gradient-to-br from-sakura-vivid to-pink-500 text-white flex items-center justify-center font-bold text-xl shadow-md group-hover:scale-110 transition-transform">2</span>
+                                <div class="flex gap-6 items-start group">
+                                    <span class="flex-shrink-0 w-14 h-14 rounded-2xl bg-sakura-vivid/10 text-sakura-vivid flex items-center justify-center font-bold text-2xl group-hover:bg-sakura-vivid group-hover:text-white transition-all duration-300">2</span>
                                     <div>
-                                        <h4 class="font-bold text-text-main text-lg mb-2">コーチングに最適なツール</h4>
-                                        <p class="text-sm text-gray-600 leading-relaxed">
+                                        <h4 class="font-bold text-tarot-dark text-xl mb-3">コーチングに最適なツール</h4>
+                                        <p class="text-gray-600 leading-relaxed">
                                             スピリチュアルな視点と現実的なアプローチが融合しており、自己発見や成長を強力にサポートします。
                                         </p>
                                     </div>
                                 </div>
-                                <div class="flex gap-5 items-start group min-h-[100px]">
-                                    <span class="flex-shrink-0 w-12 h-12 rounded-full bg-gradient-to-br from-sunshine to-amber-500 text-white flex items-center justify-center font-bold text-xl shadow-md group-hover:scale-110 transition-transform">3</span>
+                                <div class="flex gap-6 items-start group">
+                                    <span class="flex-shrink-0 w-14 h-14 rounded-2xl bg-sunshine/10 text-sunshine flex items-center justify-center font-bold text-2xl group-hover:bg-sunshine group-hover:text-white transition-all duration-300">3</span>
                                     <div>
-                                        <h4 class="font-bold text-text-main text-lg mb-2">直感を引き出すデザイン</h4>
-                                        <p class="text-sm text-gray-600 leading-relaxed">
+                                        <h4 class="font-bold text-tarot-dark text-xl mb-3">直感を引き出すデザイン</h4>
+                                        <p class="text-gray-600 leading-relaxed">
                                             美しいビジュアルが潜在意識を刺激し、新しい気づきをもたらします。
                                         </p>
                                     </div>
                                 </div>
                             </div>
 
-                            <div class="mt-12">
-                                <a href="/about" class="inline-flex items-center gap-2 text-gold-main font-bold tracking-widest hover:gap-4 transition-all group">
+                            <div class="mt-16">
+                                <a href="/about" class="inline-flex items-center gap-3 px-8 py-3 rounded-full border border-sky text-sky font-bold tracking-widest hover:bg-sky hover:text-white transition-all group duration-300">
                                     READ MORE
-                                    <span class="w-8 h-[1px] bg-gold-main group-hover:w-12 transition-all"></span>
+                                    <span class="transition-transform group-hover:translate-x-1">&rarr;</span>
                                 </a>
                             </div>
                         </div>
 
-                        <!-- Image Side (Left -> Moved to Right on Desktop) -->
-                        <div class="w-full md:w-1/2 relative min-h-[300px] bg-gray-100 group order-1 md:order-2">
-                             <div class="absolute inset-0 bg-gradient-to-tr from-indigo-100/40 to-sakura-light/40 mix-blend-multiply z-10 transition-opacity duration-700 opacity-80 group-hover:opacity-0"></div>
+                        <!-- Image Side -->
+                        <div class="w-full md:w-1/2 relative md:h-[600px] h-[400px] order-1 md:order-2">
+                             <!-- Abstract geometric background -->
+                             <div class="absolute top-10 right-10 w-full h-full bg-gradient-to-br from-gray-100 to-white rounded-[3rem] -z-10"></div>
                              
-                             <!-- Image placeholder logic reused but adapted for full bleed -->
-                            <div class="absolute inset-0 flex items-center justify-center text-gray-400 font-rounded tracking-widest z-0 bg-gray-200">
-                                <span class="z-0 relative">Voyager Image</span>
+                             <div class="relative w-full h-full rounded-[3rem] overflow-hidden shadow-2xl shadow-gray-200/50 group bg-gray-50 border border-white">
+                                 <div class="absolute inset-0 bg-gradient-to-tr from-indigo-100/40 to-sakura-light/40 mix-blend-multiply z-10 transition-opacity duration-700 opacity-80 group-hover:opacity-0"></div>
+                                 
+                                 <div class="absolute inset-0 flex items-center justify-center text-gray-400 font-rounded tracking-widest z-0">
+                                    <span class="z-0 relative">Voyager Image</span>
+                                </div>
+                                <div class="absolute inset-0 bg-white/10 backdrop-blur-[2px] opacity-0 group-hover:opacity-100 transition-opacity duration-700 z-20"></div>
                             </div>
-                             <!-- Glass Effect Overlay -->
-                            <div class="absolute inset-0 bg-white/10 backdrop-blur-[2px] opacity-0 group-hover:opacity-100 transition-opacity duration-700 z-20"></div>
                         </div>
                     </div>
                 </div>
 			</div>
 		</section>
 
-		<!-- 3. CHANGE - Image Left, Text Right (Flipped for Zigzag) -->
+		<!-- 3. CHANGE -->
 		<section class="mb-32 px-4 relative">
 			<div class="max-w-7xl mx-auto">
-                <div class="card scroll-animation opacity-0 perspective-1000">
-                    <div class="card-header">
-                        <h2 class="text-white font-rounded font-bold text-2xl md:text-3xl drop-shadow-md">
-                            ボイジャータロットが<br />もたらす変化
+                <div class="scroll-animation opacity-0">
+                    <div class="mb-16 text-center">
+                        <span class="text-gold-main font-bold tracking-widest text-sm mb-2 block">CHANGE</span>
+                        <h2 class="text-tarot-blue font-rounded font-bold text-3xl md:text-4xl">
+                            ボイジャータロットが<br class="md:hidden" />もたらす変化
                         </h2>
+                        <div class="w-16 h-[2px] bg-gold-main mx-auto mt-6"></div>
                     </div>
-                    <!-- Removed card-body -->
-                    <div class="flex flex-col md:flex-row items-stretch">
-                        <!-- Image Side (Right -> Moved to Left on Desktop) -->
-                        <div class="w-full md:w-1/2 relative min-h-[300px] order-1 md:order-1 group bg-gray-100">
+
+                    <div class="flex flex-col md:flex-row items-stretch gap-12 md:gap-20">
+                        <!-- Image Side -->
+                        <div class="w-full md:w-1/2 relative min-h-[400px] order-1 md:order-1 group rounded-[3rem] overflow-hidden shadow-2xl shadow-sakura-light/30">
                              <div
                                 class="absolute inset-0 bg-tarot-blue/5 group-hover:bg-transparent transition-colors duration-500 z-10"
                             >
@@ -301,45 +308,56 @@ const courseCategories = [
                             />
                         </div>
 
-                        <!-- Text Side (Left -> Moved to Right on Desktop) -->
-                        <div class="w-full md:w-1/2 text-left p-8 md:p-12 order-2 md:order-2">
-                            <span class="text-gold-main font-bold tracking-widest text-sm mb-4 block">CHANGE</span>
-                            <p class="leading-loose text-gray-600 mb-10 font-rounded">
-                                ボイジャータロットを使うことで、人生に次のような変化が訪れます。
+                        <!-- Text Side -->
+                        <div class="w-full md:w-1/2 order-2 md:order-2 py-8">
+                            <p class="leading-loose text-gray-600 mb-12 font-rounded text-lg">
+                                ボイジャータロットを使うことで、<br/>人生に次のような変化が訪れます。
                             </p>
 
-                            <ul class="space-y-8 font-rounded">
-                                <li class="flex flex-col gap-2">
-                                    <h3 class="font-bold text-xl text-text-main border-b border-sakura-light/50 pb-2 inline-block w-fit">
-                                        内面のクリアリング
-                                    </h3>
-                                    <p class="text-gray-600 leading-relaxed text-sm">
-                                        自分の本音を知り、迷いや不安を解消。
-                                    </p>
+                            <ul class="space-y-10 font-rounded">
+                                <li class="flex gap-5">
+                                    <div class="w-1 h-auto bg-gradient-to-b from-sakura-vivid to-transparent rounded-full"></div>
+                                    <div>
+                                        <h3 class="font-bold text-xl text-tarot-dark mb-2">
+                                            内面のクリアリング
+                                        </h3>
+                                        <p class="text-gray-600 leading-relaxed">
+                                            自分の本音を知り、迷いや不安を解消。
+                                        </p>
+                                    </div>
                                 </li>
-                                <li class="flex flex-col gap-2">
-                                    <h3 class="font-bold text-xl text-text-main border-b border-sakura-light/50 pb-2 inline-block w-fit">
-                                        具体的な行動へのヒント
-                                    </h3>
-                                    <p class="text-gray-600 leading-relaxed text-sm">
-                                        次の一歩が明確になり、行動するモチベーションが高まります。
-                                    </p>
+                                <li class="flex gap-5">
+                                    <div class="w-1 h-auto bg-gradient-to-b from-sunshine to-transparent rounded-full"></div>
+                                    <div>
+                                        <h3 class="font-bold text-xl text-tarot-dark mb-2">
+                                            具体的な行動へのヒント
+                                        </h3>
+                                        <p class="text-gray-600 leading-relaxed">
+                                            次の一歩が明確になり、行動するモチベーションが高まります。
+                                        </p>
+                                    </div>
                                 </li>
-                                <li class="flex flex-col gap-2">
-                                    <h3 class="font-bold text-xl text-text-main border-b border-sakura-light/50 pb-2 inline-block w-fit">
-                                        意識の拡大
-                                    </h3>
-                                    <p class="text-gray-600 leading-relaxed text-sm">
-                                        直感を刺激され、新しい視点に気づけるようになります。
-                                    </p>
+                                <li class="flex gap-5">
+                                    <div class="w-1 h-auto bg-gradient-to-b from-sky to-transparent rounded-full"></div>
+                                    <div>
+                                        <h3 class="font-bold text-xl text-tarot-dark mb-2">
+                                            意識の拡大
+                                        </h3>
+                                        <p class="text-gray-600 leading-relaxed">
+                                            直感を刺激され、新しい視点に気づけるようになります。
+                                        </p>
+                                    </div>
                                 </li>
-                                <li class="flex flex-col gap-2">
-                                    <h3 class="font-bold text-xl text-text-main border-b border-sakura-light/50 pb-2 inline-block w-fit">
-                                        現実創造の加速
-                                    </h3>
-                                    <p class="text-gray-600 leading-relaxed text-sm">
-                                        行動が変わることで、目標達成や自己実現がスピーディに進みます。
-                                    </p>
+                                <li class="flex gap-5">
+                                    <div class="w-1 h-auto bg-gradient-to-b from-mint to-transparent rounded-full"></div>
+                                    <div>
+                                        <h3 class="font-bold text-xl text-tarot-dark mb-2">
+                                            現実創造の加速
+                                        </h3>
+                                        <p class="text-gray-600 leading-relaxed">
+                                            行動が変わることで、目標達成や自己実現がスピーディに進みます。
+                                        </p>
+                                    </div>
                                 </li>
                             </ul>
                         </div>
@@ -348,67 +366,72 @@ const courseCategories = [
 			</div>
 		</section>
 
-		<!-- 4. MISSION - Text Left, Image Right (Already is) -->
-		<section class="mb-24 px-4 relative">
+		<!-- 4. MISSION -->
+		<section class="mb-32 px-4 relative bg-bg-surface py-20 overflow-hidden">
+             <div
+                class="absolute -right-20 top-0 w-96 h-96 bg-gold-light/20 rounded-full blur-3xl -z-10"
+            ></div>
+            
 			<div class="max-w-7xl mx-auto">
-                <div class="card scroll-animation opacity-0 perspective-1000">
-                    <div class="card-header">
-                        <h2 class="text-white font-mincho font-bold text-2xl md:text-3xl drop-shadow-md">
-                            ボイジャータロット<br />クリエイションズの使命
+                <div class="scroll-animation opacity-0">
+                    <div class="mb-16 text-center">
+                        <span class="text-gold-main font-bold tracking-widest text-sm mb-2 block">OUR MISSION</span>
+                        <h2 class="text-tarot-blue font-mincho font-bold text-3xl md:text-4xl">
+                            ボイジャータロット<br class="md:hidden" />クリエイションズの使命
                         </h2>
-                    </div>
-                <!-- Removed card-body -->
-                <div class="flex flex-col md:flex-row items-stretch">
-                    <!-- Text Side (Left) -->
-                    <div class="w-full md:w-1/2 text-left p-8 md:p-12 order-2 md:order-1">
-                        <span class="text-gold-main font-bold tracking-widest text-sm mb-4 block">OUR MISSION</span>
-                        <h3 class="text-xl md:text-2xl font-rounded text-text-main font-bold mb-6">
-                            未来を創造する力を、あなたに。
-                        </h3>
-                        
-                        <div class="space-y-6 text-gray-600 leading-loose font-rounded text-lg">
-                            <p>
-                                ボイジャータロットを通じて、皆さまの成長と可能性を広げること。
-                            </p>
-                            <p>
-                                創造性・成長・実現化をテーマに、魅力的、かつ実力あるボイジャータロットリーダー、コーチ、ティーチャーの育成に取り組んでまいります。
-                            </p>
-                        </div>
+                        <div class="w-16 h-[2px] bg-gold-main mx-auto mt-6"></div>
                     </div>
 
-                    <!-- Image Side (Right) -->
-                    <div class="w-full md:w-1/2 relative min-h-[300px] order-1 md:order-2 group">
-                         <div
-                            class="absolute inset-0 bg-gold-light/10 group-hover:bg-transparent transition-colors duration-500 z-10"
-                        >
+                    <div class="flex flex-col md:flex-row items-center gap-16">
+                        <!-- Text Side -->
+                        <div class="w-full md:w-1/2 text-left order-2 md:order-1">
+                            <h3 class="text-2xl md:text-4xl font-rounded text-tarot-dark font-bold mb-8 leading-tight">
+                                未来を創造する力を、<br/>あなたに。
+                            </h3>
+                            
+                            <div class="space-y-8 text-gray-600 leading-loose font-rounded text-lg">
+                                <p>
+                                    ボイジャータロットを通じて、<br/>皆さまの成長と可能性を広げること。
+                                </p>
+                                <p>
+                                    創造性・成長・実現化をテーマに、魅力的、かつ実力あるボイジャータロットリーダー、コーチ、ティーチャーの育成に取り組んでまいります。
+                                </p>
+                            </div>
                         </div>
-                        <img
-                            src="/images/top_3_bottom_photos_item-1.webp"
-                            alt="Mission Photo"
-                            class="absolute inset-0 w-full h-full object-cover transform group-hover:scale-105 transition-transform duration-500"
-                        />
+
+                        <!-- Image Side -->
+                        <div class="w-full md:w-1/2 relative min-h-[400px] order-1 md:order-2 group rounded-[3rem] overflow-hidden shadow-2xl shadow-gold-light/50">
+                             <div
+                                class="absolute inset-0 bg-gold-light/10 group-hover:bg-transparent transition-colors duration-500 z-10"
+                            >
+                            </div>
+                            <img
+                                src="/images/top_3_bottom_photos_item-1.webp"
+                                alt="Mission Photo"
+                                class="absolute inset-0 w-full h-full object-cover transform group-hover:scale-105 transition-transform duration-500"
+                            />
+                        </div>
                     </div>
                 </div>
-            </div>
             </div>
 		</section>
 
 		<!-- 5. COURSE (Scalable Sidebar Layout) -->
-		<section class="mb-24 px-4 relative">
+		<section class="mb-32 px-4 relative">
 			<div class="max-w-7xl mx-auto">
-            <div class="card scroll-animation opacity-0 perspective-1000">
-                <div class="card-header">
-                    <h2 class="text-white font-rounded font-bold text-2xl md:text-3xl drop-shadow-md">
+            <div class="scroll-animation opacity-0">
+                 <div class="mb-16 text-center">
+                    <span class="text-gold-main font-bold tracking-widest text-sm mb-2 block">COURSE</span>
+                    <h2 class="text-tarot-blue font-rounded font-bold text-3xl md:text-4xl">
                         講座紹介
                     </h2>
+                    <div class="w-16 h-[2px] bg-gold-main mx-auto mt-6"></div>
                 </div>
-                <div class="card-body">
+
                 <div class="grid md:grid-cols-12 gap-12">
                     <!-- Left Sidebar (Title & Tabs) -->
                     <div class="md:col-span-3">
-                        <div>
-                            <span class="text-gold-main font-bold tracking-widest text-sm mb-4 block">COURSE</span>
-                            
+                        <div class="sticky top-24">                            
                             <!-- Vertical Tabs -->
                             <div class="flex flex-col gap-4">
                                 {courseCategories.map((cat, index) => (
@@ -416,8 +439,8 @@ const courseCategories = [
                                         class:list={[
                                             "course-tab text-left px-6 py-4 rounded-xl transition-all duration-300 font-bold tracking-wide flex items-center justify-between group",
                                             index === 0 
-                                                ? "bg-gradient-to-r from-sky via-tarot-blue to-tarot-blue text-white shadow-lg shadow-sky/30 ring-0" 
-                                                : "bg-white text-gray-500 hover:text-sky hover:bg-sky/5"
+                                                ? "bg-tarot-blue text-white shadow-xl shadow-blue-200" 
+                                                : "bg-white text-gray-500 hover:text-tarot-blue hover:bg-blue-50"
                                         ]}
                                         data-target={`course-content-${cat.id}`}
                                     >
@@ -437,20 +460,20 @@ const courseCategories = [
                             class:list={["course-content transition-all duration-500", index !== 0 ? "hidden" : ""]}
                         >
                             <!-- Steps Visualization -->
-                            <div class="mb-24">
-                                <h3 class="text-center font-bold text-gray-400 text-sm tracking-widest mb-8">- STEP UP FLOW -</h3>
-                                <div class="grid grid-cols-1 md:grid-cols-3 gap-6 text-text-main font-bold font-rounded">
+                            <div class="mb-20">
+                                <h3 class="text-center font-bold text-gray-400 text-sm tracking-widest mb-10 opacity-70">- STEP UP FLOW -</h3>
+                                <div class="grid grid-cols-1 md:grid-cols-3 gap-6 text-tarot-dark font-bold font-rounded">
                                     {cat.steps.map((step, i) => (
                                         <div class="relative flex flex-col items-center justify-center">
-                                            <div class="bg-white px-6 py-3 rounded-lg border border-indigo-50 shadow-sm flex items-center justify-center gap-3 w-full relative z-10">
-                                                <span class="w-6 h-6 bg-sunshine text-white rounded-full flex items-center justify-center text-xs font-sans shadow-sm shrink-0">
+                                            <div class="bg-white px-8 py-5 rounded-2xl border border-blue-50 shadow-md flex items-center justify-center gap-4 w-full relative z-10 hover:shadow-lg transition-all duration-300">
+                                                <span class="w-8 h-8 bg-sunshine text-white rounded-full flex items-center justify-center text-sm font-sans shadow-sm shrink-0">
                                                     {step.step}
                                                 </span>
-                                                <span class="whitespace-nowrap">{step.label}</span>
+                                                <span class="whitespace-nowrap text-lg">{step.label}</span>
                                             </div>
                                             
                                             {i < cat.steps.length - 1 && (
-                                                <div class="absolute z-20 text-tarot-blue/60
+                                                <div class="absolute z-20 text-gray-300
                                                     md:top-1/2 md:left-full md:ml-3 md:-translate-x-1/2 md:-translate-y-1/2 md:bottom-auto md:right-auto md:mt-0
                                                     top-full left-1/2 mt-3 -translate-x-1/2 -translate-y-1/2
                                                 ">
@@ -464,10 +487,10 @@ const courseCategories = [
                                 </div>
                             </div>
                             <!-- Course Cards Grid -->
-                            <div class="grid md:grid-cols-3 gap-6">
+                            <div class="grid md:grid-cols-3 gap-8">
                                 {cat.cards.map((card) => (
                                     <a href={card.url} class="group block h-full">
-                                        <div class="overflow-hidden rounded-2xl mb-4 shadow-lg border border-white/50 relative aspect-[4/3]">
+                                        <div class="overflow-hidden rounded-3xl mb-5 shadow-lg shadow-gray-100 relative aspect-[4/3]">
                                             <div class="absolute inset-0 bg-tarot-blue/0 group-hover:bg-tarot-blue/10 transition-colors z-10"></div>
                                             <img
                                                 src={card.img}
@@ -475,12 +498,12 @@ const courseCategories = [
                                                 class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"
                                             />
                                         </div>
-                                        <h3 class="font-bold text-center text-lg text-tarot-blue group-hover:text-sakura-vivid transition-colors mb-2">
+                                        <h3 class="font-bold text-center text-lg text-tarot-dark group-hover:text-sakura-vivid transition-colors mb-2">
                                             {card.title}
                                         </h3>
-                                        <div class="text-center text-sm text-gray-500 flex justify-center items-center gap-1 group-hover:gap-2 transition-all">
+                                        <div class="text-center text-sm text-gray-400 flex justify-center items-center gap-1 group-hover:gap-2 transition-all">
                                             詳細はこちら 
-                                            <img src="/images/link_icon.svg" alt="" class="w-4 h-4 inline opacity-60 group-hover:opacity-100 transition-opacity" />
+                                            <span class="text-sakura-vivid opacity-0 group-hover:opacity-100 transition-opacity">&rarr;</span>
                                         </div>
                                     </a>
                                 ))}
@@ -505,7 +528,7 @@ const courseCategories = [
 
                     // 1. Reset Tabs
                     tabs.forEach(t => {
-                        t.classList.remove('bg-tarot-blue', 'text-white', 'shadow-lg', 'ring-2', 'ring-tarot-blue', 'ring-offset-2');
+                        t.classList.remove('bg-tarot-blue', 'text-white', 'shadow-xl', 'shadow-blue-200');
                         t.classList.add('bg-white', 'text-gray-500');
                          // reset marker
                          const marker = t.querySelector('span:last-child');
@@ -517,7 +540,7 @@ const courseCategories = [
 
                     // 2. Active Tab
                     tab.classList.remove('bg-white', 'text-gray-500');
-                    tab.classList.add('bg-tarot-blue', 'text-white', 'shadow-lg', 'ring-2', 'ring-tarot-blue', 'ring-offset-2');
+                    tab.classList.add('bg-tarot-blue', 'text-white', 'shadow-xl', 'shadow-blue-200');
                      const activeMarker = tab.querySelector('span:last-child');
                          if(activeMarker) {
                              activeMarker.classList.remove('bg-gray-300');
@@ -561,34 +584,26 @@ const courseCategories = [
         </script>
 
 	<!-- 6. NEWS -->
-	<section class="mb-24 px-4 relative">
+	<section class="mb-32 px-4 relative">
 		<div class="max-w-7xl mx-auto">
-        <div class="card scroll-animation opacity-0 perspective-1000">
-            <div class="card-header">
-                <h2 class="text-white font-rounded font-bold text-2xl md:text-3xl drop-shadow-md">
-                    News
+        <div class="scroll-animation opacity-0">
+             <div class="mb-16 text-center">
+                 <span class="text-gold-main font-bold tracking-widest text-sm mb-2 block">LATEST NEWS</span>
+                <h2 class="text-tarot-blue font-rounded font-bold text-3xl md:text-4xl">
+                    お知らせ
                 </h2>
-                <a
-                    href="/news"
-                    class="group flex items-center gap-3 text-sm text-white/90 hover:text-white transition-colors font-bold tracking-widest"
-                >
-                    VIEW ALL
-                    <span
-                        class="w-8 h-8 rounded-full bg-white/30 flex items-center justify-center group-hover:bg-white group-hover:text-sunshine transition-all shadow-sm"
-                        >&rarr;</span
-                    >
-                </a>
+                <div class="w-16 h-[2px] bg-gold-main mx-auto mt-6"></div>
             </div>
-            <div class="card-body">
-                <div class="grid gap-10 md:grid-cols-3">
+
+            <div class="grid gap-10 md:grid-cols-3 mb-12">
                 {
                     newsList.map((news) => (
                         <a
                             href={`/news/${news.id}`}
-                            class="block bg-card rounded-2xl shadow-sm border border-gray-100 hover:shadow-xl hover:shadow-pink-100/50 hover:-translate-y-2 transition-all duration-500 group overflow-hidden relative"
+                            class="block bg-white rounded-3xl shadow-sm border border-gray-100 hover:shadow-xl hover:shadow-blue-100/50 hover:-translate-y-2 transition-all duration-500 group overflow-hidden relative"
                         >
                             <div class="absolute inset-0 bg-gradient-to-br from-white via-transparent to-sakura-light/10 opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
-                            <div class="h-56 bg-gray-50 mb-0 overflow-hidden relative">
+                            <div class="h-64 bg-gray-50 mb-0 overflow-hidden relative">
                                 {news.eyecatch ? (
                                     <img
                                         src={news.eyecatch.url}
@@ -612,7 +627,7 @@ const courseCategories = [
                                 <time class="text-xs text-gray-400 font-bold tracking-wider block mb-3">
                                     {formatDate(news.publishedAt)}
                                 </time>
-                                <h3 class="font-bold text-lg line-clamp-2 text-text-main group-hover:text-tarot-blue transition-colors leading-relaxed mb-4">
+                                <h3 class="font-bold text-xl line-clamp-2 text-text-main group-hover:text-tarot-blue transition-colors leading-relaxed mb-4">
                                     {news.title}
                                 </h3>
                                 <div class="flex justify-end">
@@ -625,7 +640,16 @@ const courseCategories = [
                     ))
                 }
             </div>
-        </div>
+
+            <div class="text-center">
+                <a
+                    href="/news"
+                    class="inline-flex items-center gap-3 px-8 py-3 rounded-full border border-gray-300 text-gray-500 font-bold tracking-widest hover:border-tarot-blue hover:text-tarot-blue transition-all group duration-300"
+                >
+                    VIEW ALL
+                    <span class="transition-transform group-hover:translate-x-1">&rarr;</span>
+                </a>
+            </div>
         </div>
 		</div>
 	</section>

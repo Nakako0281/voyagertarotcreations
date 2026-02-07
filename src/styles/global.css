@@ -17,18 +17,18 @@
   --color-sakura-vivid: #ff80ab;
   /* Bright Pink */
 
-  /* Primary Colors - Retained but softened */
-  --color-tarot-blue: #0f4c81;
-  /* Classic Blue (Base) */
-  --color-tarot-dark: #0a2e4d;
-  /* Midnight Blue (Text) */
-  --color-tarot-light: #e0f2fe;
-  /* Light Sky Blue */
+  /* Primary Colors - Red/Pink Theme */
+  --color-tarot-blue: #1f1f1f;
+  /* Rose Red (Passion & Elegance) */
+  --color-tarot-dark: #1f1f1f;
+  /* Deep Burgundy (Maturity & Depth) */
+  --color-tarot-light: #fff1f2;
+  /* Rose Water (Softness) */
 
-  --color-gold-main: #d4af37;
-  /* Classic Gold */
-  --color-gold-light: #fff8e1;
-  /* Pale Gold */
+  --color-gold-main: #e4007f;
+  /* Magenta (Vivid Accent) */
+  --color-gold-light: #ffe6f2;
+  /* Pale Magenta (Soft Accent) */
 
   /* Text Colors */
   --color-text-main: #4a4a4a;
@@ -61,28 +61,7 @@
   }
 }
 
-.card {
-  @apply bg-white rounded-3xl shadow-xl overflow-hidden h-full border border-pink-50;
-}
-
-.card-header {
-  /* Colorful Aurora Gradient: Pink -> Gold -> Sky */
-  @apply bg-gradient-to-r from-sakura-vivid via-sunshine to-sky px-8 py-6 flex items-center justify-between relative overflow-hidden;
-}
-
-/* Sparkle overlay for the header */
-.card-header::after {
-  content: "";
-  @apply absolute top-0 left-0 w-full h-full bg-gradient-to-b from-white/20 to-transparent pointer-events-none;
-}
-
-.card-header h2 {
-  @apply text-white font-rounded font-bold text-2xl md:text-3xl drop-shadow-md tracking-wide;
-}
-
-.card-body {
-  @apply p-8 md:p-12;
-}
+/* Card styles removed for "Crystal Brightness" open layout */
 
 /* Animations */
 .animate-fade-in-up {
