@@ -1,13 +1,17 @@
 ---
-
+interface Props {
+    isHome?: boolean;
+}
+const { isHome = false } = Astro.props;
 ---
 
 <header
     class="fixed w-full top-0 z-50 transition-all duration-300 pointer-events-none"
     id="main-header"
+    data-is-home={isHome ? "true" : "false"}
 >
     <div
-        class="absolute inset-0 bg-white/90 backdrop-blur-md -z-10 transition-opacity duration-300 opacity-0 shadow-sm"
+        class={`absolute inset-0 bg-white/90 backdrop-blur-md -z-10 transition-opacity duration-300 shadow-sm ${isHome ? "opacity-0" : "opacity-100"}`}
         id="header-bg"
     >
     </div>
@@ -19,13 +23,13 @@
         <!-- Logo -->
         <a href="/" class="group flex flex-col justify-center">
             <span
-                class="text-2xl font-rounded font-bold text-white tracking-widest drop-shadow-md group-hover:text-magenta-pale transition-colors"
+                class={`text-2xl font-rounded font-bold tracking-widest drop-shadow-md group-hover:text-magenta-pale transition-colors ${isHome ? "text-white" : "text-text-dark"}`}
                 id="header-logo-text"
             >
                 Voyager Tarot
             </span>
             <span
-                class="text-[0.6rem] font-rounded text-white/80 tracking-[0.3em] uppercase group-hover:text-white transition-colors"
+                class={`text-[0.6rem] font-rounded tracking-[0.3em] uppercase group-hover:text-text-dark transition-colors ${isHome ? "text-white/80" : "text-text-dark/80"}`}
                 id="header-logo-sub"
             >
                 Creations
@@ -43,7 +47,7 @@
                 ].map((item) => (
                     <a
                         href={item.href}
-                        class="nav-link text-white font-rounded font-bold text-sm tracking-widest hover:text-magenta-pale transition-colors drop-shadow-sm relative group py-2"
+                        class={`nav-link font-rounded font-bold text-sm tracking-widest hover:text-magenta-pale transition-colors drop-shadow-sm relative group py-2 ${isHome ? "text-white" : "text-text-dark"}`}
                     >
                         {item.name}
                         <span class="absolute bottom-0 left-0 w-0 h-0.5 bg-magenta-pale transition-all duration-300 group-hover:w-full" />
@@ -52,7 +56,7 @@
             }
             <a
                 href="/contact"
-                class="nav-btn ml-4 px-6 py-2 rounded-full border border-white/60 text-white font-rounded font-bold text-sm tracking-widest hover:bg-white hover:text-text-dark transition-all duration-300 backdrop-blur-sm shadow-sm hover:shadow-lg hover:shadow-indigo-500/30"
+                class={`nav-btn ml-4 px-6 py-2 rounded-full font-rounded font-bold text-sm tracking-widest hover:bg-white hover:text-text-dark transition-all duration-300 backdrop-blur-sm shadow-sm hover:shadow-lg hover:shadow-indigo-500/30 ${isHome ? "border border-white/60 text-white" : "border border-text-dark/30 text-text-dark"}`}
             >
                 CONTACT
             </a>
@@ -61,7 +65,7 @@
         <!-- Mobile Menu Button -->
         <button
             id="mobile-menu-btn"
-            class="md:hidden text-white p-2 focus:outline-none"
+            class={`md:hidden p-2 focus:outline-none ${isHome ? "text-white" : "text-text-dark"}`}
         >
             <svg
                 xmlns="http://www.w3.org/2000/svg"
@@ -83,7 +87,7 @@
 <!-- Mobile Menu Overlay -->
 <nav
     id="mobile-menu"
-    class="fixed inset-0 bg-white/95 backdrop-blur-xl z-40 flex flex-col items-center justify-center gap-8 opacity-0 pointer-events-none transition-opacity duration-300 text-text-main font-rounded"
+    class="fixed inset-0 bg-white/95 backdrop-blur-xl z-40 flex flex-col items-center justify-center gap-8 opacity-0 pointer-events-none transition-opacity duration-300 text-text-dark font-rounded"
 >
     <a
         href="/"
@@ -113,6 +117,7 @@
 </nav>
 
 <script>
+    const header = document.getElementById("main-header");
     const headerBg = document.getElementById("header-bg");
     const logoText = document.getElementById("header-logo-text");
     const logoSub = document.getElementById("header-logo-sub");
@@ -121,48 +126,51 @@
     const mobileBtn = document.getElementById("mobile-menu-btn");
     const mobileMenu = document.getElementById("mobile-menu");
 
+    const isHome = header?.dataset.isHome === "true";
+
     // Scroll Listener
     const handleScroll = () => {
-        if (window.scrollY > 20) {
-            // Scrolled state: White background, Blue text
+        // Condition: If NOT home, always apply 'scrolled' style. If IS home, only apply when scrolled > 20.
+        if (!isHome || window.scrollY > 20) {
+            // Scrolled / Subpage state: White background, Dark text
             headerBg?.classList.remove("opacity-0");
             headerBg?.classList.add("opacity-100");
 
             logoText?.classList.remove("text-white");
-            logoText?.classList.add("text-text-main");
+            logoText?.classList.add("text-text-dark");
             logoSub?.classList.remove("text-white/80");
-            logoSub?.classList.add("text-text-main/80");
+            logoSub?.classList.add("text-text-dark/80");
 
             navLinks.forEach((link) => {
                 link.classList.remove("text-white");
-                link.classList.add("text-text-main");
+                link.classList.add("text-text-dark");
             });
 
             navBtn?.classList.remove("text-white", "border-white/60");
-            navBtn?.classList.add("text-text-main", "border-text-main/30");
+            navBtn?.classList.add("text-text-dark", "border-text-dark/30");
 
             mobileBtn?.classList.remove("text-white");
-            mobileBtn?.classList.add("text-text-main");
+            mobileBtn?.classList.add("text-text-dark");
         } else {
-            // Top state: Transparent background, White text
+            // Top state (Home only): Transparent background, White text
             headerBg?.classList.add("opacity-0");
             headerBg?.classList.remove("opacity-100");
 
             logoText?.classList.add("text-white");
-            logoText?.classList.remove("text-text-main");
+            logoText?.classList.remove("text-text-dark");
             logoSub?.classList.add("text-white/80");
-            logoSub?.classList.remove("text-text-main/80");
+            logoSub?.classList.remove("text-text-dark/80");
 
             navLinks.forEach((link) => {
                 link.classList.add("text-white");
-                link.classList.remove("text-text-main");
+                link.classList.remove("text-text-dark");
             });
 
             navBtn?.classList.add("text-white", "border-white/60");
-            navBtn?.classList.remove("text-text-main", "border-text-main/30");
+            navBtn?.classList.remove("text-text-dark", "border-text-dark/30");
 
             mobileBtn?.classList.add("text-white");
-            mobileBtn?.classList.remove("text-text-main");
+            mobileBtn?.classList.remove("text-text-dark");
         }
     };
 
@@ -173,15 +181,15 @@
     // Mobile Menu Logic
     mobileBtn?.addEventListener("click", () => {
         if (mobileMenu?.classList.contains("opacity-0")) {
-            mobileMenu.classList.remove("opacity-0", "pointer-events-none");
+            mobileMenu?.classList.remove("opacity-0", "pointer-events-none");
             document.body.style.overflow = "hidden";
-            // Ensure button is visible/colored for contrast if needed, or maybe add a close icon logic
-            mobileBtn.classList.add("text-text-main"); // force blue on white menu
-            mobileBtn.classList.remove("text-white");
+            // Ensure button is visible/colored for contrast
+            mobileBtn?.classList.add("text-text-dark");
+            mobileBtn?.classList.remove("text-white");
         } else {
-            mobileMenu.classList.add("opacity-0", "pointer-events-none");
+            mobileMenu?.classList.add("opacity-0", "pointer-events-none");
             document.body.style.overflow = "";
-            handleScroll(); // Restore correct color based on scroll
+            handleScroll(); // Restore correct color based on scroll/page
         }
     });
 
@@ -194,5 +202,3 @@
         });
     });
 </script>
-
-

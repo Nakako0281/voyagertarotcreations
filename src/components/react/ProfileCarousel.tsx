@@ -56,7 +56,7 @@ export default function ProfileCarousel({ members }: ProfileCarouselProps) {
     return (
         <div className="relative w-full max-w-6xl mx-auto px-4 md:px-12">
             {/* Main Carousel Container - Fixed Height for Screen Fit */}
-            <div className="relative overflow-hidden h-[85vh] md:h-[70vh] min-h-[600px] flex items-center">
+            <div className="relative overflow-hidden h-[60vh] md:h-[500px] min-h-[400px] flex items-center">
                 <AnimatePresence initial={false} custom={direction} mode="popLayout">
                     <motion.div
                         key={currentIndex}
@@ -110,14 +110,14 @@ export default function ProfileCarousel({ members }: ProfileCarouselProps) {
                                 {/* Qualifications Area - Fixed Height (35%) at Bottom Left */}
                                 {/* Always render to keep image size consistent */}
                                 <div className="flex-none bg-white/60 p-4 md:p-6 border-t border-white shadow-inner h-[40%] md:h-[35%] overflow-y-auto custom-scrollbar">
-                                    <h4 className="font-bold text-text-main mb-2 md:mb-3 border-b border-sakura-light/50 pb-2 text-xs md:text-sm flex items-center gap-2 sticky top-0 bg-white/0 backdrop-blur-sm z-10">
-                                        <span className="text-sakura-vivid">●</span> 資格等
+                                    <h4 className="font-bold text-sunshine mb-2 md:mb-2 border-b border-sunshine/50 pb-2 text-xs md:text-sm flex items-center gap-2 sticky top-0 bg-white/0 backdrop-blur-sm z-10">
+                                        <span className="text-sunshine">●</span> 資格等
                                     </h4>
                                     {currentMember.qualifications && currentMember.qualifications.length > 0 ? (
-                                        <ul className="space-y-1.5 text-[10px] md:text-xs text-gray-600 font-bold">
+                                        <ul className="space-y-1.5 text-[10px] md:text-xs font-bold">
                                             {currentMember.qualifications.map((q, idx) => (
-                                                <li key={idx} className="flex items-start gap-2">
-                                                    <span className="w-1.5 h-1.5 bg-sakura-vivid rounded-full mt-1.5 flex-shrink-0"></span>
+                                                <li key={idx} className="flex items-start gap-2 text-gray-600">
+                                                    <span className="w-1.5 h-1.5 bg-sunshine rounded-full mt-1.5 flex-shrink-0"></span>
                                                     <span>{q}</span>
                                                 </li>
                                             ))}
@@ -133,7 +133,7 @@ export default function ProfileCarousel({ members }: ProfileCarouselProps) {
                             {/* Right Column: Name (Fixed) + Description (Scrollable) */}
                             <div className="w-full md:w-7/12 h-3/5 md:h-full flex flex-col overflow-hidden">
                                 {/* Header: Name & Title (Fixed) */}
-                                <div className="flex-none p-6 md:p-12 pb-2 md:pb-4 border-b border-gray-100/50 bg-white/0 z-10">
+                                <div className="flex-none p-6 md:p-8 pb-2 md:pb-4 border-b border-gray-100/50 bg-white/0 z-10">
                                     <h2 className="text-2xl md:text-4xl font-rounded text-text-dark mb-2">
                                         {currentMember.name}
                                     </h2>
@@ -143,7 +143,7 @@ export default function ProfileCarousel({ members }: ProfileCarouselProps) {
                                 </div>
 
                                 {/* Body: Description (Scrollable) */}
-                                <div className="flex-1 p-6 md:p-12 pt-4 md:pt-6 overflow-y-auto custom-scrollbar">
+                                <div className="flex-1 p-6 md:p-8 pt-4 md:pt-6 overflow-y-auto custom-scrollbar">
                                     <div className="prose prose-stone text-gray-600 leading-relaxed text-xs md:text-sm font-medium whitespace-pre-wrap">
                                         {currentMember.description}
                                     </div>
@@ -162,7 +162,7 @@ export default function ProfileCarousel({ members }: ProfileCarouselProps) {
                         onClick={() => paginate(-1)}
                         aria-label="Previous member"
                     >
-                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={2.5} stroke="currentColor" className="w-5 h-5 md:w-6 md:h-6 group-hover:text-sakura-vivid transition-colors">
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={2.5} stroke="currentColor" className="w-5 h-5 md:w-6 md:h-6 group-hover:text-sky transition-colors">
                             <path strokeLinecap="round" strokeLinejoin="round" d="M15.75 19.5L8.25 12l7.5-7.5" />
                         </svg>
                     </button>
@@ -171,7 +171,7 @@ export default function ProfileCarousel({ members }: ProfileCarouselProps) {
                         onClick={() => paginate(1)}
                         aria-label="Next member"
                     >
-                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={2.5} stroke="currentColor" className="w-5 h-5 md:w-6 md:h-6 group-hover:text-sakura-vivid transition-colors">
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={2.5} stroke="currentColor" className="w-5 h-5 md:w-6 md:h-6 group-hover:text-sky transition-colors">
                             <path strokeLinecap="round" strokeLinejoin="round" d="M8.25 4.5l7.5 7.5-7.5 7.5" />
                         </svg>
                     </button>
@@ -189,8 +189,8 @@ export default function ProfileCarousel({ members }: ProfileCarouselProps) {
                                 setCurrentIndex(idx);
                             }}
                             className={`w-2.5 h-2.5 rounded-full transition-all duration-300 shadow-sm ${idx === currentIndex
-                                ? "bg-sakura-vivid w-8"
-                                : "bg-white/50 hover:bg-sakura-light border border-white"
+                                ? "bg-sky w-8"
+                                : "bg-white/50 hover:bg-sky/50 border border-white"
                                 }`}
                             aria-label={`Go to slide ${idx + 1}`}
                         />

@@ -7,9 +7,10 @@ import Footer from "../components/Footer.astro";
 interface Props {
 	title: string;
 	wide?: boolean; // New prop to enable full-width mode (no sidebar)
+	isHome?: boolean; // Smart Header Logic
 }
 
-const { title, wide = false } = Astro.props;
+const { title, wide = false, isHome = false } = Astro.props;
 ---
 
 <!doctype html>
@@ -47,7 +48,7 @@ const { title, wide = false } = Astro.props;
 			</div>
 		</div>
 
-		<Header />
+		<Header isHome={isHome} />
 
 		<div class="flex flex-1 relative flex-col md:flex-row">
 			<main
@@ -56,6 +57,12 @@ const { title, wide = false } = Astro.props;
 					wide ? "p-0 max-w-none" : "p-4 md:p-8 max-w-5xl",
 				]}
 			>
+				{/* Spacer for Fixed Header on Subpages */}
+				{
+					!isHome && !wide && (
+						<div class="w-full h-20 md:h-24 pointer-events-none" />
+					)
+				}
 				<slot />
 			</main>
 
@@ -71,5 +78,3 @@ const { title, wide = false } = Astro.props;
 		<Footer />
 	</body>
 </html>
-
-
