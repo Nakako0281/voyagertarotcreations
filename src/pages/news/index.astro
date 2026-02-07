@@ -15,49 +15,63 @@ function formatDate(dateString: string) {
 ---
 
 <Layout title="News">
-    <div class="space-y-12">
-        <header class="text-center mb-12">
-            <h1 class="text-3xl md:text-4xl font-rounded text-text-main mb-4">
+    <div class="space-y-16">
+        <!-- Header -->
+        <header class="text-center mb-16 relative">
+            <h1
+                class="text-5xl md:text-7xl font-serif font-black tracking-wider text-text-dark bg-clip-text bg-gradient-to-r from-text-dark to-slate-500 mb-4 drop-shadow-sm"
+            >
                 News
             </h1>
-            <p class="text-gray-500">お知らせ</p>
+            <div class="w-16 h-[2px] bg-magenta mx-auto mt-6 mb-8"></div>
         </header>
 
-        <div class="grid gap-6">
+        <div class="grid gap-8">
             {
                 newsList.map((news) => (
                     <a
                         href={`/news/${news.id}`}
-                        class="block bg-white p-6 rounded-xl border border-gray-100 shadow-sm hover:shadow-md hover:border-sakura-pink transition-all group"
+                        class="block bg-white/80 backdrop-blur-md p-6 md:p-8 rounded-[2rem] border border-white shadow-glass hover:shadow-crystal hover:-translate-y-1 transition-all duration-500 group relative overflow-hidden"
                     >
-                        <div class="flex flex-col md:flex-row gap-6">
-                            <div class="md:w-48 h-32 bg-gray-100 rounded-lg overflow-hidden shrink-0">
+                        <!-- Background Decoration -->
+                        <div class="absolute top-0 right-0 w-32 h-32 bg-gradient-to-br from-sakura-light/20 to-transparent rounded-bl-full z-0 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+
+                        <div class="flex flex-col md:flex-row gap-8 relative z-10">
+                            <div class="md:w-64 h-48 rounded-2xl overflow-hidden shrink-0 shadow-sm relative">
                                 {news.eyecatch ? (
                                     <img
                                         src={news.eyecatch.url}
                                         alt={news.title}
-                                        class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                                        class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"
                                     />
                                 ) : (
                                     <div class="w-full h-full flex items-center justify-center bg-gray-50 text-gray-300">
-                                        <span class="text-2xl">Voyager</span>
+                                        <span class="text-xl tracking-widest font-serif opacity-50">Voyager</span>
                                     </div>
                                 )}
+                                <div class="absolute inset-0 bg-black/0 group-hover:bg-black/5 transition-colors duration-500"></div>
                             </div>
-                            <div class="flex-1 flex flex-col justify-center">
-                                <div class="flex items-center gap-3 mb-2">
-                                    <time class="text-sm text-gray-400 font-sans">
-                                        {formatDate(news.publishedAt)}
-                                    </time>
-                                    {news.category.map((cat) => (
-                                        <span class="text-xs text-sakura-pink font-bold border border-sakura-pink/30 px-2 py-0.5 rounded-full">
-                                            {cat.name}
-                                        </span>
-                                    ))}
+                            <div class="flex-1 flex flex-col justify-between h-full md:min-h-[12rem] py-2">
+                                <div>
+                                    <div class="flex items-center gap-4 mb-4">
+                                        <time class="text-sm text-gray-400 font-bold tracking-wider">
+                                            {formatDate(news.publishedAt)}
+                                        </time>
+                                        {news.category.map((cat) => (
+                                            <span class="text-xs text-sakura-vivid font-bold border border-sakura-vivid/30 bg-sakura-light/10 px-3 py-1 rounded-full backdrop-blur-sm">
+                                                {cat.name}
+                                            </span>
+                                        ))}
+                                    </div>
+                                    <h2 class="text-xl md:text-2xl font-bold font-rounded text-text-main group-hover:text-sakura-vivid transition-colors leading-relaxed mb-4 line-clamp-2">
+                                        {news.title}
+                                    </h2>
                                 </div>
-                                <h2 class="text-lg md:text-xl font-bold font-rounded text-gray-800 group-hover:text-sakura-pink transition-colors line-clamp-2">
-                                    {news.title}
-                                </h2>
+                                <div class="flex justify-end">
+                                    <span class="text-sm font-bold text-gray-400 group-hover:text-sakura-vivid transition-colors flex items-center gap-2">
+                                        Read More <span class="group-hover:translate-x-1 transition-transform">&rarr;</span>
+                                    </span>
+                                </div>
                             </div>
                         </div>
                     </a>
