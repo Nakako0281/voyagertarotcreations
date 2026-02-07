@@ -189,7 +189,7 @@ export default function ProfileCarousel({ members }: ProfileCarouselProps) {
                                 setCurrentIndex(idx);
                             }}
                             className={`w-2.5 h-2.5 rounded-full transition-all duration-300 shadow-sm ${idx === currentIndex
-                                ? "bg-sky w-8"
+                                ? "bg-mint w-8"
                                 : "bg-white/50 hover:bg-sky/50 border border-white"
                                 }`}
                             aria-label={`Go to slide ${idx + 1}`}

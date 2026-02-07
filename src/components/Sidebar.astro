@@ -2,11 +2,13 @@
 
 ---
 
-<div class="flex flex-col gap-6 h-full overflow-y-auto">
+<div
+    class="flex flex-col gap-6 h-full overflow-y-auto bg-white/50 backdrop-blur-sm p-4 rounded-3xl"
+>
     <div class="text-center">
         <!-- Profile Image Placeholder -->
         <div
-            class="w-32 h-32 bg-gray-200 rounded-full mx-auto mb-4 overflow-hidden relative group"
+            class="w-32 h-32 bg-gray-200 rounded-full mx-auto mb-4 overflow-hidden relative group shadow-crystal border-4 border-white"
         >
             <img
                 src="/images/sakura_aoki.webp"
@@ -19,36 +21,40 @@
                 Profile
             </div>
         </div>
-        <h3 class="font-mincho text-xl mb-1">青木 咲羅</h3>
-        <p class="text-xs text-gray-500">Sakura Aoki</p>
-        <p class="text-sm mt-3 leading-relaxed">
+        <h3 class="font-rounded text-xl mb-1 text-text-dark font-bold">
+            青木 咲羅
+        </h3>
+        <p class="text-xs text-sakura-vivid font-bold tracking-wider">
+            Sakura Aoki
+        </p>
+        <p class="text-sm mt-3 leading-relaxed text-gray-600 font-rounded">
             Voyager Tarot Creations主宰。<br />
             ボイジャータロット国際認定ティーチャー。
         </p>
     </div>
 
-    <nav class="flex flex-col gap-3 mt-4">
+    <nav class="flex flex-col gap-3 mt-4 font-rounded">
         <a
             href="/"
-            class="block p-3 text-center border border-gray-200 rounded-md hover:bg-sakura-pink/10 hover:border-sakura-pink hover:text-sakura-pink transition-colors"
+            class="block p-3 text-center bg-white border border-gray-100 rounded-xl shadow-sm text-gray-600 hover:text-sakura-vivid hover:shadow-md hover:shadow-pink-100 transition-all duration-300"
         >
             HOME
         </a>
         <a
             href="/profile"
-            class="block p-3 text-center border border-gray-200 rounded-md hover:bg-sakura-pink/10 hover:border-sakura-pink hover:text-sakura-pink transition-colors"
+            class="block p-3 text-center bg-white border border-gray-100 rounded-xl shadow-sm text-gray-600 hover:text-sakura-vivid hover:shadow-md hover:shadow-pink-100 transition-all duration-300"
         >
             プロフィール
         </a>
         <a
             href="/course"
-            class="block p-3 text-center border border-gray-200 rounded-md hover:bg-sakura-pink/10 hover:border-sakura-pink hover:text-sakura-pink transition-colors"
+            class="block p-3 text-center bg-white border border-gray-100 rounded-xl shadow-sm text-gray-600 hover:text-sakura-vivid hover:shadow-md hover:shadow-pink-100 transition-all duration-300"
         >
             講座案内
         </a>
         <a
             href="/news"
-            class="block p-3 text-center border border-gray-200 rounded-md hover:bg-sakura-pink/10 hover:border-sakura-pink hover:text-sakura-pink transition-colors"
+            class="block p-3 text-center bg-white border border-gray-100 rounded-xl shadow-sm text-gray-600 hover:text-sakura-vivid hover:shadow-md hover:shadow-pink-100 transition-all duration-300"
         >
             お知らせ
         </a>
@@ -57,17 +63,17 @@
     <div class="mt-auto pb-8">
         <a
             href="/contact"
-            class="flex items-center justify-center w-full py-4 bg-text-dark text-white rounded-full shadow-lg hover:bg-blue-900 transition-transform active:scale-95"
+            class="flex items-center justify-center w-full py-4 bg-sky text-white font-bold rounded-full shadow-lg shadow-pink-200 hover:scale-105 transition-all active:scale-95 font-rounded tracking-wide"
         >
-            <span class="mr-2">✉️</span> お問い合わせ
+            <span>お問い合わせ</span>
         </a>
         <a
             href="https://reservia.jp/shop/reserve/..."
             target="_blank"
             rel="noopener noreferrer"
-            class="block text-center text-sm text-gray-500 mt-4 hover:underline"
+            class="block text-center text-sm text-gray-400 mt-4 hover:text-sakura-vivid transition-colors font-bold tracking-wider"
         >
-            ご予約はこちら
+            ご予約はこちら &rarr;
         </a>
     </div>
 </div>
