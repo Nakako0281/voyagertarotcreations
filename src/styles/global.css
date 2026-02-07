@@ -17,18 +17,16 @@
   --color-sakura-vivid: #ff80ab;
   /* Bright Pink */
 
-  /* Primary Colors - Retained but softened */
-  --color-tarot-blue: #0f4c81;
-  /* Classic Blue (Base) */
-  --color-tarot-dark: #0a2e4d;
-  /* Midnight Blue (Text) */
-  --color-tarot-light: #e0f2fe;
-  /* Light Sky Blue */
+  /* Primary Colors - Red/Pink Theme */
+  --color-text-dark: #1f1f1f;
+  /* Dark Gray (Primary Text/Headings) */
+  --color-bg-pink-pale: #fff1f2;
+  /* Rose Water (Soft Background) */
 
-  --color-gold-main: #d4af37;
-  /* Classic Gold */
-  --color-gold-light: #fff8e1;
-  /* Pale Gold */
+  --color-magenta: #e4007f;
+  /* Vivid Magenta (Main Accent) */
+  --color-magenta-pale: #ffe6f2;
+  /* Pale Magenta (Soft Accent) */
 
   /* Text Colors */
   --color-text-main: #4a4a4a;
@@ -61,28 +59,7 @@
   }
 }
 
-.card {
-  @apply bg-white rounded-3xl shadow-xl overflow-hidden h-full border border-pink-50;
-}
-
-.card-header {
-  /* Colorful Aurora Gradient: Pink -> Gold -> Sky */
-  @apply bg-gradient-to-r from-sakura-vivid via-sunshine to-sky px-8 py-6 flex items-center justify-between relative overflow-hidden;
-}
-
-/* Sparkle overlay for the header */
-.card-header::after {
-  content: "";
-  @apply absolute top-0 left-0 w-full h-full bg-gradient-to-b from-white/20 to-transparent pointer-events-none;
-}
-
-.card-header h2 {
-  @apply text-white font-rounded font-bold text-2xl md:text-3xl drop-shadow-md tracking-wide;
-}
-
-.card-body {
-  @apply p-8 md:p-12;
-}
+/* Card styles removed for "Crystal Brightness" open layout */
 
 /* Animations */
 .animate-fade-in-up {
@@ -136,4 +113,38 @@ h6 {
 
 .perspective-1000 {
   perspective: 1000px;
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: #d1d5db;
+  /* gray-300 */
+  border-radius: 4px;
+  border: 2px solid transparent;
+  background-clip: content-box;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background-color: #9ca3af;
+  /* gray-400 */
+}
+
+/* Firefox */
+* {
+  scrollbar-width: thin;
+  scrollbar-color: #d1d5db transparent;
+}
+
+/* Hide scrollbar buttons */
+::-webkit-scrollbar-button {
+  display: none;
 }

@@ -1,53 +1,91 @@
 ---
-import Layout from '../../layouts/Layout.astro';
-import { getNews, getNewsDetail } from '../../library/microcms';
-import { format } from 'date-fns';
+import Layout from "../../layouts/Layout.astro";
+import { getNews, getNewsDetail } from "../../library/microcms";
+import { format } from "date-fns";
 
 export async function getStaticPaths() {
-  const response = await getNews({ fields: ["id"] });
-  return response.contents.map((content: any) => ({
-    params: {
-      id: content.id,
-    },
-  }));
+    const response = await getNews({ fields: ["id"] });
+    return response.contents.map((content: any) => ({
+        params: {
+            id: content.id,
+        },
+    }));
 }
 
 const { id } = Astro.params;
 const news = await getNewsDetail(id as string);
 
 function formatDate(dateString: string) {
-    return format(new Date(dateString), 'yyyy.MM.dd');
+    return format(new Date(dateString), "yyyy.MM.dd");
 }
 ---
 
 <Layout title={news.title}>
-    <article class="max-w-3xl mx-auto bg-white p-8 md:p-12 rounded-3xl shadow-sm border border-gray-100">
-        <header class="mb-8 pb-8 border-b border-gray-100">
-            <div class="flex items-center gap-3 mb-4">
-                <time class="text-gray-500 font-sans">{formatDate(news.publishedAt)}</time>
-                {news.category.map(cat => (
-                    <span class="text-xs text-sakura-pink font-bold border border-sakura-pink/30 px-2 py-0.5 rounded-full">
-                        {cat.name}
-                    </span>
-                ))}
+    <article
+        class="max-w-4xl mx-auto bg-white/80 backdrop-blur-md p-8 md:p-12 rounded-[3rem] shadow-glass border border-white relative overflow-hidden"
+    >
+        <!-- Header -->
+        <header class="mb-12 pb-8 border-b border-gray-100 relative z-10">
+            <div class="flex items-center gap-4 mb-6">
+                <time class="text-gray-500 font-bold tracking-wider"
+                    >{formatDate(news.publishedAt)}</time
+                >
+                {
+                    news.category.map((cat) => (
+                        <span class="text-xs text-sakura-vivid font-bold border border-sakura-vivid/30 bg-sakura-light/10 px-3 py-1 rounded-full backdrop-blur-sm">
+                            {cat.name}
+                        </span>
+                    ))
+                }
             </div>
-            <h1 class="text-2xl md:text-3xl font-mincho font-bold text-gray-800 leading-relaxed">
+            <h1
+                class="text-3xl md:text-5xl font-rounded font-bold text-text-main leading-relaxed"
+            >
                 {news.title}
             </h1>
         </header>
 
-        {news.eyecatch && (
-            <div class="mb-10 rounded-xl overflow-hidden shadow-md">
-                <img src={news.eyecatch.url} alt={news.title} class="w-full h-auto" />
-            </div>
-        )}
+        {
+            news.eyecatch && (
+                <div class="mb-12 rounded-2xl overflow-hidden shadow-lg shadow-gray-200/50 relative z-10">
+                    <img
+                        src={news.eyecatch.url}
+                        alt={news.title}
+                        class="w-full h-auto object-cover"
+                    />
+                </div>
+            )
+        }
 
-        <div class="prose prose-p:text-gray-700 prose-headings:font-mincho prose-headings:text-tarot-blue prose-a:text-sakura-pink max-w-none" set:html={news.content} />
+        <!-- Content -->
+        <div
+            class="prose prose-lg prose-p:text-gray-600 prose-p:leading-loose prose-headings:font-rounded prose-headings:font-bold prose-headings:text-text-dark prose-a:text-sakura-vivid prose-a:no-underline hover:prose-a:underline prose-strong:text-text-dark max-w-none relative z-10 font-rounded"
+            set:html={news.content}
+        />
 
-        <div class="mt-12 pt-8 border-t border-gray-100 text-center">
-            <a href="/news" class="inline-flex items-center text-gray-500 hover:text-sakura-pink transition-colors">
-                <span class="mr-2">&larr;</span> お知らせ一覧に戻る
+        <!-- Navigation -->
+        <div
+            class="mt-16 pt-12 border-t border-gray-100 text-center relative z-10"
+        >
+            <a
+                href="/news"
+                class="inline-flex items-center px-8 py-3 rounded-full border border-gray-300 text-gray-500 font-bold tracking-widest hover:border-sakura-vivid hover:text-sakura-vivid transition-all group duration-300 bg-white/50 backdrop-blur-sm"
+            >
+                <span
+                    class="mr-2 transition-transform group-hover:-translate-x-1"
+                    >&larr;</span
+                > お知らせ一覧に戻る
             </a>
+        </div>
+
+        <!-- Background Decoration -->
+        <div
+            class="absolute top-0 right-0 w-96 h-96 bg-gradient-to-b from-sakura-light/20 to-transparent rounded-bl-full z-0 blur-3xl opacity-50 pointer-events-none"
+        >
+        </div>
+        <div
+            class="absolute bottom-0 left-0 w-64 h-64 bg-gradient-to-t from-sky/10 to-transparent rounded-tr-full z-0 blur-3xl opacity-50 pointer-events-none"
+        >
         </div>
     </article>
 </Layout>
