@@ -93,7 +93,7 @@ export default function ProfileCarousel({ members }: ProfileCarouselProps) {
                             <div className="w-full md:w-5/12 h-2/5 md:h-full relative flex flex-col bg-gray-50 border-r border-white/50">
                                 {/* Image Area - Takes remaining space (Approx 60-65%) */}
                                 <div className="flex-1 relative overflow-hidden group">
-                                    <div className="absolute inset-0 bg-tarot-blue/10 group-hover:bg-transparent transition-colors z-20 pointer-events-none" />
+                                    <div className="absolute inset-0 bg-text-dark/10 group-hover:bg-transparent transition-colors z-20 pointer-events-none" />
                                     {currentMember.image ? (
                                         <img
                                             src={currentMember.image}
@@ -134,7 +134,7 @@ export default function ProfileCarousel({ members }: ProfileCarouselProps) {
                             <div className="w-full md:w-7/12 h-3/5 md:h-full flex flex-col overflow-hidden">
                                 {/* Header: Name & Title (Fixed) */}
                                 <div className="flex-none p-6 md:p-12 pb-2 md:pb-4 border-b border-gray-100/50 bg-white/0 z-10">
-                                    <h2 className="text-2xl md:text-4xl font-rounded text-tarot-blue mb-2">
+                                    <h2 className="text-2xl md:text-4xl font-rounded text-text-dark mb-2">
                                         {currentMember.name}
                                     </h2>
                                     <p className="text-sakura-vivid font-bold tracking-widest text-[10px] md:text-sm uppercase">
@@ -158,7 +158,7 @@ export default function ProfileCarousel({ members }: ProfileCarouselProps) {
             {members.length > 1 && (
                 <>
                     <button
-                        className="absolute top-1/2 -left-2 md:-left-8 transform -translate-y-1/2 bg-white/80 hover:bg-white text-tarot-blue p-3 md:p-4 rounded-full shadow-lg backdrop-blur-sm transition-all hover:scale-110 z-30 group border border-white"
+                        className="absolute top-1/2 -left-2 md:-left-8 transform -translate-y-1/2 bg-white/80 hover:bg-white text-text-dark p-3 md:p-4 rounded-full shadow-lg backdrop-blur-sm transition-all hover:scale-110 z-30 group border border-white"
                         onClick={() => paginate(-1)}
                         aria-label="Previous member"
                     >
@@ -167,7 +167,7 @@ export default function ProfileCarousel({ members }: ProfileCarouselProps) {
                         </svg>
                     </button>
                     <button
-                        className="absolute top-1/2 -right-2 md:-right-8 transform -translate-y-1/2 bg-white/80 hover:bg-white text-tarot-blue p-3 md:p-4 rounded-full shadow-lg backdrop-blur-sm transition-all hover:scale-110 z-30 group border border-white"
+                        className="absolute top-1/2 -right-2 md:-right-8 transform -translate-y-1/2 bg-white/80 hover:bg-white text-text-dark p-3 md:p-4 rounded-full shadow-lg backdrop-blur-sm transition-all hover:scale-110 z-30 group border border-white"
                         onClick={() => paginate(1)}
                         aria-label="Next member"
                     >
@@ -200,3 +200,5 @@ export default function ProfileCarousel({ members }: ProfileCarouselProps) {
         </div>
     );
 }
+
+

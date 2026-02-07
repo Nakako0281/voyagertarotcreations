@@ -18,16 +18,14 @@
   /* Bright Pink */
 
   /* Primary Colors - Red/Pink Theme */
-  --color-tarot-blue: #1f1f1f;
-  /* Rose Red (Passion & Elegance) */
-  --color-tarot-dark: #1f1f1f;
-  /* Deep Burgundy (Maturity & Depth) */
-  --color-tarot-light: #fff1f2;
-  /* Rose Water (Softness) */
+  --color-text-dark: #1f1f1f;
+  /* Dark Gray (Primary Text/Headings) */
+  --color-bg-pink-pale: #fff1f2;
+  /* Rose Water (Soft Background) */
 
-  --color-gold-main: #e4007f;
-  /* Magenta (Vivid Accent) */
-  --color-gold-light: #ffe6f2;
+  --color-magenta: #e4007f;
+  /* Vivid Magenta (Main Accent) */
+  --color-magenta-pale: #ffe6f2;
   /* Pale Magenta (Soft Accent) */
 
   /* Text Colors */

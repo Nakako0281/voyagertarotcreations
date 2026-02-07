@@ -19,7 +19,7 @@
         <!-- Logo -->
         <a href="/" class="group flex flex-col justify-center">
             <span
-                class="text-2xl font-rounded font-bold text-white tracking-widest drop-shadow-md group-hover:text-gold-light transition-colors"
+                class="text-2xl font-rounded font-bold text-white tracking-widest drop-shadow-md group-hover:text-magenta-pale transition-colors"
                 id="header-logo-text"
             >
                 Voyager Tarot
@@ -43,16 +43,16 @@
                 ].map((item) => (
                     <a
                         href={item.href}
-                        class="nav-link text-white font-rounded font-bold text-sm tracking-widest hover:text-gold-light transition-colors drop-shadow-sm relative group py-2"
+                        class="nav-link text-white font-rounded font-bold text-sm tracking-widest hover:text-magenta-pale transition-colors drop-shadow-sm relative group py-2"
                     >
                         {item.name}
-                        <span class="absolute bottom-0 left-0 w-0 h-0.5 bg-gold-light transition-all duration-300 group-hover:w-full" />
+                        <span class="absolute bottom-0 left-0 w-0 h-0.5 bg-magenta-pale transition-all duration-300 group-hover:w-full" />
                     </a>
                 ))
             }
             <a
                 href="/contact"
-                class="nav-btn ml-4 px-6 py-2 rounded-full border border-white/60 text-white font-rounded font-bold text-sm tracking-widest hover:bg-white hover:text-tarot-blue transition-all duration-300 backdrop-blur-sm shadow-sm hover:shadow-lg hover:shadow-indigo-500/30"
+                class="nav-btn ml-4 px-6 py-2 rounded-full border border-white/60 text-white font-rounded font-bold text-sm tracking-widest hover:bg-white hover:text-text-dark transition-all duration-300 backdrop-blur-sm shadow-sm hover:shadow-lg hover:shadow-indigo-500/30"
             >
                 CONTACT
             </a>
@@ -194,3 +194,5 @@
         });
     });
 </script>
+
+

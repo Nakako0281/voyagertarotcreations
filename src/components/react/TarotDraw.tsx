@@ -37,7 +37,7 @@ export default function TarotDraw() {
                     {!showResult ? (
                         <motion.div
                             key="deck"
-                            className="w-48 h-80 md:w-64 md:h-96 rounded-xl border-2 border-white/20 shadow-2xl flex items-center justify-center cursor-pointer relative overflow-hidden bg-tarot-dark"
+                            className="w-48 h-80 md:w-64 md:h-96 rounded-xl border-2 border-white/20 shadow-2xl flex items-center justify-center cursor-pointer relative overflow-hidden bg-text-dark"
                             onClick={handleDraw}
                             initial={{ rotateY: 0 }}
                             exit={{
@@ -100,7 +100,7 @@ export default function TarotDraw() {
                             transition={{ delay: 0.2 }}
                             className="bg-white/90 backdrop-blur-sm p-6 rounded-2xl shadow-lg border border-gray-100 inline-block max-w-lg"
                         >
-                            <h3 className="text-xl font-bold font-serif text-tarot-blue mb-2">Message</h3>
+                            <h3 className="text-xl font-bold font-serif text-text-dark mb-2">Message</h3>
                             <p className="text-gray-700 leading-relaxed font-sans">{drawnCard.message}</p>
 
                             <button
@@ -126,3 +126,5 @@ export default function TarotDraw() {
         </div>
     );
 }
+
+
