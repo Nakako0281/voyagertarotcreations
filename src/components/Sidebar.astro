@@ -3,8 +3,18 @@
 ---
 
 <div
-    class="flex flex-col gap-6 h-full overflow-y-auto bg-white/50 backdrop-blur-sm p-4 rounded-3xl"
+    class="flex flex-col gap-6 h-full overflow-y-auto bg-white/50 backdrop-blur-sm p-4 rounded-3xl scrollbar-hide"
 >
+    <!-- Hide scrollbar locally -->
+    <style>
+        .scrollbar-hide {
+            -ms-overflow-style: none;
+            scrollbar-width: none;
+        }
+        .scrollbar-hide::-webkit-scrollbar {
+            display: none;
+        }
+    </style>
     <div class="text-center">
         <!-- Profile Image Placeholder -->
         <div
@@ -33,32 +43,7 @@
         </p>
     </div>
 
-    <nav class="flex flex-col gap-3 mt-4 font-rounded">
-        <a
-            href="/"
-            class="block p-3 text-center bg-white border border-gray-100 rounded-xl shadow-sm text-gray-600 hover:text-sakura-vivid hover:shadow-md hover:shadow-pink-100 transition-all duration-300"
-        >
-            HOME
-        </a>
-        <a
-            href="/profile"
-            class="block p-3 text-center bg-white border border-gray-100 rounded-xl shadow-sm text-gray-600 hover:text-sakura-vivid hover:shadow-md hover:shadow-pink-100 transition-all duration-300"
-        >
-            プロフィール
-        </a>
-        <a
-            href="/course"
-            class="block p-3 text-center bg-white border border-gray-100 rounded-xl shadow-sm text-gray-600 hover:text-sakura-vivid hover:shadow-md hover:shadow-pink-100 transition-all duration-300"
-        >
-            講座案内
-        </a>
-        <a
-            href="/news"
-            class="block p-3 text-center bg-white border border-gray-100 rounded-xl shadow-sm text-gray-600 hover:text-sakura-vivid hover:shadow-md hover:shadow-pink-100 transition-all duration-300"
-        >
-            お知らせ
-        </a>
-    </nav>
+    <!-- Navigation removed as per request (redundant with header) -->
 
     <div class="mt-auto pb-8">
         <a
@@ -68,12 +53,12 @@
             <span>お問い合わせ</span>
         </a>
         <a
-            href="https://reservia.jp/shop/reserve/..."
+            href="https://aoki-sakura.com/"
             target="_blank"
             rel="noopener noreferrer"
             class="block text-center text-sm text-gray-400 mt-4 hover:text-sakura-vivid transition-colors font-bold tracking-wider"
         >
-            ご予約はこちら &rarr;
+            Personal Website &rarr;
         </a>
     </div>
 </div>

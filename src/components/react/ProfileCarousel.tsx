@@ -109,24 +109,27 @@ export default function ProfileCarousel({ members }: ProfileCarouselProps) {
 
                                 {/* Qualifications Area - Fixed Height (35%) at Bottom Left */}
                                 {/* Always render to keep image size consistent */}
-                                <div className="flex-none bg-white/60 p-4 md:p-6 border-t border-white shadow-inner h-[40%] md:h-[35%] overflow-y-auto custom-scrollbar">
-                                    <h4 className="font-bold text-sunshine mb-2 md:mb-2 border-b border-sunshine/50 pb-2 text-xs md:text-sm flex items-center gap-2 sticky top-0 bg-white/0 backdrop-blur-sm z-10">
+                                <div className="flex-none bg-white/60 border-t border-white shadow-inner h-[40%] md:h-[35%] flex flex-col overflow-hidden">
+                                    <h4 className="flex-none font-bold text-sunshine text-xs md:text-sm flex items-center gap-2 px-4 md:px-6 py-2 md:py-3 border-b border-sunshine/30 bg-white/40 backdrop-blur-sm z-10">
                                         <span className="text-sunshine">●</span> 資格等
                                     </h4>
-                                    {currentMember.qualifications && currentMember.qualifications.length > 0 ? (
-                                        <ul className="space-y-1.5 text-[10px] md:text-xs font-bold">
-                                            {currentMember.qualifications.map((q, idx) => (
-                                                <li key={idx} className="flex items-start gap-2 text-gray-600">
-                                                    <span className="w-1.5 h-1.5 bg-sunshine rounded-full mt-1.5 flex-shrink-0"></span>
-                                                    <span>{q}</span>
-                                                </li>
-                                            ))}
-                                        </ul>
-                                    ) : (
-                                        <p className="text-[10px] md:text-xs text-gray-400 italic pl-4">
-                                            {/* Empty state placeholder or keep blank */}
-                                        </p>
-                                    )}
+
+                                    <div className="flex-1 overflow-y-auto custom-scrollbar px-4 md:px-6 py-2">
+                                        {currentMember.qualifications && currentMember.qualifications.length > 0 ? (
+                                            <ul className="space-y-1.5 text-[10px] md:text-xs font-bold pb-2">
+                                                {currentMember.qualifications.map((q, idx) => (
+                                                    <li key={idx} className="flex items-start gap-2 text-gray-600">
+                                                        <span className="w-1.5 h-1.5 bg-sunshine rounded-full mt-1.5 flex-shrink-0"></span>
+                                                        <span>{q}</span>
+                                                    </li>
+                                                ))}
+                                            </ul>
+                                        ) : (
+                                            <p className="text-[10px] md:text-xs text-gray-400 italic">
+                                                {/* Empty state placeholder or keep blank */}
+                                            </p>
+                                        )}
+                                    </div>
                                 </div>
                             </div>
 
