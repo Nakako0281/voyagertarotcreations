@@ -15,39 +15,20 @@ function formatDate(dateString: string) {
 }
 // const newsList: any[] = [];
 
-// Course Data Definition for Scalability
-const courseCategories = [
-    {
-        id: "tarot",
-        name: "ボイジャータロット",
-        description: "Voyager Tarot",
-        steps: [
-            { step: 1, label: "リーダー認定" },
-            { step: 2, label: "コーチ認定" },
-            { step: 3, label: "ティーチャー認定" }
-        ],
-        cards: [
-            { title: "リーダー認定講座", img: "/images/top_2-1.webp", url: "/course#course_1" },
-            { title: "コーチ認定講座", img: "/images/top_2-2.webp", url: "/course#course_2" },
-            { title: "ティーチャー認定講座", img: "/images/top_2-3.webp", url: "/course2#course_1" }
-        ]
-    },
-    {
-        id: "other",
-        name: "（例）その他講座",
-        description: "Other Courses",
-        steps: [
-            { step: 1, label: "入門" },
-            { step: 2, label: "応用" },
-            { step: 3, label: "マスター" }
-        ],
-        cards: [ // Using same images as placeholders for the example
-            { title: "入門講座", img: "/images/top_2-1.webp", url: "#" },
-            { title: "応用講座", img: "/images/top_2-2.webp", url: "#" },
-            { title: "マスター講座", img: "/images/top_2-3.webp", url: "#" }
-        ]
-    }
-];
+import { getCourses } from "../library/microcms";
+
+const coursesResponse = await getCourses();
+const courseCategories = coursesResponse.contents.map(course => ({
+    id: course.slug, // Use slug for ID to match existing logic (or course.id if preferred, but existing used IDs like 'tarot')
+    name: course.title,
+    description: course.subTitle || "",
+    steps: course.steps.map(step => ({ step: step.stepNumber, label: step.label })),
+    cards: course.cards.map(card => ({
+        title: card.title,
+        img: card.image?.url || "/images/placeholder.jpg",
+        url: card.url
+    }))
+}));
 ---
 
 <Layout title="Home" wide={true} isHome={true}>
@@ -159,7 +140,7 @@ const courseCategories = [
                         <!-- BLOCK 1: INTRO (Image Left, Text Right) -->
                         <div class="flex flex-col md:flex-row items-center gap-12 md:gap-20">
                             <!-- Image Side -->
-                            <div class="w-full md:w-1/2 relative min-h-[400px] md:min-h-[500px] rounded-[3rem] overflow-hidden shadow-2xl shadow-blue-100/50 group">
+                            <div class="w-full md:w-1/2 relative rounded-[3rem] overflow-hidden shadow-2xl shadow-blue-100/50 group">
                                  <div
                                     class="absolute inset-0 bg-text-dark/10 group-hover:bg-transparent transition-colors duration-500 z-10"
                                 >
@@ -167,7 +148,7 @@ const courseCategories = [
                                 <img
                                     src="/images/top_1.webp"
                                     alt="Voyager Tarot Session"
-                                    class="absolute inset-0 w-full h-full object-cover transform group-hover:scale-105 transition-transform duration-1000"
+                                    class="w-full h-auto object-cover transform group-hover:scale-105 transition-transform duration-1000"
                                 />
                             </div>
 
@@ -264,11 +245,13 @@ const courseCategories = [
                                     <div class="relative w-full h-full rounded-[3rem] overflow-hidden shadow-2xl shadow-gray-200/50 group bg-gray-50 border border-white">
                                         <div class="absolute inset-0 bg-gradient-to-tr from-indigo-100/40 to-sakura-light/40 mix-blend-multiply z-10 transition-opacity duration-700 opacity-80 group-hover:opacity-0"></div>
                                         
-                                        <div class="absolute inset-0 flex items-center justify-center text-gray-400 font-rounded tracking-widest z-0">
-                                        <span class="z-0 relative">Voyager Image</span>
+                                        <img
+                                            src="/images/title_1.webp"
+                                            alt="Voyager Tarot Card"
+                                            class="absolute inset-0 w-full h-full object-cover transform group-hover:scale-105 transition-transform duration-1000"
+                                        />
+                                        <div class="absolute inset-0 bg-white/10 backdrop-blur-[2px] opacity-0 group-hover:opacity-100 transition-opacity duration-700 z-20"></div>
                                     </div>
-                                    <div class="absolute inset-0 bg-white/10 backdrop-blur-[2px] opacity-0 group-hover:opacity-100 transition-opacity duration-700 z-20"></div>
-                                </div>
                             </div>
                         </div>
 
@@ -349,7 +332,7 @@ const courseCategories = [
                             <!-- Text Side -->
                             <div class="w-full md:w-1/2 text-left order-2 md:order-1">
                                 <h3 class="text-3xl md:text-5xl font-rounded text-text-dark font-bold mb-8 leading-tight">
-                                    未来を創造する力を、<br/>あなたに。
+                                    未来を創造する力を<br/>あなたに
                                 </h3>
                                 
                                 <div class="space-y-8 text-gray-600 leading-loose font-rounded text-lg">

@@ -2,45 +2,17 @@
 import Layout from "../layouts/Layout.astro";
 import ProfileCarousel from "../components/react/ProfileCarousel";
 
-// Mock data for staff (In a real scenario, this might come from CMS or a data file)
-// Consolidated Staff Data
-const staffMembers = [
-    {
-        name: "青木 咲羅",
-        role: "Voyager Tarot Creations代表", // Simplified role for array
-        titleEn: "Sakura Aoki / Voyager Tarot Creations代表",
-        image: "/images/sakura_aoki.webp",
-        description: `祖父・母共に占い師という家庭に生まれ、幼い頃からスピリチュアルな環境で育つ。
-保育士をしながらカウンセリング、心理療法を学び、2003年占い師、心理セラピストとして開業。
-その後、ボイジャータロットJAPANでの北海道初の認定カウンセラーとなり、2013年から認定ティーチャーとしてその普及も努める。
+import { getMembers } from "../library/microcms";
 
-マスターティーチャーとして長年在籍したボイジャータロットJAPANを卒業し、2025年に新たに『Voyager Tarot Creations』を設立。
-ボイジャータロットカウンセリング及びヒプノセラピーを中心に、癒しや願望実現まで、様々な心の問題に対応すると共に、新しい時代に活躍出来るリーダー、コーチ、ティーチャーの育成を目指している。
-イベント出演やセミナー、執筆なども精力的に活動中。`,
-        qualifications: [
-            "ボイジャータロット国際認定ティーチャー",
-            "米国催眠療法協会認定　ヒプノセラピスト",
-            "日本催眠学会会員",
-            "日本ビューティーヘルス協会札幌校代表　認定美容栄養学専門士",
-        ],
-    },
-    {
-        name: "山田 花子",
-        role: "認定コーチ",
-        titleEn: "Hanako Yamada / Certified Coach",
-        image: "/images/profile_placeholder.jpg",
-        description:
-            "丁寧なセッションで定評がある認定コーチ。クライアントの本来の輝きを引き出すことを得意とする。自身の経験に基づいた深い共感力で、多くのクライアントから信頼を得ている。\n\n現在はオンラインを中心に活動中。",
-        qualifications: ["ボイジャータロット認定コーチ"],
-    },
-    {
-        name: "Coming Soon",
-        role: "認定リーダー",
-        image: "", // Empty string will trigger fallback
-        description: "新たな認定メンバーがここに掲載されます。",
-        qualifications: [],
-    },
-];
+const response = await getMembers();
+const staffMembers = response.contents.map((member) => ({
+    name: member.name,
+    role: member.role,
+    titleEn: member.titleEn,
+    image: member.image?.url || "",
+    description: member.introduction,
+    qualifications: member.qualifications,
+}));
 ---
 
 <Layout title="Profile">
