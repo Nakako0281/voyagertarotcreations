@@ -11,8 +11,9 @@ export default function TarotDraw() {
         if (isFlipping) return;
 
         setIsFlipping(true);
-        // Force Star card as per request
-        setDrawnCard(tarotCards[17]);
+        // setDrawnCard(tarotCards[17]); // Force Star card as per request
+        const randomIndex = Math.floor(Math.random() * tarotCards.length);
+        setDrawnCard(tarotCards[randomIndex]);
 
         // Trigger the flip sequence
         setTimeout(() => {
