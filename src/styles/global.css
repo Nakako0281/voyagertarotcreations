@@ -35,9 +35,9 @@
   --color-text-inverse: #ffffff;
 
   /* Fonts */
-  --font-mincho: "Times New Roman", "YuMincho", "Hiragino Mincho ProN", "Yu Mincho", "MS PMincho", serif;
-  --font-gothic: "Helvetica", "Arial", "Hiragino Kaku Gothic ProN", "Hiragino Sans", "Meiryo", sans-serif;
-  --font-rounded: "Zen Maru Gothic", sans-serif;
+  --font-mincho: "Hannari Mincho", "Times New Roman", "YuMincho", "Hiragino Mincho ProN", "Yu Mincho", "MS PMincho", serif;
+  --font-gothic: "Hannari Mincho", "Times New Roman", "YuMincho", "Hiragino Mincho ProN", "Yu Mincho", "MS PMincho", serif;
+  --font-rounded: "Hannari Mincho", "Times New Roman", "YuMincho", "Hiragino Mincho ProN", "Yu Mincho", "MS PMincho", serif;
 
   /* Effects */
   --shadow-crystal: 0 8px 32px rgba(255, 128, 171, 0.15);
@@ -79,7 +79,7 @@
 }
 
 body {
-  font-family: var(--font-gothic);
+  font-family: var(--font-mincho);
   color: var(--color-text-main);
   background-color: var(--color-bg-base);
   /* background-image removed for pure white request */
@@ -91,7 +91,7 @@ h3,
 h4,
 h5,
 h6 {
-  font-family: var(--font-rounded);
+  font-family: var(--font-mincho);
 }
 
 /* 3D Card Draw Animation */

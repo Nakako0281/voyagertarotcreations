@@ -39,7 +39,7 @@ function formatDate(dateString: string) {
                 }
             </div>
             <h1
-                class="text-3xl md:text-5xl font-rounded font-bold text-text-main leading-relaxed"
+                class="text-3xl md:text-5xl font-bold text-text-main leading-relaxed"
             >
                 {news.title}
             </h1>
@@ -59,7 +59,7 @@ function formatDate(dateString: string) {
 
         <!-- Content -->
         <div
-            class="prose prose-lg prose-p:text-gray-600 prose-p:leading-loose prose-headings:font-rounded prose-headings:font-bold prose-headings:text-text-dark prose-a:text-sakura-vivid prose-a:no-underline hover:prose-a:underline prose-strong:text-text-dark max-w-none relative z-10 font-rounded"
+            class="prose prose-lg prose-p:text-gray-600 prose-p:leading-loose prose-headings:font-bold prose-headings:text-text-dark prose-a:text-sakura-vivid prose-a:no-underline hover:prose-a:underline prose-strong:text-text-dark max-w-none relative z-10"
             set:html={news.content}
         />
 

@@ -111,7 +111,7 @@ export default function ProfileCarousel({ members }: ProfileCarouselProps) {
                             <div className="w-full md:w-7/12 flex-1 flex flex-col overflow-hidden">
                                 {/* Header: Name & Title (Fixed) */}
                                 <div className="flex-none p-5 pb-2 md:p-8 md:pb-4 border-b border-gray-100/50 bg-white/80 md:bg-white/0 z-10">
-                                    <h2 className="text-xl md:text-4xl font-rounded text-text-dark mb-1 md:mb-2">
+                                    <h2 className="text-xl md:text-4xl text-text-dark mb-1 md:mb-2">
                                         {currentMember.name}
                                     </h2>
                                     <p className="text-sakura-vivid font-bold tracking-widest text-[10px] md:text-sm uppercase">

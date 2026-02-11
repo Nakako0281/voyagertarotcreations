@@ -173,7 +173,7 @@ const courseCategories = [
                         
                         <!-- Category Header -->
                         <div class="mb-12 pl-4 border-l-4 border-magenta">
-                            <h2 class="text-3xl font-rounded font-bold text-text-dark mb-2">{cat.title}</h2>
+                            <h2 class="text-3xl font-bold text-text-dark mb-2">{cat.title}</h2>
                             <p class="text-gray-500">{cat.description}</p>
                         </div>
 
@@ -202,10 +202,10 @@ const courseCategories = [
                                             {course.step}
                                         </span>
 
-                                        <h3 class="text-3xl md:text-4xl font-rounded font-bold text-text-dark mb-6">
+                                        <h3 class="text-3xl md:text-4xl font-bold text-text-dark mb-6">
                                             {course.title}
                                         </h3>
-                                        <p class="text-gray-600 mb-12 leading-loose font-rounded">
+                                        <p class="text-gray-600 mb-12 leading-loose">
                                             <Fragment set:html={course.description} />
                                         </p>
 
@@ -214,7 +214,7 @@ const courseCategories = [
                                             {course.subCourses.map((sub) => (
                                                 <div class="bg-white/60 p-8 md:p-10 rounded-[2rem] border border-white shadow-sm hover:shadow-md transition-shadow duration-300">
                                                     <div class="flex flex-col md:flex-row justify-between items-baseline mb-4">
-                                                        <h4 class="font-bold text-xl text-text-dark flex items-center gap-3 font-rounded">
+                                                        <h4 class="font-bold text-xl text-text-dark flex items-center gap-3">
                                                             <span class:list={["w-3 h-3 rounded-full shadow-sm", `bg-${course.stepColor}`]}></span>
                                                             {sub.title}
                                                         </h4>
@@ -222,7 +222,7 @@ const courseCategories = [
                                                             {sub.duration}
                                                         </span>
                                                     </div>
-                                                    <p class="text-gray-600 text-sm leading-relaxed mb-8 font-rounded">
+                                                    <p class="text-gray-600 text-sm leading-relaxed mb-8">
                                                         <Fragment set:html={sub.description} />
                                                     </p>
 
@@ -231,7 +231,7 @@ const courseCategories = [
                                                             <h5 class:list={["font-bold text-xs mb-3 uppercase tracking-wider", `text-${sub.condition.color}`]}>
                                                                 {sub.condition.title}
                                                             </h5>
-                                                            <ul class="list-disc list-inside text-xs text-gray-600 space-y-2 font-bold font-rounded">
+                                                            <ul class="list-disc list-inside text-xs text-gray-600 space-y-2 font-bold">
                                                                 {sub.condition.items.map(item => (
                                                                     <li>{item}</li>
                                                                 ))}
@@ -249,13 +249,13 @@ const courseCategories = [
                         <!-- Pricing Table (Per Category) -->
                          {cat.courses.some(c => c.pricing.length > 0) && (
                             <section class="mt-24 bg-white/80 backdrop-blur-sm p-8 md:p-12 rounded-[3rem] border border-white shadow-sm">
-                                <h3 class="text-2xl md:text-3xl font-rounded font-bold text-center mb-10 text-text-dark">
+                                <h3 class="text-2xl md:text-3xl font-bold text-center mb-10 text-text-dark">
                                     {cat.title} 価格一覧
                                 </h3>
                                 <div class="overflow-x-auto">
                                     <table class="w-full text-left border-collapse">
                                         <thead>
-                                            <tr class="bg-gray-50 text-gray-500 text-sm font-rounded tracking-wider">
+                                            <tr class="bg-gray-50 text-gray-500 text-sm tracking-wider">
                                                 <th class="p-6 rounded-tl-2xl">講座名</th>
                                                 <th class="p-6">時間</th>
                                                 <th class="p-6 rounded-tr-2xl text-right">受講料 (税込)</th>
@@ -264,9 +264,9 @@ const courseCategories = [
                                         <tbody class="divide-y divide-gray-100">
                                             {cat.courses.flatMap(c => c.pricing).map((price) => (
                                                 <tr class="hover:bg-sakura-light/10 transition-colors">
-                                                    <td class="p-6 font-bold text-text-dark font-rounded">{price.title}</td>
-                                                    <td class="p-6 text-gray-600 text-sm font-rounded">{price.duration}</td>
-                                                    <td class="p-6 text-right font-rounded font-bold text-text-dark">{price.price}</td>
+                                                    <td class="p-6 font-bold text-text-dark">{price.title}</td>
+                                                    <td class="p-6 text-gray-600 text-sm">{price.duration}</td>
+                                                    <td class="p-6 text-right font-bold text-text-dark">{price.price}</td>
                                                 </tr>
                                             ))}
                                         </tbody>
@@ -285,7 +285,7 @@ const courseCategories = [
                 href="https://reservia.jp/shop/reserve/..."
                 target="_blank"
                 rel="noopener noreferrer"
-                class="inline-flex items-center gap-3 bg-gradient-to-r from-sakura-vivid to-sunshine text-white px-12 py-5 rounded-full font-bold hover:scale-105 transition-all shadow-lg shadow-pink-200 font-rounded tracking-wider group"
+                class="inline-flex items-center gap-3 bg-gradient-to-r from-sakura-vivid to-sunshine text-white px-12 py-5 rounded-full font-bold hover:scale-105 transition-all shadow-lg shadow-pink-200 tracking-wider group"
             >
                 <div>
                      <span class="block text-sm opacity-90 font-normal mb-0.5">外部予約サイトへ</span>
