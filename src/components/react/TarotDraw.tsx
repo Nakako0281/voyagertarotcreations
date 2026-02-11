@@ -52,26 +52,46 @@ export default function TarotDraw() {
                     <AnimatePresence mode="wait">
                         {!selectedCard ? (
                             // 7-Card Selection View
-                            <motion.div
-                                className="flex flex-wrap justify-center gap-2 md:gap-4"
-                                initial={{ opacity: 0 }}
-                                animate={{ opacity: 1 }}
-                                exit={{ opacity: 0 }}
-                            >
-                                {deck.map((card, index) => (
-                                    <motion.div
-                                        key={card.id}
-                                        layoutId={`card-${card.id}`}
-                                        className="w-20 h-32 md:w-28 md:h-44 rounded-lg border border-white/20 shadow-lg cursor-pointer relative overflow-hidden bg-text-dark transform hover:-translate-y-2 transition-transform duration-300"
-                                        onClick={() => handleCardClick(card)}
-                                        initial={{ opacity: 0, y: 20 }}
-                                        animate={{ opacity: 1, y: 0, transition: { delay: index * 0.05 } }}
-                                        whileHover={{ scale: 1.05, boxShadow: "0 0 15px rgba(228, 0, 127, 0.4)" }}
-                                    >
-                                        <img src="/images/cards/tarot_back.webp" alt="Back" className="w-full h-full object-cover" />
-                                    </motion.div>
-                                ))}
-                            </motion.div>
+                            <>
+                                {/* Mobile View: 2-3-2 Layout */}
+                                <motion.div
+                                    className="flex flex-col gap-4 md:hidden"
+                                    initial={{ opacity: 0 }}
+                                    animate={{ opacity: 1 }}
+                                    exit={{ opacity: 0 }}
+                                >
+                                    {/* Row 1: 2 Cards */}
+                                    <div className="flex justify-center gap-3">
+                                        {deck.slice(0, 2).map((card, index) => (
+                                            <CardItem key={card.id} card={card} index={index} onClick={handleCardClick} />
+                                        ))}
+                                    </div>
+                                    {/* Row 2: 3 Cards */}
+                                    <div className="flex justify-center gap-3">
+                                        {deck.slice(2, 5).map((card, index) => (
+                                            <CardItem key={card.id} card={card} index={index + 2} onClick={handleCardClick} />
+                                        ))}
+                                    </div>
+                                    {/* Row 3: 2 Cards */}
+                                    <div className="flex justify-center gap-3">
+                                        {deck.slice(5, 7).map((card, index) => (
+                                            <CardItem key={card.id} card={card} index={index + 5} onClick={handleCardClick} />
+                                        ))}
+                                    </div>
+                                </motion.div>
+
+                                {/* Desktop View: Standard Wrap/Row */}
+                                <motion.div
+                                    className="hidden md:flex flex-wrap justify-center gap-4"
+                                    initial={{ opacity: 0 }}
+                                    animate={{ opacity: 1 }}
+                                    exit={{ opacity: 0 }}
+                                >
+                                    {deck.map((card, index) => (
+                                        <CardItem key={card.id} card={card} index={index} onClick={handleCardClick} />
+                                    ))}
+                                </motion.div>
+                            </>
                         ) : (
                             // Selected Card Reveal View
                             <div className="relative flex flex-col items-center">
@@ -165,3 +185,17 @@ export default function TarotDraw() {
         </div>
     );
 }
+
+// Sub-component for individual card rendering to avoid duplication
+const CardItem = ({ card, index, onClick }: { card: TarotCard, index: number, onClick: (c: TarotCard) => void }) => (
+    <motion.div
+        layoutId={`card-${card.id}`}
+        className="w-20 h-32 md:w-28 md:h-44 rounded-lg border border-white/20 shadow-lg cursor-pointer relative overflow-hidden bg-text-dark transform hover:-translate-y-2 transition-transform duration-300"
+        onClick={() => onClick(card)}
+        initial={{ opacity: 0, y: 20 }}
+        animate={{ opacity: 1, y: 0, transition: { delay: index * 0.05 } }}
+        whileHover={{ scale: 1.05, boxShadow: "0 0 15px rgba(228, 0, 127, 0.4)" }}
+    >
+        <img src="/images/cards/tarot_back.webp" alt="Back" className="w-full h-full object-cover" />
+    </motion.div>
+);
