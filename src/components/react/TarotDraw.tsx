@@ -1,112 +1,136 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { tarotCards, type TarotCard } from '../../data/tarotCards';
 
 export default function TarotDraw() {
-    const [drawnCard, setDrawnCard] = useState<TarotCard | null>(null);
-    const [showResult, setShowResult] = useState(false);
-    const [isFlipping, setIsFlipping] = useState(false);
+    const [deck, setDeck] = useState<TarotCard[]>([]);
+    const [selectedCard, setSelectedCard] = useState<TarotCard | null>(null);
+    const [isRevealed, setIsRevealed] = useState(false);
 
-    const handleDraw = () => {
-        if (isFlipping) return;
-
-        setIsFlipping(true);
-        // setDrawnCard(tarotCards[17]); // Force Star card as per request
-        const randomIndex = Math.floor(Math.random() * tarotCards.length);
-        setDrawnCard(tarotCards[randomIndex]);
-
-        // Trigger the flip sequence
-        setTimeout(() => {
-            setShowResult(true);
-        }, 50); // Small delay to ensure state update
+    // Shuffle and pick 7 cards
+    const shuffleDeck = () => {
+        const shuffled = [...tarotCards].sort(() => 0.5 - Math.random());
+        setDeck(shuffled.slice(0, 7));
+        setSelectedCard(null);
+        setIsRevealed(false);
     };
 
-    const onFlipComplete = () => {
-        setIsFlipping(false);
+    useEffect(() => {
+        shuffleDeck();
+    }, []);
+
+    const handleCardClick = (card: TarotCard) => {
+        if (selectedCard) return;
+        setSelectedCard(card);
+        setTimeout(() => setIsRevealed(true), 800);
     };
 
     const handleReset = () => {
-        setShowResult(false);
-        setDrawnCard(null);
-        setIsFlipping(false);
+        shuffleDeck();
     };
 
     return (
-        <div className="w-full max-w-2xl mx-auto p-4 text-center">
-            <div className="relative h-[400px] md:h-[500px] flex items-center justify-center mb-8 perspective-1000">
-                <AnimatePresence mode="wait" onExitComplete={() => null}>
-                    {!showResult ? (
+        <div className="w-full max-w-5xl mx-auto p-4 text-center min-h-[600px] flex flex-col items-center justify-center">
+
+            {/* Main Display Area */}
+            <div
+                className="relative w-full flex items-center justify-center mb-8 min-h-[400px]"
+                style={{ perspective: "1000px" }}
+            >
+                <AnimatePresence mode="wait">
+                    {!selectedCard ? (
+                        // 7-Card Selection View
                         <motion.div
-                            key="deck"
-                            className="w-48 h-80 md:w-64 md:h-96 rounded-xl border-2 border-white/20 shadow-2xl flex items-center justify-center cursor-pointer relative overflow-hidden bg-text-dark"
-                            onClick={handleDraw}
-                            initial={{ rotateY: 0 }}
-                            exit={{
-                                rotateY: 90,
-                                opacity: 1,
-                                transition: { duration: 0.8, ease: "easeIn" }
-                            }}
-                            whileHover={{ scale: 1.05, boxShadow: "0 0 25px rgba(228, 0, 127, 0.3)" }}
+                            className="flex flex-wrap justify-center gap-2 md:gap-4"
+                            initial={{ opacity: 0 }}
+                            animate={{ opacity: 1 }}
+                            exit={{ opacity: 0 }}
                         >
-                            {/* Card Back Image */}
-                            <img
-                                src="/images/cards/tarot_back.webp"
-                                alt="Tarot Back"
-                                className="absolute inset-0 w-full h-full object-cover"
-                            />
-
-                            <div className="relative z-10 text-white/30 text-6xl font-serif">?</div>
-
-                            {/* Card Pattern (Decorative) */}
-                            <div className="absolute inset-2 border border-white/10 rounded-lg z-10"></div>
+                            {deck.map((card, index) => (
+                                <motion.div
+                                    key={card.id}
+                                    layoutId={`card-${card.id}`}
+                                    className="w-20 h-32 md:w-28 md:h-44 rounded-lg border border-white/20 shadow-lg cursor-pointer relative overflow-hidden bg-text-dark transform hover:-translate-y-2 transition-transform duration-300"
+                                    onClick={() => handleCardClick(card)}
+                                    initial={{ opacity: 0, y: 20 }}
+                                    animate={{ opacity: 1, y: 0, transition: { delay: index * 0.05 } }}
+                                    whileHover={{ scale: 1.05, boxShadow: "0 0 15px rgba(228, 0, 127, 0.4)" }}
+                                >
+                                    <img src="/images/cards/tarot_back.webp" alt="Back" className="w-full h-full object-cover" />
+                                </motion.div>
+                            ))}
                         </motion.div>
                     ) : (
-                        drawnCard && (
-                            <motion.div
-                                key="card"
-                                initial={{ rotateY: -90, opacity: 1 }}
-                                animate={{ rotateY: 0, opacity: 1 }}
-                                transition={{ duration: 0.3, ease: "easeOut" }}
-                                onAnimationComplete={onFlipComplete}
-                                className="w-48 h-80 md:w-64 md:h-96 bg-white rounded-xl shadow-2xl overflow-hidden relative"
-                            >
-                                {/* Full Card Image Display */}
-                                <div className="w-full h-full bg-gray-200 relative">
-                                    <img
-                                        src={drawnCard.image}
-                                        alt={drawnCard.name}
-                                        className="w-full h-full object-cover"
-                                        onError={(e) => {
-                                            (e.target as HTMLImageElement).style.display = 'none';
-                                            (e.target as HTMLImageElement).nextElementSibling?.classList.remove('hidden');
-                                        }}
-                                    />
-                                    {/* Fallback if image fails */}
-                                    <div className="hidden absolute inset-0 flex items-center justify-center text-gray-500 font-bold text-xl bg-gray-100">
-                                        {drawnCard.name}
+                        // Selected Card Reveal View
+                        <div className="relative flex flex-col items-center">
+                            <div className="relative w-64 h-96 md:w-80 md:h-[480px]">
+                                <motion.div
+                                    layoutId={`card-${selectedCard.id}`}
+                                    className="w-full h-full relative"
+                                    animate={{
+                                        rotateY: isRevealed ? 180 : 0,
+                                        scale: isRevealed ? [1, 1.15, 1.1] : 1,
+                                        y: isRevealed ? [0, -20, 0] : 0,
+                                    }}
+                                    transition={{
+                                        duration: 0.6,
+                                        times: [0, 0.5, 1],
+                                        ease: "easeInOut"
+                                    }}
+                                    style={{ transformStyle: "preserve-3d" }}
+                                >
+                                    {/* Back Face */}
+                                    <div
+                                        className="absolute inset-0 rounded-xl border-2 border-white/20 shadow-2xl overflow-hidden bg-text-dark"
+                                        style={{ backfaceVisibility: "hidden", transform: "rotateY(0deg)" }}
+                                    >
+                                        <img src="/images/cards/tarot_back.webp" alt="Back" className="w-full h-full object-cover" />
                                     </div>
-                                </div>
-                            </motion.div>
-                        )
+
+                                    {/* Front Face */}
+                                    <div
+                                        className="absolute inset-0 bg-white rounded-xl border-2 border-white/20 shadow-2xl overflow-hidden"
+                                        style={{
+                                            backfaceVisibility: "hidden",
+                                            transform: "rotateY(180deg)"
+                                        }}
+                                    >
+                                        <img
+                                            src={selectedCard.image}
+                                            alt={selectedCard.name}
+                                            className="w-full h-full object-cover"
+                                            onError={(e) => {
+                                                (e.target as HTMLImageElement).style.display = 'none';
+                                                (e.target as HTMLImageElement).nextElementSibling?.classList.remove('hidden');
+                                            }}
+                                        />
+                                        <div className="hidden absolute inset-0 flex items-center justify-center text-gray-500 font-bold text-xl bg-gray-100">
+                                            {selectedCard.name}
+                                        </div>
+                                    </div>
+                                </motion.div>
+                            </div>
+                        </div>
                     )}
                 </AnimatePresence>
             </div>
 
-            <div className="min-h-[120px]">
+            {/* Message & Reset Button */}
+            <div className="min-h-[150px] w-full max-w-lg">
                 <AnimatePresence>
-                    {showResult && drawnCard && (
+                    {isRevealed && selectedCard && (
                         <motion.div
-                            initial={{ opacity: 0, y: 10 }}
+                            initial={{ opacity: 0, y: 20 }}
                             animate={{ opacity: 1, y: 0 }}
-                            transition={{ delay: 0.2 }}
-                            className="bg-white/90 backdrop-blur-sm p-6 rounded-2xl shadow-lg border border-gray-100 inline-block max-w-lg"
+                            transition={{ delay: 0.3 }}
+                            className="bg-white/90 backdrop-blur-sm p-6 rounded-2xl shadow-lg border border-gray-100"
                         >
-                            <h3 className="text-xl font-bold font-serif text-text-dark mb-2">Message</h3>
-                            <p className="text-gray-700 leading-relaxed font-sans">{drawnCard.message}</p>
+                            <h3 className="text-2xl font-bold font-serif text-text-dark mb-2">{selectedCard.name}</h3>
+                            <p className="text-gray-700 leading-relaxed font-sans mb-4">{selectedCard.message}</p>
 
                             <button
                                 onClick={handleReset}
-                                className="mt-4 text-sm text-gray-400 hover:text-sakura-pink transition-colors underline underline-offset-4"
+                                className="px-6 py-2 bg-text-dark text-white rounded-full hover:bg-sakura-pink transition-colors duration-300 shadow-md text-sm tracking-wider"
                             >
                                 もう一度引く
                             </button>
@@ -114,18 +138,16 @@ export default function TarotDraw() {
                     )}
                 </AnimatePresence>
 
-                {!showResult && !isFlipping && (
+                {!selectedCard && (
                     <motion.p
                         initial={{ opacity: 0 }}
                         animate={{ opacity: 1 }}
-                        className="text-white/80 text-lg font-serif"
+                        className="text-white/80 text-lg font-serif mt-4"
                     >
-                        カードをタップしてください
+                        心を落ち着かせて、1枚カードを選んでください
                     </motion.p>
                 )}
             </div>
         </div>
     );
 }
-
-
