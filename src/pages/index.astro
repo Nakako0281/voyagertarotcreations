@@ -1,6 +1,7 @@
 ---
 import Layout from "../layouts/Layout.astro";
 import TarotDraw from "../components/react/TarotDraw.tsx";
+import VoiceSection from "../components/VoiceSection.astro";
 import { getNews } from "../library/microcms";
 import { format } from "date-fns";
 
@@ -534,7 +535,10 @@ const courseCategories = coursesResponse.contents.map(course => ({
             });
         </script>
 
-	<!-- 6. NEWS -->
+    <!-- 6. VOICE -->
+    <VoiceSection />
+
+	<!-- 7. NEWS -->
 	<section class="mb-32 px-4 relative">
 		<div class="max-w-7xl mx-auto">
         <div class="scroll-animation opacity-0">
