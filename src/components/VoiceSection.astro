@@ -2,7 +2,7 @@
 import { voices } from "../data/voices";
 ---
 
-<div class="pt-8 pb-12 px-4 relative overflow-hidden">
+<div class="pt-4 md:pt-8 pb-8 md:pb-12 px-4 relative overflow-hidden">
     <div class="max-w-7xl mx-auto relative z-10">
 
 
@@ -23,17 +23,17 @@ import { voices } from "../data/voices";
                 ][index % 3];
 
                 return (
-                    <div class="bg-white rounded-[2rem] p-8 md:p-10 shadow-[var(--shadow-crystal)] hover:shadow-xl hover:-translate-y-1 transition-all duration-500 relative group overflow-hidden border border-white/50">
+                    <div class="bg-white rounded-[1.5rem] md:rounded-[2rem] p-6 md:p-10 shadow-[var(--shadow-crystal)] hover:shadow-xl hover:-translate-y-1 transition-all duration-500 relative group overflow-hidden border border-white/50">
                         
                         <!-- Top Accent Line -->
                         <div class={`absolute top-0 left-0 w-full h-1.5 bg-gradient-to-r ${accentGradient}`}></div>
 
                         <!-- Quote Icon & Title -->
-                        <div class="mb-6 flex items-end gap-4">
-                            <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 24 24" fill="currentColor" class={`opacity-20 ${iconColor}`}>
+                        <div class="mb-4 md:mb-6 flex items-end gap-3 md:gap-4">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="currentColor" class={`opacity-20 ${iconColor} md:w-10 md:h-10`}>
                                 <path d="M14.017 21L14.017 18C14.017 16.0966 14.017 10.1585 19.0983 10.1585V14.1585C17.4668 14.1585 16.5303 15.4 16.5303 17.525V21H14.017ZM8.01691 21L8.01691 18C8.01691 16.0966 8.01691 10.1585 13.0982 10.1585V14.1585C11.4667 14.1585 10.5302 15.4 10.5302 17.525V21H8.01691Z" transform="translate(-4 -6) scale(1.5)" />
                             </svg>
-                            <span class={`text-xl font-bold tracking-widest ${iconColor}`}>受講生の声</span>
+                            <span class={`text-lg md:text-xl font-bold tracking-widest ${iconColor}`}>受講生の声</span>
                         </div>
 
                         <!-- Catchphrase -->

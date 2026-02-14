@@ -89,14 +89,14 @@ const courseCategories = coursesResponse.contents.map(course => ({
 		<!-- Hero Content -->
 		<div class="relative z-20 text-center text-white px-4">
 			<h1
-				class="text-6xl md:text-8xl font-bold mb-6 tracking-wide drop-shadow-lg leading-tight animate-fade-in-up delay-100"
+				class="text-4xl md:text-8xl font-bold mb-6 tracking-wide drop-shadow-lg leading-tight animate-fade-in-up delay-100"
 			>
 				Voyager Tarot<br />
 				<span>Creations</span>
 			</h1>
 
 			<p
-				class="text-lg md:text-2xl tracking-widest opacity-90 mb-12 animate-fade-in-up delay-200"
+				class="text-base md:text-2xl tracking-widest opacity-90 mb-8 md:mb-12 animate-fade-in-up delay-200"
 			>
 				未来を創造する力を、あなたに。
 			</p>
@@ -124,11 +124,11 @@ const courseCategories = coursesResponse.contents.map(course => ({
 	<div class="bg-bg-base relative z-10">
 
 		<!-- 1-4. CONSOLIDATED SECTION: WHO WE ARE (Brand Story) -->
-		<section class="mb-32 pt-24 px-4 relative">
+		<section class="mb-16 md:mb-32 pt-12 md:pt-24 px-4 relative">
 			<div class="max-w-7xl mx-auto">
                 <div class="scroll-animation opacity-0">
                     <!-- MAIN HEADER (Reverted to standard style) -->
-                    <div class="mb-24 text-center">
+                    <div class="mb-12 md:mb-24 text-center">
                         <span class="text-magenta font-bold tracking-widest text-sm mb-2 block">WHO WE ARE</span>
                         <h2 class="text-text-dark font-bold text-3xl md:text-4xl inline-block relative">
                             ボイジャータロット<br class="md:hidden" />クリエイションズについて
@@ -136,7 +136,7 @@ const courseCategories = coursesResponse.contents.map(course => ({
                         <div class="w-16 h-[2px] bg-magenta mx-auto mt-6"></div>
                     </div>
 
-                    <div class="space-y-32"> <!-- Unified vertical spacing for flow -->
+                    <div class="space-y-16 md:space-y-32"> <!-- Unified vertical spacing for flow -->
                         
                         <!-- BLOCK 1: WHAT IS VOYAGER TAROT -->
                         <div class="flex flex-col md:flex-row items-center gap-12 md:gap-20">
@@ -169,7 +169,7 @@ const courseCategories = coursesResponse.contents.map(course => ({
                                 </h4>
 
                                 <div
-                                    class="space-y-10 text-gray-600 leading-loose text-lg"
+                                    class="space-y-6 md:space-y-10 text-gray-600 leading-loose text-lg"
                                 >
                                     <div class="relative pl-12 py-1">
                                         <div class="absolute left-0 top-2 w-6 h-6">
@@ -247,7 +247,7 @@ const courseCategories = coursesResponse.contents.map(course => ({
                                     </p>
                                 </div>
 
-                                <div class="mt-12">
+                                <div class="mt-8 md:mt-12">
                                     <a
                                         href="/profile"
                                         class="inline-flex items-center gap-3 px-8 py-3 rounded-full border border-sky text-sky font-bold tracking-widest hover:bg-sky hover:text-white transition-all group duration-300"
@@ -273,13 +273,13 @@ const courseCategories = coursesResponse.contents.map(course => ({
                         </div>
 
                         <!-- BLOCK 3: CAREER PATH (NEW) -->
-                        <div>
-                            <div class="text-center mb-16">
+                        <div class="py-8 md:py-0">
+                            <div class="text-center mb-8 md:mb-16">
                                 <span class="text-magenta font-bold tracking-widest text-sm mb-2 block">CAREER PATH</span>
                                 <h3 class="text-2xl md:text-4xl font-bold text-text-dark">
                                     プロフェッショナルへの道
                                 </h3>
-                                <div class="w-16 h-[2px] bg-magenta mx-auto mt-6 mb-8"></div>
+                                <div class="w-16 h-[2px] bg-magenta mx-auto mt-6 mb-4 md:mb-8"></div>
                             </div>
 
                             <div class="grid md:grid-cols-2 gap-10">
@@ -362,10 +362,10 @@ const courseCategories = coursesResponse.contents.map(course => ({
 		</section>
 
 		<!-- 5. COURSE (Scalable Sidebar Layout) -->
-		<section id="course" class="mb-32 px-4 py-24 relative scroll-mt-32 bg-gray-50 rounded-[3rem]">
+		<section id="course" class="mb-16 md:mb-32 px-4 py-12 md:py-24 relative scroll-mt-32 bg-gray-50 rounded-[2rem] md:rounded-[3rem]">
 			<div class="max-w-7xl mx-auto">
             <div class="scroll-animation opacity-0">
-                 <div class="mb-16 text-center">
+                 <div class="mb-8 md:mb-16 text-center">
                     <span class="text-magenta font-bold tracking-widest text-sm mb-2 block">COURSE</span>
                     <h2 class="text-text-dark font-bold text-3xl md:text-4xl">
                         講座紹介
@@ -412,8 +412,8 @@ const courseCategories = coursesResponse.contents.map(course => ({
                                         const stepColors = ["bg-sakura-vivid", "bg-sunshine", "bg-sky"];
                                         const colorClass = stepColors[i % stepColors.length];
                                         return (
-                                        <div class="relative flex flex-col items-center justify-center">
-                                            <div class="bg-white px-8 py-5 rounded-2xl border border-blue-50 shadow-md flex items-center justify-center gap-4 w-full relative z-10 hover:shadow-lg transition-all duration-300">
+                                        <div class="relative flex flex-col items-center justify-center group/step">
+                                            <div class="bg-white px-6 md:px-8 py-4 md:py-5 rounded-2xl border border-blue-50 shadow-md flex items-center justify-start md:justify-center gap-4 w-full max-w-[280px] md:max-w-none relative z-10 hover:shadow-lg transition-all duration-300">
                                                 <span class={`w-8 h-8 ${colorClass} text-white rounded-full flex items-center justify-center text-sm font-sans shadow-sm shrink-0`}>
                                                     {step.step}
                                                 </span>
@@ -450,7 +450,7 @@ const courseCategories = coursesResponse.contents.map(course => ({
                                             {card.title}
                                         </h3>
                                         <div class="text-center text-sm text-gray-400 flex justify-center items-center gap-1 group-hover:gap-2 transition-all">
-                                            詳細はこちら 
+                                            詳細を見る 
                                             <span class="text-sakura-vivid opacity-0 group-hover:opacity-100 transition-opacity">&rarr;</span>
                                         </div>
                                     </a>
@@ -463,7 +463,7 @@ const courseCategories = coursesResponse.contents.map(course => ({
         </div>
 
         <!-- 6. VOICE (Integrated) -->
-        <div class="mt-24 mb-8">
+        <div class="mt-12 md:mt-24 mb-4 md:mb-8">
             <div class="w-full h-px bg-gray-200/50 max-w-4xl mx-auto"></div>
         </div>
         <VoiceSection />
@@ -539,10 +539,10 @@ const courseCategories = coursesResponse.contents.map(course => ({
 
 
 	<!-- 7. NEWS -->
-	<section class="mb-32 px-4 relative">
+	<section class="mb-16 md:mb-32 px-4 relative">
 		<div class="max-w-7xl mx-auto">
         <div class="scroll-animation opacity-0">
-             <div class="mb-16 text-center">
+             <div class="mb-8 md:mb-16 text-center">
                 <span class="text-magenta font-bold tracking-widest text-sm mb-2 block">LATEST NEWS</span>
                 <h2 class="text-text-dark font-bold text-3xl md:text-4xl">
                     お知らせ
@@ -612,10 +612,10 @@ const courseCategories = coursesResponse.contents.map(course => ({
 	<!-- 7. TAROT DRAW -->
 	<section
 		id="tarot-draw"
-		class="mb-20 py-16 px-4 bg-gradient-to-br from-white to-blue-50 text-text-main rounded-[3rem] text-center relative overflow-hidden shadow-glass border border-white"
+		class="mb-12 md:mb-20 py-8 md:py-16 px-4 bg-gradient-to-br from-white to-blue-50 text-text-main rounded-[2rem] md:rounded-[3rem] text-center relative overflow-hidden shadow-glass border border-white"
 	>
 		<div class="relative z-10">
-             <div class="mb-12 text-center">
+             <div class="mb-8 md:mb-12 text-center">
                 <span class="text-magenta font-bold tracking-widest text-sm mb-2 block">TODAY'S TAROT</span>
                 <h2 class="text-text-dark font-bold text-3xl md:text-4xl">
                     今日の1枚を引く
