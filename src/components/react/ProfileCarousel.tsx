@@ -54,7 +54,7 @@ export default function ProfileCarousel({ members }: ProfileCarouselProps) {
     const currentMember = members[currentIndex];
 
     return (
-        <div className="relative w-full max-w-6xl mx-auto px-4 md:px-12">
+        <div className="relative w-full max-w-6xl mx-auto px-6 md:px-12">
             {/* Main Carousel Container - Fixed Height for Screen Fit */}
             <div className="relative overflow-hidden h-[85vh] md:h-[500px] min-h-[600px] md:min-h-[400px] flex items-center">
                 <AnimatePresence initial={false} custom={direction} mode="popLayout">

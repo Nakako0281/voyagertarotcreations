@@ -148,7 +148,7 @@ const mockMembers: Member[] = [
         name: "青木 咲羅",
         role: "Voyager Tarot Creations代表",
         titleEn: "Sakura Aoki / Voyager Tarot Creations代表",
-        image: { url: "/images/sakura_aoki.webp", height: 800, width: 600 },
+        image: { url: "/images/AokiSakura_1.webp", height: 800, width: 600 },
         introduction: `祖父・母共に占い師という家庭に生まれ、幼い頃からスピリチュアルな環境で育つ。
 保育士をしながらカウンセリング、心理療法を学び、2003年占い師、心理セラピストとして開業。
 その後、ボイジャータロットJAPANでの北海道初の認定カウンセラーとなり、2013年から認定ティーチャーとしてその普及も努める。
@@ -257,9 +257,9 @@ const mockCourses: CourseCategory[] = [
             { stepNumber: 3, label: "ティーチャー認定" }
         ],
         cards: [
-            { title: "リーダー認定講座", image: { url: "/images/top_2-1.webp", height: 300, width: 400 }, url: "/course#course_1" },
-            { title: "コーチ認定講座", image: { url: "/images/top_2-2.webp", height: 300, width: 400 }, url: "/course#course_2" },
-            { title: "ティーチャー認定講座", image: { url: "/images/top_2-3.webp", height: 300, width: 400 }, url: "/course2#course_1" }
+            { title: "リーダー認定講座", image: { url: "/images/home/leader_1.webp", height: 300, width: 400 }, url: "/course#course_1" },
+            { title: "コーチ認定講座", image: { url: "/images/home/coach_1.webp", height: 300, width: 400 }, url: "/course#course_2" },
+            { title: "ティーチャー認定講座", image: { url: "/images/home/teacher_1.webp", height: 300, width: 400 }, url: "/course2#course_1" }
         ]
     },
     {

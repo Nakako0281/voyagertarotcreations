@@ -12,7 +12,8 @@ const publicDir = path.join(projectRoot, 'public', 'images');
 // Folders to scan
 const folders = [
     publicDir,
-    path.join(publicDir, 'cards')
+    path.join(publicDir, 'cards'),
+    path.join(publicDir, 'home')
 ];
 
 async function optimizeImages() {
@@ -30,7 +31,7 @@ async function optimizeImages() {
             const ext = path.extname(file).toLowerCase();
             if (['.jpg', '.jpeg', '.png'].includes(ext)) {
                 const inputPath = path.join(folder, file);
-                const outputPath = path.join(folder, path.basename(file, ext) + '.webp');
+                const outputPath = path.join(folder, path.parse(file).name + '.webp');
 
                 // Skip if webp already exists (optional, but good for idempotency)
                 // if (fs.existsSync(outputPath)) continue;
