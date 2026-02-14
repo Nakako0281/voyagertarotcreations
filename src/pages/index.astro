@@ -24,11 +24,18 @@ const courseCategories = coursesResponse.contents.map(course => ({
     name: course.title,
     description: course.subTitle || "",
     steps: course.steps.map(step => ({ step: step.stepNumber, label: step.label })),
-    cards: course.cards.map(card => ({
-        title: card.title,
-        img: card.image?.url || "/images/placeholder.jpg",
-        url: card.url
-    }))
+    cards: course.cards.map(card => {
+        let url = card.url;
+        if (card.title.includes("リーダー")) url = "/course#reader";
+        else if (card.title.includes("コーチ")) url = "/course#coach";
+        else if (card.title.includes("ティーチャー")) url = "/course#teacher";
+
+        return {
+            title: card.title,
+            img: card.image?.url || "/images/placeholder.jpg",
+            url: url
+        };
+    })
 }));
 ---
 

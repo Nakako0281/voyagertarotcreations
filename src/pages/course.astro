@@ -180,7 +180,8 @@ const courseCategories = [
                         <div class="space-y-24">
                             {cat.courses.map((course) => (
                                 <div
-                                    class="bg-white/80 backdrop-blur-md p-8 md:p-12 rounded-[3rem] border border-white shadow-glass relative overflow-hidden group hover:shadow-crystal transition-all duration-500"
+                                    id={course.id}
+                                    class="bg-white/80 backdrop-blur-md p-8 md:p-12 rounded-[3rem] border border-white shadow-glass relative overflow-hidden group hover:shadow-crystal transition-all duration-500 scroll-mt-32"
                                 >
                                     <!-- Background Blob -->
                                     <div
@@ -282,7 +283,7 @@ const courseCategories = [
         <!-- Application CTA -->
         <div class="mt-16 text-center">
             <a
-                href="https://reservia.jp/shop/reserve/..."
+                href="https://tol-app.jp/s/aoki-sakuracom"
                 target="_blank"
                 rel="noopener noreferrer"
                 class="inline-flex items-center gap-3 bg-gradient-to-r from-sakura-vivid to-sunshine text-white px-12 py-5 rounded-full font-bold hover:scale-105 transition-all shadow-lg shadow-pink-200 tracking-wider group"
