@@ -43,7 +43,6 @@ const mockNews: News[] = [
         title: "Webサイトをリニューアルしました",
         content: "<p>Voyager Tarot CreationsのWebサイトをリニューアルしました。より見やすく、使いやすいサイトを目指してまいります。<br>今後ともよろしくお願いいたします。</p>",
         category: [{ id: "info", name: "お知らせ" }],
-        eyecatch: { url: "/images/news_placeholder.jpg", height: 600, width: 800 }
     },
     {
         id: "2",
@@ -173,7 +172,7 @@ const mockMembers: Member[] = [
         name: "山田 花子",
         role: "認定コーチ",
         titleEn: "Hanako Yamada / Certified Coach",
-        image: { url: "/images/profile_placeholder.jpg", height: 800, width: 600 },
+        image: { url: "/images/AokiSakura_1.webp", height: 800, width: 600 },
         introduction: "丁寧なセッションで定評がある認定コーチ。クライアントの本来の輝きを引き出すことを得意とする。自身の経験に基づいた深い共感力で、多くのクライアントから信頼を得ている。\n\n現在はオンラインを中心に活動中。",
         qualifications: ["ボイジャータロット認定コーチ"],
     },
@@ -273,9 +272,9 @@ const mockCourses: CourseCategory[] = [
             { stepNumber: 3, label: "マスター" }
         ],
         cards: [
-            { title: "入門講座", image: { url: "/images/top_2-1.webp", height: 300, width: 400 }, url: "#" },
-            { title: "応用講座", image: { url: "/images/top_2-2.webp", height: 300, width: 400 }, url: "#" },
-            { title: "マスター講座", image: { url: "/images/top_2-3.webp", height: 300, width: 400 }, url: "#" }
+            { title: "入門講座", image: { url: "/images/home/home_1.webp", height: 300, width: 400 }, url: "#" },
+            { title: "応用講座", image: { url: "/images/home/home_2.webp", height: 300, width: 400 }, url: "#" },
+            { title: "マスター講座", image: { url: "/images/home/home_3.webp", height: 300, width: 400 }, url: "#" }
         ]
     }
 ];
