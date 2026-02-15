@@ -38,16 +38,23 @@ const { title, wide = false, isHome = false } = Astro.props;
 	>
 		<!-- Vivid Blobs (Restored for Crystal Depth - Colorful & Happy) -->
 		<div class="fixed inset-0 pointer-events-none z-0 overflow-hidden">
+			<!-- Mobile Static Background (Lightweight) -->
 			<div
-				class="absolute top-[-10%] left-[-10%] w-[70%] h-[70%] bg-gradient-to-br from-sakura-vivid/20 to-transparent blur-[120px] rounded-full mix-blend-multiply opacity-70 animate-pulse-slow"
+				class="absolute inset-0 bg-gradient-to-br from-white via-pink-50/30 to-blue-50/30 md:hidden"
+			>
+			</div>
+
+			<!-- Desktop Animated Blobs (Heavy) -->
+			<div
+				class="hidden md:block absolute top-[-10%] left-[-10%] w-[70%] h-[70%] bg-gradient-to-br from-sakura-vivid/20 to-transparent blur-[120px] rounded-full mix-blend-multiply opacity-70 animate-pulse-slow"
 			>
 			</div>
 			<div
-				class="absolute bottom-[-10%] right-[-10%] w-[60%] h-[60%] bg-gradient-to-tl from-sunshine/25 to-transparent blur-[130px] rounded-full mix-blend-multiply opacity-70"
+				class="hidden md:block absolute bottom-[-10%] right-[-10%] w-[60%] h-[60%] bg-gradient-to-tl from-sunshine/25 to-transparent blur-[130px] rounded-full mix-blend-multiply opacity-70"
 			>
 			</div>
 			<div
-				class="absolute top-[20%] right-[10%] w-[50%] h-[50%] bg-gradient-to-b from-sky/20 to-transparent blur-[100px] rounded-full mix-blend-multiply opacity-60"
+				class="hidden md:block absolute top-[20%] right-[10%] w-[50%] h-[50%] bg-gradient-to-b from-sky/20 to-transparent blur-[100px] rounded-full mix-blend-multiply opacity-60"
 			>
 			</div>
 		</div>

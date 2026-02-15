@@ -57,30 +57,24 @@ const courseCategories = coursesResponse.contents.map(course => ({
 				alt="Hero Background 1"
 				class="absolute inset-0 w-full h-full object-cover transition-opacity duration-[2000ms] ease-in-out opacity-100 hero-bg"
 				data-index="0"
+                loading="eager"
+                decoding="sync"
 			/>
 			<img
 				src="/images/home/top_2.webp"
 				alt="Hero Background 2"
 				class="absolute inset-0 w-full h-full object-cover transition-opacity duration-[2000ms] ease-in-out opacity-0 hero-bg"
 				data-index="1"
+                loading="eager"
+                decoding="sync"
 			/>
 			<img
 				src="/images/home/top_3.webp"
 				alt="Hero Background 3"
 				class="absolute inset-0 w-full h-full object-cover transition-opacity duration-[2000ms] ease-in-out opacity-0 hero-bg"
 				data-index="2"
-			/>
-			<img
-				src="/images/home/top_4.webp"
-				alt="Hero Background 4"
-				class="absolute inset-0 w-full h-full object-cover transition-opacity duration-[2000ms] ease-in-out opacity-0 hero-bg"
-				data-index="3"
-			/>
-			<img
-				src="/images/home/top_5.webp"
-				alt="Hero Background 5"
-				class="absolute inset-0 w-full h-full object-cover transition-opacity duration-[2000ms] ease-in-out opacity-0 hero-bg"
-				data-index="4"
+                loading="eager"
+                decoding="sync"
 			/>
 		</div>
 
@@ -168,6 +162,8 @@ const courseCategories = coursesResponse.contents.map(course => ({
                                     src="/images/home/home_1.webp"
                                     alt="Voyager Tarot Card"
                                     class="w-full h-auto object-cover transform group-hover:scale-105 transition-transform duration-1000"
+                                    loading="lazy"
+                                    decoding="async"
                                 />
                             </div>
 
@@ -286,6 +282,8 @@ const courseCategories = coursesResponse.contents.map(course => ({
                                    src="/images/home/home_2.webp"
                                    alt="Voyager Tarot Session"
                                    class="w-full h-auto object-cover transform group-hover:scale-105 transition-transform duration-1000"
+                                   loading="lazy"
+                                   decoding="async"
                                />
                            </div>
                         </div>
@@ -370,6 +368,8 @@ const courseCategories = coursesResponse.contents.map(course => ({
                                     src="/images/home/home_3.webp"
                                     alt="Mission Photo"
                                     class="absolute inset-0 w-full h-full object-cover transform group-hover:scale-105 transition-transform duration-500"
+                                    loading="lazy"
+                                    decoding="async"
                                 />
                             </div>
                         </div>
@@ -462,6 +462,8 @@ const courseCategories = coursesResponse.contents.map(course => ({
                                                 src={card.img}
                                                 alt={card.title}
                                                 class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"
+                                                loading="lazy"
+                                                decoding="async"
                                             />
                                         </div>
                                         <h3 class="font-bold text-center text-lg text-text-dark group-hover:text-sakura-vivid transition-colors mb-2">
@@ -582,6 +584,8 @@ const courseCategories = coursesResponse.contents.map(course => ({
                                         src={news.eyecatch.url}
                                         alt={news.title}
                                         class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
+                                        loading="lazy"
+                                        decoding="async"
                                     />
                                 ) : (
                                     <div class="w-full h-full flex items-center justify-center bg-gray-50 text-gray-300">
