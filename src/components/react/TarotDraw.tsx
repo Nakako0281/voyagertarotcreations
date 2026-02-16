@@ -39,7 +39,7 @@ export default function TarotDraw() {
     };
 
     return (
-        <div ref={containerRef} className="w-full max-w-6xl mx-auto p-4 text-center min-h-[600px] flex flex-col items-center justify-center">
+        <div ref={containerRef} className="w-full max-w-6xl mx-auto px-4 pb-4 pt-0 text-center min-h-[400px] flex flex-col items-center justify-start">
 
             {/* Content Container: Switches to row layout on desktop when card is selected */}
             <div className={`w-full flex transition-all duration-500 ${selectedCard ? 'flex-col md:flex-row md:items-start md:text-left md:justify-center gap-8' : 'flex-col items-center'}`}>
