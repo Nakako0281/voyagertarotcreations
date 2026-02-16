@@ -26,13 +26,22 @@ const courseCategories = coursesResponse.contents.map(course => ({
     steps: course.steps.map(step => ({ step: step.stepNumber, label: step.label })),
     cards: course.cards.map(card => {
         let url = card.url;
-        if (card.title.includes("リーダー")) url = "/course#reader";
-        else if (card.title.includes("コーチ")) url = "/course#coach";
-        else if (card.title.includes("ティーチャー")) url = "/course#teacher";
+        let img = card.image?.url || "/images/placeholder.jpg";
+
+        if (card.title.includes("リーダー")) {
+            url = "/course#reader";
+            img = "/images/home/leader_1.webp";
+        } else if (card.title.includes("コーチ")) {
+            url = "/course#coach";
+            img = "/images/home/coach_1.webp";
+        } else if (card.title.includes("ティーチャー")) {
+            url = "/course#teacher";
+             img = "/images/home/teacher_1.webp";
+        }
 
         return {
             title: card.title,
-            img: card.image?.url || "/images/placeholder.jpg",
+            img: img,
             url: url
         };
     })
@@ -133,7 +142,7 @@ const courseCategories = coursesResponse.contents.map(course => ({
 	</section>
 
 	<!-- Content Wrapper -->
-	<div class="bg-bg-base relative z-10">
+	<div class="bg-gradient-to-br from-pink-50 via-white to-yellow-50 relative z-10">
 
 		<!-- 1-4. CONSOLIDATED SECTION: WHO WE ARE (Brand Story) -->
 		<section class="mb-16 md:mb-32 pt-12 md:pt-24 px-6 relative">
