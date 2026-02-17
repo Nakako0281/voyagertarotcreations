@@ -158,6 +158,16 @@ export default function TarotDraw() {
                                 transition={{ delay: 0.3 }}
                                 className="bg-white/90 backdrop-blur-sm p-6 rounded-2xl shadow-lg border border-gray-100 flex flex-col items-center md:items-start"
                             >
+                                <div className="flex items-center text-sm font-serif text-gray-500 mb-1 tracking-wider">
+                                    <span>
+                                        {selectedCard.category === 'Major' ? 'アルカナ' :
+                                            selectedCard.category === 'Crystal' ? 'クリスタル' :
+                                                selectedCard.category === 'Cup' ? 'カップ' :
+                                                    selectedCard.category === 'World' ? 'ワールド' :
+                                                        selectedCard.category === 'Wand' ? 'ワンド' : selectedCard.category}
+                                    </span>
+                                    <span className="ml-2">{selectedCard.categoryNumber}</span>
+                                </div>
                                 <h3 className="text-2xl font-bold font-serif text-text-dark mb-4">{selectedCard.name}</h3>
                                 <p className="text-gray-700 leading-relaxed font-sans mb-6 text-left w-full">{selectedCard.message}</p>
 
@@ -177,7 +187,6 @@ export default function TarotDraw() {
                             animate={{ opacity: 1 }}
                             className="text-white/80 text-lg font-serif mt-4"
                         >
-                            心を落ち着かせて、1枚カードを選んでください
                         </motion.p>
                     )}
                 </div>
