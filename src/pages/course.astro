@@ -211,11 +211,32 @@ const courseCategories = [
                 {courseCategories.map((cat, index) => (
                     <div 
                         id={cat.id} 
-                        class:list={["category-content transition-all duration-500 ease-in-out", index !== 0 ? "hidden opacity-0 translate-y-4" : "block opacity-100 translate-y-0"]}
+                        class:list={["category-content transition-all duration-700 ease-in-out p-6 md:p-12 rounded-[2.5rem] relative overflow-hidden", 
+                            index !== 0 ? "hidden opacity-0 translate-y-4" : "block opacity-100 translate-y-0",
+                            cat.id === 'voyager' ? 'bg-magenta-pale/30' : 
+                            cat.id === 'coach' ? 'bg-yellow-50/40' : 
+                            'bg-blue-50/40'
+                        ]}
                     >
+                        {/* Decorative background blobs */}
+                        <div class="absolute inset-0 -z-10 overflow-hidden pointer-events-none">
+                            <div class:list={[
+                                "absolute -top-24 -left-24 w-96 h-96 blur-[100px] opacity-20 rounded-full",
+                                cat.id === 'voyager' ? 'bg-magenta' : cat.id === 'coach' ? 'bg-sunshine' : 'bg-sky'
+                            ]}></div>
+                            <div class:list={[
+                                "absolute bottom-0 -right-24 w-80 h-80 blur-[80px] opacity-15 rounded-full",
+                                cat.id === 'voyager' ? 'bg-sakura-vivid' : cat.id === 'coach' ? 'bg-yellow-200' : 'bg-blue-200'
+                            ]}></div>
+                        </div>
                         
                         <!-- Category Header -->
-                        <div class="mb-12 pl-4 border-l-4 border-magenta">
+                        <div class:list={[
+                            "mb-12 pl-6 border-l-4 rounded-r-lg py-2",
+                            cat.id === 'voyager' ? 'border-magenta bg-magenta/5' : 
+                            cat.id === 'coach' ? 'border-sunshine bg-sunshine/5' : 
+                            'border-sky bg-sky/5'
+                        ]}>
                             <h2 class="text-3xl font-bold text-text-dark mb-2">{cat.title}</h2>
                             <p class="text-gray-500">{cat.description}</p>
                         </div>
@@ -224,7 +245,12 @@ const courseCategories = [
                             {cat.courses.map((course) => (
                                 <div
                                     id={course.id}
-                                    class="bg-white/95 backdrop-blur-md rounded-[2.5rem] border border-white shadow-xl relative overflow-hidden group hover:shadow-2xl transition-all duration-500 scroll-mt-40 mb-16"
+                                    class:list={[
+                                        "bg-white/95 backdrop-blur-md rounded-[2.5rem] border border-white shadow-xl relative overflow-hidden group hover:shadow-2xl transition-all duration-500 scroll-mt-40 mb-16",
+                                        cat.id === 'voyager' ? 'shadow-magenta/10 hover:shadow-magenta/20' : 
+                                        cat.id === 'coach' ? 'shadow-sunshine/10 hover:shadow-sunshine/20' : 
+                                        'shadow-sky/10 hover:shadow-sky/20'
+                                    ]}
                                 >
                                     <div class="flex flex-col">
                                         <!-- Image Block (Top, fixed aspect ratio) -->
@@ -236,41 +262,40 @@ const courseCategories = [
                                             />
                                             <div class="absolute inset-0 bg-gradient-to-t from-white via-transparent to-transparent"></div>
                                             
-                                            <div class="absolute bottom-6 left-8 z-10">
-                                                 <span
-                                                    class:list={[
-                                                        "font-bold px-5 py-1.5 rounded-full text-[10px] bg-white text-text-dark shadow-sm tracking-widest uppercase border border-gray-100",
-                                                    ]}
-                                                >
-                                                    {course.step}
-                                                </span>
-                                            </div>
                                         </div>
 
                                         <!-- Content Block -->
                                         <div class="p-8 md:p-12">
                                             <div class="mb-10">
-                                                <h3 class="text-3xl md:text-4xl font-bold text-text-dark mb-4 font-mincho leading-tight">
-                                                    {course.title}
-                                                </h3>
-                                                <p class="text-magenta font-bold text-sm tracking-wide mb-6">
-                                                    {course.subtitle}
-                                                </p>
-                                                <div class="w-12 h-1 bg-magenta/20 mb-8 rounded-full"></div>
+                                                <div>
+                                                    <span class:list={["inline-block text-[10px] font-black uppercase tracking-widest mb-3 px-3 py-1 rounded-full text-white", `bg-${course.stepColor}`]}>
+                                                        {course.step}
+                                                    </span>
+                                                    <h4 class="text-2xl md:text-3xl font-bold text-text-dark mb-2">
+                                                        {course.title}
+                                                    </h4>
+                                                    <p class="text-gray-500 leading-relaxed max-w-xl">{course.subtitle}</p>
+                                                </div>
+                                                <div class:list={["w-12 h-1 mb-8 rounded-full opacity-20", `bg-${course.stepColor}`]}></div>
                                                 <p class="text-gray-600 leading-relaxed">
                                                     <Fragment set:html={course.description} />
                                                 </p>
                                             </div>
         
                                             <!-- Sub Courses -->
-                                            <div class="space-y-4">
+                                            <div class="space-y-6">
                                                 {course.subCourses.map((sub) => (
-                                                    <div class="bg-white p-6 md:p-8 rounded-2xl border border-gray-100 shadow-sm">
-                                                        <div class="flex flex-col md:flex-row justify-between items-baseline mb-4">
-                                                            <h5 class="font-bold text-lg text-text-dark">
+                                                    <div class:list={[
+                                                        "bg-white p-6 md:p-8 rounded-3xl border border-gray-100/50 shadow-xl transition-all duration-300 hover:shadow-2xl",
+                                                        cat.id === 'voyager' ? 'shadow-magenta/5 hover:shadow-magenta/10' : 
+                                                        cat.id === 'coach' ? 'shadow-sunshine/5 hover:shadow-sunshine/10' : 
+                                                        'shadow-sky/5 hover:shadow-sky/10'
+                                                    ]}>
+                                                        <div class="flex flex-col md:flex-row justify-between items-baseline mb-4 gap-2">
+                                                            <h5 class="font-bold text-xl text-text-dark">
                                                                 {sub.title}
                                                             </h5>
-                                                            <span class="text-xs font-bold text-gray-400 bg-gray-50 px-3 py-1 rounded-lg">
+                                                            <span class="text-[10px] font-black text-gray-400 bg-gray-50 px-3 py-1.5 rounded-full uppercase tracking-tighter">
                                                                 期間: {sub.duration}
                                                             </span>
                                                         </div>
@@ -279,18 +304,25 @@ const courseCategories = [
                                                         </p>
 
                                                         {sub.contents && (
-                                                            <div class="mb-8 p-6 bg-gray-50/50 rounded-2xl border border-gray-100">
-                                                                <h6 class="text-xs font-black text-gray-400 uppercase tracking-widest mb-4 flex items-center gap-2">
-                                                                    <span class:list={["w-1 h-3 rounded-full", `bg-${course.stepColor}`]}></span>
+                                                            <div class:list={[
+                                                                "mb-8 p-6 md:p-8 rounded-3xl border border-white/50 shadow-inner",
+                                                                cat.id === 'voyager' ? 'bg-magenta-pale/30' : 
+                                                                cat.id === 'coach' ? 'bg-yellow-50/50' : 
+                                                                'bg-blue-50/50'
+                                                            ]}>
+                                                                <h6 class="text-[10px] font-black text-gray-400 uppercase tracking-widest mb-5 flex items-center gap-3">
+                                                                    <span class:list={["w-1.5 h-4 rounded-full", `bg-${course.stepColor}`]}></span>
                                                                     講座内容
                                                                 </h6>
-                                                                <ul class="space-y-3">
+                                                                <ul class="grid grid-cols-1 gap-4">
                                                                     {sub.contents.map((item: string) => (
-                                                                        <li class="flex items-start gap-3 text-sm text-gray-600">
-                                                                            <svg xmlns="http://www.w3.org/2000/svg" class:list={["h-4 w-4 mt-0.5", `text-${course.stepColor}`]} fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                                                                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4" />
-                                                                            </svg>
-                                                                            <span class="leading-relaxed">{item}</span>
+                                                                        <li class="flex items-start gap-3 text-sm text-gray-700 leading-relaxed font-medium">
+                                                                            <div class:list={["mt-0.5 p-0.5 rounded-full bg-white shadow-sm ring-1", `ring-${course.stepColor}/20`]}>
+                                                                                <svg xmlns="http://www.w3.org/2000/svg" class:list={["h-3.5 w-3.5", `text-${course.stepColor}`]} fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                                                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M5 13l4 4L19 7" />
+                                                                                </svg>
+                                                                            </div>
+                                                                            <span>{item}</span>
                                                                         </li>
                                                                     ))}
                                                                 </ul>
@@ -329,18 +361,28 @@ const courseCategories = [
                                 </h3>
                                 <div class="overflow-x-auto">
                                     <table class="w-full text-left border-collapse">
-                                        <thead>
-                                            <tr class="bg-gray-50 text-gray-500 text-sm tracking-wider">
-                                                <th class="p-6 rounded-tl-2xl">講座名</th>
-                                                <th class="p-6">時間</th>
-                                                <th class="p-6 rounded-tr-2xl text-right">受講料 (税込)</th>
+                                        <thead class:list={[
+                                            "text-xs uppercase tracking-widest border-b",
+                                            cat.id === 'voyager' ? 'bg-magenta/10 border-magenta/20 text-magenta' : 
+                                            cat.id === 'coach' ? 'bg-sunshine/10 border-sunshine/20 text-sunshine' : 
+                                            'bg-sky/10 border-sky/20 text-sky'
+                                        ]}>
+                                            <tr>
+                                                <th class="p-6 font-black">講座名</th>
+                                                <th class="p-6 font-black">期間</th>
+                                                <th class="p-6 font-black text-right">料金（税込）</th>
                                             </tr>
                                         </thead>
-                                        <tbody class="divide-y divide-gray-100">
+                                        <tbody class="divide-y divide-gray-50">
                                             {cat.courses.flatMap(c => c.pricing).map((price) => (
-                                                <tr class="hover:bg-sakura-light/10 transition-colors">
+                                                <tr class:list={[
+                                                    "transition-colors",
+                                                    cat.id === 'voyager' ? 'hover:bg-magenta/5' : 
+                                                    cat.id === 'coach' ? 'hover:bg-sunshine/5' : 
+                                                    'hover:bg-sky/5'
+                                                ]}>
                                                     <td class="p-6 font-bold text-text-dark">{price.title}</td>
-                                                    <td class="p-6 text-gray-600 text-sm">{price.duration}</td>
+                                                    <td class="p-6 text-gray-600 text-sm font-medium">{price.duration}</td>
                                                     <td class="p-6 text-right font-bold text-text-dark">{price.price}</td>
                                                 </tr>
                                             ))}
