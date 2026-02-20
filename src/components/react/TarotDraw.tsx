@@ -168,7 +168,9 @@ export default function TarotDraw() {
                                     </span>
                                     <span className="ml-2">{selectedCard.categoryNumber}</span>
                                 </div>
-                                <h3 className="text-2xl font-bold font-serif text-text-dark mb-4">{selectedCard.name}</h3>
+                                <h3 className="text-2xl font-bold font-serif text-text-dark mb-4">
+                                    {selectedCard.name}
+                                </h3>
                                 <p className="text-gray-700 leading-relaxed font-sans mb-6 text-left w-full">{selectedCard.message}</p>
 
                                 <button
