@@ -14,6 +14,7 @@ const courseCategories = [
                 step: "STEP 1",
                 stepColor: "sakura-vivid", // Red
                 bgGradient: "bg-sakura-vivid/20",
+                image: "/images/home/leader_1.webp",
                 title: "認定リーダー養成講座",
                 subtitle: "基礎を学び、自分と他者をリーディングできるようになる",
                 description: "ボイジャータロットの基礎と78枚のカードの解説、基本のリーディングを学びます。<br />ボイジャータロットがどんなカードかを理解し、自分で行うセルフリーディングから他者への基礎リーディングが出来るようになります。",
@@ -22,12 +23,38 @@ const courseCategories = [
                         title: "STEP 1-1: ベーシック講座",
                         duration: "12時間 (4時間×3回)",
                         description: "カードの基礎知識、直感の磨き方、基本スプレッドを習得し、有料セッションへの第一歩を踏み出します。",
+                        contents: [
+                            "ボイジャータロットの特徴と作者の紹介",
+                            "ボイジャータロットの基礎知識",
+                            "カードの使い方",
+                            "リーディングの心構え",
+                            "全78枚完全解説",
+                            "Q＆Aリーディング",
+                            "基本の１枚引きリーディング",
+                            "私は誰？ゲーム (ゲームを楽しみながらカードを読む力が身に付きます。)",
+                            "関係性リーディング (気になる人との関係性がわかるリーディング)",
+                            "ヒーローズジャーニー (定番のスプレッド。４枚のカードを順序立てて引くので使いやすく初心者の方にも人気のリーディング)",
+                            "選択リーディング (選択に迷った時に！速攻で決断できる簡単リーディング)",
+                            "マジックリング (自分の強みや才能を発見し、最大限活用する方法を見つけ可能性を開くスプレッド。)"
+                        ],
                         condition: null
                     },
                     {
                         title: "STEP 1-2: アドバンス講座",
                         duration: "12時間 (4時間×3回)",
-                        description: "基礎リーディングが出来るようになったら次のステップへ。大型スプレッドを学び、プロとしてのリーディングスキルを磨きます。",
+                        description: "基礎リーディングが出来るようになった、次のステップの講座です。 大型スプレッドでリーディングのスキルが大きく上がります。ここをマスターするとプロの道へ到達します。 すでにカードを覚えている段階なので、更にボイジャーの知識を深め、リーディングが楽しくなってきます。 カードを楽しむ事によって、自然に知識や理解を深められます。",
+                        contents: [
+                            "家族カードリーディング (家族以外の人間関係にも使えるスプレッド)",
+                            "数秘術カードと数秘術基礎 (ボイジャータロットには数秘術の要素が含まれます。より深めるために必要な知識をしっかり学びます。)",
+                            "占星術カードと占星術基礎 (占星術の超基礎の知識と対応カードを学びます。)",
+                            "スターツリーリーディング (人生の展開を読み解く大型スプレッド。自分の持つ性質、テーマへの可能性、そこからどう成長して実現していくのかの展開を読んでいきます。)",
+                            "ネガティブカードリーディング (ボイジャータロットには『ネガティブカード』と呼ばれるチャンスカードがあります。ネガティブカードをマスターするとリーディングのスキルが上がり、お客様を勇気づけ魂の成長を促す事が出来ます。)",
+                            "ヒーローズジャーニー応用版 (ベーシック講座で学んだヒーローズジャーニーを更にわかりやすくした応用版です。)",
+                            "物語を作るリーディング (直感と想像力を使って自由にストーリーを作って楽しむ右脳系リーディングです。感じたことを言語化する力が身に付きます。)",
+                            "選択リーディング (大事な選択や決断に迫られている時に役立つリーディング。)",
+                            "ホールセルフマンダラ (新年や誕生日など節目の時期におススメのスプレッド。仕事、恋愛などカテゴリ別のカードや、内面を映し出すカードで今後の全体像を見ていきます。)",
+                            "認定課題"
+                        ],
                         condition: {
                             title: "認定条件",
                             items: ["20時間のリーディング記録の提出", "認定テスト（モニターセッション30分）"],
@@ -47,14 +74,22 @@ const courseCategories = [
                 step: "STEP 2",
                 stepColor: "sunshine", // Yellow
                 bgGradient: "bg-sunshine/20",
+                image: "/images/home/coach_1.webp",
                 title: "認定コーチ養成講座",
                 subtitle: "質問力を磨き、行動を促すコーチングスキルを習得",
-                description: "単なる占いのツールではなく、行動を促し未来をクリエイトするのがボイジャータロットのパワー。<br />ボイジャーを使った実践的なコーチングスキルを学び、自分自身も取り組むことで、学びと行動の習慣化を両立します。",
+                description: "占いやカウンセリングの知識を得ても、スムーズなセッションが出来なかったり、自分自身が思うように生きられていなければ活かしていく事は出来ません。単なる占いのツールではなく、行動を促し未来をクリエイトするのがボイジャータロットのパワー。ボイジャーを使った実践的なコーチングスキルを学び、自分自身も取り組むことで、学びと行動の習慣化を両立し、身につけることが出来る講座です。受講しながら自分自身にも変化を起こし、目標達成を叶えていきます。この先のティーチャーとして活躍していきたい方にも重要な講座です。",
                 subCourses: [
                     {
                         title: "コーチ認定講座",
                         duration: "12時間 (3時間×4回)",
                         description: "質問力を磨き、クライアントの答えを引き出すコーチング手法を習得します。<br />継続セッションの技術も学び、リピーターに繋がる実力をつけます。",
+                        contents: [
+                            "ボイジャータロットコーチングとは？",
+                            "ボイジャーコーチングの法則",
+                            "ボイジャーコーチングの進め方",
+                            "ボイジャーコーチングに大切な3つの要素",
+                            "アクションマップと４つのスプレッド"
+                        ],
                         condition: {
                             title: "認定条件",
                             items: ["3名の方に3回の継続セッションを実施・記録提出", "認定テスト（モニターセッション60分）"],
@@ -73,6 +108,7 @@ const courseCategories = [
                 step: "STEP 3",
                 stepColor: "sky", // Blue
                 bgGradient: "bg-sky/20",
+                image: "/images/home/teacher_1.webp",
                 title: "認定ティーチャー養成講座",
                 subtitle: "ボイジャータロットを教え、広める存在になる",
                 description: "認定ティーチャーとして『リーダー認定講座(ベーシック・アドバンス)』を開催できるようになります。<br />教える立場になることで、カードへの理解が圧倒的に深まり、ビジネスとしての活動の幅も広がります。",
@@ -81,6 +117,12 @@ const courseCategories = [
                         title: "ティーチャー認定講座",
                         duration: "要問い合わせ",
                         description: "インストラクション技術、集客、ブランディングなど、指導者・経営者としてのスキルを総合的に学びます。",
+                        contents: [
+                            "起業のための実践ビジネス講座",
+                            "開業までの流れと準備",
+                            "集客の方法",
+                            "ティーチャーとしての心得とレクチャー 　　　など"
+                        ],
                         condition: {
                             title: "認定条件",
                             items: ["50時間の有料セッション実施・記録提出", "講座アシスタント経験・集客実績", "レポート提出"],
@@ -107,6 +149,7 @@ const courseCategories = [
                 step: "COMING SOON",
                 stepColor: "gray-400",
                 bgGradient: "bg-gray-100",
+                image: "/images/home/leader_1.webp",
                 title: "数秘術講座（準備中）",
                 subtitle: "数字の神秘を学び、自己理解を深める",
                 description: "現在準備中です。公開までしばらくお待ちください。",
@@ -119,7 +162,7 @@ const courseCategories = [
 ---
 
 <Layout title="Course Guide">
-    <div class="space-y-16">
+    <div class="pt-32 pb-16 space-y-16">
         <!-- Header -->
         <header class="text-center mb-16 relative">
             <h1
@@ -181,66 +224,97 @@ const courseCategories = [
                             {cat.courses.map((course) => (
                                 <div
                                     id={course.id}
-                                    class="bg-white/80 backdrop-blur-md p-8 md:p-12 rounded-[3rem] border border-white shadow-glass relative overflow-hidden group hover:shadow-crystal transition-all duration-500 scroll-mt-32"
+                                    class="bg-white/95 backdrop-blur-md rounded-[2.5rem] border border-white shadow-xl relative overflow-hidden group hover:shadow-2xl transition-all duration-500 scroll-mt-40 mb-16"
                                 >
-                                    <!-- Background Blob -->
-                                    <div
-                                        class:list={[
-                                            "absolute top-0 right-0 w-64 h-64 rounded-bl-full z-0 blur-3xl",
-                                            course.bgGradient
-                                        ]}
-                                    ></div>
+                                    <div class="flex flex-col">
+                                        <!-- Image Block (Top, fixed aspect ratio) -->
+                                        <div class="w-full h-48 md:h-64 relative overflow-hidden">
+                                            <img
+                                                src={course.image}
+                                                alt={course.title}
+                                                class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
+                                            />
+                                            <div class="absolute inset-0 bg-gradient-to-t from-white via-transparent to-transparent"></div>
+                                            
+                                            <div class="absolute bottom-6 left-8 z-10">
+                                                 <span
+                                                    class:list={[
+                                                        "font-bold px-5 py-1.5 rounded-full text-[10px] bg-white text-text-dark shadow-sm tracking-widest uppercase border border-gray-100",
+                                                    ]}
+                                                >
+                                                    {course.step}
+                                                </span>
+                                            </div>
+                                        </div>
 
-                                    <div class="relative z-10">
-                                        <!-- Step Label -->
-                                        <span
-                                            class:list={[
-                                                "font-bold border px-6 py-2 rounded-full text-sm mb-8 inline-block bg-white/80 backdrop-blur shadow-sm tracking-widest",
-                                                `text-${course.stepColor}`,
-                                                `border-${course.stepColor}/30`
-                                            ]}
-                                        >
-                                            {course.step}
-                                        </span>
-
-                                        <h3 class="text-3xl md:text-4xl font-bold text-text-dark mb-6">
-                                            {course.title}
-                                        </h3>
-                                        <p class="text-gray-600 mb-12 leading-loose">
-                                            <Fragment set:html={course.description} />
-                                        </p>
-
-                                        <!-- Sub Courses -->
-                                        <div class="space-y-8">
-                                            {course.subCourses.map((sub) => (
-                                                <div class="bg-white/60 p-8 md:p-10 rounded-[2rem] border border-white shadow-sm hover:shadow-md transition-shadow duration-300">
-                                                    <div class="flex flex-col md:flex-row justify-between items-baseline mb-4">
-                                                        <h4 class="font-bold text-xl text-text-dark flex items-center gap-3">
-                                                            <span class:list={["w-3 h-3 rounded-full shadow-sm", `bg-${course.stepColor}`]}></span>
-                                                            {sub.title}
-                                                        </h4>
-                                                        <span class="text-sm font-bold text-gray-500 bg-white border border-gray-100 px-4 py-1.5 rounded-full mt-2 md:mt-0 shadow-sm">
-                                                            {sub.duration}
-                                                        </span>
-                                                    </div>
-                                                    <p class="text-gray-600 text-sm leading-relaxed mb-8">
-                                                        <Fragment set:html={sub.description} />
-                                                    </p>
-
-                                                    {sub.condition && (
-                                                        <div class:list={["p-6 rounded-2xl border", sub.condition.bgColor, sub.condition.borderColor]}>
-                                                            <h5 class:list={["font-bold text-xs mb-3 uppercase tracking-wider", `text-${sub.condition.color}`]}>
-                                                                {sub.condition.title}
+                                        <!-- Content Block -->
+                                        <div class="p-8 md:p-12">
+                                            <div class="mb-10">
+                                                <h3 class="text-3xl md:text-4xl font-bold text-text-dark mb-4 font-mincho leading-tight">
+                                                    {course.title}
+                                                </h3>
+                                                <p class="text-magenta font-bold text-sm tracking-wide mb-6">
+                                                    {course.subtitle}
+                                                </p>
+                                                <div class="w-12 h-1 bg-magenta/20 mb-8 rounded-full"></div>
+                                                <p class="text-gray-600 leading-relaxed">
+                                                    <Fragment set:html={course.description} />
+                                                </p>
+                                            </div>
+        
+                                            <!-- Sub Courses -->
+                                            <div class="space-y-4">
+                                                {course.subCourses.map((sub) => (
+                                                    <div class="bg-white p-6 md:p-8 rounded-2xl border border-gray-100 shadow-sm">
+                                                        <div class="flex flex-col md:flex-row justify-between items-baseline mb-4">
+                                                            <h5 class="font-bold text-lg text-text-dark">
+                                                                {sub.title}
                                                             </h5>
-                                                            <ul class="list-disc list-inside text-xs text-gray-600 space-y-2 font-bold">
-                                                                {sub.condition.items.map(item => (
-                                                                    <li>{item}</li>
-                                                                ))}
-                                                            </ul>
+                                                            <span class="text-xs font-bold text-gray-400 bg-gray-50 px-3 py-1 rounded-lg">
+                                                                期間: {sub.duration}
+                                                            </span>
                                                         </div>
-                                                    )}
-                                                </div>
-                                            ))}
+                                                        <p class="text-gray-500 text-sm leading-relaxed mb-6">
+                                                            <Fragment set:html={sub.description} />
+                                                        </p>
+
+                                                        {sub.contents && (
+                                                            <div class="mb-8 p-6 bg-gray-50/50 rounded-2xl border border-gray-100">
+                                                                <h6 class="text-xs font-black text-gray-400 uppercase tracking-widest mb-4 flex items-center gap-2">
+                                                                    <span class:list={["w-1 h-3 rounded-full", `bg-${course.stepColor}`]}></span>
+                                                                    講座内容
+                                                                </h6>
+                                                                <ul class="space-y-3">
+                                                                    {sub.contents.map((item: string) => (
+                                                                        <li class="flex items-start gap-3 text-sm text-gray-600">
+                                                                            <svg xmlns="http://www.w3.org/2000/svg" class:list={["h-4 w-4 mt-0.5", `text-${course.stepColor}`]} fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                                                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4" />
+                                                                            </svg>
+                                                                            <span class="leading-relaxed">{item}</span>
+                                                                        </li>
+                                                                    ))}
+                                                                </ul>
+                                                            </div>
+                                                        )}
+        
+                                                        {sub.condition && (
+                                                            <div class:list={["p-5 rounded-xl border border-dashed", sub.condition.bgColor, sub.condition.borderColor]}>
+                                                                <h6 class:list={["font-bold text-[10px] uppercase tracking-widest mb-3", `text-${sub.condition.color}`]}>
+                                                                    {sub.condition.title}
+                                                                </h6>
+                                                                <ul class="grid grid-cols-1 md:grid-cols-2 gap-x-6 gap-y-2 text-xs text-gray-500 font-medium">
+                                                                    {sub.condition.items.map(item => (
+                                                                        <li class="flex items-start gap-2">
+                                                                            <span class="mt-1.5 w-1 h-1 rounded-full bg-current opacity-30 shrink-0"></span>
+                                                                            {item}
+                                                                        </li>
+                                                                    ))}
+                                                                </ul>
+                                                            </div>
+                                                        )}
+                                                    </div>
+                                                ))}
+                                            </div>
                                         </div>
                                     </div>
                                 </div>
@@ -286,7 +360,7 @@ const courseCategories = [
                 href="https://tol-app.jp/s/aoki-sakuracom"
                 target="_blank"
                 rel="noopener noreferrer"
-                class="inline-flex items-center gap-3 bg-gradient-to-r from-sakura-vivid to-sunshine text-white px-12 py-5 rounded-full font-bold hover:scale-105 transition-all shadow-lg shadow-pink-200 tracking-wider group"
+                class="inline-flex items-center gap-3 bg-gradient-to-r from-[#ff80ab] to-[#ffb300] text-white px-12 py-5 rounded-full font-bold hover:scale-105 transition-all shadow-lg shadow-pink-200 tracking-wider group"
             >
                 <div>
                      <span class="block text-sm opacity-90 font-normal mb-0.5">外部予約サイトへ</span>
