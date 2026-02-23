@@ -145,142 +145,163 @@ const courseCategories = coursesResponse.contents.map(course => ({
 	<div class="bg-gradient-to-br from-pink-50 via-white to-yellow-50 relative z-10">
 
 		<!-- 1-4. CONSOLIDATED SECTION: WHO WE ARE (Brand Story) -->
-		<section class="mb-16 md:mb-32 pt-12 md:pt-24 px-6 relative">
+		<section class="mb-8 md:mb-12 pt-8 md:pt-12 relative">
 			<div class="max-w-7xl mx-auto">
                 <div class="scroll-animation opacity-0">
 
-                    <div class="space-y-16 md:space-y-32"> <!-- Unified vertical spacing for flow -->
+                    <div class="space-y-8 md:space-y-12"> <!-- Further reduced spacing between blocks -->
                         
                         <!-- BLOCK 1: WHAT IS VOYAGER TAROT -->
-                        <div class="py-8 md:py-12 relative overflow-hidden group border-t border-b border-magenta/20 my-8">
-                             <div class="absolute -top-10 -right-10 w-32 h-32 bg-magenta/20 rounded-full blur-3xl opacity-50"></div>
-                            <div class="flex flex-col md:flex-row items-center gap-8 md:gap-16 relative z-10">
-                                 <!-- Image Side -->
-                                <div class="w-full md:w-1/2 rounded-[2rem] overflow-hidden shadow-2xl transform group-hover:scale-105 transition-transform duration-500 shadow-magenta/10 aspect-[3/2]">
-                                     <img
-                                        src="/images/home/home_1.webp"
-                                        alt="Voyager Tarot Card"
-                                        class="w-full h-full object-cover"
-                                        loading="lazy"
-                                        decoding="async"
-                                    />
+                        <div class="min-h-[70vh] md:min-h-[85vh] flex flex-col justify-center py-0 relative overflow-hidden group">
+                            <div class="bg-[#f3eaff]/30 pb-12 md:pb-16">
+                                <!-- Decorative Spackles -->
+                                <div class="flex justify-center pt-8 mb-4 text-[#9575cd] opacity-40">
+                                    <span class="text-3xl mx-2 animate-pulse">✦</span>
+                                    <span class="text-xl mx-2 animate-pulse delay-500 leading-10">✦</span>
+                                    <span class="text-3xl mx-2 animate-pulse delay-200">✦</span>
                                 </div>
-                                 <!-- Text Side -->
-                                <div class="w-full md:w-1/2">
-                                    <div class="mb-10 relative">
-                                        <div class="inline-block bg-magenta text-white px-8 py-4 rounded-xl shadow-lg relative z-10">
-                                            <h3 class="text-2xl font-bold font-mincho tracking-wider">
-                                                ボイジャータロットとは？
-                                            </h3>
-                                        </div>
-                                        <div class="absolute -bottom-2 -left-2 w-full h-full bg-magenta/10 rounded-xl -z-10"></div>
+                                <!-- Title Band (Full Width) -->
+                                <div class="w-full bg-[#d1c4e9] py-4 md:py-6 mb-8 shadow-sm">
+                                    <div class="max-w-7xl mx-auto px-6">
+                                        <h3 class="text-center text-2xl md:text-3xl font-mincho font-bold tracking-widest text-[#5e35b1]">
+                                            ボイジャータロットとは？
+                                        </h3>
                                     </div>
-                                    <h4 class="text-xl md:text-2xl font-bold text-text-dark mb-6 leading-tight">
-                                        『生きたい人生を<br/>創造するためのツール』
-                                    </h4>
+                                </div>
 
-                                    <div class="space-y-4 md:space-y-6 text-lg text-gray-500 leading-relaxed">
-                                        <p class="flex gap-2">
-                                            <span class="text-magenta mt-1 shrink-0">●</span>
-                                            <span>
+                            <div class="max-w-7xl mx-auto px-6 w-full">
+                                <div class="flex flex-col md:flex-row items-center gap-10 md:gap-20">
+                                     <!-- Image Side -->
+                                    <div class="w-full md:w-1/2 rounded-[2rem] overflow-hidden shadow-2xl transform group-hover:scale-105 transition-transform duration-500 shadow-purple-50 aspect-[4/3] max-h-[45vh]">
+                                         <img
+                                            src="/images/home/home_1.webp"
+                                            alt="Voyager Tarot Card"
+                                            class="w-full h-full object-cover"
+                                            loading="lazy"
+                                            decoding="async"
+                                        />
+                                    </div>
+                                     <!-- Text Side -->
+                                    <div class="w-full md:w-1/2">
+                                        <h4 class="text-lg md:text-2xl font-mincho leading-tight mb-6 text-text-dark">
+                                            『生きたい人生を<br/>創造するためのツール』
+                                        </h4>
+    
+                                        <div class="space-y-4 text-sm md:text-base text-gray-500 leading-relaxed font-mincho">
+                                            <div class="flex gap-4 items-start">
+                                            <div class="w-2.5 h-2.5 shrink-0 rounded-full bg-[#7e57c2] mt-1.5 md:mt-2"></div>
+                                            <p>
                                                 ボイジャータロットは従来のタロットとは少し違います。<br/>
                                                 タロット＝占いではなく、より深く自分を知り、成長させてくれるアイテムです。
-                                            </span>
-                                        </p>
-                                        <p class="flex gap-2">
-                                            <span class="text-magenta mt-1 shrink-0">●</span>
-                                            <span>
-                                                78枚のカードには神話の神々や、人物、遺跡、自然、宇宙、植物、動物など、たくさんの象徴が美しいコラージュとして描かれ、眺めているだけで様々なインスピレーションや感情が湧いてきます。
-                                            </span>
-                                        </p>
-                                        <p class="flex gap-2">
-                                            <span class="text-magenta mt-1 shrink-0">●</span>
-                                            <span>
-                                                なんと言ってもボイジャータロットの素晴らしさは、本来持っている才能を引き出すパワーにあります。さらに、発見した才能を開花させる道をも示し、願望実現へと導く行動を促すエネルギーを与えてくれる、スピリチュアルでありながら現実的なタロットカードです。
-                                            </span>
-                                        </p>
+                                            </p>
+                                        </div>
+                                        <div class="flex gap-4 items-start">
+                                            <div class="w-2.5 h-2.5 shrink-0 rounded-full bg-[#7e57c2] mt-1.5 md:mt-2"></div>
+                                            <p>
+                                                78枚のカードには象徴が美しいコラージュとして描かれ、眺めているだけで様々なインスピレーションが湧いてきます。
+                                            </p>
+                                        </div>
+                                        <div class="flex gap-4 items-start">
+                                            <div class="w-2.5 h-2.5 shrink-0 rounded-full bg-[#7e57c2] mt-1.5 md:mt-2"></div>
+                                            <p>
+                                                素晴らしさは、本来持っている才能を引き出すパワーにあります。願望実現へと導く行動を促す、実用的なタロットカードです。
+                                            </p>
+                                        </div>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
                         </div>
 
                         <!-- BLOCK 2: ABOUT CREATIONS -->
-                        <div class="py-8 md:py-12 relative overflow-hidden group border-t border-b border-sunshine/20 my-8">
-                             <div class="absolute -top-10 -left-10 w-32 h-32 bg-sunshine/20 rounded-full blur-3xl opacity-50"></div>
-                            <div class="flex flex-col md:flex-row items-center gap-8 md:gap-16 relative z-10">
-                                <!-- Text Side -->
-                                <div class="w-full md:w-1/2 order-2 md:order-1">
-                                    <div class="mb-10 relative">
-                                        <div class="inline-block bg-sunshine text-white px-8 py-4 rounded-xl shadow-lg relative z-10">
-                                            <h3 class="text-2xl font-bold font-mincho tracking-wider leading-tight">
-                                                ボイジャータロット<br/>クリエイションズについて
-                                            </h3>
-                                        </div>
-                                        <div class="absolute -bottom-2 -right-2 w-full h-full bg-sunshine/10 rounded-xl -z-10"></div>
-                                    </div>
-                                    <div class="space-y-6 text-lg text-gray-500 leading-relaxed">
-                                         <p class="text-xl md:text-2xl font-bold text-text-dark leading-relaxed">
-                                            認定ティーチャーとして<br/>10年以上の経験を持つ<br/>
-                                            <span class="text-sunshine border-b-2 border-sunshine/30">青木咲羅</span>が主宰する団体です。
-                                        </p>
-                                        <p>
-                                            ボイジャータロットの作者、ジェームズ・ワンレス博士の源流を正統に受け継ぎながら、他の占術や心理セラピストとしての知識も合わせた、より広く、深いアプローチを探求しています。
-                                        </p>
-                                        <p>
-                                            みんなが「生きたい人生を創造する」ためのツールとして、魅力的で実力あるリーダー、コーチ、ティーチャーの育成を目指して活動しています。
-                                        </p>
-                                    </div>
-    
-                                    <div class="mt-8">
-                                        <a
-                                            href="/profile"
-                                            class="inline-flex items-center gap-2 px-8 py-3 rounded-full bg-sunshine text-white font-bold tracking-widest hover:bg-sunshine/90 hover:scale-105 transition-all shadow-lg text-sm"
-                                        >
-                                            PROFILE &rarr;
-                                        </a>
+                        <div class="min-h-[70vh] md:min-h-[85vh] flex flex-col justify-center py-0 relative overflow-hidden group">
+                            <div class="bg-blue-50/50 pb-12 md:pb-16">
+                                <!-- Decorative Spackles -->
+                                <div class="flex justify-center pt-8 mb-4 text-[#29b6f6] opacity-40">
+                                    <span class="text-3xl mx-2 animate-pulse">✦</span>
+                                    <span class="text-xl mx-2 animate-pulse delay-500 leading-10">✦</span>
+                                    <span class="text-3xl mx-2 animate-pulse delay-200">✦</span>
+                                </div>
+                                <!-- Title Band (Full Width) -->
+                                <div class="w-full bg-[#e1f5fe] py-4 md:py-6 mb-8 shadow-sm">
+                                    <div class="max-w-7xl mx-auto px-6">
+                                        <h3 class="text-center text-xl md:text-3xl font-mincho font-bold tracking-widest text-[#0277bd]">
+                                            ボイジャータロット クリエイションズについて
+                                        </h3>
                                     </div>
                                 </div>
-                                 <!-- Image Side -->
-                                 <div class="w-full md:w-1/2 order-1 md:order-2 rounded-[2rem] overflow-hidden shadow-2xl transform group-hover:scale-105 transition-transform duration-500 shadow-sunshine/10 aspect-[3/2]">
-                                       <img
-                                           src="/images/home/home_2.webp"
-                                           alt="Voyager Tarot Session"
-                                           class="w-full h-full object-cover"
-                                           loading="lazy"
-                                           decoding="async"
-                                       />
+    
+                                <div class="max-w-7xl mx-auto px-6 w-full">
+                                    <div class="flex flex-col md:flex-row items-center gap-10 md:gap-20">
+                                        <!-- Text Side -->
+                                        <div class="w-full md:w-1/2 order-2 md:order-1">
+                                            <div class="space-y-6 text-sm md:text-base text-gray-500 leading-relaxed font-mincho">
+                                                 <p class="text-lg md:text-xl font-mincho text-text-dark leading-relaxed">
+                                                    認定ティーチャーとして<br/>
+                                                    <span class="text-lg md:text-xl font-bold border-b-2 border-sakura-vivid/20">10年以上の経験を持つ</span><br/>
+                                                    <span class="text-sakura-vivid text-2xl md:text-4xl font-bold tracking-tight">青木咲羅</span>が主宰する団体です。
+                                                 </p>
+                                                <p>
+                                                    ジェームズ・ワンレス博士の源流を正統に受け継ぎながら、豊かなアプローチを探求しています。
+                                                </p>
+                                                <p>
+                                                    実力あるリーダー、コーチ、ティーチャーの育成を目指して活動しています。
+                                                </p>
+                                            </div>
+            
+                                            <div class="mt-8 md:mt-10">
+                                                <a
+                                                    href="/profile"
+                                                    class="inline-flex items-center gap-3 px-8 py-3 rounded-full border border-[#0277bd] text-[#0277bd] text-base font-bold tracking-widest hover:bg-[#0277bd] hover:text-white transition-all duration-300 group"
+                                                >
+                                                    PROFILE
+                                                    <span class="transition-transform group-hover:translate-x-1">&rarr;</span>
+                                                </a>
+                                            </div>
+                                        </div>
+                                         <!-- Image Side -->
+                                         <div class="w-full md:w-1/2 order-1 md:order-2 rounded-[2rem] overflow-hidden shadow-2xl transform group-hover:scale-105 transition-transform duration-500 shadow-blue-50 aspect-[4/3] max-h-[45vh]">
+                                               <img
+                                                   src="/images/home/home_2.webp"
+                                                   alt="Voyager Tarot Session"
+                                                   class="w-full h-full object-cover"
+                                                   loading="lazy"
+                                                   decoding="async"
+                                               />
+                                        </div>
+                                    </div>
                                 </div>
                             </div>
                         </div>
 
                         <!-- BLOCK 3: CAREER PATH (NEW) -->
-                        <div class="py-16 md:py-24 bg-blue-50/50 rounded-[3rem] px-6 md:px-16 mx-[-1rem] md:mx-0">
+                        <div class="py-16 md:py-24 bg-pink-50/50 rounded-[3rem] px-6 md:px-16 mx-[-1rem] md:mx-0">
                             <div class="text-center mb-20 md:mb-28">
                                 <div class="relative inline-block mx-4">
-                                    <h3 class="relative z-20 bg-sky text-white text-2xl md:text-4xl font-bold px-16 py-6 shadow-xl tracking-wider">
+                                    <h3 class="relative z-20 bg-sakura-vivid text-white text-2xl md:text-4xl font-bold px-16 py-6 shadow-xl tracking-wider">
                                         プロフェッショナルへの道
                                     </h3>
                                     <!-- Left Tail -->
-                                    <div class="absolute top-3 -left-5 h-full w-full bg-sky -z-10 rounded-l-lg"></div>
+                                    <div class="absolute top-3 -left-5 h-full w-full bg-sakura-vivid -z-10 rounded-l-lg"></div>
                                     <!-- Right Tail -->
-                                    <div class="absolute top-3 -right-5 h-full w-full bg-sky -z-10 rounded-r-lg"></div>
+                                    <div class="absolute top-3 -right-5 h-full w-full bg-sakura-vivid -z-10 rounded-r-lg"></div>
                                     
                                     <!-- Left Fold (Darker Triangle) -->
-                                    <div class="absolute top-full left-0 w-0 h-0 border-t-[12px] border-t-[#0288d1] border-l-[12px] border-l-transparent z-10"></div>
+                                    <div class="absolute top-full left-0 w-0 h-0 border-t-[12px] border-t-magenta border-l-[12px] border-l-transparent z-10"></div>
                                     <!-- Right Fold (Darker Triangle) -->
-                                    <div class="absolute top-full right-0 w-0 h-0 border-t-[12px] border-t-[#0288d1] border-r-[12px] border-r-transparent z-10"></div>
+                                    <div class="absolute top-full right-0 w-0 h-0 border-t-[12px] border-t-magenta border-r-[12px] border-r-transparent z-10"></div>
                                 </div>
                             </div>
 
                             <div class="grid md:grid-cols-2 gap-8">
                                 <!-- Card 1: 3 Months -->
-                                <div class="bg-white/40 backdrop-blur-sm rounded-[2rem] p-8 md:p-10 relative overflow-hidden group hover:-translate-y-2 transition-transform duration-300 border-t-4 border-sky shadow-sm">
+                                <div class="bg-white/40 backdrop-blur-sm rounded-[2rem] p-8 md:p-10 relative overflow-hidden group hover:-translate-y-2 transition-transform duration-300 border-t-4 border-sakura-vivid shadow-sm">
                                     <div class="absolute top-0 right-0 p-4 opacity-10">
-                                        <span class="text-8xl font-bold text-sky">3</span>
+                                        <span class="text-8xl font-bold text-sakura-vivid">3</span>
                                     </div>
-                                    <div class="bg-sky text-white px-5 py-2 rounded-full text-sm font-bold inline-block mb-6 shadow-sm">STEP 1</div>
-                                    <h4 class="text-2xl md:text-4xl font-bold text-text-dark mb-6 relative z-10 leading-snug">
-                                        <span class="text-sky underline decoration-sky/30 underline-offset-8">3ヶ月</span>で<br/>プロのタロットリーダーに！
+                                    <div class="bg-sakura-vivid text-white px-5 py-2 rounded-full text-sm font-bold inline-block mb-6 shadow-sm">STEP 1</div>
+                                    <h4 class="text-xl md:text-3xl font-bold text-text-dark mb-6 relative z-10 leading-snug">
+                                        <span class="text-sakura-vivid underline decoration-sakura-vivid/30 underline-offset-8">3ヶ月</span>で<br/>プロのタロットリーダーに！
                                     </h4>
                                     <p class="text-gray-500 leading-relaxed mb-6 font-medium relative z-10 text-lg">
                                         ボイジャータロットリーダー認定講座（ベーシック・アドバンス）を受講し、課題と認定テスト合格で、プロのタロットリーダーとして認定を受けられます。
@@ -291,13 +312,13 @@ const courseCategories = coursesResponse.contents.map(course => ({
                                 </div>
 
                                 <!-- Card 2: 1 Year -->
-                                <div class="bg-white/40 backdrop-blur-sm rounded-[2rem] p-8 md:p-10 relative overflow-hidden group hover:-translate-y-2 transition-transform duration-300 border-t-4 border-sky shadow-sm">
+                                <div class="bg-white/40 backdrop-blur-sm rounded-[2rem] p-8 md:p-10 relative overflow-hidden group hover:-translate-y-2 transition-transform duration-300 border-t-4 border-sakura-vivid shadow-sm">
                                      <div class="absolute top-0 right-0 p-4 opacity-10">
-                                        <span class="text-8xl font-bold text-sky">1</span>
+                                        <span class="text-8xl font-bold text-sakura-vivid">1</span>
                                     </div>
-                                    <div class="bg-sky text-white px-5 py-2 rounded-full text-sm font-bold inline-block mb-6 shadow-sm">STEP 2</div>
-                                    <h4 class="text-2xl md:text-4xl font-bold text-text-dark mb-6 relative z-10 leading-snug">
-                                        <span class="text-sky underline decoration-sky/30 underline-offset-8">1年</span>で<br/>ティーチャーを目指す！
+                                    <div class="bg-sakura-vivid text-white px-5 py-2 rounded-full text-sm font-bold inline-block mb-6 shadow-sm">STEP 2</div>
+                                    <h4 class="text-xl md:text-3xl font-bold text-text-dark mb-6 relative z-10 leading-snug">
+                                        <span class="text-sakura-vivid underline decoration-sakura-vivid/30 underline-offset-8">1年</span>で<br/>ティーチャーを目指す！
                                     </h4>
                                     <p class="text-gray-500 leading-relaxed mb-6 font-medium relative z-10 text-lg">
                                         リーダー・コーチ・ティーチャーの認定講座を受講し、規定の課題、認定テスト合格で、ボイジャータロット講座を開講出来る、ティーチャーになる事が出来ます。
@@ -310,31 +331,48 @@ const courseCategories = coursesResponse.contents.map(course => ({
                         </div>
 
 
-                        <!-- BLOCK 4: MISSION (Text Left, Image Right) -->
-                                <div class="py-8 md:py-12 relative overflow-hidden group border-t border-b border-mint/20 my-8">
-                                    <div class="absolute top-1/2 left-0 w-64 h-64 bg-mint/30 rounded-full blur-3xl -translate-y-1/2 -z-10 opacity-70"></div>
-                                    <div class="flex flex-col md:flex-row items-center gap-8 md:gap-16 relative z-10">
-                                         <!-- Text Side -->
-                                        <div class="w-full md:w-1/2 text-left order-2 md:order-1">
-                                            <div class="relative inline-block mb-10">
-                                                <h3 class="text-2xl md:text-3xl font-bold text-text-dark leading-tight relative z-10 font-mincho">
-                                                    未来を創造する力を、<br/><span class="text-mint">あなたに。</span>
-                                                </h3>
-                                                <div class="absolute -bottom-2 left-0 w-full h-0.5 bg-mint/30"></div>
-                                            </div>
-                                            
-                                            <div class="space-y-6 text-lg text-gray-500 leading-relaxed relative z-10">
-                                                <p>
-                                                    ボイジャータロットを通じて、<br/>皆さまの成長と可能性を広げること。
-                                                </p>
-                                                <p>
-                                                    創造性・成長・実現化をテーマに、魅力的、かつ実力あるボイジャータロットリーダー、コーチ、ティーチャーの育成に取り組んでまいります。
-                                                </p>
-                                            </div>
+                        <!-- BLOCK 4: FUTURE CREATE (Previously MISSION) -->
+                        <div class="min-h-[70vh] md:min-h-[85vh] flex flex-col justify-center py-20 relative overflow-hidden group">
+                            <!-- Background Decoration -->
+                            <div class="absolute top-0 right-0 w-[400px] h-[400px] bg-mint/10 rounded-full blur-[80px] -z-10"></div>
+                            <div class="absolute bottom-0 left-0 w-[300px] h-[300px] bg-sky/10 rounded-full blur-[80px] -z-10"></div>
+                            
+                            <div class="max-w-7xl mx-auto px-6 w-full text-center">
+                                <!-- Decorative Spackles -->
+                                <div class="flex justify-center mb-10 text-mint opacity-40">
+                                    <span class="text-3xl mx-2 animate-pulse">✦</span>
+                                    <span class="text-xl mx-2 animate-pulse delay-500 leading-10">✦</span>
+                                    <span class="text-3xl mx-2 animate-pulse delay-200">✦</span>
+                                </div>
+                                
+                                <div class="flex flex-col items-center gap-12">
+                                     <!-- Text Content -->
+                                    <div class="w-full max-w-3xl">
+                                        <h4 class="text-xl md:text-3xl font-mincho leading-relaxed mb-10 text-text-dark tracking-[0.1em]">
+                                            未来を創造する力を、<br/>
+                                            <span class="text-mint border-b-2 border-mint/20 pb-2">あなたに。</span>
+                                        </h4>
+                                        
+                                        <div class="space-y-8 text-sm md:text-base text-gray-500 leading-[2] font-mincho">
+                                            <p class="md:text-lg">
+                                                ボイジャータロットを通じて、<br/>
+                                                皆さまの成長と可能性を広げること。
+                                            </p>
+                                            <div class="w-12 h-px bg-mint/30 mx-auto"></div>
+                                            <p>
+                                                創造性・成長・実現化をテーマに、<br/>
+                                                魅力的、かつ実力あるボイジャータロットリーダー、コーチ、<br/>
+                                                ティーチャーの育成に取り組んでまいります。
+                                            </p>
                                         </div>
-            
-                                        <!-- Image Side -->
-                                         <div class="w-full md:w-1/2 order-1 md:order-2 rounded-[2rem] overflow-hidden shadow-2xl transform group-hover:-translate-y-2 transition-transform duration-500 shadow-mint/20 aspect-[3/2]">
+                                    </div>
+        
+                                    <!-- Image Side -->
+                                     <div class="w-full max-w-2xl relative mt-4">
+                                         <!-- Decorative Frame -->
+                                         <div class="absolute -inset-4 border border-mint/20 rounded-[3rem] -z-10"></div>
+                                         <div class="absolute inset-0 bg-mint/5 blur-xl -z-10 group-hover:blur-3xl transition-all duration-700"></div>
+                                         <div class="rounded-[2.5rem] overflow-hidden shadow-2xl transform group-hover:scale-[1.02] transition-transform duration-700 aspect-[16/9]">
                                              <img
                                                 src="/images/home/home_3.webp"
                                                 alt="Mission Photo"
@@ -345,6 +383,8 @@ const courseCategories = coursesResponse.contents.map(course => ({
                                         </div>
                                     </div>
                                 </div>
+                            </div>
+                        </div>
 
                     </div>
                 </div>
@@ -362,7 +402,7 @@ const courseCategories = coursesResponse.contents.map(course => ({
                         <div class="absolute -top-[30px] left-1/2 -translate-x-1/2 w-0 h-0 border-l-[58px] border-l-transparent border-r-[58px] border-r-transparent border-b-[30px] border-b-white z-10"></div>
                         
                         {/* Main Board - Reverted to Decorative Box with solid fill preference */}
-                        <div class="bg-magenta text-white border-4 border-magenta px-16 py-6 shadow-2xl relative z-20 min-w-[300px] md:min-w-[450px]">
+                        <div class="bg-sakura-vivid text-white border-4 border-magenta px-16 py-6 shadow-2xl relative z-20 min-w-[300px] md:min-w-[450px]">
                              {/* Top Bar Decoration */}
                              <div class="absolute -top-2 left-[-4px] right-[-4px] h-3 bg-white/20 rounded-full border border-white/30"></div>
                             
