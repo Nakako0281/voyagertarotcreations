@@ -11,6 +11,8 @@ const response = await getNews({
 });
 const { contents: newsList } = response;
 
+import { Video, GraduationCap, MessageCircle, Users, UserPlus, Presentation, Briefcase, PlusCircle } from 'lucide-astro';
+
 function formatDate(dateString: string) {
 	return format(new Date(dateString), "yyyy.MM.dd");
 }
@@ -163,7 +165,7 @@ const courseCategories = coursesResponse.contents.map(course => ({
                                 <!-- Title Band (Full Width) -->
                                 <div class="w-full bg-[#d1c4e9] py-4 md:py-6 mb-8 shadow-sm">
                                     <div class="max-w-7xl mx-auto px-6">
-                                        <h3 class="text-center text-2xl md:text-3xl font-mincho font-bold tracking-widest text-[#5e35b1]">
+                                        <h3 class="text-center text-2xl md:text-3xl font-mincho font-bold tracking-widest text-[#9C0CEF]">
                                             ボイジャータロットとは？
                                         </h3>
                                     </div>
@@ -295,37 +297,101 @@ const courseCategories = coursesResponse.contents.map(course => ({
 
                             <div class="grid md:grid-cols-2 gap-8">
                                 <!-- Card 1: 3 Months -->
-                                <div class="bg-white/40 backdrop-blur-sm rounded-[2rem] p-8 md:p-10 relative overflow-hidden group hover:-translate-y-2 transition-transform duration-300 border-t-4 border-sakura-vivid shadow-sm">
-                                    <div class="absolute top-0 right-0 p-4 opacity-10">
-                                        <span class="text-8xl font-bold text-sakura-vivid">3</span>
+                                <div class="bg-white/90 backdrop-blur-sm rounded-[3rem] p-8 md:p-12 relative overflow-hidden group hover:shadow-2xl hover:shadow-pink-200/30 transition-all duration-500 border-t-8 border-sakura-vivid shadow-xl">
+                                    <div class="absolute top-0 right-0 p-8 opacity-5">
+                                        <span class="text-[12rem] font-bold text-sakura-vivid leading-none">1</span>
                                     </div>
-                                    <div class="bg-sakura-vivid text-white px-5 py-2 rounded-full text-sm font-bold inline-block mb-6 shadow-sm">STEP 1</div>
-                                    <h4 class="text-xl md:text-3xl font-bold text-text-dark mb-6 relative z-10 leading-snug">
-                                        <span class="text-sakura-vivid underline decoration-sakura-vivid/30 underline-offset-8">3ヶ月</span>で<br/>プロのタロットリーダーに！
+                                    <div class="bg-sakura-vivid text-white px-6 py-2 rounded-full text-sm font-black inline-block mb-8 shadow-sm tracking-widest uppercase">STEP 1</div>
+                                    
+                                    <h4 class="text-2xl md:text-3xl font-bold text-text-dark mb-4 relative z-10 leading-snug">
+                                        <span class="text-sakura-vivid">3ヶ月</span>でプロのリーダーに！
                                     </h4>
-                                    <p class="text-gray-500 leading-relaxed mb-6 font-medium relative z-10 text-lg">
-                                        ボイジャータロットリーダー認定講座（ベーシック・アドバンス）を受講し、課題と認定テスト合格で、プロのタロットリーダーとして認定を受けられます。
-                                    </p>
-                                    <p class="text-sm text-gray-400 bg-white/50 backdrop-blur-sm p-6 rounded-2xl relative z-10 leading-relaxed italic">
-                                        毎月の無料練習会や勉強会、LINEでの質問メールなど、受講後のアフターフォローも充実しているので、安心して学ぶことが出来ます。
-                                    </p>
+                                    <p class="text-gray-500 mb-10 text-sm md:text-base leading-relaxed">ボイジャータロットリーダー認定講座（ベーシック・アドバンス）を受講し、課題と認定テスト合格で、プロのタロットリーダーとして認定を受けられます。</p>
+
+                                    <div class="space-y-6 relative z-10">
+                                        <div class="flex items-center gap-4 mb-8">
+                                            <div class="h-px flex-1 bg-gradient-to-r from-transparent to-sakura-vivid/20"></div>
+                                            <span class="text-sakura-vivid font-black text-sm tracking-[0.2em] whitespace-nowrap">充実のアフターフォロー</span>
+                                            <div class="h-px flex-1 bg-gradient-to-l from-transparent to-sakura-vivid/20"></div>
+                                        </div>
+
+                                        <div class="grid grid-cols-2 gap-4 md:gap-6">
+                                            <div class="bg-pink-50/50 p-4 md:p-6 rounded-2xl flex flex-col items-center text-center group/item hover:bg-white hover:shadow-md transition-all duration-300">
+                                                <div class="p-3 bg-white rounded-full mb-3 text-sakura-vivid shadow-sm group-hover/item:scale-110 transition-transform">
+                                                    <Video size={24} strokeWidth={2.5} />
+                                                </div>
+                                                <p class="text-[13px] md:text-sm font-bold text-text-dark leading-tight">月一回の無料<br/>オンライン練習会</p>
+                                            </div>
+                                            <div class="bg-pink-50/50 p-4 md:p-6 rounded-2xl flex flex-col items-center text-center group/item hover:bg-white hover:shadow-md transition-all duration-300">
+                                                <div class="p-3 bg-white rounded-full mb-3 text-sakura-vivid shadow-sm group-hover/item:scale-110 transition-transform">
+                                                    <GraduationCap size={24} strokeWidth={2.5} />
+                                                </div>
+                                                <p class="text-[13px] md:text-sm font-bold text-text-dark leading-tight">イベント講座や<br/>講習会の開催</p>
+                                            </div>
+                                            <div class="bg-pink-50/50 p-4 md:p-6 rounded-2xl flex flex-col items-center text-center group/item hover:bg-white hover:shadow-md transition-all duration-300">
+                                                <div class="p-3 bg-white rounded-full mb-3 text-sakura-vivid shadow-sm group-hover/item:scale-110 transition-transform">
+                                                    <MessageCircle size={24} strokeWidth={2.5} />
+                                                </div>
+                                                <p class="text-[13px] md:text-sm font-bold text-text-dark leading-tight">LINEでの<br/>質問メール</p>
+                                            </div>
+                                            <div class="bg-pink-50/50 p-4 md:p-6 rounded-2xl flex flex-col items-center text-center group/item hover:bg-white hover:shadow-md transition-all duration-300">
+                                                <div class="p-3 bg-white rounded-full mb-3 text-sakura-vivid shadow-sm group-hover/item:scale-110 transition-transform">
+                                                    <Users size={24} strokeWidth={2.5} />
+                                                </div>
+                                                <p class="text-[13px] md:text-sm font-bold text-text-dark leading-tight">受講生同士の<br/>交流セッション</p>
+                                            </div>
+                                        </div>
+                                        <p class="text-right text-[10px] text-gray-400 font-bold">...and more</p>
+                                    </div>
                                 </div>
 
                                 <!-- Card 2: 1 Year -->
-                                <div class="bg-white/40 backdrop-blur-sm rounded-[2rem] p-8 md:p-10 relative overflow-hidden group hover:-translate-y-2 transition-transform duration-300 border-t-4 border-sakura-vivid shadow-sm">
-                                     <div class="absolute top-0 right-0 p-4 opacity-10">
-                                        <span class="text-8xl font-bold text-sakura-vivid">1</span>
+                                <div class="bg-white/90 backdrop-blur-sm rounded-[3rem] p-8 md:p-12 relative overflow-hidden group hover:shadow-2xl hover:shadow-pink-200/30 transition-all duration-500 border-t-8 border-sakura-vivid shadow-xl">
+                                     <div class="absolute top-0 right-0 p-8 opacity-5">
+                                        <span class="text-[12rem] font-bold text-sakura-vivid leading-none">2</span>
                                     </div>
-                                    <div class="bg-sakura-vivid text-white px-5 py-2 rounded-full text-sm font-bold inline-block mb-6 shadow-sm">STEP 2</div>
-                                    <h4 class="text-xl md:text-3xl font-bold text-text-dark mb-6 relative z-10 leading-snug">
-                                        <span class="text-sakura-vivid underline decoration-sakura-vivid/30 underline-offset-8">1年</span>で<br/>ティーチャーを目指す！
+                                    <div class="bg-sakura-vivid text-white px-6 py-2 rounded-full text-sm font-black inline-block mb-8 shadow-sm tracking-widest uppercase">STEP 2</div>
+                                    
+                                    <h4 class="text-2xl md:text-3xl font-bold text-text-dark mb-4 relative z-10 leading-snug">
+                                        <span class="text-sakura-vivid">1年</span>でティーチャーを目指す！
                                     </h4>
-                                    <p class="text-gray-500 leading-relaxed mb-6 font-medium relative z-10 text-lg">
-                                        リーダー・コーチ・ティーチャーの認定講座を受講し、規定の課題、認定テスト合格で、ボイジャータロット講座を開講出来る、ティーチャーになる事が出来ます。
-                                    </p>
-                                    <p class="text-sm text-gray-400 bg-white/50 backdrop-blur-sm p-6 rounded-2xl relative z-10 leading-relaxed italic">
-                                        リーダー認定同様、受講後のアフターフォローや講師のアシスタントとして講座に参加する事で経験を積むことが出来ます。独立開業や集客についての学びも出来るので、万全の体制でティーチャーデビューする事が出来ます。
-                                    </p>
+                                    <p class="text-gray-500 mb-10 text-sm md:text-base leading-relaxed">リーダー・コーチ・ティーチャーの認定講座を受講し、規定の課題、認定テスト合格で、ボイジャータロット講座を開講出来る、ティーチャーになる事が出来ます。</p>
+
+                                    <div class="space-y-6 relative z-10">
+                                        <div class="flex items-center gap-4 mb-8">
+                                            <div class="h-px flex-1 bg-gradient-to-r from-transparent to-sakura-vivid/20"></div>
+                                            <span class="text-sakura-vivid font-black text-sm tracking-[0.2em] whitespace-nowrap">充実のアフターフォロー</span>
+                                            <div class="h-px flex-1 bg-gradient-to-l from-transparent to-sakura-vivid/20"></div>
+                                        </div>
+
+                                        <div class="grid grid-cols-2 gap-4 md:gap-6">
+                                            <div class="bg-pink-50/50 p-4 md:p-6 rounded-2xl flex flex-col items-center text-center group/item hover:bg-white hover:shadow-md transition-all duration-300">
+                                                <div class="p-3 bg-white rounded-full mb-3 text-sakura-vivid shadow-sm group-hover/item:scale-110 transition-transform">
+                                                    <PlusCircle size={24} strokeWidth={2.5} />
+                                                </div>
+                                                <p class="text-[13px] md:text-sm font-bold text-text-dark leading-tight">ステップ1の<br/>全サポート</p>
+                                            </div>
+                                            <div class="bg-pink-50/50 p-4 md:p-6 rounded-2xl flex flex-col items-center text-center group/item hover:bg-white hover:shadow-md transition-all duration-300">
+                                                <div class="p-3 bg-white rounded-full mb-3 text-sakura-vivid shadow-sm group-hover/item:scale-110 transition-transform">
+                                                    <UserPlus size={24} strokeWidth={2.5} />
+                                                </div>
+                                                <p class="text-[13px] md:text-sm font-bold text-text-dark leading-tight">講師アシスタント<br/>として参加</p>
+                                            </div>
+                                            <div class="bg-pink-50/50 p-4 md:p-6 rounded-2xl flex flex-col items-center text-center group/item hover:bg-white hover:shadow-md transition-all duration-300">
+                                                <div class="p-3 bg-white rounded-full mb-3 text-sakura-vivid shadow-sm group-hover/item:scale-110 transition-transform">
+                                                    <Presentation size={24} strokeWidth={2.5} />
+                                                </div>
+                                                <p class="text-[13px] md:text-sm font-bold text-text-dark leading-tight">体験会開催の<br/>徹底サポート</p>
+                                            </div>
+                                            <div class="bg-pink-50/50 p-4 md:p-6 rounded-2xl flex flex-col items-center text-center group/item hover:bg-white hover:shadow-md transition-all duration-300">
+                                                <div class="p-3 bg-white rounded-full mb-3 text-sakura-vivid shadow-sm group-hover/item:scale-110 transition-transform">
+                                                    <Briefcase size={24} strokeWidth={2.5} />
+                                                </div>
+                                                <p class="text-[13px] md:text-sm font-bold text-text-dark leading-tight">独立開業・集客の<br/>個別相談</p>
+                                            </div>
+                                        </div>
+                                        <p class="text-right text-[10px] text-gray-400 font-bold">...and more</p>
+                                    </div>
                                 </div>
                             </div>
                         </div>
