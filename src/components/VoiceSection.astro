@@ -1,75 +1,133 @@
 ---
 import { voices } from "../data/voices";
+
+// Get the primary voice (using the first one as requested, since there is only one in the data)
+const mainVoice = voices[0];
+const points = mainVoice?.points || [];
+
+// Create an array of gentle background gradients for the cards
+const cardBgGradients = [
+    "bg-gradient-to-b from-pink-100/80 to-white",
+    "bg-gradient-to-b from-orange-100/80 to-white",
+    "bg-gradient-to-b from-blue-100/80 to-white",
+    "bg-gradient-to-b from-emerald-100/80 to-white",
+    "bg-gradient-to-b from-purple-100/80 to-white",
+];
 ---
 
-<div class="pt-4 md:pt-8 pb-8 md:pb-12 px-4 relative overflow-hidden">
-    <div class="max-w-7xl mx-auto relative z-10">
+<div class="pt-8 md:pt-16 pb-12 md:pb-24 relative overflow-hidden bg-white/50">
+    <div
+        class="max-w-4xl mx-auto px-6 relative z-10 text-center mb-10 md:mb-16"
+    >
+        <!-- Header Section -->
+        <div class="flex items-center justify-center gap-3 mb-6">
+            <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="32"
+                height="32"
+                viewBox="0 0 24 24"
+                fill="currentColor"
+                class="text-sakura-vivid opacity-60 w-8 h-8 md:w-10 md:h-10"
+            >
+                <path
+                    d="M14.017 21L14.017 18C14.017 16.0966 14.017 10.1585 19.0983 10.1585V14.1585C17.4668 14.1585 16.5303 15.4 16.5303 17.525V21H14.017ZM8.01691 21L8.01691 18C8.01691 16.0966 8.01691 10.1585 13.0982 10.1585V14.1585C11.4667 14.1585 10.5302 15.4 10.5302 17.525V21H8.01691Z"
+                    transform="translate(-4 -6) scale(1.5)"></path>
+            </svg>
+            <h2
+                class="text-2xl md:text-3xl font-mincho font-bold text-gray-800 tracking-widest"
+            >
+                受講生の声
+            </h2>
+        </div>
 
+        <h3
+            class="text-lg md:text-2xl font-bold text-sakura-vivid leading-relaxed mb-6"
+        >
+            {mainVoice.catchphrase}
+        </h3>
 
-        <!-- Grid Container -->
-        <div class="max-w-4xl mx-auto flex flex-col gap-8 md:gap-12">
-            {voices.map((voice, index) => {
-                // Assign different accent colors to cards for rhythm
-                const accentColors = [
-                    "from-sakura-vivid to-magenta-pale",
-                    "from-sunshine to-orange-200",
-                    "from-sky to-blue-200"
-                ];
-                const accentGradient = accentColors[index % accentColors.length];
-                const iconColor = [
-                    "text-sakura-vivid",
-                    "text-sunshine",
-                    "text-sky"
-                ][index % 3];
+        <p
+            class="text-gray-600 text-sm md:text-base leading-[1.8] text-center max-w-2xl mx-auto"
+        >
+            {mainVoice.summary}
+        </p>
+    </div>
 
-                return (
-                    <div class="bg-white rounded-[1.5rem] md:rounded-[2rem] p-6 md:p-10 shadow-[var(--shadow-crystal)] hover:shadow-xl hover:-translate-y-1 transition-all duration-500 relative group overflow-hidden border border-white/50">
-                        
-                        <!-- Top Accent Line -->
-                        <div class={`absolute top-0 left-0 w-full h-1.5 bg-gradient-to-r ${accentGradient}`}></div>
-
-                        <!-- Quote Icon & Title -->
-                        <div class="mb-4 md:mb-6 flex items-end gap-3 md:gap-4">
-                            <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="currentColor" class={`opacity-20 ${iconColor} md:w-10 md:h-10`}>
-                                <path d="M14.017 21L14.017 18C14.017 16.0966 14.017 10.1585 19.0983 10.1585V14.1585C17.4668 14.1585 16.5303 15.4 16.5303 17.525V21H14.017ZM8.01691 21L8.01691 18C8.01691 16.0966 8.01691 10.1585 13.0982 10.1585V14.1585C11.4667 14.1585 10.5302 15.4 10.5302 17.525V21H8.01691Z" transform="translate(-4 -6) scale(1.5)" />
-                            </svg>
-                            <span class={`text-lg md:text-xl font-bold tracking-widest ${iconColor}`}>受講生の声</span>
-                        </div>
-
-                        <!-- Catchphrase -->
-                        <div class="mb-8 min-h-[4rem] flex items-center">
-                            <h3 class="text-xl font-bold text-text-dark leading-relaxed">
-                                {voice.catchphrase}
-                            </h3>
-                        </div>
-
-                        <!-- Summary -->
-                        <p class="text-gray-600 text-sm leading-[1.8] text-justify mb-8">
-                            {voice.summary}
-                        </p>
-
-                        <!-- Divider -->
-                        <div class="w-full h-px bg-gray-100 mb-8"></div>
-
-                        <!-- Points -->
-                        <ul class="space-y-4">
-                            {voice.points.map((point) => (
-                                <li class="flex items-start gap-3">
-                                    <div class={`shrink-0 w-1.5 h-1.5 rounded-full mt-2 bg-gradient-to-r ${accentGradient}`}></div>
-                                    <div class="flex flex-col">
-                                        <span class="text-xs font-bold text-gray-400 mb-0.5 tracking-wider">
-                                            {point.label}
-                                        </span>
-                                        <p class="text-sm text-text-main leading-relaxed">
-                                            {point.text}
-                                        </p>
-                                    </div>
-                                </li>
-                            ))}
-                        </ul>
+    <!-- Infinite Marquee Section -->
+    <div class="w-full relative overflow-hidden fade-edges pb-6 pt-2">
+        <!-- Scroll Container: flex w-max and animation class -->
+        <div class="flex w-max animate-marquee hover:play-state-paused">
+            <!-- 
+              Render the points list twice for a seamless infinite loop.
+              The animation moves the container by -50%, which equals exactly one length of the list.
+            -->
+            {
+                [...Array(2)].map((_, listIndex) => (
+                    <div
+                        class="flex shrink-0 gap-6 pr-6"
+                        aria-hidden={listIndex === 1 ? "true" : "false"}
+                    >
+                        {points.map((point, index) => {
+                            const bgClass =
+                                cardBgGradients[index % cardBgGradients.length];
+                            return (
+                                <div
+                                    class={`w-[280px] md:w-[320px] ${bgClass} rounded-2xl p-6 shadow-sm hover:shadow-md transition-shadow duration-300 relative overflow-hidden border border-gray-100 flex flex-col shrink-0 whitespace-normal`}
+                                >
+                                    <span class="text-xs font-bold text-gray-500 mb-3 tracking-wider block border-b border-gray-200/60 pb-2">
+                                        Q. {point.label}
+                                    </span>
+                                    <p class="text-sm text-gray-700 leading-relaxed flex-grow">
+                                        {point.text}
+                                    </p>
+                                </div>
+                            );
+                        })}
                     </div>
-                );
-            })}
+                ))
+            }
         </div>
     </div>
 </div>
+
+<style>
+    /* CSS Marquee Animation */
+    @keyframes marquee {
+        0% {
+            transform: translateX(0);
+        }
+        100% {
+            /* Translates exactly half of the flex container (one full set of cards) */
+            transform: translateX(-50%);
+        }
+    }
+
+    .animate-marquee {
+        animation: marquee 40s linear infinite;
+        /* ensure hover targets children content easily */
+        display: flex;
+    }
+
+    /* Pause animation on hover */
+    .hover\:play-state-paused:hover {
+        animation-play-state: paused;
+    }
+
+    /* Fade left and right edges for a seamless appearance */
+    .fade-edges {
+        mask-image: linear-gradient(
+            to right,
+            transparent,
+            black 10%,
+            black 90%,
+            transparent
+        );
+        -webkit-mask-image: linear-gradient(
+            to right,
+            transparent,
+            black 5%,
+            black 95%,
+            transparent
+        );
+    }
+</style>

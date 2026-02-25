@@ -159,42 +159,41 @@ const courseCategories = coursesResponse.contents.map(course => ({
 
             <!-- ==========================================
                  BLOCK 1: WHAT IS VOYAGER TAROT 
-                 背景：文字が黒でOKになるくらい薄く、明るく鮮やかなパープル
+                 背景：ボタンのような非常に鮮やかなパープルグラデーション
             =========================================== -->
-            <section class="relative w-full py-20 md:py-32 bg-[#f3eaff]">
+            <section class="relative w-full py-20 md:py-32 bg-gradient-to-b from-[#BC84F0] via-[#DB9FF5] to-[#9884F0]">
                 <div class="max-w-7xl mx-auto px-6 relative z-10 scroll-animation opacity-0 delay-100">
                     
                     <!-- セクションタイトル (上部に独立配置) -->
                     <div class="text-center mb-16">
-                        <span class="text-[#5e35b1] font-bold tracking-[0.2em] text-sm uppercase block mb-3">About Voyager Tarot</span>
-                        <h2 class="text-3xl md:text-5xl font-mincho font-bold text-[#5e35b1] tracking-widest leading-tight">
+                        <span class="text-white/90 font-bold tracking-[0.2em] text-sm uppercase block mb-3 drop-shadow-sm">About Voyager Tarot</span>
+                        <h2 class="text-2xl md:text-4xl font-mincho font-bold text-white tracking-widest leading-tight drop-shadow-md">
                             ボイジャータロットとは？
                         </h2>
-                        <div class="w-16 h-[2px] bg-magenta mx-auto mt-6"></div>
+                        <div class="w-16 h-[2px] bg-white mx-auto mt-6 shadow-sm"></div>
                     </div>
 
                     <!-- 白い情報カード (影と角丸を強調) -->
-                    <div class="bg-white rounded-[2rem] md:rounded-[3rem] shadow-2xl p-8 md:p-16 lg:px-24">
-                        <div class="flex flex-col md:flex-row items-center gap-12 md:gap-20">
+                    <div class="bg-white rounded-[2rem] md:rounded-[3rem] shadow-2xl overflow-hidden">
+                        <div class="flex flex-col md:flex-row items-stretch md:h-[500px] lg:h-[550px]">
                             <!-- 画像エリア (左側) -->
-                            <div class="w-full md:w-5/12 rounded-[1.5rem] md:rounded-[2rem] overflow-hidden shadow-lg aspect-[4/3] max-h-[45vh] relative group cursor-pointer border-4 border-white/20">
-                                <div class="absolute inset-0 bg-[#f3eaff]/20 mix-blend-multiply group-hover:bg-transparent transition-colors duration-500 z-10"></div>
+                            <div class="w-full md:w-1/2 relative group cursor-pointer min-h-[300px] md:min-h-0">
                                 <img
                                     src="/images/home/home_1.webp"
                                     alt="Voyager Tarot Card"
-                                    class="w-full h-full object-cover transform group-hover:scale-105 transition-transform duration-700 ease-out"
+                                    class="w-full h-full absolute inset-0 object-cover transform group-hover:scale-105 transition-transform duration-700 ease-out"
                                     loading="lazy"
                                     decoding="async"
                                 />
                             </div>
                             
                             <!-- テキストエリア (右側) -->
-                            <div class="w-full md:w-7/12">
-                                <h3 class="text-xl md:text-3xl font-mincho font-bold leading-normal mb-8 text-[#5e35b1]">
-                                    『生きたい人生を<br class="md:hidden"/>創造するためのツール』
+                            <div class="w-full md:w-1/2 p-8 md:p-10 lg:p-12 flex flex-col justify-center overflow-y-auto">
+                                <h3 class="text-xl md:text-2xl lg:text-3xl font-mincho font-bold leading-normal mb-6 text-[#9c27b0]">
+                                    <span class="inline-block">『生きたい人生を</span><br class="md:hidden"/><span class="inline-block">創造するための</span><span class="inline-block">ツール』</span>
                                 </h3>
                                 
-                                <div class="space-y-6 text-[15px] md:text-lg text-gray-600 leading-loose font-mincho tracking-wide">
+                                <div class="space-y-4 lg:space-y-6 text-sm md:text-[15px] lg:text-base text-gray-700 leading-[2] font-mincho antialiased font-medium">
                                     <p>
                                         ボイジャータロットは従来のタロットとは少し違います。<br class="hidden md:block" />
                                         タロット＝占いではなく、より深く自分を知り、成長させてくれるアイテムです。
@@ -215,12 +214,13 @@ const courseCategories = coursesResponse.contents.map(course => ({
 
             <!-- ==========================================
                  BLOCK 2: ABOUT CREATIONS
-                 背景：水色っぽく（薄いブルー）
+                 背景：非常に鮮やかでクリアなブルーグラデーション
             =========================================== -->
-            <section class="relative w-full py-20 md:py-32 bg-[#e1f5fe]">
+            <section class="relative w-full py-20 md:py-32 bg-gradient-to-b from-[#ABB5F7] via-[#B1E1F5] to-[#E2D4F0]">
                 <!-- 少し被せた装飾要素でセクション間をつなぐ -->
                 <div class="absolute -top-[1px] left-0 w-full overflow-hidden leading-[0]">
-                    <svg viewBox="0 0 1200 120" preserveAspectRatio="none" class="relative block w-full h-[60px] md:h-[100px]" fill="#f3eaff">
+                    <!-- Block 1の最後のグラデーション色に合わせてSVGの色を調整するか、無地にする -->
+                    <svg viewBox="0 0 1200 120" preserveAspectRatio="none" class="relative block w-full h-[60px] md:h-[100px]" fill="#9884F0">
                         <path d="M1200,0H0V120H281.94C572.9,116.24,602.45,3.86,902.25,0.05c100.22-1.27,297.75,0,297.75,0Z"></path>
                     </svg>
                 </div>
@@ -229,25 +229,25 @@ const courseCategories = coursesResponse.contents.map(course => ({
                     
                     <!-- セクションタイトル -->
                     <div class="text-center mb-16">
-                        <span class="text-[#0277bd] font-bold tracking-[0.2em] text-sm uppercase block mb-3">About Voyager Tarot Creations</span>
-                        <h2 class="text-3xl md:text-5xl font-mincho font-bold text-[#0277bd] tracking-widest leading-tight">
+                        <span class="text-white/90 font-bold tracking-[0.2em] text-sm uppercase block mb-3 drop-shadow-sm">About Voyager Tarot Creations</span>
+                        <h2 class="text-2xl md:text-4xl font-mincho font-bold text-white tracking-widest leading-tight drop-shadow-md">
                             クリエイションズについて
                         </h2>
-                        <div class="w-16 h-[2px] bg-[#0277bd] mx-auto mt-6"></div>
+                        <div class="w-16 h-[2px] bg-white mx-auto mt-6 shadow-sm"></div>
                     </div>
 
                     <!-- 白い情報カード -->
-                    <div class="bg-white rounded-[2rem] md:rounded-[3rem] shadow-2xl p-8 md:p-16 lg:px-24">
-                        <div class="flex flex-col md:flex-row items-center gap-12 md:gap-20">
+                    <div class="bg-white rounded-[2rem] md:rounded-[3rem] shadow-2xl overflow-hidden">
+                        <div class="flex flex-col md:flex-row items-stretch md:h-[500px] lg:h-[550px]">
                             
                             <!-- テキストエリア (左側) -->
-                            <div class="w-full md:w-7/12 order-2 md:order-1">
-                                <div class="space-y-6 text-[15px] md:text-lg text-gray-600 leading-loose font-mincho tracking-wide">
-                                    <p class="text-lg md:text-2xl font-bold text-text-dark leading-relaxed mb-6">
+                            <div class="w-full md:w-1/2 order-2 md:order-1 p-8 md:p-10 lg:p-12 flex flex-col justify-center overflow-y-auto">
+                                <div class="space-y-4 lg:space-y-6 text-sm md:text-[15px] lg:text-base text-gray-700 leading-[2] font-mincho antialiased font-medium">
+                                    <p class="text-base md:text-lg lg:text-xl font-bold text-gray-800 leading-[1.8] mb-4 lg:mb-6">
                                         認定ティーチャーとして<br class="md:hidden"/>
-                                        <span class="border-b-[3px] border-[#0277bd]/20 pb-1">10年以上の経験を持つ</span><br />
-                                        <span class="text-sakura-vivid text-3xl md:text-5xl tracking-tight inline-block mt-4">青木咲羅</span>
-                                        <span class="text-base text-gray-500 font-normal ml-2">が主宰する団体です。</span>
+                                        <span class="inline-block text-[#0288d1] border-b-[3px] border-[#0288d1]/30 pb-1">10年以上の経験を持つ</span><br />
+                                        <span class="text-sakura-vivid text-2xl md:text-3xl lg:text-4xl tracking-tight inline-block mt-2 lg:mt-4">青木咲羅</span>
+                                        <span class="text-base text-gray-800 font-bold ml-2">が主宰する団体です。</span>
                                     </p>
                                     <p>
                                         ジェームズ・ワンレス博士の源流を正統に受け継ぎながら、豊かなアプローチを探求しています。
@@ -257,10 +257,10 @@ const courseCategories = coursesResponse.contents.map(course => ({
                                     </p>
                                 </div>
                                 
-                                <div class="mt-12">
+                                <div class="mt-8 lg:mt-12">
                                     <a
                                         href="/profile"
-                                        class="inline-flex items-center gap-4 px-10 py-4 rounded-full bg-white border-2 border-[#0277bd] text-[#0277bd] text-sm md:text-base font-bold tracking-[0.15em] hover:bg-[#0277bd] hover:text-white transition-all duration-400 group shadow-sm hover:shadow-lg hover:-translate-y-1"
+                                        class="inline-flex items-center gap-4 px-8 lg:px-10 py-3 lg:py-4 rounded-full bg-white border-2 border-[#03a9f4] text-[#03a9f4] text-sm lg:text-base font-bold tracking-[0.15em] hover:bg-[#03a9f4] hover:text-white transition-all duration-400 group shadow-sm hover:shadow-lg hover:-translate-y-1"
                                     >
                                         PROFILE
                                         <span class="w-8 h-[2px] bg-current transform origin-left transition-all duration-400 group-hover:w-10"></span>
@@ -269,12 +269,11 @@ const courseCategories = coursesResponse.contents.map(course => ({
                             </div>
                             
                             <!-- 画像エリア (右側) -->
-                            <div class="w-full md:w-5/12 order-1 md:order-2 rounded-[1.5rem] md:rounded-[2rem] overflow-hidden shadow-lg aspect-[4/3] max-h-[45vh] relative group cursor-pointer border-4 border-white/20">
-                                <div class="absolute inset-0 bg-[#e1f5fe]/20 mix-blend-multiply group-hover:bg-transparent transition-colors duration-500 z-10"></div>
+                            <div class="w-full md:w-1/2 order-1 md:order-2 relative group cursor-pointer min-h-[300px] md:min-h-0">
                                 <img
                                     src="/images/home/home_2.webp"
                                     alt="Voyager Tarot Session"
-                                    class="w-full h-full object-cover transform group-hover:scale-105 transition-transform duration-700 ease-out"
+                                    class="w-full h-full absolute inset-0 object-cover transform group-hover:scale-105 transition-transform duration-700 ease-out"
                                     loading="lazy"
                                     decoding="async"
                                 />
@@ -287,23 +286,15 @@ const courseCategories = coursesResponse.contents.map(course => ({
         </div>
 
                         <!-- BLOCK 3: CAREER PATH (NEW) -->
-                        <div class="py-16 md:py-24 bg-pink-50/50 rounded-[3rem] px-6 md:px-16 mx-[-1rem] md:mx-0">
-                            <div class="text-center mb-20 md:mb-28">
-                                <div class="relative inline-block mx-4">
-                                    <h3 class="relative z-20 bg-sakura-vivid text-white text-2xl md:text-4xl font-bold px-16 py-6 shadow-xl tracking-wider">
+                        <section class="relative w-full py-20 md:py-32 bg-gradient-to-b from-[#FCE9FA] via-[#F2BCE5] to-[#FCE9FA]">
+                            <div class="max-w-7xl mx-auto px-6 relative z-10 scroll-animation opacity-0 delay-100">
+                                <div class="text-center mb-16 md:mb-24 flex flex-col items-center relative z-10">
+                                    <span class="text-[#E69C17] font-bold tracking-[0.2em] text-sm md:text-base uppercase block mb-3 drop-shadow-sm">Professional Certification</span>
+                                    <h2 class="text-2xl md:text-4xl font-mincho font-bold tracking-widest leading-tight drop-shadow-md">
                                         プロフェッショナルへの道
-                                    </h3>
-                                    <!-- Left Tail -->
-                                    <div class="absolute top-3 -left-5 h-full w-full bg-sakura-vivid -z-10 rounded-l-lg"></div>
-                                    <!-- Right Tail -->
-                                    <div class="absolute top-3 -right-5 h-full w-full bg-sakura-vivid -z-10 rounded-r-lg"></div>
-                                    
-                                    <!-- Left Fold (Darker Triangle) -->
-                                    <div class="absolute top-full left-0 w-0 h-0 border-t-[12px] border-t-magenta border-l-[12px] border-l-transparent z-10"></div>
-                                    <!-- Right Fold (Darker Triangle) -->
-                                    <div class="absolute top-full right-0 w-0 h-0 border-t-[12px] border-t-magenta border-r-[12px] border-r-transparent z-10"></div>
+                                    </h2>
+                                    <div class="w-16 h-[2px] bg-[#E69C17] mx-auto mt-6 shadow-sm"></div>
                                 </div>
-                            </div>
 
                             <div class="grid md:grid-cols-2 gap-8">
                                 <!-- Card 1: 3 Months -->
@@ -326,32 +317,31 @@ const courseCategories = coursesResponse.contents.map(course => ({
                                         </div>
 
                                         <div class="grid grid-cols-2 gap-4 md:gap-6">
-                                            <div class="bg-pink-50/50 p-4 md:p-6 rounded-2xl flex flex-col items-center text-center group/item hover:bg-white hover:shadow-md transition-all duration-300">
+                                            <div class="bg-pink-200/50 p-4 md:p-6 rounded-2xl flex flex-col items-center text-center group/item hover:bg-white hover:shadow-md transition-all duration-300">
                                                 <div class="p-3 bg-white rounded-full mb-3 text-sakura-vivid shadow-sm group-hover/item:scale-110 transition-transform">
                                                     <Video size={24} strokeWidth={2.5} />
                                                 </div>
                                                 <p class="text-[13px] md:text-sm font-bold text-text-dark leading-tight">月一回の無料<br/>オンライン練習会</p>
                                             </div>
-                                            <div class="bg-pink-50/50 p-4 md:p-6 rounded-2xl flex flex-col items-center text-center group/item hover:bg-white hover:shadow-md transition-all duration-300">
+                                            <div class="bg-pink-200/50 p-4 md:p-6 rounded-2xl flex flex-col items-center text-center group/item hover:bg-white hover:shadow-md transition-all duration-300">
                                                 <div class="p-3 bg-white rounded-full mb-3 text-sakura-vivid shadow-sm group-hover/item:scale-110 transition-transform">
                                                     <GraduationCap size={24} strokeWidth={2.5} />
                                                 </div>
                                                 <p class="text-[13px] md:text-sm font-bold text-text-dark leading-tight">イベント講座や<br/>講習会の開催</p>
                                             </div>
-                                            <div class="bg-pink-50/50 p-4 md:p-6 rounded-2xl flex flex-col items-center text-center group/item hover:bg-white hover:shadow-md transition-all duration-300">
+                                            <div class="bg-pink-200/50 p-4 md:p-6 rounded-2xl flex flex-col items-center text-center group/item hover:bg-white hover:shadow-md transition-all duration-300">
                                                 <div class="p-3 bg-white rounded-full mb-3 text-sakura-vivid shadow-sm group-hover/item:scale-110 transition-transform">
                                                     <MessageCircle size={24} strokeWidth={2.5} />
                                                 </div>
                                                 <p class="text-[13px] md:text-sm font-bold text-text-dark leading-tight">LINEでの<br/>質問メール</p>
                                             </div>
-                                            <div class="bg-pink-50/50 p-4 md:p-6 rounded-2xl flex flex-col items-center text-center group/item hover:bg-white hover:shadow-md transition-all duration-300">
+                                            <div class="bg-pink-200/50 p-4 md:p-6 rounded-2xl flex flex-col items-center text-center group/item hover:bg-white hover:shadow-md transition-all duration-300">
                                                 <div class="p-3 bg-white rounded-full mb-3 text-sakura-vivid shadow-sm group-hover/item:scale-110 transition-transform">
                                                     <Users size={24} strokeWidth={2.5} />
                                                 </div>
                                                 <p class="text-[13px] md:text-sm font-bold text-text-dark leading-tight">受講生同士の<br/>交流セッション</p>
                                             </div>
                                         </div>
-                                        <p class="text-right text-[10px] text-gray-400 font-bold">...and more</p>
                                     </div>
                                 </div>
 
@@ -375,88 +365,73 @@ const courseCategories = coursesResponse.contents.map(course => ({
                                         </div>
 
                                         <div class="grid grid-cols-2 gap-4 md:gap-6">
-                                            <div class="bg-pink-50/50 p-4 md:p-6 rounded-2xl flex flex-col items-center text-center group/item hover:bg-white hover:shadow-md transition-all duration-300">
+                                            <div class="bg-pink-200/50 p-4 md:p-6 rounded-2xl flex flex-col items-center text-center group/item hover:bg-white hover:shadow-md transition-all duration-300">
                                                 <div class="p-3 bg-white rounded-full mb-3 text-sakura-vivid shadow-sm group-hover/item:scale-110 transition-transform">
                                                     <PlusCircle size={24} strokeWidth={2.5} />
                                                 </div>
                                                 <p class="text-[13px] md:text-sm font-bold text-text-dark leading-tight">ステップ1の<br/>全サポート</p>
                                             </div>
-                                            <div class="bg-pink-50/50 p-4 md:p-6 rounded-2xl flex flex-col items-center text-center group/item hover:bg-white hover:shadow-md transition-all duration-300">
+                                            <div class="bg-pink-200/50 p-4 md:p-6 rounded-2xl flex flex-col items-center text-center group/item hover:bg-white hover:shadow-md transition-all duration-300">
                                                 <div class="p-3 bg-white rounded-full mb-3 text-sakura-vivid shadow-sm group-hover/item:scale-110 transition-transform">
                                                     <UserPlus size={24} strokeWidth={2.5} />
                                                 </div>
                                                 <p class="text-[13px] md:text-sm font-bold text-text-dark leading-tight">講師アシスタント<br/>として参加</p>
                                             </div>
-                                            <div class="bg-pink-50/50 p-4 md:p-6 rounded-2xl flex flex-col items-center text-center group/item hover:bg-white hover:shadow-md transition-all duration-300">
+                                            <div class="bg-pink-200/50 p-4 md:p-6 rounded-2xl flex flex-col items-center text-center group/item hover:bg-white hover:shadow-md transition-all duration-300">
                                                 <div class="p-3 bg-white rounded-full mb-3 text-sakura-vivid shadow-sm group-hover/item:scale-110 transition-transform">
                                                     <Presentation size={24} strokeWidth={2.5} />
                                                 </div>
                                                 <p class="text-[13px] md:text-sm font-bold text-text-dark leading-tight">体験会開催の<br/>徹底サポート</p>
                                             </div>
-                                            <div class="bg-pink-50/50 p-4 md:p-6 rounded-2xl flex flex-col items-center text-center group/item hover:bg-white hover:shadow-md transition-all duration-300">
+                                            <div class="bg-pink-200/50 p-4 md:p-6 rounded-2xl flex flex-col items-center text-center group/item hover:bg-white hover:shadow-md transition-all duration-300">
                                                 <div class="p-3 bg-white rounded-full mb-3 text-sakura-vivid shadow-sm group-hover/item:scale-110 transition-transform">
                                                     <Briefcase size={24} strokeWidth={2.5} />
                                                 </div>
                                                 <p class="text-[13px] md:text-sm font-bold text-text-dark leading-tight">独立開業・集客の<br/>個別相談</p>
                                             </div>
                                         </div>
-                                        <p class="text-right text-[10px] text-gray-400 font-bold">...and more</p>
+                                    </div>
                                     </div>
                                 </div>
                             </div>
-                        </div>
+                            </div>
+                        </section>
 
 
                         <!-- BLOCK 4: FUTURE CREATE (Previously MISSION) -->
-                        <div class="min-h-[70vh] md:min-h-[85vh] flex flex-col justify-center py-20 relative overflow-hidden group">
-                            <!-- Background Decoration -->
-                            <div class="absolute top-0 right-0 w-[400px] h-[400px] bg-mint/10 rounded-full blur-[80px] -z-10"></div>
-                            <div class="absolute bottom-0 left-0 w-[300px] h-[300px] bg-sky/10 rounded-full blur-[80px] -z-10"></div>
+                        <div class="relative min-h-[70vh] md:min-h-[85vh] flex flex-col justify-center py-24 md:py-32 overflow-hidde shadow-xl">
+                            <!-- Background Image with Overlay -->
+                            <div class="absolute inset-0 z-0">
+                                <img
+                                    src="/images/home/home_3.webp"
+                                    alt="Voyager Tarot Background"
+                                    class="w-full h-full object-cover transform scale-100 group-hover:scale-105 transition-transform duration-[2s] ease-out"
+                                    loading="lazy"
+                                    decoding="async"
+                                />
+                                <!-- Dark/Light Overlay for better text contrast if needed -->
+                                <div class="absolute inset-0 bg-white/20"></div>
+                            </div>
                             
-                            <div class="max-w-7xl mx-auto px-6 w-full text-center">
-                                <!-- Decorative Spackles -->
-                                <div class="flex justify-center mb-10 text-mint opacity-40">
-                                    <span class="text-3xl mx-2 animate-pulse">✦</span>
-                                    <span class="text-xl mx-2 animate-pulse delay-500 leading-10">✦</span>
-                                    <span class="text-3xl mx-2 animate-pulse delay-200">✦</span>
-                                </div>
-                                
-                                <div class="flex flex-col items-center gap-12">
-                                     <!-- Text Content -->
-                                    <div class="w-full max-w-3xl">
-                                        <h4 class="text-xl md:text-3xl font-mincho leading-relaxed mb-10 text-text-dark tracking-[0.1em]">
-                                            未来を創造する力を、<br/>
-                                            <span class="text-mint border-b-2 border-mint/20 pb-2">あなたに。</span>
-                                        </h4>
-                                        
-                                        <div class="space-y-8 text-sm md:text-base text-gray-500 leading-[2] font-mincho">
-                                            <p class="md:text-lg">
-                                                ボイジャータロットを通じて、<br/>
-                                                皆さまの成長と可能性を広げること。
-                                            </p>
-                                            <div class="w-12 h-px bg-mint/30 mx-auto"></div>
-                                            <p>
-                                                創造性・成長・実現化をテーマに、<br/>
-                                                魅力的、かつ実力あるボイジャータロットリーダー、コーチ、<br/>
-                                                ティーチャーの育成に取り組んでまいります。
-                                            </p>
-                                        </div>
-                                    </div>
-        
-                                    <!-- Image Side -->
-                                     <div class="w-full max-w-2xl relative mt-4">
-                                         <!-- Decorative Frame -->
-                                         <div class="absolute -inset-4 border border-mint/20 rounded-[3rem] -z-10"></div>
-                                         <div class="absolute inset-0 bg-mint/5 blur-xl -z-10 group-hover:blur-3xl transition-all duration-700"></div>
-                                         <div class="rounded-[2.5rem] overflow-hidden shadow-2xl transform group-hover:scale-[1.02] transition-transform duration-700 aspect-[16/9]">
-                                             <img
-                                                src="/images/home/home_3.webp"
-                                                alt="Mission Photo"
-                                                class="w-full h-full object-cover"
-                                                loading="lazy"
-                                                decoding="async"
-                                            />
-                                        </div>
+                            <!-- Glassmorphism Text Card -->
+                            <div class="max-w-4xl mx-auto px-6 w-full text-center relative z-10">
+                                <div class="backdrop-blur-sm bg-white/60 border border-white/50 shadow-2xl rounded-[2rem] md:rounded-[2.5rem] p-8 md:p-16 flex flex-col items-center">
+                                    <h4 class="text-2xl md:text-3xl lg:text-4xl font-mincho font-bold leading-relaxed mb-8 md:mb-12 text-gray-800 tracking-wide drop-shadow-sm">
+                                        未来を創造する力を、<br class="md:hidden"/>
+                                        <span class="text-mint border-b-[3px] border-mint pb-2">あなたに。</span>
+                                    </h4>
+                                    
+                                    <div class="space-y-6 md:space-y-8 text-[15px] md:text-base lg:text-lg text-gray-800 leading-[2] font-mincho antialiased font-medium max-w-2xl">
+                                        <p class="md:text-lg lg:text-xl font-bold">
+                                            ボイジャータロットを通じて、<br/>
+                                            皆さまの成長と可能性を広げること。
+                                        </p>
+                                        <div class="w-12 h-[2px] bg-mint/60 mx-auto rounded-full"></div>
+                                        <p>
+                                            創造性・成長・実現化をテーマに、<br/>
+                                            魅力的、かつ実力あるボイジャータロットリーダー、コーチ、<br/>
+                                            ティーチャーの育成に取り組んでまいります。
+                                        </p>
                                     </div>
                                 </div>
                             </div>
@@ -468,7 +443,7 @@ const courseCategories = coursesResponse.contents.map(course => ({
 		</section>
 
 		<!-- 5. COURSE (Scalable Sidebar Layout) -->
-		<section id="course" class="mb-16 md:mb-32 px-6 py-12 md:py-24 relative scroll-mt-32 bg-gray-50 rounded-[2rem] md:rounded-[3rem]">
+		<section id="course" class="mb-16 md:mb-32 px-6 py-12 md:py-24 relative scroll-mt-32 bg-gradient-to-b from-white via-[#FDF5E6] to-[#FFF8EB]">
 			<div class="max-w-7xl mx-auto">
             <div class="scroll-animation opacity-0">
                  <div class="mb-16 md:mb-24 text-center">
@@ -679,7 +654,14 @@ const courseCategories = coursesResponse.contents.map(course => ({
 
             <div class="grid gap-10 md:grid-cols-3 mb-12">
                 {
-                    newsList.map((news) => (
+                    newsList.map((news, index) => {
+                        const fallbackImages = [
+                            "/images/home/home_1.webp",
+                            "/images/home/home_2.webp",
+                            "/images/home/home_3.webp"
+                        ];
+                        const defaultImg = fallbackImages[index % fallbackImages.length];
+                        return (
                         <a
                             href={`/news/${news.id}`}
                             class="block bg-white rounded-3xl shadow-sm border border-gray-100 hover:shadow-xl hover:shadow-blue-100/50 hover:-translate-y-2 transition-all duration-500 group overflow-hidden relative"
@@ -695,11 +677,13 @@ const courseCategories = coursesResponse.contents.map(course => ({
                                         decoding="async"
                                     />
                                 ) : (
-                                    <div class="w-full h-full flex items-center justify-center bg-gray-50 text-gray-300">
-                                        <span class="text-sm tracking-widest">
-                                            Voyager
-                                        </span>
-                                    </div>
+                                    <img
+                                        src={defaultImg}
+                                        alt="News Placeholder"
+                                        class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700 opacity-90"
+                                        loading="lazy"
+                                        decoding="async"
+                                    />
                                 )}
                                 <div class="absolute top-4 left-4">
                                     <span class="bg-white/90 backdrop-blur text-xs text-text-dark font-bold px-3 py-1 rounded-full shadow-sm">
@@ -721,8 +705,8 @@ const courseCategories = coursesResponse.contents.map(course => ({
                                 </div>
                             </div>
                         </a>
-                    ))
-                }
+                    )}
+                )}
             </div>
 
             <div class="text-center">
