@@ -184,7 +184,7 @@ const courseCategories = [
                             <li class="snap-start shrink-0">
                                 <button
                                     class:list={[
-                                        "category-tab w-full text-center justify-center px-6 py-4 rounded-xl transition-all duration-300 font-bold tracking-wide flex items-center gap-3 group border border-transparent whitespace-nowrap",
+                                        "category-tab w-full text-center justify-center px-4 py-3 md:px-6 md:py-4 rounded-xl transition-all duration-300 font-bold tracking-wide flex items-center gap-3 group border border-transparent whitespace-nowrap",
                                         index === 0 
                                             ? "bg-text-dark text-white shadow-lg shadow-gray-200" 
                                             : "hover:bg-white hover:shadow-md text-gray-500 hover:text-text-dark"
@@ -211,7 +211,7 @@ const courseCategories = [
                 {courseCategories.map((cat, index) => (
                     <div 
                         id={cat.id} 
-                        class:list={["category-content transition-all duration-700 ease-in-out p-6 md:p-12 rounded-[2.5rem] relative overflow-hidden", 
+                        class:list={["category-content transition-all duration-700 ease-in-out p-4 md:p-12 rounded-[2rem] md:rounded-[2.5rem] relative overflow-hidden", 
                             index !== 0 ? "hidden opacity-0 translate-y-4" : "block opacity-100 translate-y-0",
                             cat.id === 'voyager' ? 'bg-magenta-pale/30' : 
                             cat.id === 'coach' ? 'bg-yellow-50/40' : 
@@ -241,12 +241,12 @@ const courseCategories = [
                             <p class="text-gray-500">{cat.description}</p>
                         </div>
 
-                        <div class="space-y-24">
+                        <div class="space-y-16 md:space-y-24">
                             {cat.courses.map((course) => (
                                 <div
                                     id={course.id}
                                     class:list={[
-                                        "bg-white/95 backdrop-blur-md rounded-[2.5rem] border border-white shadow-xl relative overflow-hidden group hover:shadow-2xl transition-all duration-500 scroll-mt-40 mb-16",
+                                        "bg-white/95 backdrop-blur-md rounded-[2rem] md:rounded-[2.5rem] border border-white shadow-xl relative overflow-hidden group hover:shadow-2xl transition-all duration-500 scroll-mt-40 mb-10 md:mb-16",
                                         cat.id === 'voyager' ? 'shadow-magenta/10 hover:shadow-magenta/20' : 
                                         cat.id === 'coach' ? 'shadow-sunshine/10 hover:shadow-sunshine/20' : 
                                         'shadow-sky/10 hover:shadow-sky/20'
@@ -265,7 +265,7 @@ const courseCategories = [
                                         </div>
 
                                         <!-- Content Block -->
-                                        <div class="p-8 md:p-12">
+                                        <div class="p-6 md:p-12">
                                             <div class="mb-10">
                                                 <div>
                                                     <span class:list={["inline-block text-[10px] font-black uppercase tracking-widest mb-3 px-3 py-1 rounded-full text-white", `bg-${course.stepColor}`]}>
@@ -286,7 +286,7 @@ const courseCategories = [
                                             <div class="space-y-6">
                                                 {course.subCourses.map((sub) => (
                                                     <div class:list={[
-                                                        "bg-white p-6 md:p-8 rounded-3xl border border-gray-100/50 shadow-xl transition-all duration-300 hover:shadow-2xl",
+                                                        "bg-white p-5 md:p-8 rounded-2xl md:rounded-3xl border border-gray-100/50 shadow-xl transition-all duration-300 hover:shadow-2xl",
                                                         cat.id === 'voyager' ? 'shadow-magenta/5 hover:shadow-magenta/10' : 
                                                         cat.id === 'coach' ? 'shadow-sunshine/5 hover:shadow-sunshine/10' : 
                                                         'shadow-sky/5 hover:shadow-sky/10'
@@ -305,7 +305,7 @@ const courseCategories = [
 
                                                         {sub.contents && (
                                                             <div class:list={[
-                                                                "mb-8 p-6 md:p-8 rounded-3xl border border-white/50 shadow-inner",
+                                                                "mb-6 md:mb-8 p-5 md:p-8 rounded-2xl md:rounded-3xl border border-white/50 shadow-inner",
                                                                 cat.id === 'voyager' ? 'bg-magenta-pale/30' : 
                                                                 cat.id === 'coach' ? 'bg-yellow-50/50' : 
                                                                 'bg-blue-50/50'
@@ -355,8 +355,8 @@ const courseCategories = [
 
                         <!-- Pricing Table (Per Category) -->
                          {cat.courses.some(c => c.pricing.length > 0) && (
-                            <section class="mt-24 bg-white/80 backdrop-blur-sm p-8 md:p-12 rounded-[3rem] border border-white shadow-sm">
-                                <h3 class="text-2xl md:text-3xl font-bold text-center mb-10 text-text-dark">
+                            <section class="mt-16 md:mt-24 bg-white/80 backdrop-blur-sm p-6 md:p-12 rounded-[2rem] md:rounded-[3rem] border border-white shadow-sm">
+                                <h3 class="text-xl md:text-3xl font-bold text-center mb-6 md:mb-10 text-text-dark">
                                     {cat.title} 価格一覧
                                 </h3>
                                 <div class="overflow-x-auto">
@@ -368,9 +368,9 @@ const courseCategories = [
                                             'bg-sky/10 border-sky/20 text-sky'
                                         ]}>
                                             <tr>
-                                                <th class="p-6 font-black">講座名</th>
-                                                <th class="p-6 font-black">期間</th>
-                                                <th class="p-6 font-black text-right">料金（税込）</th>
+                                                <th class="p-4 md:p-6 font-black whitespace-nowrap text-[10px] md:text-xs">講座名</th>
+                                                <th class="p-4 md:p-6 font-black whitespace-nowrap text-[10px] md:text-xs">期間</th>
+                                                <th class="p-4 md:p-6 font-black text-right whitespace-nowrap text-[10px] md:text-xs">料金（税込）</th>
                                             </tr>
                                         </thead>
                                         <tbody class="divide-y divide-gray-50">
@@ -381,9 +381,9 @@ const courseCategories = [
                                                     cat.id === 'coach' ? 'hover:bg-sunshine/5' : 
                                                     'hover:bg-sky/5'
                                                 ]}>
-                                                    <td class="p-6 font-bold text-text-dark">{price.title}</td>
-                                                    <td class="p-6 text-gray-600 text-sm font-medium">{price.duration}</td>
-                                                    <td class="p-6 text-right font-bold text-text-dark">{price.price}</td>
+                                                    <td class="p-4 md:p-6 font-bold text-text-dark text-xs md:text-base min-w-[120px]">{price.title}</td>
+                                                    <td class="p-4 md:p-6 text-gray-600 text-[10px] md:text-sm font-medium whitespace-nowrap">{price.duration}</td>
+                                                    <td class="p-4 md:p-6 text-right font-bold text-text-dark text-xs md:text-base whitespace-nowrap">{price.price}</td>
                                                 </tr>
                                             ))}
                                         </tbody>
