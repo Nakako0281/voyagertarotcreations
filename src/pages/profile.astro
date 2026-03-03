@@ -7,14 +7,23 @@ import jamesWanlessImg from "../assets/images/james_wanless.webp";
 import { getMembers } from "../library/microcms";
 
 const response = await getMembers();
-const staffMembers = response.contents.map((member) => ({
-    name: member.name,
-    role: member.role,
-    titleEn: member.titleEn,
-    image: member.image?.url || "",
-    description: member.introduction,
-    qualifications: member.qualifications,
-}));
+const staffMembers = response.contents.map((member) => {
+    let imageUrl = "";
+    if (member.image?.url) {
+        imageUrl =
+            typeof member.image.url === "object"
+                ? (member.image.url as any).src
+                : member.image.url;
+    }
+    return {
+        name: member.name,
+        role: member.role,
+        titleEn: member.titleEn,
+        image: imageUrl,
+        description: member.introduction,
+        qualifications: member.qualifications,
+    };
+});
 ---
 
 <Layout title="Profile">
