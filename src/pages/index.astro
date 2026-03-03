@@ -4,6 +4,18 @@ import TarotDraw from "../components/react/TarotDraw.tsx";
 import VoiceSection from "../components/VoiceSection.astro";
 import { getNews } from "../library/microcms";
 import { format } from "date-fns";
+import { Image } from "astro:assets";
+
+import top1Img from "../assets/images/home/top_1.webp";
+import top2Img from "../assets/images/home/top_2.webp";
+import top3Img from "../assets/images/home/top_3.webp";
+import home1Img from "../assets/images/home/home_1.webp";
+import home2Img from "../assets/images/home/home_2.webp";
+import home3Img from "../assets/images/home/home_3.webp";
+import leader1Img from "../assets/images/home/leader_1.webp";
+import coach1Img from "../assets/images/home/coach_1.webp";
+import teacher1Img from "../assets/images/home/teacher_1.webp";
+import placeholderImg from "../assets/images/placeholder.jpg";
 
 const response = await getNews({
 	limit: 3,
@@ -34,17 +46,17 @@ const courseCategories = coursesResponse.contents.map(course => ({
     steps: course.steps.map(step => ({ step: step.stepNumber, label: step.label })),
     cards: course.cards.map(card => {
         let url = card.url;
-        let img = card.image?.url || "/images/placeholder.jpg";
+        let img = card.image?.url || placeholderImg;
 
         if (card.title.includes("リーダー")) {
             url = "/course#reader";
-            img = "/images/home/leader_1.webp";
+            img = leader1Img;
         } else if (card.title.includes("コーチ")) {
             url = "/course#coach";
-            img = "/images/home/coach_1.webp";
+            img = coach1Img;
         } else if (card.title.includes("ティーチャー")) {
             url = "/course#teacher";
-             img = "/images/home/teacher_1.webp";
+             img = teacher1Img;
         }
 
         return {
@@ -69,24 +81,24 @@ const courseCategories = coursesResponse.contents.map(course => ({
 			</div>
 			<!-- Overlay -->
 
-			<img
-				src="/images/home/top_1.webp"
+			<Image
+				src={top1Img as any}
 				alt="Hero Background 1"
 				class="absolute inset-0 w-full h-full object-cover transition-opacity duration-[2000ms] ease-in-out opacity-100 hero-bg"
 				data-index="0"
                 loading="eager"
                 decoding="sync"
 			/>
-			<img
-				src="/images/home/top_2.webp"
+			<Image
+				src={top2Img as any}
 				alt="Hero Background 2"
 				class="absolute inset-0 w-full h-full object-cover transition-opacity duration-[2000ms] ease-in-out opacity-0 hero-bg"
 				data-index="1"
                 loading="eager"
                 decoding="sync"
 			/>
-			<img
-				src="/images/home/top_3.webp"
+			<Image
+				src={top3Img as any}
 				alt="Hero Background 3"
 				class="absolute inset-0 w-full h-full object-cover transition-opacity duration-[2000ms] ease-in-out opacity-0 hero-bg"
 				data-index="2"
@@ -178,8 +190,8 @@ const courseCategories = coursesResponse.contents.map(course => ({
                         <div class="flex flex-col md:flex-row items-stretch md:h-[500px] lg:h-[550px]">
                             <!-- 画像エリア (左側) -->
                             <div class="w-full md:w-1/2 relative group cursor-pointer min-h-[300px] md:min-h-0">
-                                <img
-                                    src="/images/home/home_1.webp"
+                                <Image
+                                    src={home1Img as any}
                                     alt="Voyager Tarot Card"
                                     class="w-full h-full absolute inset-0 object-cover transform group-hover:scale-105 transition-transform duration-700 ease-out"
                                     loading="lazy"
@@ -270,8 +282,8 @@ const courseCategories = coursesResponse.contents.map(course => ({
                             
                             <!-- 画像エリア (右側) -->
                             <div class="w-full md:w-1/2 order-1 md:order-2 relative group cursor-pointer min-h-[300px] md:min-h-0">
-                                <img
-                                    src="/images/home/home_2.webp"
+                                <Image
+                                    src={home2Img as any}
                                     alt="Voyager Tarot Session"
                                     class="w-full h-full absolute inset-0 object-cover transform group-hover:scale-105 transition-transform duration-700 ease-out"
                                     loading="lazy"
@@ -402,8 +414,8 @@ const courseCategories = coursesResponse.contents.map(course => ({
                         <div class="relative min-h-[70vh] md:min-h-[85vh] flex flex-col justify-center py-24 md:py-32 overflow-hidde shadow-xl">
                             <!-- Background Image with Overlay -->
                             <div class="absolute inset-0 z-0">
-                                <img
-                                    src="/images/home/home_3.webp"
+                                <Image
+                                    src={home3Img as any}
                                     alt="Voyager Tarot Background"
                                     class="w-full h-full object-cover transform scale-100 group-hover:scale-105 transition-transform duration-[2s] ease-out"
                                     loading="lazy"
@@ -538,8 +550,8 @@ const courseCategories = coursesResponse.contents.map(course => ({
                                     <a href={card.url} class="group block h-full">
                                         <div class="overflow-hidden rounded-3xl mb-5 shadow-lg shadow-gray-100 relative aspect-[4/3] border-[3px] border-transparent group-hover:border-sakura-vivid/50 transition-all duration-300">
                                             <div class="absolute inset-0 bg-text-dark/0 group-hover:bg-text-dark/10 transition-colors z-10"></div>
-                                            <img
-                                                src={card.img}
+                                            <Image
+                                                src={card.img as any}
                                                 alt={card.title}
                                                 class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"
                                                 loading="lazy"
@@ -655,11 +667,7 @@ const courseCategories = coursesResponse.contents.map(course => ({
             <div class="grid gap-10 md:grid-cols-3 mb-12">
                 {
                     newsList.map((news, index) => {
-                        const fallbackImages = [
-                            "/images/home/home_1.webp",
-                            "/images/home/home_2.webp",
-                            "/images/home/home_3.webp"
-                        ];
+                        const fallbackImages = [home1Img, home2Img, home3Img];
                         const defaultImg = fallbackImages[index % fallbackImages.length];
                         return (
                         <a
@@ -677,8 +685,8 @@ const courseCategories = coursesResponse.contents.map(course => ({
                                         decoding="async"
                                     />
                                 ) : (
-                                    <img
-                                        src={defaultImg}
+                                    <Image
+                                        src={defaultImg as any}
                                         alt="News Placeholder"
                                         class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700 opacity-90"
                                         loading="lazy"

@@ -1,5 +1,10 @@
 ---
 import Layout from "../layouts/Layout.astro";
+import { Image } from "astro:assets";
+
+import leaderImg from "../assets/images/home/leader_1.webp";
+import coachImg from "../assets/images/home/coach_1.webp";
+import teacherImg from "../assets/images/home/teacher_1.webp";
 
 // Data Definitions
 const courseCategories = [
@@ -14,7 +19,7 @@ const courseCategories = [
                 step: "STEP 1",
                 stepColor: "sakura-vivid", // Red
                 bgGradient: "bg-sakura-vivid/20",
-                image: "/images/home/leader_1.webp",
+                image: leaderImg,
                 title: "認定リーダー養成講座",
                 subtitle: "基礎を学び、自分と他者をリーディングできるようになる",
                 description: "ボイジャータロットの基礎と78枚のカードの解説、基本のリーディングを学びます。<br />ボイジャータロットがどんなカードかを理解し、自分で行うセルフリーディングから他者への基礎リーディングが出来るようになります。",
@@ -74,7 +79,7 @@ const courseCategories = [
                 step: "STEP 2",
                 stepColor: "sunshine", // Yellow
                 bgGradient: "bg-sunshine/20",
-                image: "/images/home/coach_1.webp",
+                image: coachImg,
                 title: "認定コーチ養成講座",
                 subtitle: "質問力を磨き、行動を促すコーチングスキルを習得",
                 description: "占いやカウンセリングの知識を得ても、スムーズなセッションが出来なかったり、自分自身が思うように生きられていなければ活かしていく事は出来ません。単なる占いのツールではなく、行動を促し未来をクリエイトするのがボイジャータロットのパワー。ボイジャーを使った実践的なコーチングスキルを学び、自分自身も取り組むことで、学びと行動の習慣化を両立し、身につけることが出来る講座です。受講しながら自分自身にも変化を起こし、目標達成を叶えていきます。この先のティーチャーとして活躍していきたい方にも重要な講座です。",
@@ -108,7 +113,7 @@ const courseCategories = [
                 step: "STEP 3",
                 stepColor: "sky", // Blue
                 bgGradient: "bg-sky/20",
-                image: "/images/home/teacher_1.webp",
+                image: teacherImg,
                 title: "認定ティーチャー養成講座",
                 subtitle: "ボイジャータロットを教え、広める存在になる",
                 description: "認定ティーチャーとして『リーダー認定講座(ベーシック・アドバンス)』を開催できるようになります。<br />教える立場になることで、カードへの理解が圧倒的に深まり、ビジネスとしての活動の幅も広がります。",
@@ -149,7 +154,7 @@ const courseCategories = [
                 step: "COMING SOON",
                 stepColor: "gray-400",
                 bgGradient: "bg-gray-100",
-                image: "/images/home/leader_1.webp",
+                image: leaderImg,
                 title: "数秘術講座（準備中）",
                 subtitle: "数字の神秘を学び、自己理解を深める",
                 description: "現在準備中です。公開までしばらくお待ちください。",
@@ -255,8 +260,8 @@ const courseCategories = [
                                     <div class="flex flex-col">
                                         <!-- Image Block (Top, fixed aspect ratio) -->
                                         <div class="w-full h-48 md:h-64 relative overflow-hidden">
-                                            <img
-                                                src={course.image}
+                                            <Image
+                                                src={course.image as any}
                                                 alt={course.title}
                                                 class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
                                             />

@@ -1,5 +1,6 @@
 ---
-
+import { Image } from "astro:assets";
+import aokiSakuraImg from "../assets/images/AokiSakura_1.webp";
 ---
 
 <div
@@ -20,8 +21,8 @@
         <div
             class="w-32 h-32 bg-gray-200 rounded-full mx-auto mb-4 overflow-hidden relative group shadow-crystal border-4 border-white"
         >
-            <img
-                src="/images/AokiSakura_1.webp"
+            <Image
+                src={aokiSakuraImg as any}
                 alt="Sakura Aoki"
                 class="w-full h-full object-cover"
             />

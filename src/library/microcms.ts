@@ -141,13 +141,21 @@ export interface MemberResponse {
     contents: Member[];
 }
 
+import { default as aokiSakuraImg } from "../assets/images/AokiSakura_1.webp";
+import { default as leader1Img } from "../assets/images/home/leader_1.webp";
+import { default as coach1Img } from "../assets/images/home/coach_1.webp";
+import { default as teacher1Img } from "../assets/images/home/teacher_1.webp";
+import { default as home1Img } from "../assets/images/home/home_1.webp";
+import { default as home2Img } from "../assets/images/home/home_2.webp";
+import { default as home3Img } from "../assets/images/home/home_3.webp";
+
 const mockMembers: Member[] = [
     {
         id: "sakura-aoki",
         name: "青木 咲羅",
         role: "Voyager Tarot Creations代表",
         titleEn: "Sakura Aoki / Voyager Tarot Creations代表",
-        image: { url: "/images/AokiSakura_1.webp", height: 800, width: 600 },
+        image: { url: aokiSakuraImg as any, height: 800, width: 600 },
         introduction: `祖父・母共に占い師という家庭に生まれ、幼い頃からスピリチュアルな環境で育つ。
 保育士をしながらカウンセリング、心理療法を学び、2003年占い師、心理セラピストとして開業。
 その後、ボイジャータロットJAPANでの北海道初の認定カウンセラーとなり、2013年から認定ティーチャーとしてその普及も努める。
@@ -172,7 +180,7 @@ const mockMembers: Member[] = [
         name: "山田 花子",
         role: "認定コーチ",
         titleEn: "Hanako Yamada / Certified Coach",
-        image: { url: "/images/AokiSakura_1.webp", height: 800, width: 600 },
+        image: { url: aokiSakuraImg as any, height: 800, width: 600 },
         introduction: "丁寧なセッションで定評がある認定コーチ。クライアントの本来の輝きを引き出すことを得意とする。自身の経験に基づいた深い共感力で、多くのクライアントから信頼を得ている。\n\n現在はオンラインを中心に活動中。",
         qualifications: ["ボイジャータロット認定コーチ"],
     },
@@ -256,9 +264,9 @@ const mockCourses: CourseCategory[] = [
             { stepNumber: 3, label: "ティーチャー認定" }
         ],
         cards: [
-            { title: "リーダー認定講座", image: { url: "/images/home/leader_1.webp", height: 300, width: 400 }, url: "/course#course_1" },
-            { title: "コーチ認定講座", image: { url: "/images/home/coach_1.webp", height: 300, width: 400 }, url: "/course#course_2" },
-            { title: "ティーチャー認定講座", image: { url: "/images/home/teacher_1.webp", height: 300, width: 400 }, url: "/course2#course_1" }
+            { title: "リーダー認定講座", image: { url: leader1Img as any, height: 300, width: 400 }, url: "/course#course_1" },
+            { title: "コーチ認定講座", image: { url: coach1Img as any, height: 300, width: 400 }, url: "/course#course_2" },
+            { title: "ティーチャー認定講座", image: { url: teacher1Img as any, height: 300, width: 400 }, url: "/course2#course_1" }
         ]
     },
     {
@@ -272,9 +280,9 @@ const mockCourses: CourseCategory[] = [
             { stepNumber: 3, label: "マスター" }
         ],
         cards: [
-            { title: "入門講座", image: { url: "/images/home/home_1.webp", height: 300, width: 400 }, url: "#" },
-            { title: "応用講座", image: { url: "/images/home/home_2.webp", height: 300, width: 400 }, url: "#" },
-            { title: "マスター講座", image: { url: "/images/home/home_3.webp", height: 300, width: 400 }, url: "#" }
+            { title: "入門講座", image: { url: home1Img as any, height: 300, width: 400 }, url: "#" },
+            { title: "応用講座", image: { url: home2Img as any, height: 300, width: 400 }, url: "#" },
+            { title: "マスター講座", image: { url: home3Img as any, height: 300, width: 400 }, url: "#" }
         ]
     }
 ];

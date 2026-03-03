@@ -1,6 +1,8 @@
 ---
 import Layout from "../layouts/Layout.astro";
 import ProfileCarousel from "../components/react/ProfileCarousel";
+import { Image } from "astro:assets";
+import jamesWanlessImg from "../assets/images/james_wanless.webp";
 
 import { getMembers } from "../library/microcms";
 
@@ -66,8 +68,8 @@ const staffMembers = response.contents.map((member) => ({
                 <div
                     class="w-48 h-48 bg-white rounded-full overflow-hidden border-4 border-white shadow-crystal relative"
                 >
-                    <img
-                        src="/images/james_wanless.webp"
+                    <Image
+                        src={jamesWanlessImg as any}
                         alt="James Wanless"
                         class="w-full h-full object-cover"
                     />
