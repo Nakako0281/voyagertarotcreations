@@ -333,7 +333,7 @@ const courseCategories = coursesResponse.contents.map(course => ({
                                                 <div class="p-3 bg-white rounded-full mb-3 text-sakura-vivid shadow-sm group-hover/item:scale-110 transition-transform">
                                                     <Video size={24} strokeWidth={2.5} />
                                                 </div>
-                                                <p class="text-[13px] md:text-sm font-bold text-text-dark leading-tight">月一回の無料<br/>オンライン練習会</p>
+                                                <p class="text-[13px] md:text-sm font-bold text-text-dark leading-tight">受講後一年間<br/>オンライン練習会無料参加</p>
                                             </div>
                                             <div class="bg-pink-200/50 p-4 md:p-6 rounded-2xl flex flex-col items-center text-center group/item hover:bg-white hover:shadow-md transition-all duration-300">
                                                 <div class="p-3 bg-white rounded-full mb-3 text-sakura-vivid shadow-sm group-hover/item:scale-110 transition-transform">
@@ -440,8 +440,9 @@ const courseCategories = coursesResponse.contents.map(course => ({
                                         </p>
                                         <div class="w-12 h-[2px] bg-mint/60 mx-auto rounded-full"></div>
                                         <p>
-                                            創造性・成長・実現化をテーマに、<br/>
-                                            魅力的、かつ実力あるボイジャータロットリーダー、コーチ、<br/>
+                                            <span class="text-lg md:text-xl lg:text-4xl font-bold text-green-600">創造性・成長・実現化</span><br/>
+                                            をテーマに、魅力的かつ実力ある<br/>
+                                            ボイジャータロットリーダー、コーチ、<br/>
                                             ティーチャーの育成に取り組んでまいります。
                                         </p>
                                     </div>
@@ -519,18 +520,36 @@ const courseCategories = coursesResponse.contents.map(course => ({
                                 <h3 class="text-center font-bold text-gray-400 text-sm tracking-widest mb-10 opacity-70">- STEP UP FLOW -</h3>
                                 <div class="grid grid-cols-1 md:grid-cols-3 gap-6 text-text-dark font-bold">
                                     {cat.steps.map((step, i) => {
+                                        const isTarot = cat.id === "tarot";
                                         const stepColors = ["bg-sakura-vivid", "bg-sunshine", "bg-sky"];
                                         const colorClass = stepColors[i % stepColors.length];
+                                        
+                                        // 枠サイズの統一と文字数に応じたスタイル変更
+                                        const labelLength = step.label.replace(/\s/g, '').length;
+                                        // "入門" サイズ(高さを抑える)に合わせつつ、あふれないように文字を小さく・行間を詰める
+                                        const textSizeClass = labelLength > 15 ? "text-xs md:text-sm leading-tight" : labelLength > 8 ? "text-sm md:text-base leading-snug" : "text-lg md:text-xl leading-relaxed";
+
                                         return (
-                                        <div class="relative flex flex-col items-center justify-center group/step">
-                                            <div class="bg-white px-6 py-4 md:p-8 rounded-2xl border-[3px] border-blue-50 shadow-md flex items-center justify-start md:justify-center gap-4 w-full max-w-[280px] md:max-w-none relative z-10 hover:shadow-lg hover:border-blue-200 transition-all duration-300">
-                                                <span class={`w-8 h-8 ${colorClass} text-white rounded-full flex items-center justify-center text-sm font-sans shadow-sm shrink-0`}>
-                                                    {step.step}
-                                                </span>
-                                                <span class="whitespace-nowrap text-lg">{step.label}</span>
-                                            </div>
+                                        <div class="relative flex flex-col items-center justify-center group/step w-full">
+                                            {isTarot ? (
+                                                <div class="bg-white px-6 py-4 md:p-8 rounded-2xl border-[3px] border-blue-50 shadow-md flex items-center justify-start md:justify-center gap-4 w-full h-full max-w-[280px] md:max-w-none relative z-10 hover:shadow-lg hover:border-blue-200 transition-all duration-300">
+                                                    <span class={`w-8 h-8 ${colorClass} text-white rounded-full flex items-center justify-center text-sm font-sans shadow-sm shrink-0`}>
+                                                        {step.step}
+                                                    </span>
+                                                    <span class={`whitespace-pre-line leading-relaxed flex-1 text-left md:text-center ${textSizeClass}`}>{step.label}</span>
+                                                </div>
+                                            ) : (
+                                                <div class="bg-white px-4 py-3 md:px-6 md:py-4 rounded-2xl border-[3px] border-blue-50 shadow-md flex items-center justify-start md:justify-center gap-3 w-full max-w-[280px] md:max-w-none relative z-10 hover:shadow-lg hover:border-blue-200 transition-all duration-300 min-h-[5rem] md:min-h-[6rem]">
+                                                    <span class="text-sakura-vivid text-lg shrink-0 w-6 text-center">◆</span>
+                                                    <span class={`flex-1 flex flex-col items-start md:items-center text-left md:text-center tracking-tight justify-center ${textSizeClass}`}>
+                                                        {step.label.split('\n').map((line, idx) => (
+                                                            <span class="inline-block whitespace-nowrap">{line}</span>
+                                                        ))}
+                                                    </span>
+                                                </div>
+                                            )}
                                             
-                                            {i < cat.steps.length - 1 && (
+                                            {isTarot && i < cat.steps.length - 1 && (
                                                 <div class="absolute z-20 text-gray-300
                                                     md:top-1/2 md:left-full md:ml-3 md:-translate-x-1/2 md:-translate-y-1/2 md:bottom-auto md:right-auto md:mt-0
                                                     top-full left-1/2 mt-3 -translate-x-1/2 -translate-y-1/2

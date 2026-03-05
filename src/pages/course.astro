@@ -145,21 +145,87 @@ const courseCategories = [
     },
     {
         id: "other",
-        title: "その他講座（例）",
+        title: "その他講座",
         sub: "Other Courses",
-        description: "数秘術や占星術など、その他の講座も準備中です。",
+        description: "ビューティーボイジャーレッスンなど。",
         courses: [
              {
-                id: "example",
-                step: "COMING SOON",
-                stepColor: "gray-400",
-                bgGradient: "bg-gray-100",
-                image: leaderImg,
-                title: "数秘術講座（準備中）",
-                subtitle: "数字の神秘を学び、自己理解を深める",
-                description: "現在準備中です。公開までしばらくお待ちください。",
-                subCourses: [],
-                pricing: []
+                id: "beauty-voyager",
+                step: "beauty・health",
+                stepColor: "sakura-vivid",
+                bgGradient: "bg-sakura-vivid/20",
+                image: leaderImg, // 仮で既存の画像を流用
+                title: "ビューティーボイジャーレッスン\n（アンチエイジング・ダイエット）",
+                subtitle: "BEAUTY VOYAGER LESSON",
+                description: `
+                    <strong>ビューティーボイジャーレッスンとは</strong><br />
+                    カラダは、約37兆個の細胞で出来ています。<br />
+                    その細胞は食事によって作られます。<br />
+                    食生活の悪化により、老化促進や病気に発展していくことが、現代の深刻な問題になっています。<br />
+                    現代社会において不規則、不摂生な食生活だけでなく、ストレス、生活時間の乱れ、睡眠不足、過度な痩身願望など、美や健康の大敵は多くあります。<br />
+                    特に女性は、月経、出産、子育て、閉経など一生涯の中で身体や生活の変化が多々訪れます。<br />
+                    ただ、痩せているだけでは美しいとは言えません。健康で、美しい身体づくり、健康美を目指すことが大切です。<br /><br />
+                    美しく、健康でありたいはみんなの願い。<br />
+                    内面からの真の美しさを生成・維持・継続していく為に、食の正しい知識である栄養学を学ぶことは、人生の美の宝です。美容栄養学は食から、生活習慣まであらゆる美について学ぶことができます。<br /><br />
+                    <ul class="list-disc pl-5 mt-4 mb-6 space-y-1 text-gray-600 font-medium">
+                        <li>美容や健康に興味がある</li>
+                        <li>健康を維持していきたい</li>
+                        <li>疲れやすい</li>
+                        <li>食生活が乱れている実感がある</li>
+                        <li>日々の食生活の中で最大限美しくなりたい</li>
+                        <li>美容食の知識を学びたい</li>
+                        <li>ダイエットしたい</li>
+                        <li>ダイエットが続かない、失敗したことがある</li>
+                        <li>料理が苦手</li>
+                        <li>作る時間がない　　　　　　など</li>
+                    </ul>
+                    分かってはいるけど、中々変えられない生活習慣や食習慣など、様々な悩みも、知識を得る事で、自然と変化させる事が出来ます。<br />
+                    そしてボイジャータロットがより良い選択肢や解決策を提示してくれます。<br />
+                    行動を促し、実現化するパワーがあるので、真に健康で美しく、なりたい自分へと導いてくれます。
+                `,
+                subCourses: [
+                    {
+                        title: "アンチエイジングクラス",
+                        duration: "9時間 (3時間×3回) ＋報告会",
+                        description: "美しく年を重ねるための実践的な知識とケアを学びます。",
+                        contents: [
+                            "01 色の白いは七難隠す ー 美白・シミ",
+                            "02 重力に抗え ー シワ・たるみ",
+                            "03 血流は命の水 ー くすみ・くま・血栓",
+                            "04 大人女子はホルモンを制す ー 更年期・ツヤ・肥満",
+                            "05 女は衣装、髪かたち ー 白髪・薄毛・パサつき",
+                            "06 軸がブレると自由は奪われる ー 美骨",
+                            "07 生涯冴えてるイイ女 ー 脳活性・認知症",
+                            "08 人生のスパイスを使いこなす ー ストレス"
+                        ],
+                        condition: null
+                    },
+                    {
+                        title: "ダイエットクラス",
+                        duration: "9時間 (3時間×3回) ＋報告会",
+                        description: "健康的に痩せ、リバウンドしない真のダイエット法を身につけます。",
+                        contents: [
+                            "01 本当の自分のカラダで生きる ー ダイエット",
+                            "02 要らない物を持ち続けますか？ ー デトックス",
+                            "03 不要な物は全て流す ー リンパ・むくみ",
+                            "04 賢い女は時間を上手く使う ー 時間栄養学",
+                            "05 疲れ知らずのパワフルウーマン ー 抗疲労・運動",
+                            "06 美と健康は内側から ー 便秘・腸活"
+                        ],
+                        condition: {
+                            title: "特別プログラム",
+                            items: ["美容栄養学の知識とボイジャータロットの実現化で、3ヶ月で『変わる』を実践します！"],
+                            color: "sakura-vivid",
+                            bgColor: "bg-pink-50/50",
+                            borderColor: "border-pink-100/50"
+                        }
+                    }
+                ],
+                pricing: [
+                    { title: "アンチエイジングクラス", duration: "全9時間＋報告会", price: "¥45,000" },
+                    { title: "ダイエットクラス", duration: "全9時間＋報告会", price: "¥45,000" },
+                    { title: "セット受講特典", duration: "若返りホルモン活性化\n（メタセラピープレゼント付）", price: "¥90,000" }
+                ]
             }
         ]
     }
@@ -182,14 +248,14 @@ const courseCategories = [
         <div class="grid md:grid-cols-12 gap-0 md:gap-8 items-start relative">
             
             <!-- Sidebar Navigation (Sticky on Desktop) -->
-            <aside class="md:col-span-3 md:sticky md:top-32 z-20 w-full overflow-hidden">
-                <nav class="bg-white/50 backdrop-blur-md rounded-[2rem] p-4 border border-white shadow-glass w-full">
-                    <ul class="flex md:flex-col gap-2 overflow-x-auto md:overflow-visible pb-2 md:pb-0 touch-action-pan-x snap-x no-scrollbar w-full">
+            <aside class="md:col-span-3 md:sticky md:top-32 z-20 w-full">
+                <nav class="bg-white/70 md:bg-white/50 backdrop-blur-md rounded-[2rem] p-2 md:p-4 border border-white shadow-glass w-full">
+                    <ul class="grid grid-cols-2 md:flex md:flex-col gap-2 w-full">
                         {courseCategories.map((cat, index) => (
-                            <li class="snap-start shrink-0">
+                            <li class="w-full">
                                 <button
                                     class:list={[
-                                        "category-tab w-full text-center justify-center px-4 py-3 md:px-6 md:py-4 rounded-xl transition-all duration-300 font-bold tracking-wide flex items-center gap-3 group border border-transparent whitespace-nowrap",
+                                        "category-tab w-full h-full text-center justify-center px-2 py-3 md:px-6 md:py-4 rounded-xl transition-all duration-300 font-bold tracking-wide flex flex-col md:flex-row items-center gap-1 md:gap-3 group border border-transparent",
                                         index === 0 
                                             ? "bg-text-dark text-white shadow-lg shadow-gray-200" 
                                             : "hover:bg-white hover:shadow-md text-gray-500 hover:text-text-dark"
@@ -201,7 +267,8 @@ const courseCategories = [
                                         index === 0 ? "bg-sakura-vivid" : "bg-gray-300 group-hover:bg-text-dark"
                                     ]}></span>
                                     <div class="flex flex-col items-center">
-                                        <span class="text-sm md:text-base">{cat.title}</span>
+                                        <span class="text-xs md:text-base whitespace-normal leading-tight">{cat.title}</span>
+                                        <span class="text-[9px] md:text-[10px] uppercase tracking-widest opacity-60 mt-0.5 md:hidden hidden">{cat.sub}</span>
                                         <span class="text-[10px] uppercase tracking-widest opacity-60 hidden md:block">{cat.sub}</span>
                                     </div>
                                 </button>
@@ -373,9 +440,9 @@ const courseCategories = [
                                             'bg-sky/10 border-sky/20 text-sky'
                                         ]}>
                                             <tr>
-                                                <th class="p-4 md:p-6 font-black whitespace-nowrap text-[10px] md:text-xs">講座名</th>
-                                                <th class="p-4 md:p-6 font-black whitespace-nowrap text-[10px] md:text-xs">期間</th>
-                                                <th class="p-4 md:p-6 font-black text-right whitespace-nowrap text-[10px] md:text-xs">料金（税込）</th>
+                                                <th class="p-3 md:p-6 font-black whitespace-nowrap text-[10px] md:text-xs">講座名</th>
+                                                <th class="p-3 md:p-6 font-black whitespace-nowrap text-[10px] md:text-xs">期間</th>
+                                                <th class="p-3 md:p-6 font-black text-right whitespace-nowrap text-[10px] md:text-xs">料金（税込）</th>
                                             </tr>
                                         </thead>
                                         <tbody class="divide-y divide-gray-50">
@@ -386,9 +453,9 @@ const courseCategories = [
                                                     cat.id === 'coach' ? 'hover:bg-sunshine/5' : 
                                                     'hover:bg-sky/5'
                                                 ]}>
-                                                    <td class="p-4 md:p-6 font-bold text-text-dark text-xs md:text-base min-w-[120px]">{price.title}</td>
-                                                    <td class="p-4 md:p-6 text-gray-600 text-[10px] md:text-sm font-medium whitespace-nowrap">{price.duration}</td>
-                                                    <td class="p-4 md:p-6 text-right font-bold text-text-dark text-xs md:text-base whitespace-nowrap">{price.price}</td>
+                                                    <td class="p-3 md:p-6 font-bold text-text-dark text-xs md:text-base min-w-[100px] md:min-w-[120px]">{price.title}</td>
+                                                    <td class="p-3 md:p-6 text-gray-600 text-[10px] md:text-sm font-medium whitespace-pre-line leading-relaxed">{price.duration}</td>
+                                                    <td class="p-3 md:p-6 text-right font-bold text-text-dark text-xs md:text-base whitespace-nowrap">{price.price}</td>
                                                 </tr>
                                             ))}
                                         </tbody>
