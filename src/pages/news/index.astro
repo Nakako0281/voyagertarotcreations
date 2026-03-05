@@ -54,11 +54,11 @@ function formatDate(dateString: string) {
                             <div class="flex-1 flex flex-col justify-between h-full md:min-h-[12rem] py-2">
                                 <div>
                                     <div class="flex items-center gap-4 mb-4">
-                                        <time class="text-sm text-gray-400 font-bold tracking-wider">
+                                        <time class="text-sm text-gray-600 font-bold tracking-wider">
                                             {formatDate(news.publishedAt)}
                                         </time>
                                         {news.category.map((cat) => (
-                                            <span class="text-xs text-sakura-vivid font-bold border border-sakura-vivid/30 bg-sakura-light/10 px-3 py-1 rounded-full backdrop-blur-sm">
+                                            <span class="text-sm text-sakura-vivid font-bold border border-sakura-vivid/30 bg-sakura-light/10 px-3 py-1 rounded-full backdrop-blur-sm">
                                                 {cat.name}
                                             </span>
                                         ))}
@@ -68,7 +68,7 @@ function formatDate(dateString: string) {
                                     </h2>
                                 </div>
                                 <div class="flex justify-end">
-                                    <span class="text-sm font-bold text-gray-400 group-hover:text-sakura-vivid transition-colors flex items-center gap-2">
+                                    <span class="text-sm font-bold text-gray-600 group-hover:text-sakura-vivid transition-colors flex items-center gap-2">
                                         Read More <span class="group-hover:translate-x-1 transition-transform">&rarr;</span>
                                     </span>
                                 </div>

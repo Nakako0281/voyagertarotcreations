@@ -27,12 +27,15 @@ function formatDate(dateString: string) {
         <!-- Header -->
         <header class="mb-12 pb-8 border-b border-gray-100 relative z-10">
             <div class="flex items-center gap-4 mb-6">
-                <time class="text-gray-500 font-bold tracking-wider"
-                    >{formatDate(news.publishedAt)}</time
+                <time
+                    class="text-gray-600 font-bold tracking-wider"
+                    datetime={news.publishedAt}
                 >
+                    {formatDate(news.publishedAt)}
+                </time>
                 {
-                    news.category.map((cat) => (
-                        <span class="text-xs text-sakura-vivid font-bold border border-sakura-vivid/30 bg-sakura-light/10 px-3 py-1 rounded-full backdrop-blur-sm">
+                    news.category.map((cat: any) => (
+                        <span class="text-sm text-sakura-vivid font-bold border border-sakura-vivid/30 bg-sakura-light/10 px-3 py-1 rounded-full backdrop-blur-sm">
                             {cat.name}
                         </span>
                     ))
@@ -69,12 +72,13 @@ function formatDate(dateString: string) {
         >
             <a
                 href="/news"
-                class="inline-flex items-center px-8 py-3 rounded-full border border-gray-300 text-gray-500 font-bold tracking-widest hover:border-sakura-vivid hover:text-sakura-vivid transition-all group duration-300 bg-white/50 backdrop-blur-sm"
+                class="inline-flex items-center px-8 py-3 rounded-full border border-gray-300 text-gray-700 font-bold tracking-widest hover:border-sakura-vivid hover:text-sakura-vivid transition-all group duration-300 bg-white/50 backdrop-blur-sm"
             >
                 <span
-                    class="mr-2 transition-transform group-hover:-translate-x-1"
+                    class="mr-2 group-hover:-translate-x-1 transition-transform"
                     >&larr;</span
-                > お知らせ一覧に戻る
+                >
+                BACK TO NEWS
             </a>
         </div>
 

@@ -258,7 +258,7 @@ const courseCategories = [
                                         "category-tab w-full h-full text-center justify-center px-2 py-3 md:px-6 md:py-4 rounded-xl transition-all duration-300 font-bold tracking-wide flex flex-col md:flex-row items-center gap-1 md:gap-3 group border border-transparent",
                                         index === 0 
                                             ? "bg-text-dark text-white shadow-lg shadow-gray-200" 
-                                            : "hover:bg-white hover:shadow-md text-gray-500 hover:text-text-dark"
+                                            : "hover:bg-white hover:shadow-md text-gray-600 hover:text-text-dark"
                                     ]}
                                     data-target={cat.id}
                                 >
@@ -310,7 +310,9 @@ const courseCategories = [
                             'border-sky bg-sky/5'
                         ]}>
                             <h2 class="text-3xl font-bold text-text-dark mb-2">{cat.title}</h2>
-                            <p class="text-gray-500">{cat.description}</p>
+                            <div class="mt-8 md:mt-12 text-center md:text-left">
+                            <p class="text-gray-600 font-medium leading-relaxed">{cat.description}</p>
+                        </div>
                         </div>
 
                         <div class="space-y-16 md:space-y-24">
@@ -343,15 +345,18 @@ const courseCategories = [
                                                     <span class:list={["inline-block text-[10px] font-black uppercase tracking-widest mb-3 px-3 py-1 rounded-full text-white", `bg-${course.stepColor}`]}>
                                                         {course.step}
                                                     </span>
-                                                    <h4 class="text-2xl md:text-3xl font-bold text-text-dark mb-2">
-                                                        {course.title}
-                                                    </h4>
-                                                    <p class="text-gray-500 leading-relaxed max-w-xl">{course.subtitle}</p>
+                                                    <h4 class="text-2xl md:text-3xl font-bold mb-3 text-text-dark">{course.title}</h4>
+                                                    <p class="text-gray-600 leading-relaxed max-w-xl font-medium">{course.subtitle}</p>
                                                 </div>
                                                 <div class:list={["w-12 h-1 mb-8 rounded-full opacity-20", `bg-${course.stepColor}`]}></div>
                                                 <p class="text-gray-600 leading-relaxed">
                                                     <Fragment set:html={course.description} />
                                                 </p>
+                                                <p class="text-gray-600 text-xs md:text-sm mt-4 font-medium">
+                ※価格はすべて税込表示です。<br/>
+                ※講座内容は予告なく変更される場合があります。<br/>
+                ※テキスト代・認定料が含まれている講座と、別途必要な講座があります。詳細は各講座のページをご確認ください。
+            </p>                                    
                                             </div>
         
                                             <!-- Sub Courses -->
@@ -367,11 +372,11 @@ const courseCategories = [
                                                             <h5 class="font-bold text-xl text-text-dark">
                                                                 {sub.title}
                                                             </h5>
-                                                            <span class="text-[10px] font-black text-gray-400 bg-gray-50 px-3 py-1.5 rounded-full uppercase tracking-tighter">
+                                                            <span class="text-xs md:text-sm font-black text-gray-600 bg-gray-50 px-3 py-1.5 rounded-full uppercase tracking-tighter">
                                                                 期間: {sub.duration}
                                                             </span>
                                                         </div>
-                                                        <p class="text-gray-500 text-sm leading-relaxed mb-6">
+                                                        <p class="text-gray-700 text-sm md:text-base leading-relaxed mb-6 font-medium">
                                                             <Fragment set:html={sub.description} />
                                                         </p>
 
@@ -382,7 +387,7 @@ const courseCategories = [
                                                                 cat.id === 'coach' ? 'bg-yellow-50/50' : 
                                                                 'bg-blue-50/50'
                                                             ]}>
-                                                                <h6 class="text-[10px] font-black text-gray-400 uppercase tracking-widest mb-5 flex items-center gap-3">
+                                                                <h6 class="text-xs md:text-sm font-black text-gray-600 uppercase tracking-widest mb-5 flex items-center gap-3">
                                                                     <span class:list={["w-1.5 h-4 rounded-full", `bg-${course.stepColor}`]}></span>
                                                                     講座内容
                                                                 </h6>
@@ -403,10 +408,10 @@ const courseCategories = [
         
                                                         {sub.condition && (
                                                             <div class:list={["p-5 rounded-xl border border-dashed", sub.condition.bgColor, sub.condition.borderColor]}>
-                                                                <h6 class:list={["font-bold text-[10px] uppercase tracking-widest mb-3", `text-${sub.condition.color}`]}>
+                                                                <h6 class:list={["font-bold text-xs md:text-sm uppercase tracking-widest mb-3", `text-${sub.condition.color}`]}>
                                                                     {sub.condition.title}
                                                                 </h6>
-                                                                <ul class="grid grid-cols-1 md:grid-cols-2 gap-x-6 gap-y-2 text-xs text-gray-500 font-medium">
+                                                                <ul class="grid grid-cols-1 md:grid-cols-2 gap-x-6 gap-y-2 text-sm text-gray-600 font-medium">
                                                                     {sub.condition.items.map(item => (
                                                                         <li class="flex items-start gap-2">
                                                                             <span class="mt-1.5 w-1 h-1 rounded-full bg-current opacity-30 shrink-0"></span>
@@ -440,9 +445,9 @@ const courseCategories = [
                                             'bg-sky/10 border-sky/20 text-sky'
                                         ]}>
                                             <tr>
-                                                <th class="p-3 md:p-6 font-black whitespace-nowrap text-[10px] md:text-xs">講座名</th>
-                                                <th class="p-3 md:p-6 font-black whitespace-nowrap text-[10px] md:text-xs">期間</th>
-                                                <th class="p-3 md:p-6 font-black text-right whitespace-nowrap text-[10px] md:text-xs">料金（税込）</th>
+                                                <th class="p-3 md:p-6 font-black whitespace-nowrap text-xs md:text-sm">講座名</th>
+                                                <th class="p-3 md:p-6 font-black whitespace-nowrap text-xs md:text-sm">期間</th>
+                                                <th class="p-3 md:p-6 font-black text-right whitespace-nowrap text-xs md:text-sm">料金（税込）</th>
                                             </tr>
                                         </thead>
                                         <tbody class="divide-y divide-gray-50">
@@ -453,9 +458,9 @@ const courseCategories = [
                                                     cat.id === 'coach' ? 'hover:bg-sunshine/5' : 
                                                     'hover:bg-sky/5'
                                                 ]}>
-                                                    <td class="p-3 md:p-6 font-bold text-text-dark text-xs md:text-base min-w-[100px] md:min-w-[120px]">{price.title}</td>
-                                                    <td class="p-3 md:p-6 text-gray-600 text-[10px] md:text-sm font-medium whitespace-pre-line leading-relaxed">{price.duration}</td>
-                                                    <td class="p-3 md:p-6 text-right font-bold text-text-dark text-xs md:text-base whitespace-nowrap">{price.price}</td>
+                                                    <td class="p-3 md:p-6 font-bold text-text-dark text-sm md:text-base min-w-[100px] md:min-w-[120px]">{price.title}</td>
+                                                    <td class="p-3 md:p-6 text-gray-700 text-xs md:text-sm font-medium whitespace-pre-line leading-relaxed">{price.duration}</td>
+                                                    <td class="p-3 md:p-6 text-right font-bold text-text-dark text-sm md:text-base whitespace-nowrap">{price.price}</td>
                                                 </tr>
                                             ))}
                                         </tbody>
@@ -501,7 +506,7 @@ const courseCategories = [
          // 1. Reset Tabs
          tabs.forEach(t => {
                 t.classList.remove('bg-text-dark', 'text-white', 'shadow-lg', 'shadow-gray-200');
-                t.classList.add('hover:bg-white', 'hover:shadow-md', 'text-gray-500', 'hover:text-text-dark');
+                t.classList.add('hover:bg-white', 'hover:shadow-md', 'text-gray-600', 'hover:text-text-dark');
                 
                 const marker = t.querySelector('span');
                 if(marker) {
@@ -513,7 +518,7 @@ const courseCategories = [
             // 2. Find and Activate Tab
             const activeTab = document.querySelector(`.category-tab[data-target="${targetId}"]`);
             if (activeTab) {
-                activeTab.classList.remove('hover:bg-white', 'hover:shadow-md', 'text-gray-500', 'hover:text-text-dark');
+                activeTab.classList.remove('hover:bg-white', 'hover:shadow-md', 'text-gray-600', 'hover:text-text-dark');
                 activeTab.classList.add('bg-text-dark', 'text-white', 'shadow-lg', 'shadow-gray-200');
                 
                 const activeMarker = activeTab.querySelector('span');
