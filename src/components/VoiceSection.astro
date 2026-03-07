@@ -126,13 +126,13 @@ import { voices } from "../data/voices";
                         <!-- Card Q&A section (Slider / Paging) -->
                         <div class="px-5 md:px-7 pb-6 flex-grow flex flex-col justify-end mt-auto">
                             <!-- Fixed height container for Q&A to ensure uniform card height -->
-                            <div class="bg-white rounded-2xl p-5 md:p-6 shadow-sm border border-white/60 h-[220px] relative flex flex-col">
+                            <div class="bg-white rounded-2xl p-4 md:p-6 shadow-sm border border-white/60 h-[260px] md:h-[240px] relative flex flex-col">
                                 
-                                <!-- Q&A Items Wrapper -->
-                                <div class="relative flex-grow QA-items-container">
+                                <!-- Q&A Items Wrapper (Scrollable if text is too long) -->
+                                <div class="relative flex-grow QA-items-container overflow-y-auto custom-scrollbar pr-2 mb-2">
                                     {voice.points.map((point, pIndex) => (
                                         <div 
-                                            class={`absolute inset-0 transition-opacity duration-500 QA-item ${pIndex === 0 ? 'opacity-100 z-10' : 'opacity-0 z-0 pointer-events-none'}`}
+                                            class={`absolute top-0 left-0 w-full transition-opacity duration-500 QA-item ${pIndex === 0 ? 'opacity-100 z-10' : 'opacity-0 z-0 pointer-events-none'}`}
                                             data-qa-index={pIndex}
                                         >
                                             <span class="text-sm font-bold text-sakura-vivid block mb-2 tracking-wide">
@@ -145,8 +145,8 @@ import { voices } from "../data/voices";
                                     ))}
                                 </div>
                                 
-                                <!-- Pagination Controls -->
-                                <div class="flex justify-between items-center mt-4 pt-4 border-t border-gray-200/50">
+                                <!-- Pagination Controls (Always at the bottom, not overlapping) -->
+                                <div class="flex justify-between items-center mt-auto pt-3 border-t border-gray-100/60 shrink-0">
                                     <button class="text-gray-400 hover:text-sakura-vivid transition-colors p-1 QA-prev" aria-label="Previous Q&A">
                                         <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="15 18 9 12 15 6"></polyline></svg>
                                     </button>
