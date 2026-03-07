@@ -6,6 +6,7 @@ import leaderImg from "../assets/images/home/leader_1.webp";
 import coachImg from "../assets/images/home/coach_1.webp";
 import teacherImg from "../assets/images/home/teacher_1.webp";
 import home1Img from "../assets/images/home/home_1.webp";
+import beautyVoyagerImg from "../assets/images/home/beautyvoygerLesson_2.webp";
 
 // Data Definitions
 const courseCategories = [
@@ -226,7 +227,7 @@ const courseCategories = [
                 step: "beauty・health",
                 stepColor: "sakura-vivid",
                 bgGradient: "bg-sakura-vivid/20",
-                image: leaderImg, // 仮で既存の画像を流用
+                image: beautyVoyagerImg,
                 title: "ビューティーボイジャーレッスン\n（アンチエイジング・ダイエット）",
                 subtitle: "BEAUTY VOYAGER LESSON",
                 description: `
@@ -237,8 +238,10 @@ const courseCategories = [
                     現代社会において不規則、不摂生な食生活だけでなく、ストレス、生活時間の乱れ、睡眠不足、過度な痩身願望など、美や健康の大敵は多くあります。<br />
                     特に女性は、月経、出産、子育て、閉経など一生涯の中で身体や生活の変化が多々訪れます。<br />
                     ただ、痩せているだけでは美しいとは言えません。健康で、美しい身体づくり、健康美を目指すことが大切です。<br /><br />
-                    <strong>日本ビューティーヘルス協会札幌校代表<br />
-                    美容栄養学専門士、ビューティーフードスペシャリストが直伝</strong><br /><br />
+                    <span class="text-red-500 font-bold">
+                        日本ビューティーヘルス協会札幌校代表<br />
+                        美容栄養学専門士、ビューティーフードスペシャリストが直伝
+                    </span><br /><br />
                     美しく、健康でありたいはみんなの願い。<br />
                     内面からの真の美しさを生成・維持・継続していく為に、食の正しい知識である栄養学を学ぶことは、人生の美の宝です。美容栄養学は食から、生活習慣まであらゆる美について学ぶことができます。<br /><br />
                     <ul class="list-disc pl-5 mt-4 mb-6 space-y-1 text-gray-600 font-medium">
@@ -256,16 +259,16 @@ const courseCategories = [
                     分かってはいるけど、中々変えられない生活習慣や食習慣など、様々な悩みも、知識を得る事で、自然と変化させる事が出来ます。<br />
                     そしてボイジャータロットがより良い選択肢や解決策を提示してくれます。<br />
                     行動を促し、実現化するパワーがあるので、真に健康で美しく、なりたい自分へと導いてくれます。<br /><br />
-                    <div class="mt-8 p-6 bg-pink-50/50 rounded-2xl border border-pink-100">
-                        <strong class="text-sakura-vivid block mb-3">＊日本ビューティーヘルス協会認定</strong>
-                        <ul class="list-none space-y-1 text-sm text-gray-700 mb-4">
+                    <div class="mt-8 text-red-500">
+                        <strong class="text-red-500 block mb-3">日本ビューティーヘルス協会認定</strong>
+                        <ul class="list-none space-y-1 text-sm mb-4 font-bold">
                             <li>・ビューティーフードアドバイザー</li>
                             <li>・ビューティーフードスペシャリスト</li>
                             <li>・ビューティーフードプロフェッショナル</li>
                             <li>・美容栄養学専門士</li>
                         </ul>
-                        <p class="text-sm text-gray-700 mb-4">など、美容と健康の食のスペシャリストを目指す認定講座もございます。</p>
-                        <a href="https://eiyo-c.com" target="_blank" rel="noopener noreferrer" class="text-sakura-vivid hover:text-sakura transition-colors text-sm font-bold inline-flex items-center gap-1">
+                        <p class="text-sm mb-4 font-bold">など、美容と健康の食のスペシャリストを目指す認定講座もございます。</p>
+                        <a href="https://eiyo-c.com" target="_blank" rel="noopener noreferrer" class="text-red-500 hover:text-red-600 transition-colors text-sm font-bold inline-flex items-center gap-1">
                             詳細はこちら (https://eiyo-c.com) <span aria-hidden="true">&rarr;</span>
                         </a>
                     </div>
@@ -342,19 +345,15 @@ const courseCategories = [
                             <li class="w-full">
                                 <button
                                     class:list={[
-                                        "category-tab w-full h-full text-center justify-center px-2 py-3 md:px-6 md:py-4 rounded-xl transition-all duration-300 font-bold tracking-wide flex flex-col md:flex-row items-center gap-1 md:gap-3 group border border-transparent",
+                                        "category-tab w-full h-full text-center justify-center px-2 py-3 md:px-6 md:py-4 rounded-xl transition-all duration-300 font-bold tracking-wide flex flex-col items-center gap-1 group border border-transparent",
                                         index === 0 
                                             ? "bg-text-dark text-white shadow-lg shadow-gray-200" 
                                             : "hover:bg-white hover:shadow-md text-gray-600 hover:text-text-dark"
                                     ]}
                                     data-target={cat.id}
                                 >
-                                    <span class:list={[
-                                        "w-2 h-2 rounded-full transition-colors duration-300",
-                                        index === 0 ? "bg-sakura-vivid" : "bg-gray-300 group-hover:bg-text-dark"
-                                    ]}></span>
                                     <div class="flex flex-col items-center">
-                                        <span class="text-xs md:text-base whitespace-normal leading-tight">{cat.title}</span>
+                                        <span class="text-xs md:text-base whitespace-nowrap leading-tight">{cat.title}</span>
                                         <span class="text-[9px] md:text-[10px] uppercase tracking-widest opacity-60 mt-0.5 md:hidden hidden">{cat.sub}</span>
                                         <span class="text-[10px] uppercase tracking-widest opacity-60 hidden md:block">{cat.sub}</span>
                                     </div>
@@ -440,74 +439,69 @@ const courseCategories = [
                                                     <Fragment set:html={course.description} />
                                                 </p>
                                                 <p class="text-gray-600 text-xs md:text-sm mt-4 font-medium">
-                ※価格はすべて税込表示です。<br/>
-                ※講座内容は予告なく変更される場合があります。<br/>
-                ※テキスト代・認定料が含まれている講座と、別途必要な講座があります。詳細は各講座のページをご確認ください。
-            </p>                                    
+                                                    ※価格はすべて税込表示です。<br/>
+                                                    ※講座内容は予告なく変更される場合があります。<br/>
+                                                    ※テキスト代・認定料が含まれている講座と、別途必要な講座があります。詳細は各講座のページをご確認ください。
+                                                </p>
                                             </div>
         
                                             <!-- Sub Courses -->
-                                            <div class="space-y-6">
-                                                {course.subCourses.map((sub) => (
-                                                    <div class:list={[
-                                                        "bg-white p-5 md:p-8 rounded-2xl md:rounded-3xl border border-gray-100/50 shadow-xl transition-all duration-300 hover:shadow-2xl",
-                                                        cat.id === 'voyager' ? 'shadow-magenta/5 hover:shadow-magenta/10' : 
-                                                        cat.id === 'coach' ? 'shadow-sunshine/5 hover:shadow-sunshine/10' : 
-                                                        'shadow-sky/5 hover:shadow-sky/10'
-                                                    ]}>
-                                                        <div class="flex flex-col md:flex-row justify-between items-baseline mb-4 gap-2">
-                                                            <h5 class="font-bold text-xl text-text-dark">
+                                            <div class="space-y-10 md:space-y-12 mt-8 md:mt-10 border-t border-gray-100 pt-8 md:pt-10">
+                                                {course.subCourses.map((sub, index) => (
+                                                    <div class="relative">
+                                                        {index !== 0 && <div class="absolute -top-5 md:-top-6 left-0 right-0 h-px bg-gray-100"></div>}
+                                                        
+                                                        <div class="flex flex-col md:flex-row justify-between items-baseline mb-4 gap-3">
+                                                            <h5 class="font-bold text-xl md:text-2xl text-text-dark flex items-center gap-3">
+                                                                <span class:list={["w-1.5 h-6 rounded-full shrink-0", `bg-${course.stepColor}`]}></span>
                                                                 {sub.title}
                                                             </h5>
-                                                            <span class="text-xs md:text-sm font-black text-gray-600 bg-gray-50 px-3 py-1.5 rounded-full uppercase tracking-tighter">
+                                                            <span class="text-xs md:text-sm font-bold text-gray-500 bg-gray-50 px-4 py-1.5 rounded-full tracking-wider border border-gray-100 shrink-0">
                                                                 期間: {sub.duration}
                                                             </span>
                                                         </div>
-                                                        <p class="text-gray-700 text-sm md:text-base leading-relaxed mb-6 font-medium">
-                                                            <Fragment set:html={sub.description} />
-                                                        </p>
-
-                                                        {sub.contents && (
-                                                            <div class:list={[
-                                                                "mb-6 md:mb-8 p-5 md:p-8 rounded-2xl md:rounded-3xl border border-white/50 shadow-inner",
-                                                                cat.id === 'voyager' ? 'bg-magenta-pale/30' : 
-                                                                cat.id === 'coach' ? 'bg-yellow-50/50' : 
-                                                                'bg-blue-50/50'
-                                                            ]}>
-                                                                <h6 class="text-xs md:text-sm font-black text-gray-600 uppercase tracking-widest mb-5 flex items-center gap-3">
-                                                                    <span class:list={["w-1.5 h-4 rounded-full", `bg-${course.stepColor}`]}></span>
-                                                                    講座内容
-                                                                </h6>
-                                                                <ul class="grid grid-cols-1 gap-4">
-                                                                    {sub.contents.map((item: string) => (
-                                                                        <li class="flex items-start gap-3 text-sm text-gray-700 leading-relaxed font-medium">
-                                                                            <div class:list={["mt-0.5 p-0.5 rounded-full bg-white shadow-sm ring-1", `ring-${course.stepColor}/20`]}>
-                                                                                <svg xmlns="http://www.w3.org/2000/svg" class:list={["h-3.5 w-3.5", `text-${course.stepColor}`]} fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                                                                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M5 13l4 4L19 7" />
-                                                                                </svg>
-                                                                            </div>
-                                                                            <span>{item}</span>
-                                                                        </li>
-                                                                    ))}
-                                                                </ul>
-                                                            </div>
-                                                        )}
+                                                        <div class="pl-4 md:pl-9">
+                                                            <p class="text-gray-700 text-sm md:text-base leading-relaxed mb-6 font-medium">
+                                                                <Fragment set:html={sub.description} />
+                                                            </p>
         
-                                                        {sub.condition && (
-                                                            <div class:list={["p-5 rounded-xl border border-dashed", sub.condition.bgColor, sub.condition.borderColor]}>
-                                                                <h6 class:list={["font-bold text-xs md:text-sm uppercase tracking-widest mb-3", `text-${sub.condition.color}`]}>
-                                                                    {sub.condition.title}
-                                                                </h6>
-                                                                <ul class="grid grid-cols-1 md:grid-cols-2 gap-x-6 gap-y-2 text-sm text-gray-600 font-medium">
-                                                                    {sub.condition.items.map(item => (
-                                                                        <li class="flex items-start gap-2">
-                                                                            <span class="mt-1.5 w-1 h-1 rounded-full bg-current opacity-30 shrink-0"></span>
-                                                                            {item}
-                                                                        </li>
-                                                                    ))}
-                                                                </ul>
-                                                            </div>
-                                                        )}
+                                                            {sub.contents && (
+                                                                <div class="mb-6 md:mb-8">
+                                                                    <h6 class="text-sm font-bold text-gray-800 tracking-wider mb-4 flex items-center gap-2">
+                                                                        <span class:list={["w-1.5 h-4 rounded-full", `bg-${course.stepColor}`]}></span>
+                                                                        講座内容
+                                                                    </h6>
+                                                                    <ul class="grid grid-cols-1 gap-3 md:gap-4">
+                                                                        {sub.contents.map((item: string) => (
+                                                                            <li class="flex items-start gap-3 text-sm md:text-base text-gray-700 leading-relaxed font-medium">
+                                                                                <span class:list={["mt-2.5 w-1.5 h-1.5 rounded-full shrink-0", `bg-${course.stepColor}`]}></span>
+                                                                                <span>{item}</span>
+                                                                            </li>
+                                                                        ))}
+                                                                    </ul>
+                                                                </div>
+                                                            )}
+                
+                                                            {sub.condition && (
+                                                                <div class:list={["p-5 md:p-6 rounded-2xl border bg-opacity-50", sub.condition.bgColor, sub.condition.borderColor]}>
+                                                                    <h6 class:list={["font-bold text-sm tracking-wider mb-4", `text-${sub.condition.color}`]}>
+                                                                        {sub.condition.title}
+                                                                    </h6>
+                                                                    <ul class="grid grid-cols-1 gap-y-3 text-sm md:text-base text-gray-700 font-medium">
+                                                                        {sub.condition.items.map(item => (
+                                                                            <li class="flex items-start gap-3">
+                                                                                <div class:list={["mt-1 p-0.5 rounded-full bg-white shadow-sm ring-1 shrink-0", `ring-${sub.condition.color}/30`]}>
+                                                                                    <svg xmlns="http://www.w3.org/2000/svg" class:list={["h-3 w-3", `text-${sub.condition.color}`]} fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                                                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M5 13l4 4L19 7" />
+                                                                                    </svg>
+                                                                                </div>
+                                                                                <span class="mt-0.5">{item}</span>
+                                                                            </li>
+                                                                        ))}
+                                                                    </ul>
+                                                                </div>
+                                                            )}
+                                                        </div>
                                                     </div>
                                                 ))}
                                             </div>
@@ -620,12 +614,6 @@ const courseCategories = [
          tabs.forEach(t => {
                 t.classList.remove('bg-text-dark', 'text-white', 'shadow-lg', 'shadow-gray-200');
                 t.classList.add('hover:bg-white', 'hover:shadow-md', 'text-gray-600', 'hover:text-text-dark');
-                
-                const marker = t.querySelector('span');
-                if(marker) {
-                    marker.classList.remove('bg-sakura-vivid');
-                    marker.classList.add('bg-gray-300');
-                }
             });
 
             // 2. Find and Activate Tab
@@ -633,12 +621,6 @@ const courseCategories = [
             if (activeTab) {
                 activeTab.classList.remove('hover:bg-white', 'hover:shadow-md', 'text-gray-600', 'hover:text-text-dark');
                 activeTab.classList.add('bg-text-dark', 'text-white', 'shadow-lg', 'shadow-gray-200');
-                
-                const activeMarker = activeTab.querySelector('span');
-                if(activeMarker) {
-                    activeMarker.classList.remove('bg-gray-300');
-                    activeMarker.classList.add('bg-sakura-vivid');
-                }
             }
 
             // 3. Switch Content

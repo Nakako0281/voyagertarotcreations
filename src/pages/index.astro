@@ -15,6 +15,7 @@ import home3Img from "../assets/images/home/home_3.webp";
 import leader1Img from "../assets/images/home/leader_1.webp";
 import coach1Img from "../assets/images/home/coach_1.webp";
 import teacher1Img from "../assets/images/home/teacher_1.webp";
+import beautyVoyager1Img from "../assets/images/home/beautyvoygerLesson_1.webp";
 import placeholderImg from "../assets/images/placeholder.jpg";
 
 const response = await getNews({
@@ -46,7 +47,7 @@ const courseCategories = coursesResponse.contents.map(course => ({
     steps: course.steps.map(step => ({ step: step.stepNumber, label: step.label })),
     cards: course.cards.map(card => {
         let url = card.url;
-        let img = card.image?.url || placeholderImg;
+        let img: any = card.image?.url || placeholderImg;
 
         if (card.title.includes("リーダー")) {
             url = "/course#reader";
@@ -57,6 +58,12 @@ const courseCategories = coursesResponse.contents.map(course => ({
         } else if (card.title.includes("ティーチャー")) {
             url = "/course#teacher";
              img = teacher1Img;
+        } else if (card.title.includes("ビューティーボイジャー")) {
+            url = "/course#beauty-voyager";
+            img = beautyVoyager1Img;
+        } else if (card.title.includes("ライフクリエイション")) {
+            url = "#"; // Disable link
+            img = null; // Gray background
         }
 
         return {
@@ -566,27 +573,50 @@ const courseCategories = coursesResponse.contents.map(course => ({
                             <!-- Course Cards Grid -->
                             <div class:list={["grid gap-6 md:gap-8", cat.cards.length === 3 ? "md:grid-cols-3" : "grid-cols-2 md:grid-cols-2 lg:grid-cols-2 max-w-3xl mx-auto"]}>
                                 {cat.cards.map((card) => (
-                                    <a href={card.url} class="group block h-full w-full">
+                                    <a 
+                                        href={card.url} 
+                                        class:list={["group block h-full w-full", card.url === "#" ? "pointer-events-none" : ""]}
+                                    >
                                         <div class:list={[
-                                            "overflow-hidden rounded-3xl mb-4 md:mb-5 shadow-lg shadow-gray-100 relative border-[3px] border-transparent group-hover:border-sakura-vivid/50 transition-all duration-300",
+                                            "overflow-hidden rounded-3xl mb-4 md:mb-5 shadow-lg shadow-gray-100 relative border-[3px] border-transparent transition-all duration-300",
+                                            card.url !== "#" ? "group-hover:border-sakura-vivid/50" : "",
                                             cat.cards.length === 3 ? "aspect-[4/3]" : "aspect-[2/1]"
                                         ]}>
-                                            <div class="absolute inset-0 bg-text-dark/0 group-hover:bg-text-dark/10 transition-colors z-10"></div>
-                                            <Image
-                                                src={card.img as any}
-                                                alt={card.title}
-                                                class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"
-                                                loading="lazy"
-                                                decoding="async"
-                                            />
+                                            <div class:list={["absolute inset-0 transition-colors z-10", card.url !== "#" ? "bg-text-dark/0 group-hover:bg-text-dark/10" : "bg-white/40"]}></div>
+                                            {card.img ? (
+                                                <Image
+                                                    src={card.img as any}
+                                                    alt={card.title}
+                                                    class:list={["w-full h-full object-cover transition-transform duration-700", card.url !== "#" ? "group-hover:scale-110" : "grayscale-[0.3]"]}
+                                                    loading="lazy"
+                                                    decoding="async"
+                                                />
+                                            ) : (
+                                                <div class="w-full h-full bg-gray-100 flex items-center justify-center">
+                                                    <div class="flex flex-col items-center gap-2">
+                                                        <PlusCircle class="w-8 h-8 text-gray-300" />
+                                                    </div>
+                                                </div>
+                                            )}
+                                            {card.url === "#" && (
+                                                <div class="absolute inset-0 flex items-center justify-center z-20">
+                                                    <span class="bg-white/90 backdrop-blur px-4 py-1 rounded-full text-xs font-bold text-gray-400 tracking-widest border border-gray-100 uppercase">Coming Soon</span>
+                                                </div>
+                                            )}
                                         </div>
-                                        <h3 class="font-bold text-center text-sm md:text-lg text-text-dark group-hover:text-sakura-vivid transition-colors mb-2">
+                                        <h3 class:list={["font-bold text-center text-sm md:text-lg transition-colors mb-2", card.url !== "#" ? "text-text-dark group-hover:text-sakura-vivid" : "text-gray-400"]}>
                                             {card.title}
                                         </h3>
-                                        <div class="text-center text-xs md:text-base font-bold text-gray-600 flex justify-center items-center gap-1 group-hover:gap-2 transition-all">
-                                            詳細を見る 
-                                            <span class="text-sakura-vivid opacity-0 group-hover:opacity-100 transition-opacity">&rarr;</span>
-                                        </div>
+                                        {card.url !== "#" ? (
+                                            <div class="text-center text-xs md:text-base font-bold text-gray-600 flex justify-center items-center gap-1 group-hover:gap-2 transition-all">
+                                                詳細を見る 
+                                                <span class="text-sakura-vivid opacity-0 group-hover:opacity-100 transition-opacity">&rarr;</span>
+                                            </div>
+                                        ) : (
+                                             <div class="text-center text-xs md:text-base font-bold text-gray-300">
+                                                準備中
+                                            </div>
+                                        )}
                                     </a>
                                 ))}
                             </div>
