@@ -516,8 +516,9 @@ const courseCategories = coursesResponse.contents.map(course => ({
                             class:list={["course-content transition-all duration-500", index !== 0 ? "hidden" : ""]}
                         >
                             <!-- Steps Visualization -->
-                            <div class="mb-20">
-                                <div class="grid grid-cols-1 md:grid-cols-4 gap-6 text-text-dark font-bold">
+                            {cat.steps && cat.steps.length > 0 && (
+                                <div class="mb-20">
+                                    <div class:list={["grid grid-cols-1 gap-6 text-text-dark font-bold", cat.steps.length === 3 ? "md:grid-cols-3" : "md:grid-cols-2 lg:grid-cols-4"]}>
                                     {cat.steps.map((step, i) => {
                                         const isTarot = cat.id === "tarot";
                                         const stepColors = ["bg-sakura-vivid", "bg-sunshine", "bg-sky"];
@@ -538,9 +539,8 @@ const courseCategories = coursesResponse.contents.map(course => ({
                                                     <span class={`whitespace-pre-line leading-relaxed flex-1 text-left md:text-center ${textSizeClass}`}>{step.label}</span>
                                                 </div>
                                             ) : (
-                                                <div class="bg-white px-4 py-3 md:px-6 md:py-4 rounded-2xl border-[3px] border-blue-50 shadow-md flex items-center justify-start md:justify-center gap-3 w-full max-w-[280px] md:max-w-none relative z-10 hover:shadow-lg hover:border-blue-200 transition-all duration-300 min-h-[5rem] md:min-h-[6rem]">
-                                                    <span class="text-sakura-vivid text-lg shrink-0 w-6 text-center">◆</span>
-                                                    <span class={`flex-1 flex flex-col items-start md:items-center text-left md:text-center tracking-tight justify-center ${textSizeClass}`}>
+                                                <div class="bg-white px-1 py-3 md:px-2 md:py-4 rounded-2xl border-[3px] border-blue-50 shadow-md flex items-center justify-center w-full max-w-[280px] md:max-w-none relative z-10 hover:shadow-lg hover:border-blue-200 transition-all duration-300 min-h-[5rem] md:min-h-[6rem]">
+                                                    <span class={`flex flex-col items-center text-center tracking-tighter justify-center ${step.label.includes("ビューティーボイジャー") ? "text-[10px] sm:text-[11px] md:text-[8px] lg:text-[10px] leading-tight" : step.label.includes("ライフクリエイション") ? "text-[11px] sm:text-[12px] md:text-[10px] lg:text-[11px] leading-tight" : textSizeClass}`}>
                                                         {step.label.split('\n').map((line, idx) => (
                                                             <span class="inline-block whitespace-nowrap">{line}</span>
                                                         ))}
@@ -560,13 +560,17 @@ const courseCategories = coursesResponse.contents.map(course => ({
                                             )}
                                         </div>
                                     )})}
+                                    </div>
                                 </div>
-                            </div>
+                            )}
                             <!-- Course Cards Grid -->
-                            <div class="grid md:grid-cols-4 gap-8">
+                            <div class:list={["grid gap-6 md:gap-8", cat.cards.length === 3 ? "md:grid-cols-3" : "grid-cols-2 md:grid-cols-2 lg:grid-cols-2 max-w-3xl mx-auto"]}>
                                 {cat.cards.map((card) => (
-                                    <a href={card.url} class="group block h-full">
-                                        <div class="overflow-hidden rounded-3xl mb-5 shadow-lg shadow-gray-100 relative aspect-[4/3] border-[3px] border-transparent group-hover:border-sakura-vivid/50 transition-all duration-300">
+                                    <a href={card.url} class="group block h-full w-full">
+                                        <div class:list={[
+                                            "overflow-hidden rounded-3xl mb-4 md:mb-5 shadow-lg shadow-gray-100 relative border-[3px] border-transparent group-hover:border-sakura-vivid/50 transition-all duration-300",
+                                            cat.cards.length === 3 ? "aspect-[4/3]" : "aspect-[2/1]"
+                                        ]}>
                                             <div class="absolute inset-0 bg-text-dark/0 group-hover:bg-text-dark/10 transition-colors z-10"></div>
                                             <Image
                                                 src={card.img as any}
@@ -576,10 +580,10 @@ const courseCategories = coursesResponse.contents.map(course => ({
                                                 decoding="async"
                                             />
                                         </div>
-                                        <h3 class="font-bold text-center text-lg text-text-dark group-hover:text-sakura-vivid transition-colors mb-2">
+                                        <h3 class="font-bold text-center text-sm md:text-lg text-text-dark group-hover:text-sakura-vivid transition-colors mb-2">
                                             {card.title}
                                         </h3>
-                                        <div class="text-center text-sm md:text-base font-bold text-gray-600 flex justify-center items-center gap-1 group-hover:gap-2 transition-all">
+                                        <div class="text-center text-xs md:text-base font-bold text-gray-600 flex justify-center items-center gap-1 group-hover:gap-2 transition-all">
                                             詳細を見る 
                                             <span class="text-sakura-vivid opacity-0 group-hover:opacity-100 transition-opacity">&rarr;</span>
                                         </div>
