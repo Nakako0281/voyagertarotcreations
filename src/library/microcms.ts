@@ -275,14 +275,16 @@ const mockCourses: CourseCategory[] = [
         title: "その他講座",
         subTitle: "Other Courses",
         steps: [
-            { stepNumber: 1, label: "入門" },
-            { stepNumber: 2, label: "ビューティーボイジャーレッスン\n（アンチエイジング・ダイエット）" },
-            { stepNumber: 3, label: "ライフクリエイション講座" }
+            { stepNumber: 1, label: "体験会" },
+            { stepNumber: 2, label: "入門" },
+            { stepNumber: 3, label: "ビューティーボイジャーレッスン\n（アンチエイジング・ダイエット）" },
+            { stepNumber: 4, label: "ライフクリエイション講座" }
         ],
         cards: [
-            { title: "入門講座", image: { url: home1Img as any, height: 300, width: 400 }, url: "#" },
-            { title: "ビューティーボイジャーレッスン", image: { url: home2Img as any, height: 300, width: 400 }, url: "#" },
-            { title: "ライフクリエイション講座", image: { url: home3Img as any, height: 300, width: 400 }, url: "#" }
+            { title: "ボイジャータロット体験会", image: { url: home1Img as any, height: 300, width: 400 }, url: "/course#trial-course" },
+            { title: "ボイジャータロット入門講座", image: { url: leader1Img as any, height: 300, width: 400 }, url: "/course#intro-course" },
+            { title: "ビューティーボイジャーレッスン", image: { url: home2Img as any, height: 300, width: 400 }, url: "/course#beauty-voyager" },
+            { title: "ライフクリエイション講座", image: { url: home3Img as any, height: 300, width: 400 }, url: "/course#life-creation" }
         ]
     }
 ];

@@ -517,8 +517,7 @@ const courseCategories = coursesResponse.contents.map(course => ({
                         >
                             <!-- Steps Visualization -->
                             <div class="mb-20">
-                                <h3 class="text-center font-bold text-gray-600 text-base tracking-widest mb-10">- STEP UP FLOW -</h3>
-                                <div class="grid grid-cols-1 md:grid-cols-3 gap-6 text-text-dark font-bold">
+                                <div class="grid grid-cols-1 md:grid-cols-4 gap-6 text-text-dark font-bold">
                                     {cat.steps.map((step, i) => {
                                         const isTarot = cat.id === "tarot";
                                         const stepColors = ["bg-sakura-vivid", "bg-sunshine", "bg-sky"];
@@ -564,7 +563,7 @@ const courseCategories = coursesResponse.contents.map(course => ({
                                 </div>
                             </div>
                             <!-- Course Cards Grid -->
-                            <div class="grid md:grid-cols-3 gap-8">
+                            <div class="grid md:grid-cols-4 gap-8">
                                 {cat.cards.map((card) => (
                                     <a href={card.url} class="group block h-full">
                                         <div class="overflow-hidden rounded-3xl mb-5 shadow-lg shadow-gray-100 relative aspect-[4/3] border-[3px] border-transparent group-hover:border-sakura-vivid/50 transition-all duration-300">

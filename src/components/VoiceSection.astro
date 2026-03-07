@@ -1,133 +1,272 @@
 ---
 import { voices } from "../data/voices";
 
-// Get the primary voice (using the first one as requested, since there is only one in the data)
-const mainVoice = voices[0];
-const points = mainVoice?.points || [];
-
-// Create an array of gentle background gradients for the cards
-const cardBgGradients = [
-    "bg-gradient-to-b from-pink-100/80 to-white",
-    "bg-gradient-to-b from-orange-100/80 to-white",
-    "bg-gradient-to-b from-blue-100/80 to-white",
-    "bg-gradient-to-b from-emerald-100/80 to-white",
-    "bg-gradient-to-b from-purple-100/80 to-white",
-];
+// Removed cardBgGradients as we will use a unified white background with a shadow.
 ---
 
-<div class="pt-8 md:pt-16 pb-12 md:pb-24 relative overflow-hidden bg-white/50">
-    <div
-        class="max-w-4xl mx-auto px-6 relative z-10 text-center mb-10 md:mb-16"
-    >
+<div class="pt-12 md:pt-20 pb-16 md:pb-32 relative overflow-hidden">
+    <div class="max-w-7xl mx-auto px-6 relative z-10">
         <!-- Header Section -->
-        <div class="flex items-center justify-center gap-3 mb-6">
-            <svg
-                xmlns="http://www.w3.org/2000/svg"
-                width="32"
-                height="32"
-                viewBox="0 0 24 24"
-                fill="currentColor"
-                class="text-sakura-vivid opacity-60 w-8 h-8 md:w-10 md:h-10"
-            >
-                <path
-                    d="M14.017 21L14.017 18C14.017 16.0966 14.017 10.1585 19.0983 10.1585V14.1585C17.4668 14.1585 16.5303 15.4 16.5303 17.525V21H14.017ZM8.01691 21L8.01691 18C8.01691 16.0966 8.01691 10.1585 13.0982 10.1585V14.1585C11.4667 14.1585 10.5302 15.4 10.5302 17.525V21H8.01691Z"
-                    transform="translate(-4 -6) scale(1.5)"></path>
+        <div class="flex items-center justify-center gap-4 mb-12 md:mb-16">
+            <svg width="40" height="40" viewBox="0 0 24 24" fill="currentColor" class="text-pink-300">
+                <path d="M14.017 21L14.017 18C14.017 16.0966 14.017 10.1585 19.0983 10.1585V14.1585C17.4668 14.1585 16.5303 15.4 16.5303 17.525V21H14.017ZM8.01691 21L8.01691 18C8.01691 16.0966 8.01691 10.1585 13.0982 10.1585V14.1585C11.4667 14.1585 10.5302 15.4 10.5302 17.525V21H8.01691Z" transform="translate(-4 -6) scale(1.5)"></path>
             </svg>
-            <h2
-                class="text-2xl md:text-3xl font-mincho font-bold text-gray-800 tracking-widest"
-            >
+            <h2 class="text-xl md:text-2xl lg:text-4xl font-mincho font-bold text-gray-800 tracking-widest">
                 受講生の声
             </h2>
         </div>
 
-        <h3
-            class="text-lg md:text-2xl font-bold text-sakura-vivid leading-relaxed mb-6"
-        >
-            {mainVoice.catchphrase}
-        </h3>
+        <!-- Cards Grid -->
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            {voices.map((voice, index) => {
+                const bgGradients = [
+                    "bg-gradient-to-b from-rose-100/60 via-pink-50/30 to-white",
+                    "bg-gradient-to-b from-cyan-100/50 via-blue-50/30 to-white",
+                    "bg-gradient-to-b from-orange-100/60 via-amber-50/30 to-white"
+                ];
+                const cardBg = bgGradients[index % 3];
+                return (
+                    <div class={`flex flex-col h-full rounded-[2rem] shadow-lg hover:shadow-2xl transition-all duration-300 overflow-hidden relative ${cardBg}`} data-card-index={index}>
+                        
+                        <!-- Card Header (Name & Icon) -->
+                        <div class="pt-8 px-6 md:px-8 pb-2 w-full flex justify-between items-center">
+                            <div class="pt-2">
+                                <!-- Name -->
+                                <span class="font-bold text-text-dark text-xl md:text-2xl block tracking-wider">{voice.name}</span>
+                            </div>
+                            
+                            <!-- Profile Circle Image/Generic Silhouette -->
+                            <div class="w-24 h-24 md:w-28 md:h-28 rounded-full bg-[#fdfaf5] border-2 border-white shadow-sm flex items-center justify-center shrink-0 overflow-hidden">
+                                {voice.image ? (
+                                    <img src={voice.image} alt={voice.name} class="w-full h-full object-cover rounded-full" />
+                                ) : (
+                                    <div class="w-full h-full flex items-center justify-center">
+                                        {index === 0 && (
+                                            <!-- Icon 1: Medium/Bob hair style (Cute colored) -->
+                                            <svg viewBox="0 0 100 100" class="w-20 h-20 md:w-24 md:h-24 mt-4" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                <!-- Body/Clothes -->
+                                                <path d="M25 90 C 25 70, 40 65, 50 65 C 60 65, 75 70, 75 90" fill="#f0f0f0" stroke="#4a4a4a" stroke-width="2.5" stroke-linecap="round"/>
+                                                <!-- Back Hair -->
+                                                <path d="M35 70 C 30 65, 30 40, 50 40 C 70 40, 70 65, 65 70 C 60 75, 40 75, 35 70 Z" fill="#b08d6a"/>
+                                                <!-- Face/Neck -->
+                                                <path d="M45 60 L 45 65 C 45 68, 55 68, 55 65 L 55 60 Z" fill="#ffeadd"/>
+                                                <path d="M38 45 C 38 30, 62 30, 62 45 C 62 58, 55 62, 50 62 C 45 62, 38 58, 38 45 Z" fill="#ffeadd" stroke="#4a4a4a" stroke-width="2"/>
+                                                <!-- Front Hair/Bangs -->
+                                                <path d="M35 55 C 35 40, 40 30, 50 30 C 60 30, 65 40, 65 55 C 62 50, 60 45, 55 42 C 50 38, 48 38, 45 42 C 40 45, 38 50, 35 55 Z" fill="#b08d6a" stroke="#4a4a4a" stroke-width="2" stroke-linejoin="round"/>
+                                                <!-- Face Features -->
+                                                <!-- Eyes -->
+                                                <circle cx="45" cy="50" r="2" fill="#4a4a4a"/>
+                                                <circle cx="55" cy="50" r="2" fill="#4a4a4a"/>
+                                                <!-- Cheeks -->
+                                                <ellipse cx="42" cy="53" rx="2.5" ry="1.5" fill="#ffb6c1" opacity="0.6"/>
+                                                <ellipse cx="58" cy="53" rx="2.5" ry="1.5" fill="#ffb6c1" opacity="0.6"/>
+                                                <!-- Mouth -->
+                                                <path d="M48 56 Q 50 58 52 56" stroke="#4a4a4a" stroke-width="1.5" stroke-linecap="round" fill="none"/>
+                                            </svg>
+                                        )}
+                                        {index === 1 && (
+                                            <!-- Icon 2: Updo/Bun style (Cute colored) -->
+                                            <svg viewBox="0 0 100 100" class="w-20 h-20 md:w-24 md:h-24 mt-4" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                <!-- Body/Clothes -->
+                                                <path d="M28 90 C 28 75, 42 70, 50 70 C 58 70, 72 75, 72 90" fill="#e8f4f8" stroke="#4a4a4a" stroke-width="2.5" stroke-linecap="round"/>
+                                                <!-- Hair Bun -->
+                                                <circle cx="50" cy="28" r="10" fill="#8c7365" stroke="#4a4a4a" stroke-width="2"/>
+                                                <path d="M45 25 C 48 22, 52 22, 55 25" stroke="#4a4a4a" stroke-width="1.5" stroke-linecap="round"/>
+                                                <!-- Face/Neck -->
+                                                <path d="M46 60 L 46 70 C 46 72, 54 72, 54 70 L 54 60 Z" fill="#ffeadd"/>
+                                                <path d="M39 45 C 39 32, 61 32, 61 45 C 61 58, 55 63, 50 63 C 45 63, 39 58, 39 45 Z" fill="#ffeadd" stroke="#4a4a4a" stroke-width="2"/>
+                                                <!-- Front Hair -->
+                                                <path d="M35 48 C 35 35, 40 30, 50 30 C 60 30, 65 35, 65 48 C 65 40, 60 35, 50 35 C 40 35, 35 40, 35 48 Z" fill="#8c7365" stroke="#4a4a4a" stroke-width="2" stroke-linejoin="round"/>
+                                                <!-- Face Features -->
+                                                <!-- Eyes -->
+                                                <circle cx="45" cy="50" r="1.5" fill="#4a4a4a"/>
+                                                <circle cx="55" cy="50" r="1.5" fill="#4a4a4a"/>
+                                                <!-- Cheeks -->
+                                                <ellipse cx="42" cy="54" rx="2" ry="1.5" fill="#ffb6c1" opacity="0.6"/>
+                                                <ellipse cx="58" cy="54" rx="2" ry="1.5" fill="#ffb6c1" opacity="0.6"/>
+                                                <!-- Mouth -->
+                                                <path d="M49 56 Q 50 57.5 51 56" stroke="#4a4a4a" stroke-width="1.5" stroke-linecap="round" fill="none"/>
+                                            </svg>
+                                        )}
+                                        {index === 2 && (
+                                            <!-- Icon 3: Short hair style (Cute colored) -->
+                                            <svg viewBox="0 0 100 100" class="w-20 h-20 md:w-24 md:h-24 mt-4" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                <!-- Body/Clothes -->
+                                                <path d="M22 90 C 25 72, 38 68, 50 68 C 62 68, 75 72, 78 90" fill="#fff0e6" stroke="#4a4a4a" stroke-width="2.5" stroke-linecap="round"/>
+                                                <!-- Face/Neck -->
+                                                <path d="M45 60 L 45 68 C 45 70, 55 70, 55 68 L 55 60 Z" fill="#ffeadd"/>
+                                                <path d="M37 46 C 37 32, 63 32, 63 46 C 63 56, 56 62, 50 62 C 44 62, 37 56, 37 46 Z" fill="#ffeadd" stroke="#4a4a4a" stroke-width="2"/>
+                                                <!-- Front/Short Hair -->
+                                                <path d="M33 58 C 33 45, 36 30, 50 30 C 64 30, 67 45, 67 58 C 65 52, 62 48, 58 46 C 54 44, 46 44, 42 46 C 38 48, 35 52, 33 58 Z" fill="#a47764" stroke="#4a4a4a" stroke-width="2" stroke-linejoin="round"/>
+                                                <path d="M33 58 C 30 65, 38 65, 40 55" fill="#a47764" stroke="#4a4a4a" stroke-width="1.5"/>
+                                                <path d="M67 58 C 70 65, 62 65, 60 55" fill="#a47764" stroke="#4a4a4a" stroke-width="1.5"/>
+                                                <!-- Face Features -->
+                                                <!-- Eyes (smiling closed) -->
+                                                <path d="M43 50 Q 45 48 47 50" stroke="#4a4a4a" stroke-width="1.5" stroke-linecap="round" fill="none"/>
+                                                <path d="M53 50 Q 55 48 57 50" stroke="#4a4a4a" stroke-width="1.5" stroke-linecap="round" fill="none"/>
+                                                <!-- Cheeks -->
+                                                <ellipse cx="42" cy="54" rx="2.5" ry="1.5" fill="#ffb6c1" opacity="0.7"/>
+                                                <ellipse cx="58" cy="54" rx="2.5" ry="1.5" fill="#ffb6c1" opacity="0.7"/>
+                                                <!-- Mouth (open smile) -->
+                                                <path d="M48 56 C 48 59, 52 59, 52 56 Z" fill="#ff8c94" stroke="#4a4a4a" stroke-width="1" stroke-linejoin="round"/>
+                                            </svg>
+                                        )}
+                                    </div>
+                                )}
+                            </div>
+                        </div>
 
-        <p
-            class="text-gray-600 text-sm md:text-base leading-[1.8] text-center max-w-2xl mx-auto"
-        >
-            {mainVoice.summary}
-        </p>
-    </div>
+                        <!-- Card Body (Catchphrase) -->
+                        <div class="px-6 md:px-8 pb-4 w-full overflow-hidden">
+                            <h4 class="text-[13px] min-[375px]:text-sm md:text-[15px] lg:text-base font-bold text-text-dark leading-snug mb-2 whitespace-nowrap tracking-tight">
+                                {voice.catchphrase}
+                            </h4>
+                        </div>
 
-    <!-- Infinite Marquee Section -->
-    <div class="w-full relative overflow-hidden fade-edges pb-6 pt-2">
-        <!-- Scroll Container: flex w-max and animation class -->
-        <div class="flex w-max animate-marquee hover:play-state-paused">
-            <!-- 
-              Render the points list twice for a seamless infinite loop.
-              The animation moves the container by -50%, which equals exactly one length of the list.
-            -->
-            {
-                [...Array(2)].map((_, listIndex) => (
-                    <div
-                        class="flex shrink-0 gap-6 pr-6"
-                        aria-hidden={listIndex === 1 ? "true" : "false"}
-                    >
-                        {points.map((point, index) => {
-                            const bgClass =
-                                cardBgGradients[index % cardBgGradients.length];
-                            return (
-                                <div
-                                    class={`w-[280px] md:w-[320px] ${bgClass} rounded-2xl p-6 shadow-sm hover:shadow-md transition-shadow duration-300 relative overflow-hidden border border-gray-100 flex flex-col shrink-0 whitespace-normal`}
-                                >
-                                    <span class="text-sm font-bold text-gray-600 mb-3 tracking-wider block border-b border-gray-200/60 pb-2">
-                                        Q. {point.label}
-                                    </span>
-                                    <p class="text-sm text-gray-700 leading-relaxed flex-grow">
-                                        {point.text}
-                                    </p>
+                        <!-- Card Q&A section (Slider / Paging) -->
+                        <div class="px-5 md:px-7 pb-6 flex-grow flex flex-col justify-end mt-auto">
+                            <!-- Fixed height container for Q&A to ensure uniform card height -->
+                            <div class="bg-white rounded-2xl p-5 md:p-6 shadow-sm border border-white/60 h-[220px] relative flex flex-col">
+                                
+                                <!-- Q&A Items Wrapper -->
+                                <div class="relative flex-grow QA-items-container">
+                                    {voice.points.map((point, pIndex) => (
+                                        <div 
+                                            class={`absolute inset-0 transition-opacity duration-500 QA-item ${pIndex === 0 ? 'opacity-100 z-10' : 'opacity-0 z-0 pointer-events-none'}`}
+                                            data-qa-index={pIndex}
+                                        >
+                                            <span class="text-sm font-bold text-sakura-vivid block mb-2 tracking-wide">
+                                                Q. {point.label}
+                                            </span>
+                                            <p class="text-[13.5px] md:text-sm text-gray-700 leading-relaxed font-medium">
+                                                <span class="font-bold text-gray-500 mr-1">A.</span>{point.text}
+                                            </p>
+                                        </div>
+                                    ))}
                                 </div>
-                            );
-                        })}
+                                
+                                <!-- Pagination Controls -->
+                                <div class="flex justify-between items-center mt-4 pt-4 border-t border-gray-200/50">
+                                    <button class="text-gray-400 hover:text-sakura-vivid transition-colors p-1 QA-prev" aria-label="Previous Q&A">
+                                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="15 18 9 12 15 6"></polyline></svg>
+                                    </button>
+                                    
+                                    <div class="flex justify-center items-center gap-2">
+                                        {voice.points.map((_, pIndex) => (
+                                            <button 
+                                                class={`w-2 h-2 rounded-full transition-all duration-300 QA-dot ${pIndex === 0 ? 'bg-sakura-vivid w-4' : 'bg-gray-300 hover:bg-gray-400'}`}
+                                                aria-label={`Go to slide ${pIndex + 1}`}
+                                                data-dot-index={pIndex}
+                                                tabindex="0"
+                                            ></button>
+                                        ))}
+                                    </div>
+
+                                    <button class="text-gray-400 hover:text-sakura-vivid transition-colors p-1 QA-next" aria-label="Next Q&A">
+                                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"></polyline></svg>
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+
                     </div>
-                ))
-            }
+                );
+            })}
         </div>
     </div>
 </div>
 
+<script>
+    // Client-side script for handling Q&A pagination in Voice cards
+    document.addEventListener("DOMContentLoaded", () => {
+        // Find all student testimonial cards
+        const cards = document.querySelectorAll("[data-card-index]");
+
+        cards.forEach((card) => {
+            const qaItems = card.querySelectorAll(".QA-item");
+            const dots = card.querySelectorAll(".QA-dot");
+            let currentIndex = 0;
+
+            // Function to update the active Q&A item and dot indicator
+            const goToSlide = (index: number) => {
+                // Update Items
+                qaItems.forEach((item, i) => {
+                    if (i === index) {
+                        item.classList.remove("opacity-0", "z-0", "pointer-events-none");
+                        item.classList.add("opacity-100", "z-10");
+                    } else {
+                        item.classList.remove("opacity-100", "z-10");
+                        item.classList.add("opacity-0", "z-0", "pointer-events-none");
+                    }
+                });
+
+                // Update Dots
+                dots.forEach((dot, i) => {
+                    if (i === index) {
+                        dot.classList.remove("bg-gray-300");
+                        dot.classList.add("bg-sakura-vivid", "w-4");
+                    } else {
+                        dot.classList.remove("bg-sakura-vivid", "w-4");
+                        dot.classList.add("bg-gray-300", "w-2");
+                    }
+                });
+
+                currentIndex = index;
+            };
+
+            // Add click event listeners to dots
+            dots.forEach((dot) => {
+                dot.addEventListener("click", () => {
+                    const dotIndexAttr = dot.getAttribute("data-dot-index");
+                    if (dotIndexAttr) {
+                        const targetIndex = parseInt(dotIndexAttr, 10);
+                        if (!isNaN(targetIndex) && targetIndex !== currentIndex) {
+                            goToSlide(targetIndex);
+                        }
+                    }
+                });
+            });
+
+            // Add click event listeners to prev/next arrows
+            const prevBtn = card.querySelector(".QA-prev");
+            const nextBtn = card.querySelector(".QA-next");
+            
+            if (prevBtn) {
+                prevBtn.addEventListener("click", () => {
+                    const targetIndex = (currentIndex - 1 + qaItems.length) % qaItems.length;
+                    goToSlide(targetIndex);
+                });
+            }
+            if (nextBtn) {
+                nextBtn.addEventListener("click", () => {
+                    const targetIndex = (currentIndex + 1) % qaItems.length;
+                    goToSlide(targetIndex);
+                });
+            }
+            
+            // Optional: Auto-play functionality (uncomment if desired)
+            // setInterval(() => {
+            //    let nextIndex = (currentIndex + 1) % qaItems.length;
+            //    goToSlide(nextIndex);
+            // }, 5000); // 5 seconds interval
+        });
+    });
+</script>
+
 <style>
-    /* CSS Marquee Animation */
-    @keyframes marquee {
-        0% {
-            transform: translateX(0);
-        }
-        100% {
-            /* Translates exactly half of the flex container (one full set of cards) */
-            transform: translateX(-50%);
-        }
+    /* Custom scrollbar for Q&A area to not overflow the card vertically */
+    .custom-scrollbar::-webkit-scrollbar {
+        width: 6px;
     }
-
-    .animate-marquee {
-        animation: marquee 40s linear infinite;
-        /* ensure hover targets children content easily */
-        display: flex;
+    .custom-scrollbar::-webkit-scrollbar-track {
+        background: rgba(0,0,0,0.02);
+        border-radius: 20px;
     }
-
-    /* Pause animation on hover */
-    .hover\:play-state-paused:hover {
-        animation-play-state: paused;
+    .custom-scrollbar::-webkit-scrollbar-thumb {
+        background-color: rgba(240, 113, 166, 0.3); /* sakura-vivid with transparency */
+        border-radius: 20px;
     }
-
-    /* Fade left and right edges for a seamless appearance */
-    .fade-edges {
-        mask-image: linear-gradient(
-            to right,
-            transparent,
-            black 10%,
-            black 90%,
-            transparent
-        );
-        -webkit-mask-image: linear-gradient(
-            to right,
-            transparent,
-            black 5%,
-            black 95%,
-            transparent
-        );
+    .custom-scrollbar::-webkit-scrollbar-thumb:hover {
+        background-color: rgba(240, 113, 166, 0.5); /* slightly darker on hover */
     }
 </style>

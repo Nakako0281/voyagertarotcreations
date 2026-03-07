@@ -5,6 +5,7 @@ import { Image } from "astro:assets";
 import leaderImg from "../assets/images/home/leader_1.webp";
 import coachImg from "../assets/images/home/coach_1.webp";
 import teacherImg from "../assets/images/home/teacher_1.webp";
+import home1Img from "../assets/images/home/home_1.webp";
 
 // Data Definitions
 const courseCategories = [
@@ -147,9 +148,80 @@ const courseCategories = [
         id: "other",
         title: "その他講座",
         sub: "Other Courses",
-        description: "ビューティーボイジャーレッスンなど。",
+        description: "体験会、ビューティーボイジャーレッスンなど。",
         courses: [
+            {
+                id: "trial-course",
+                step: "TRIAL",
+                stepColor: "mint",
+                bgGradient: "bg-mint/20",
+                image: home1Img,
+                title: "ボイジャータロット体験会",
+                subtitle: "従来の占いにとどまらない、願いを叶えるパワーをも持ったボイジャータロットを体験出来ます。",
+                description: `
+                    <strong>ボイジャータロット体験会</strong><br />
+                    ◆ボイジャータロットに興味がある<br />
+                    ◆講座を受ける前に体験してみたい<br />
+                    ◆本格的に習うか迷っている<br />
+                    ◆体験だけしてみたい<br />
+                    など、気軽な気持ちで受ける事が出来ます。<br />
+                    自分の本音に気づいたり、次の一歩が明確になるので、不安や悩みが解消され行動するモチベーションが高まります。<br />
+                    通常セッションよりお安い、お得な体験会です。
+                `,
+                subCourses: [
+                    {
+                        title: "体験会",
+                        duration: "90分",
+                        description: "ボイジャータロットのパワーを気軽に体験できるセッションです。",
+                        contents: [
+                            "ボイジャータロットとは",
+                            "実際のカード体験",
+                            "Q&Aと講座のご案内"
+                        ],
+                        condition: null
+                    }
+                ],
+                pricing: [
+                    { title: "ボイジャータロット体験会", duration: "1回 90分", price: "¥3,500" }
+                ]
+            },
              {
+                id: "intro-course",
+                step: "入門",
+                stepColor: "sky",
+                bgGradient: "bg-sky/20",
+                image: leaderImg, // 仮で既存画像を流用
+                title: "ボイジャータロット入門講座",
+                subtitle: "認定講座までは必要ないけど、タロットを学んでみたい方、セルフリーディングしたい方にぴったりの入門編です。",
+                description: `
+                    <strong>こんな方に</strong><br />
+                    ◆タロットを学んでみたい<br />
+                    ◆ボイジャータロットに興味がある<br />
+                    ◆お金をかけずに少しだけ学んでみたい<br />
+                    ◆自分の事をタロットで見れるようになりたい<br />
+                    など<br /><br />
+                    ＊受講後、認定講座に進みたい方は割引きが適用されます。（価格等はお問い合わせ下さい）
+                `,
+                subCourses: [
+                    {
+                        title: "入門講座",
+                        duration: "4時間",
+                        description: "ボイジャータロットの基礎とセルフリーディングを学びます。",
+                        contents: [
+                            "ボイジャータロットの特徴と基礎知識",
+                            "全78枚カード解説",
+                            "基本の一枚引き",
+                            "応用の3枚引き"
+                        ],
+                        condition: null
+                    }
+                ],
+                pricing: [
+                    { title: "ボイジャータロット入門講座\n(テキスト付き)", duration: "全4時間", price: "¥19,800" },
+                    { title: "カード代別途", duration: "-", price: "¥4,950" }
+                ]
+            },
+            {
                 id: "beauty-voyager",
                 step: "beauty・health",
                 stepColor: "sakura-vivid",
@@ -436,8 +508,34 @@ const courseCategories = [
                                 <h3 class="text-xl md:text-3xl font-bold text-center mb-6 md:mb-10 text-text-dark">
                                     {cat.title} 価格一覧
                                 </h3>
-                                <div class="overflow-x-auto">
-                                    <table class="w-full text-left border-collapse">
+                                <div class="w-full">
+                                    <!-- Mobile Card Layout -->
+                                    <div class="md:hidden flex flex-col gap-4">
+                                        {cat.courses.flatMap(c => c.pricing).map((price) => (
+                                            <div class:list={[
+                                                "bg-white p-5 rounded-2xl border shadow-sm flex flex-col gap-3",
+                                                cat.id === 'voyager' ? 'border-magenta/10' : 
+                                                cat.id === 'coach' ? 'border-sunshine/10' : 
+                                                'border-sky/10'
+                                            ]}>
+                                                <div class="border-b pb-2 border-gray-100/60">
+                                                    <span class="text-[10px] text-gray-500 font-bold uppercase tracking-widest block mb-1">講座名</span>
+                                                    <h4 class="font-bold text-text-dark text-base">{price.title}</h4>
+                                                </div>
+                                                <div class="flex flex-col gap-1">
+                                                    <span class="text-[10px] text-gray-500 font-bold uppercase tracking-widest block">期間</span>
+                                                    <p class="text-gray-700 text-sm font-medium whitespace-pre-line leading-relaxed">{price.duration}</p>
+                                                </div>
+                                                <div class="mt-2 pt-3 border-t border-gray-100/60 flex items-baseline justify-between">
+                                                    <span class="text-[10px] text-gray-500 font-bold uppercase tracking-widest">料金（税込）</span>
+                                                    <span class="font-bold text-text-dark text-lg">{price.price}</span>
+                                                </div>
+                                            </div>
+                                        ))}
+                                    </div>
+
+                                    <!-- Desktop Table Layout -->
+                                    <table class="hidden md:table w-full text-left border-collapse">
                                         <thead class:list={[
                                             "text-xs uppercase tracking-widest border-b",
                                             cat.id === 'voyager' ? 'bg-magenta/10 border-magenta/20 text-magenta' : 
@@ -445,9 +543,9 @@ const courseCategories = [
                                             'bg-sky/10 border-sky/20 text-sky'
                                         ]}>
                                             <tr>
-                                                <th class="p-3 md:p-6 font-black whitespace-nowrap text-xs md:text-sm">講座名</th>
-                                                <th class="p-3 md:p-6 font-black whitespace-nowrap text-xs md:text-sm">期間</th>
-                                                <th class="p-3 md:p-6 font-black text-right whitespace-nowrap text-xs md:text-sm">料金（税込）</th>
+                                                <th class="p-6 font-black whitespace-nowrap text-sm">講座名</th>
+                                                <th class="p-6 font-black whitespace-nowrap text-sm">期間</th>
+                                                <th class="p-6 font-black text-right whitespace-nowrap text-sm">料金（税込）</th>
                                             </tr>
                                         </thead>
                                         <tbody class="divide-y divide-gray-50">
@@ -458,9 +556,9 @@ const courseCategories = [
                                                     cat.id === 'coach' ? 'hover:bg-sunshine/5' : 
                                                     'hover:bg-sky/5'
                                                 ]}>
-                                                    <td class="p-3 md:p-6 font-bold text-text-dark text-sm md:text-base min-w-[100px] md:min-w-[120px]">{price.title}</td>
-                                                    <td class="p-3 md:p-6 text-gray-700 text-xs md:text-sm font-medium whitespace-pre-line leading-relaxed">{price.duration}</td>
-                                                    <td class="p-3 md:p-6 text-right font-bold text-text-dark text-sm md:text-base whitespace-nowrap">{price.price}</td>
+                                                    <td class="p-6 font-bold text-text-dark text-base min-w-[120px]">{price.title}</td>
+                                                    <td class="p-6 text-gray-700 text-sm font-medium whitespace-pre-line leading-relaxed">{price.duration}</td>
+                                                    <td class="p-6 text-right font-bold text-text-dark text-base border-r-0">{price.price}</td>
                                                 </tr>
                                             ))}
                                         </tbody>
