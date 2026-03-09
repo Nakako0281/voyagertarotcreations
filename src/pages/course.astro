@@ -12,7 +12,8 @@ import beautyVoyagerImg from "../assets/images/home/beautyvoygerLesson_2.webp";
 const courseCategories = [
     {
         id: "voyager",
-        title: "ボイジャータロット",
+        tabTitle: "認定講座",
+        title: "ボイジャータロット認定講座",
         sub: "Voyager Tarot",
         description: "ボイジャータロットの認定講座です。基礎からプロフェッショナルまで段階的に学べます。",
         courses: [
@@ -65,6 +66,7 @@ const courseCategories = [
                         condition: {
                             title: "認定条件",
                             items: ["20時間のリーディング記録の提出", "認定テスト（モニターセッション30分）"],
+                            note: "※受験料¥11,000、認定料¥11,000 合計¥22,000",
                             color: "sakura-vivid",
                             bgColor: "bg-pink-50/50",
                             borderColor: "border-pink-100/50"
@@ -100,6 +102,7 @@ const courseCategories = [
                         condition: {
                             title: "認定条件",
                             items: ["3名の方に3回の継続セッションを実施・記録提出", "認定テスト（モニターセッション60分）"],
+                            note: "※受験料¥11,000、認定料¥11,000 合計¥22,000",
                             color: "sunshine",
                             bgColor: "bg-yellow-50/50",
                             borderColor: "border-yellow-100/50"
@@ -133,6 +136,7 @@ const courseCategories = [
                         condition: {
                             title: "認定条件",
                             items: ["50時間の有料セッション実施・記録提出", "講座アシスタント経験・集客実績", "レポート提出"],
+                            note: "※受験料¥11,000、認定料¥11,000 合計¥22,000",
                             color: "sky",
                             bgColor: "bg-blue-50/50",
                             borderColor: "border-blue-100/50"
@@ -147,7 +151,8 @@ const courseCategories = [
     },
     {
         id: "other",
-        title: "その他講座",
+        tabTitle: "その他の講座",
+        title: "その他の講座",
         sub: "Other Courses",
         description: "体験会、ビューティーボイジャーレッスンなど。",
         courses: [
@@ -201,7 +206,8 @@ const courseCategories = [
                     ◆お金をかけずに少しだけ学んでみたい<br />
                     ◆自分の事をタロットで見れるようになりたい<br />
                     など<br /><br />
-                    ＊受講後、認定講座に進みたい方は割引きが適用されます。（価格等はお問い合わせ下さい）
+                    ＊受講後、認定講座に進みたい方は割引きが適用されます。（価格等はお問い合わせ下さい）<br />
+                    ＊カード代別途（¥4,950）
                 `,
                 subCourses: [
                     {
@@ -218,8 +224,7 @@ const courseCategories = [
                     }
                 ],
                 pricing: [
-                    { title: "ボイジャータロット入門講座\n(テキスト付き)", duration: "全4時間", price: "¥19,800" },
-                    { title: "カード代別途", duration: "-", price: "¥4,950" }
+                    { title: "ボイジャータロット入門講座\n(テキスト付き)", duration: "全4時間", price: "¥19,800" }
                 ]
             },
             {
@@ -277,7 +282,7 @@ const courseCategories = [
                     {
                         title: "アンチエイジングクラス",
                         duration: "9時間 (3時間×3回) ＋報告会",
-                        description: "美しく年を重ねるための実践的な知識とケアを学びます。",
+                        description: "美しく年を重ねるための実践的な知識とケアを学びます。<br />＊カード代別途（¥4,950）",
                         contents: [
                             "01 色の白いは七難隠す ー 美白・シミ",
                             "02 重力に抗え ー シワ・たるみ",
@@ -293,7 +298,7 @@ const courseCategories = [
                     {
                         title: "ダイエットクラス",
                         duration: "9時間 (3時間×3回) ＋報告会",
-                        description: "健康的に痩せ、リバウンドしない真のダイエット法を身につけます。",
+                        description: "健康的に痩せ、リバウンドしない真のダイエット法を身につけます。<br />＊カード代別途（¥4,950）",
                         contents: [
                             "01 本当の自分のカラダで生きる ー ダイエット",
                             "02 要らない物を持ち続けますか？ ー デトックス",
@@ -305,6 +310,7 @@ const courseCategories = [
                         condition: {
                             title: "特別プログラム",
                             items: ["美容栄養学の知識とボイジャータロットの実現化で、3ヶ月で『変わる』を実践します！"],
+                            note: undefined,
                             color: "sakura-vivid",
                             bgColor: "bg-pink-50/50",
                             borderColor: "border-pink-100/50"
@@ -314,7 +320,7 @@ const courseCategories = [
                 pricing: [
                     { title: "アンチエイジングクラス", duration: "全9時間＋報告会", price: "¥45,000" },
                     { title: "ダイエットクラス", duration: "全9時間＋報告会", price: "¥45,000" },
-                    { title: "セット受講", duration: "若返りホルモン（成長ホルモン）の活\n性化を促す波動調整メタセラピー\nプレゼント（¥15,000相当）", price: "¥90,000" }
+                    { title: "セット受講", duration: "-", price: "¥90,000" }
                 ]
             }
         ]
@@ -331,7 +337,7 @@ const courseCategories = [
             >
                 Course Guide
             </h1>
-            <div class="w-16 h-[2px] bg-magenta mx-auto mt-6 mb-8"></div>
+            <div class="w-16 h-[2px] bg-[#8b5cf6] mx-auto mt-6 mb-8"></div>
         </header>
 
         <!-- Main Content Layout -->
@@ -347,15 +353,13 @@ const courseCategories = [
                                     class:list={[
                                         "category-tab w-full h-full text-center justify-center px-2 py-3 md:px-6 md:py-4 rounded-xl transition-all duration-300 font-bold tracking-wide flex flex-col items-center gap-1 group border border-transparent",
                                         index === 0 
-                                            ? "bg-text-dark text-white shadow-lg shadow-gray-200" 
+                                            ? "bg-[#8b5cf6] text-white shadow-lg shadow-gray-200" 
                                             : "hover:bg-white hover:shadow-md text-gray-700 hover:text-text-dark"
                                     ]}
                                     data-target={cat.id}
                                 >
                                     <div class="flex flex-col items-center">
-                                        <span class="text-xs md:text-base whitespace-nowrap leading-tight">{cat.title}</span>
-                                        <span class="text-[9px] md:text-[10px] uppercase tracking-widest opacity-60 mt-0.5 md:hidden hidden">{cat.sub}</span>
-                                        <span class="text-[10px] uppercase tracking-widest opacity-60 hidden md:block">{cat.sub}</span>
+                                        <span class="text-xs md:text-base whitespace-nowrap leading-tight">{cat.tabTitle || cat.title}</span>
                                     </div>
                                 </button>
                             </li>
@@ -396,7 +400,7 @@ const courseCategories = [
                             'border-sky bg-sky/5'
                         ]}>
                             <h2 class="text-3xl font-bold text-text-dark mb-2">{cat.title}</h2>
-                            <div class="mt-8 md:mt-12 text-center md:text-left">
+                            <div class="mt-8 md:mt-12 text-left">
                             <p class="text-gray-800 font-medium leading-relaxed">{cat.description}</p>
                         </div>
                         </div>
@@ -440,8 +444,7 @@ const courseCategories = [
                                                 </p>
                                                 <p class="text-gray-700 text-xs md:text-sm mt-4 font-medium">
                                                     ※価格はすべて税込表示です。<br/>
-                                                    ※講座内容は予告なく変更される場合があります。<br/>
-                                                    ※テキスト代・認定料が含まれている講座と、別途必要な講座があります。詳細は各講座のページをご確認ください。
+                                                    ※講座内容は予告なく変更される場合があります。
                                                 </p>
                                             </div>
         
@@ -451,14 +454,16 @@ const courseCategories = [
                                                     <div class="relative">
                                                         {index !== 0 && <div class="absolute -top-5 md:-top-6 left-0 right-0 h-px bg-gray-100"></div>}
                                                         
-                                                        <div class="flex flex-col md:flex-row justify-between items-baseline mb-4 gap-3">
-                                                            <h5 class="font-bold text-xl md:text-2xl text-text-dark flex items-center gap-3">
+                                                        <div class="mb-4">
+                                                            <h5 class="font-bold text-xl md:text-2xl text-text-dark flex items-center gap-3 mb-2">
                                                                 <span class:list={["w-1.5 h-6 rounded-full shrink-0", `bg-${course.stepColor}`]}></span>
-                                                                {sub.title}
+                                                                <span class="whitespace-nowrap">{sub.title}</span>
                                                             </h5>
-                                                            <span class="text-xs md:text-sm font-bold text-gray-700 bg-gray-100 px-4 py-1.5 rounded-full tracking-wider border border-gray-200 shrink-0">
-                                                                期間: {sub.duration}
-                                                            </span>
+                                                            <div class="pl-4 md:pl-9">
+                                                                <span class="inline-block text-[11px] md:text-sm font-bold text-gray-700 bg-gray-100 px-4 py-1.5 rounded-full tracking-wider border border-gray-200">
+                                                                    期間: {sub.duration}
+                                                                </span>
+                                                            </div>
                                                         </div>
                                                         <div class="pl-4 md:pl-9">
                                                             <p class="text-gray-800 text-sm md:text-base leading-relaxed mb-6 font-medium">
@@ -499,6 +504,11 @@ const courseCategories = [
                                                                             </li>
                                                                         ))}
                                                                     </ul>
+                                                                    {sub.condition.note && (
+                                                                        <p class="mt-4 pt-4 border-t border-white/40 text-xs md:text-sm font-bold text-gray-700 tracking-wider">
+                                                                            {sub.condition.note}
+                                                                        </p>
+                                                                    )}
                                                                 </div>
                                                             )}
                                                         </div>
@@ -612,7 +622,7 @@ const courseCategories = [
     function switchTab(targetId: string) {
          // 1. Reset Tabs
          tabs.forEach(t => {
-                t.classList.remove('bg-text-dark', 'text-white', 'shadow-lg', 'shadow-gray-200');
+                t.classList.remove('bg-[#8b5cf6]', 'text-white', 'shadow-lg', 'shadow-gray-200');
                 t.classList.add('hover:bg-white', 'hover:shadow-md', 'text-gray-600', 'hover:text-text-dark');
             });
 
@@ -620,7 +630,7 @@ const courseCategories = [
             const activeTab = document.querySelector(`.category-tab[data-target="${targetId}"]`);
             if (activeTab) {
                 activeTab.classList.remove('hover:bg-white', 'hover:shadow-md', 'text-gray-600', 'hover:text-text-dark');
-                activeTab.classList.add('bg-text-dark', 'text-white', 'shadow-lg', 'shadow-gray-200');
+                activeTab.classList.add('bg-[#8b5cf6]', 'text-white', 'shadow-lg', 'shadow-gray-200');
             }
 
             // 3. Switch Content
@@ -651,9 +661,24 @@ const courseCategories = [
     window.addEventListener('load', () => {
         if(window.location.hash) {
             const hash = window.location.hash.replace('#', '');
-            // Check if hash matches a category ID
-            if(document.getElementById(hash) && document.querySelector(`.category-tab[data-target="${hash}"]`)) {
+            
+            // 1. カテゴリーID（親タブ）に直接一致する場合
+            if (document.querySelector(`.category-tab[data-target="${hash}"]`)) {
                  switchTab(hash);
+                 return;
+            }
+            
+            // 2. 講座ID（タブの中身）に一致する場合
+            const targetElement = document.getElementById(hash);
+            if (targetElement) {
+                const parentCategory = targetElement.closest('.category-content');
+                if (parentCategory) {
+                    const categoryId = parentCategory.id;
+                    switchTab(categoryId);
+                    setTimeout(() => {
+                        targetElement.scrollIntoView({ behavior: 'smooth' });
+                    }, 100);
+                }
             }
         }
     });

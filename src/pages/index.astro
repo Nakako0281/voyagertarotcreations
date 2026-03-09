@@ -40,9 +40,17 @@ function formatDate(dateString: string) {
 import { getCourses } from "../library/microcms";
 
 const coursesResponse = await getCourses();
-const courseCategories = coursesResponse.contents.map(course => ({
+const courseCategories = coursesResponse.contents.map(course => {
+    let mappedName = course.title;
+    if (course.slug === "tarot" || mappedName.includes("ボイジャータロット")) {
+        mappedName = "認定講座";
+    } else if (course.slug === "other" || mappedName.includes("その他")) {
+        mappedName = "その他の講座";
+    }
+    
+    return {
     id: course.slug, // Use slug for ID to match existing logic (or course.id if preferred, but existing used IDs like 'tarot')
-    name: course.title,
+    name: mappedName,
     description: course.subTitle || "",
     steps: course.steps.map(step => ({ step: step.stepNumber, label: step.label })),
     cards: course.cards.map(card => {
@@ -64,6 +72,10 @@ const courseCategories = coursesResponse.contents.map(course => ({
         } else if (card.title.includes("ライフクリエイション")) {
             url = "#"; // Disable link
             img = null; // Gray background
+        } else if (card.title.includes("体験会")) {
+            url = "/course#trial-course";
+        } else if (card.title.includes("入門")) {
+            url = "/course#intro-course";
         }
 
         return {
@@ -72,7 +84,8 @@ const courseCategories = coursesResponse.contents.map(course => ({
             url: url
         };
     })
-}));
+    };
+});
 ---
 
 <Layout title="Home" wide={true} isHome={true}>
@@ -503,13 +516,13 @@ const courseCategories = coursesResponse.contents.map(course => ({
                                         class:list={[
                                             "course-tab text-left px-6 py-4 rounded-xl transition-all duration-300 font-bold tracking-wide flex items-center justify-between group",
                                             index === 0 
-                                                ? "bg-text-dark text-white shadow-xl shadow-blue-200" 
+                                                ? "bg-[#8b5cf6] text-white shadow-xl shadow-blue-200" 
                                                 : "bg-white text-gray-600 hover:text-text-dark hover:bg-blue-50"
                                         ]}
                                         data-target={`course-content-${cat.id}`}
                                     >
                                         <span class="z-10 relative">{cat.name}</span>
-                                        <span class:list={["w-2 h-2 rounded-full transition-all", index === 0 ? "bg-sakura-vivid" : "bg-gray-300 group-hover:bg-text-dark"]}></span>
+                                        <span class:list={["w-2 h-2 rounded-full transition-all", index === 0 ? "bg-white" : "bg-gray-300 group-hover:bg-text-dark"]}></span>
                                     </button>
                                 ))}
                             </div>
@@ -625,9 +638,8 @@ const courseCategories = coursesResponse.contents.map(course => ({
                 </div>
             </div>
         </div>
-
         <!-- 6. VOICE (Integrated) -->
-        <div class="mt-12 md:mt-24 mb-4 md:mb-8">
+        <div class="mt-12 md:mt-24 mb-4 md:mb-8 px-4 md:px-0">
             <div class="w-full h-px bg-gray-200/50 max-w-4xl mx-auto"></div>
         </div>
         <VoiceSection />
@@ -646,23 +658,23 @@ const courseCategories = coursesResponse.contents.map(course => ({
 
                     // 1. Reset Tabs
                     tabs.forEach(t => {
-                        t.classList.remove('bg-text-dark', 'text-white', 'shadow-xl', 'shadow-blue-200');
+                        t.classList.remove('bg-[#8b5cf6]', 'text-white', 'shadow-xl', 'shadow-blue-200');
                         t.classList.add('bg-white', 'text-gray-600');
                          // reset marker
                          const marker = t.querySelector('span:last-child');
                          if(marker) {
-                             marker.classList.remove('bg-sakura-vivid');
+                             marker.classList.remove('bg-white');
                              marker.classList.add('bg-gray-300');
                          }
                     });
 
                     // 2. Active Tab
                     tab.classList.remove('bg-white', 'text-gray-600');
-                    tab.classList.add('bg-text-dark', 'text-white', 'shadow-xl', 'shadow-blue-200');
+                    tab.classList.add('bg-[#8b5cf6]', 'text-white', 'shadow-xl', 'shadow-blue-200');
                      const activeMarker = tab.querySelector('span:last-child');
                          if(activeMarker) {
                              activeMarker.classList.remove('bg-gray-300');
-                             activeMarker.classList.add('bg-sakura-vivid');
+                             activeMarker.classList.add('bg-white');
                          }
 
                     // 3. Switch Content
