@@ -224,7 +224,7 @@ const courseCategories = [
                     }
                 ],
                 pricing: [
-                    { title: "ボイジャータロット入門講座\n(テキスト付き)", duration: "全4時間", price: "¥19,800" }
+                    { title: "ボイジャータロット入門講座\n(テキスト付き)", duration: "全4時間", price: "¥19,800", note: "※カード代別途¥4,950" }
                 ]
             },
             {
@@ -264,16 +264,16 @@ const courseCategories = [
                     分かってはいるけど、中々変えられない生活習慣や食習慣など、様々な悩みも、知識を得る事で、自然と変化させる事が出来ます。<br />
                     そしてボイジャータロットがより良い選択肢や解決策を提示してくれます。<br />
                     行動を促し、実現化するパワーがあるので、真に健康で美しく、なりたい自分へと導いてくれます。<br /><br />
-                    <div class="mt-8 text-red-500">
+                    <div class="mt-8">
                         <strong class="text-red-500 block mb-3">日本ビューティーヘルス協会認定</strong>
-                        <ul class="list-none space-y-1 text-sm mb-4 font-bold">
+                        <ul class="list-none space-y-1 text-sm mb-4 font-bold text-red-500">
                             <li>・ビューティーフードアドバイザー</li>
                             <li>・ビューティーフードスペシャリスト</li>
                             <li>・ビューティーフードプロフェッショナル</li>
                             <li>・美容栄養学専門士</li>
                         </ul>
                         <p class="text-sm mb-4 font-bold">など、美容と健康の食のスペシャリストを目指す認定講座もございます。</p>
-                        <a href="https://eiyo-c.com" target="_blank" rel="noopener noreferrer" class="text-red-500 hover:text-red-600 transition-colors text-sm font-bold inline-flex items-center gap-1">
+                        <a href="https://eiyo-c.com" target="_blank" rel="noopener noreferrer" class="hover:text-gray-600 transition-colors text-sm font-bold inline-flex items-center gap-1">
                             詳細はこちら (https://eiyo-c.com) <span aria-hidden="true">&rarr;</span>
                         </a>
                     </div>
@@ -318,9 +318,9 @@ const courseCategories = [
                     }
                 ],
                 pricing: [
-                    { title: "アンチエイジングクラス", duration: "全9時間＋報告会", price: "¥45,000" },
-                    { title: "ダイエットクラス", duration: "全9時間＋報告会", price: "¥45,000" },
-                    { title: "セット受講", duration: "-", price: "¥90,000" }
+                    { title: "ビューティーボイジャーレッスン\nアンチエイジングクラス", duration: "全9時間＋報告会", price: "¥45,000", note: "※カード代別途¥4,950" },
+                    { title: "ビューティーボイジャーレッスン\nダイエットクラス", duration: "全9時間＋報告会", price: "¥45,000", note: "※カード代別途¥4,950" },
+                    { title: "ビューティーボイジャーレッスン\n・アンチエイジングクラス\n・ダイエットクラス\nセット受講", duration: "-", price: "¥90,000", present: "● ボイジャータロットプレゼント" }
                 ]
             }
         ]
@@ -351,10 +351,10 @@ const courseCategories = [
                             <li class="w-full">
                                 <button
                                     class:list={[
-                                        "category-tab w-full h-full text-center justify-center px-2 py-3 md:px-6 md:py-4 rounded-xl transition-all duration-300 font-bold tracking-wide flex flex-col items-center gap-1 group border border-transparent",
+                                        "category-tab w-full h-full text-center justify-center px-2 py-3 md:px-6 md:py-4 rounded-xl transition-all duration-300 font-bold tracking-wide flex flex-col items-center gap-1 group border",
                                         index === 0 
-                                            ? "bg-[#8b5cf6] text-white shadow-lg shadow-gray-200" 
-                                            : "hover:bg-white hover:shadow-md text-gray-700 hover:text-text-dark"
+                                            ? "bg-[#8b5cf6] border-transparent text-white shadow-lg shadow-gray-200" 
+                                            : "bg-white border-[#8b5cf6]/30 text-gray-600 hover:bg-[#8b5cf6]/5 hover:shadow-md hover:text-text-dark"
                                     ]}
                                     data-target={cat.id}
                                 >
@@ -523,31 +523,44 @@ const courseCategories = [
 
                         <!-- Pricing Table (Per Category) -->
                          {cat.courses.some(c => c.pricing.length > 0) && (
-                            <section class="mt-16 md:mt-24 bg-white/80 backdrop-blur-sm p-6 md:p-12 rounded-[2rem] md:rounded-[3rem] border border-white shadow-sm">
+                            <section class="mt-16 md:mt-24 bg-white/80 backdrop-blur-sm py-6 px-3 md:py-8 md:px-6 lg:px-6 rounded-[2rem] md:rounded-[3rem] border border-white shadow-sm overflow-x-auto">
                                 <h3 class="text-xl md:text-3xl font-bold text-center mb-6 md:mb-10 text-text-dark">
                                     {cat.title} 価格一覧
                                 </h3>
                                 <div class="w-full">
                                     <!-- Mobile Card Layout -->
                                     <div class="md:hidden flex flex-col gap-4">
-                                        {cat.courses.flatMap(c => c.pricing).map((price) => (
+                                        {cat.courses.flatMap(c => c.pricing).map((price: any) => (
                                             <div class:list={[
-                                                "bg-white p-5 rounded-2xl border shadow-sm flex flex-col gap-3",
+                                                "p-5 rounded-2xl border shadow-sm flex flex-col gap-3",
+                                                price.present ? "bg-purple-50" : "bg-white",
                                                 cat.id === 'voyager' ? 'border-magenta/10' : 
                                                 cat.id === 'coach' ? 'border-sunshine/10' : 
                                                 'border-sky/10'
                                             ]}>
                                                 <div class="border-b pb-2 border-gray-100/60">
                                                     <span class="text-[10px] text-gray-600 font-bold uppercase tracking-widest block mb-1">講座名</span>
-                                                    <h4 class="font-bold text-text-dark text-base">{price.title}</h4>
+                                                    <h4 class="font-bold text-text-dark text-sm whitespace-pre-line">{price.title}</h4>
+                                                    {price.present && (
+                                                        <div class="mt-2">
+                                                            <span class="inline-block text-pink-600 text-[11px] font-black">
+                                                                {price.present}
+                                                            </span>
+                                                        </div>
+                                                    )}
                                                 </div>
                                                 <div class="flex flex-col gap-1">
                                                     <span class="text-[10px] text-gray-600 font-bold uppercase tracking-widest block">期間</span>
-                                                    <p class="text-gray-800 text-sm font-medium whitespace-pre-line leading-relaxed">{price.duration}</p>
+                                                    <p class="text-gray-800 text-xs font-medium whitespace-pre-line leading-relaxed">{price.duration}</p>
                                                 </div>
-                                                <div class="mt-2 pt-3 border-t border-gray-100/60 flex items-baseline justify-between">
-                                                    <span class="text-[10px] text-gray-600 font-bold uppercase tracking-widest">料金（税込）</span>
-                                                    <span class="font-bold text-text-dark text-lg">{price.price}</span>
+                                                <div class="mt-2 pt-3 border-t border-gray-100/60 flex flex-col items-end justify-between">
+                                                    <div class="w-full flex justify-between items-end mb-1">
+                                                        <span class="text-[10px] text-gray-600 font-bold uppercase tracking-widest pb-0.5">料金（税込）</span>
+                                                        <span class="font-bold text-text-dark text-base relative inline-flex items-end pr-2.5">
+                                                            <span>{price.price}</span>
+                                                            {price.note ? <span class="absolute bottom-[-6px] right-0 text-[10px] text-gray-500 font-bold leading-none">※</span> : null}
+                                                        </span>
+                                                    </div>
                                                 </div>
                                             </div>
                                         ))}
@@ -562,29 +575,53 @@ const courseCategories = [
                                             'bg-sky/10 border-sky/20 text-sky'
                                         ]}>
                                             <tr>
-                                                <th class="p-6 font-black whitespace-nowrap text-sm">講座名</th>
-                                                <th class="p-6 font-black whitespace-nowrap text-sm">期間</th>
-                                                <th class="p-6 font-black text-right whitespace-nowrap text-sm">料金（税込）</th>
+                                                <th class="px-2 py-4 md:px-4 md:py-5 font-black whitespace-nowrap text-xs">講座名</th>
+                                                <th class="px-2 py-4 md:px-4 md:py-5 font-black whitespace-nowrap text-xs">期間</th>
+                                                <th class="px-2 py-4 md:px-4 md:py-5 font-black text-right whitespace-nowrap text-xs">料金（税込）</th>
                                             </tr>
                                         </thead>
                                         <tbody class="divide-y divide-gray-50">
-                                            {cat.courses.flatMap(c => c.pricing).map((price) => (
+                                            {cat.courses.flatMap(c => c.pricing).map((price: any) => (
                                                 <tr class:list={[
                                                     "transition-colors",
+                                                    price.present ? "bg-purple-50" : "",
                                                     cat.id === 'voyager' ? 'hover:bg-magenta/5' : 
                                                     cat.id === 'coach' ? 'hover:bg-sunshine/5' : 
                                                     'hover:bg-sky/5'
                                                 ]}>
-                                                    <td class="p-6 font-bold text-text-dark text-base min-w-[120px]">{price.title}</td>
-                                                    <td class="p-6 text-gray-800 text-sm font-medium whitespace-pre-line leading-relaxed">{price.duration}</td>
-                                                    <td class="p-6 text-right font-bold text-text-dark text-base border-r-0">{price.price}</td>
+                                                    <td class="px-2 py-4 md:px-4 md:py-5 min-w-[200px] border-b border-gray-100/80">
+                                                        <div class="font-bold text-text-dark text-sm whitespace-pre-line">{price.title}</div>
+                                                        {price.present && (
+                                                            <div class="mt-2">
+                                                                <span class="inline-flex items-center text-sm font-black text-pink-600">
+                                                                    {price.present}
+                                                                </span>
+                                                            </div>
+                                                        )}
+                                                    </td>
+                                                    <td class="px-2 py-4 md:px-4 md:py-5 text-gray-800 text-xs font-medium whitespace-pre-line leading-relaxed border-b border-gray-100/80">{price.duration}</td>
+                                                    <td class="px-2 py-4 md:px-4 md:py-5 text-right pb-6 md:pb-7 border-b border-gray-100/80 border-r-0">
+                                                        <div class="flex justify-end w-full">
+                                                            <div class="font-bold text-text-dark text-sm relative pr-2.5">
+                                                                <span class="w-[70px] text-right inline-block">{price.price}</span>
+                                                                {price.note ? <span class="absolute bottom-[-10px] right-2.5 text-[10px] text-gray-500 font-bold font-sans leading-none">※</span> : null}
+                                                            </div>
+                                                        </div>
+                                                    </td>
                                                 </tr>
                                             ))}
                                         </tbody>
-                                    </table>
-                                </div>
-                            </section>
-                         )}
+                                                    </table>
+
+                                                    {/* Common Notes Footer */}
+                                                    {cat.courses.some(c => c.pricing.some((p: any) => p.note)) && (
+                                                        <div class="mt-6 pt-6 border-t border-gray-100/80 text-right">
+                                                            <p class="text-sm text-gray-800 font-medium">※カード代別途¥4,950</p>
+                                                        </div>
+                                                    )}
+                                                </div>
+                                            </section>
+                                         )}
                     </div>
                 ))}
             </div>
@@ -622,15 +659,15 @@ const courseCategories = [
     function switchTab(targetId: string) {
          // 1. Reset Tabs
          tabs.forEach(t => {
-                t.classList.remove('bg-[#8b5cf6]', 'text-white', 'shadow-lg', 'shadow-gray-200');
-                t.classList.add('hover:bg-white', 'hover:shadow-md', 'text-gray-600', 'hover:text-text-dark');
+                t.classList.remove('bg-[#8b5cf6]', 'border-transparent', 'text-white', 'shadow-lg', 'shadow-gray-200');
+                t.classList.add('bg-white', 'border-[#8b5cf6]/30', 'text-gray-600', 'hover:bg-[#8b5cf6]/5', 'hover:shadow-md', 'hover:text-text-dark');
             });
 
             // 2. Find and Activate Tab
             const activeTab = document.querySelector(`.category-tab[data-target="${targetId}"]`);
             if (activeTab) {
-                activeTab.classList.remove('hover:bg-white', 'hover:shadow-md', 'text-gray-600', 'hover:text-text-dark');
-                activeTab.classList.add('bg-[#8b5cf6]', 'text-white', 'shadow-lg', 'shadow-gray-200');
+                activeTab.classList.remove('bg-white', 'border-[#8b5cf6]/30', 'text-gray-600', 'hover:bg-[#8b5cf6]/5', 'hover:shadow-md', 'hover:text-text-dark');
+                activeTab.classList.add('bg-[#8b5cf6]', 'border-transparent', 'text-white', 'shadow-lg', 'shadow-gray-200');
             }
 
             // 3. Switch Content

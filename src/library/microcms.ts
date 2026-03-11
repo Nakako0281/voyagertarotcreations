@@ -175,23 +175,6 @@ const mockMembers: Member[] = [
             "認定瞑想ファシリテーター",
         ],
     },
-    {
-        id: "hanako-yamada",
-        name: "山田 花子",
-        role: "認定コーチ",
-        titleEn: "Hanako Yamada / Certified Coach",
-        image: { url: aokiSakuraImg as any, height: 800, width: 600 },
-        introduction: "丁寧なセッションで定評がある認定コーチ。クライアントの本来の輝きを引き出すことを得意とする。自身の経験に基づいた深い共感力で、多くのクライアントから信頼を得ている。\n\n現在はオンラインを中心に活動中。",
-        qualifications: ["ボイジャータロット認定コーチ"],
-    },
-    {
-        id: "coming-soon",
-        name: "Coming Soon",
-        role: "認定リーダー",
-        image: undefined,
-        introduction: "新たな認定メンバーがここに掲載されます。",
-        qualifications: [],
-    },
 ];
 
 export const getMembers = async (queries?: MicroCMSQueries): Promise<MemberResponse> => {
