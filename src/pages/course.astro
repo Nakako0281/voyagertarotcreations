@@ -23,7 +23,7 @@ const courseCategories = [
                 stepColor: "sakura-vivid", // Red
                 bgGradient: "bg-sakura-vivid/20",
                 image: leaderImg,
-                title: "認定リーダー養成講座",
+                title: "認定リーダー講座",
                 subtitle: "基礎を学び、自分と他者をリーディングできるようになる",
                 description: "ボイジャータロットの基礎と78枚のカードの解説、基本のリーディングを学びます。<br />ボイジャータロットがどんなカードかを理解し、自分で行うセルフリーディングから他者への基礎リーディングが出来るようになります。",
                 subCourses: [
@@ -73,9 +73,9 @@ const courseCategories = [
                         }
                     }
                 ],
-                 pricing: [
-                    { title: "認定リーダー養成講座 (ベーシック)", duration: "全12時間", price: "¥55,000" },
-                    { title: "認定リーダー養成講座 (アドバンス)", duration: "全12時間", price: "¥55,000" }
+                  pricing: [
+                    { title: "認定リーダー講座 (ベーシック)", duration: "全12時間", price: "¥55,000" },
+                    { title: "認定リーダー講座 (アドバンス)", duration: "全12時間", price: "¥55,000" }
                 ]
             },
             {
@@ -84,7 +84,7 @@ const courseCategories = [
                 stepColor: "sunshine", // Yellow
                 bgGradient: "bg-sunshine/20",
                 image: coachImg,
-                title: "認定コーチ養成講座",
+                title: "認定コーチ講座",
                 subtitle: "質問力を磨き、行動を促すコーチングスキルを習得",
                 description: "占いやカウンセリングの知識を得ても、スムーズなセッションが出来なかったり、自分自身が思うように生きられていなければ活かしていく事は出来ません。単なる占いのツールではなく、行動を促し未来をクリエイトするのがボイジャータロットのパワー。ボイジャーを使った実践的なコーチングスキルを学び、自分自身も取り組むことで、学びと行動の習慣化を両立し、身につけることが出来る講座です。受講しながら自分自身にも変化を起こし、目標達成を叶えていきます。この先のティーチャーとして活躍していきたい方にも重要な講座です。",
                 subCourses: [
@@ -110,7 +110,7 @@ const courseCategories = [
                     }
                 ],
                 pricing: [
-                    { title: "認定コーチ養成講座", duration: "全12時間", price: "¥88,000" }
+                    { title: "認定コーチ講座", duration: "全12時間", price: "¥88,000" }
                 ]
             },
             {
@@ -119,7 +119,7 @@ const courseCategories = [
                 stepColor: "sky", // Blue
                 bgGradient: "bg-sky/20",
                 image: teacherImg,
-                title: "認定ティーチャー養成講座",
+                title: "認定ティーチャー講座",
                 subtitle: "ボイジャータロットを教え、広める存在になる",
                 description: "認定ティーチャーとして『リーダー認定講座(ベーシック・アドバンス)』を開催できるようになります。<br />教える立場になることで、カードへの理解が圧倒的に深まり、ビジネスとしての活動の幅も広がります。",
                 subCourses: [
@@ -144,7 +144,19 @@ const courseCategories = [
                     }
                 ],
                 pricing: [
-                    { title: "認定ティーチャー養成講座", duration: "要問い合わせ", price: "¥120,000" }
+                    { title: "認定ティーチャー講座", duration: "要問い合わせ", price: "¥120,000" },
+                    { 
+                        title: "認定リーダー講座 セット受講\n（ベーシック・アドバンス）", 
+                        duration: "全24時間", 
+                        price: "¥110,000",
+                        present: "● ボイジャータロット（¥4,950）と解説書（¥4,180）プレゼント"
+                    },
+                    { 
+                        title: "プロフェッショナル講座\n・認定リーダー講座（ベーシック・アドバンス）\n・認定コーチ講座\n・認定ティーチャー講座 セットお申込み", 
+                        duration: "-", 
+                        price: "¥300,000\n(¥18,000お得)", 
+                        present: "● ボイジャータロット（¥4,950）と解説書（¥4,180）プレゼント" 
+                    }
                 ]
             }
         ]
@@ -206,8 +218,8 @@ const courseCategories = [
                     ◆お金をかけずに少しだけ学んでみたい<br />
                     ◆自分の事をタロットで見れるようになりたい<br />
                     など<br /><br />
-                    ＊受講後、認定講座に進みたい方は割引きが適用されます。（価格等はお問い合わせ下さい）<br />
-                    ＊カード代別途（¥4,950）
+                    ＊ 受講後、認定講座に進みたい方は割引きが適用されます。（価格等はお問い合わせ下さい）<br />
+                    ＊ カード代別途（¥4,950）
                 `,
                 subCourses: [
                     {
@@ -557,7 +569,7 @@ const courseCategories = [
                                                     <div class="w-full flex justify-between items-end mb-1">
                                                         <span class="text-[10px] text-gray-600 font-bold uppercase tracking-widest pb-0.5">料金（税込）</span>
                                                         <span class="font-bold text-text-dark text-base relative inline-flex items-end pr-2.5">
-                                                            <span>{price.price}</span>
+                                                        <span class="whitespace-pre-line text-right">{price.price}</span>
                                                             {price.note ? <span class="absolute bottom-[-6px] right-0 text-[10px] text-gray-500 font-bold leading-none">※</span> : null}
                                                         </span>
                                                     </div>
@@ -603,7 +615,7 @@ const courseCategories = [
                                                     <td class="px-2 py-4 md:px-4 md:py-5 text-right pb-6 md:pb-7 border-b border-gray-100/80 border-r-0">
                                                         <div class="flex justify-end w-full">
                                                             <div class="font-bold text-text-dark text-sm relative pr-2.5">
-                                                                <span class="w-[70px] text-right inline-block">{price.price}</span>
+                                                                <span class="text-right inline-block whitespace-pre-line leading-tight">{price.price}</span>
                                                                 {price.note ? <span class="absolute bottom-[-10px] right-2.5 text-[10px] text-gray-500 font-bold font-sans leading-none">※</span> : null}
                                                             </div>
                                                         </div>
