@@ -51,6 +51,10 @@ export default function ProfileCarousel({ members }: ProfileCarouselProps) {
         setCurrentIndex(nextIndex);
     };
 
+    if (!members || members.length === 0) {
+        return null;
+    }
+
     const currentMember = members[currentIndex];
 
     return (

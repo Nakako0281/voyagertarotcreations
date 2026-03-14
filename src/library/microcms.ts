@@ -103,7 +103,7 @@ export const getMembers = async (queries?: MicroCMSQueries): Promise<MemberRespo
             queries,
         });
     } catch (error) {
-        console.error("Failed to fetch members from MicroCMS:", error);
+        console.warn("MicroCMS Fetch Warning (getMembers): Endpoint may not exist, returning empty data.", error);
         return { contents: [], totalCount: 0, offset: 0, limit: 10 };
     }
 };
@@ -152,7 +152,7 @@ export const getCourses = async (queries?: MicroCMSQueries): Promise<CourseRespo
             queries,
         });
     } catch (error) {
-        console.error("Failed to fetch courses from MicroCMS:", error);
+        console.warn("MicroCMS Fetch Warning (getCourses): Endpoint may not exist, returning empty data.", error);
         return { contents: [], totalCount: 0, offset: 0, limit: 10 };
     }
 };
