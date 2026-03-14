@@ -20,7 +20,6 @@ import placeholderImg from "../assets/images/placeholder.jpg";
 
 const response = await getNews({
 	limit: 3,
-	fields: ["id", "title", "publishedAt", "category", "eyecatch"],
 });
 const { contents: newsList } = response;
 
@@ -738,68 +737,88 @@ const courseCategories = coursesResponse.contents.map(course => {
                 </div>
             </div>
 
-            <div class="grid gap-10 md:grid-cols-3 mb-12">
+            <div class="mb-12">
                 {
-                    newsList.map((news, index) => {
-                        const fallbackImages = [home1Img, home2Img, home3Img];
-                        const defaultImg = fallbackImages[index % fallbackImages.length];
-                        return (
-                        <a
-                            href={`/news/${news.id}`}
-                            class="block bg-white rounded-3xl shadow-sm border border-gray-100 hover:shadow-xl hover:shadow-blue-100/50 hover:-translate-y-2 transition-all duration-500 group overflow-hidden relative"
-                        >
-                            <div class="absolute inset-0 bg-gradient-to-br from-white via-transparent to-sakura-light/10 opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
-                            <div class="h-64 bg-gray-50 mb-0 overflow-hidden relative">
-                                {news.eyecatch ? (
-                                    <img
-                                        src={news.eyecatch.url}
-                                        alt={news.title}
-                                        class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
-                                        loading="lazy"
-                                        decoding="async"
-                                    />
-                                ) : (
-                                    <Image
-                                        src={defaultImg as any}
-                                        alt="News Placeholder"
-                                        class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700 opacity-90"
-                                        loading="lazy"
-                                        decoding="async"
-                                    />
-                                )}
-                                <div class="absolute top-4 left-4">
-                                    <span class="bg-white/90 backdrop-blur text-xs text-text-dark font-bold px-3 py-1 rounded-full shadow-sm">
-                                        {news.category[0]?.name}
-                                    </span>
+                    newsList.length > 0 ? (
+                        <div class="grid gap-10 md:grid-cols-3">
+                            {newsList.map((news, index) => {
+                                const fallbackImages = [home1Img, home2Img, home3Img];
+                                const defaultImg = fallbackImages[index % fallbackImages.length];
+                                return (
+                                <a
+                                    href={`/news/${news.id}`}
+                                    class="block bg-white rounded-3xl shadow-sm border border-gray-100 hover:shadow-xl hover:shadow-blue-100/50 hover:-translate-y-2 transition-all duration-500 group overflow-hidden relative"
+                                >
+                                    <div class="absolute inset-0 bg-gradient-to-br from-white via-transparent to-sakura-light/10 opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+                                    <div class="h-64 bg-gray-50 mb-0 overflow-hidden relative">
+                                        {news.eyecatch ? (
+                                            <img
+                                                src={news.eyecatch.url}
+                                                alt={news.title}
+                                                class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
+                                                loading="lazy"
+                                                decoding="async"
+                                            />
+                                        ) : (
+                                            <Image
+                                                src={defaultImg as any}
+                                                alt="News Placeholder"
+                                                class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700 opacity-90"
+                                                loading="lazy"
+                                                decoding="async"
+                                            />
+                                        )}
+                                        <div class="absolute top-4 left-4">
+                                            <span class="bg-white/90 backdrop-blur text-xs text-text-dark font-bold px-3 py-1 rounded-full shadow-sm">
+                                                {news.category?.[0]?.name || "お知らせ"}
+                                            </span>
+                                        </div>
+                                    </div>
+                                    <div class="p-8 relative z-10">
+                                        <time class="text-sm text-gray-600 font-bold tracking-wider block mb-3">
+                                            {formatDate(news.publishedAt)}
+                                        </time>
+                                        <h3 class="font-bold text-xl line-clamp-2 text-text-main group-hover:text-text-dark transition-colors leading-relaxed mb-4">
+                                            {news.title}
+                                        </h3>
+                                        <div class="flex justify-end">
+                                            <span class="text-sakura-vivid text-sm font-bold opacity-0 group-hover:opacity-100 transform translate-x-[-10px] group-hover:translate-x-0 transition-all duration-300">
+                                                Read More &rarr;
+                                            </span>
+                                        </div>
+                                    </div>
+                                </a>
+                            )})}
+                        </div>
+                    ) : (
+                        <div class="text-center py-20 bg-white/40 backdrop-blur-md rounded-[3rem] border border-dashed border-sakura-vivid/20 shadow-sm relative overflow-hidden group">
+                            <div class="absolute inset-0 bg-gradient-to-br from-sakura-light/5 to-transparent opacity-50"></div>
+                            <div class="relative z-10">
+                                <div class="w-16 h-16 bg-white rounded-full flex items-center justify-center mx-auto mb-6 shadow-sm text-sakura-vivid">
+                                    <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 20H5a2 2 0 01-2-2V6a2 2 0 012-2h10l4 4v10a2 2 0 01-2 2z" />
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 11V7l-4 4 4 4v-4z" />
+                                    </svg>
                                 </div>
+                                <h3 class="text-text-main font-bold text-xl mb-2">現在、新しいお知らせはありません</h3>
+                                <p class="text-text-main/60">更新まで今しばらくお待ちください。</p>
                             </div>
-                            <div class="p-8 relative z-10">
-                                <time class="text-sm text-gray-600 font-bold tracking-wider block mb-3">
-                                    {formatDate(news.publishedAt)}
-                                </time>
-                                <h3 class="font-bold text-xl line-clamp-2 text-text-main group-hover:text-text-dark transition-colors leading-relaxed mb-4">
-                                    {news.title}
-                                </h3>
-                                <div class="flex justify-end">
-                                    <span class="text-sakura-vivid text-sm font-bold opacity-0 group-hover:opacity-100 transform translate-x-[-10px] group-hover:translate-x-0 transition-all duration-300">
-                                        Read More &rarr;
-                                    </span>
-                                </div>
-                            </div>
-                        </a>
-                    )}
-                )}
+                        </div>
+                    )
+                }
             </div>
 
-            <div class="text-center">
-                <a
-                    href="/news"
-                    class="inline-flex items-center gap-3 px-8 py-3 rounded-full border border-gray-300 text-gray-700 font-bold tracking-widest hover:border-text-dark hover:text-text-dark transition-all group duration-300"
-                >
-                    VIEW ALL
-                    <span class="transition-transform group-hover:translate-x-1">&rarr;</span>
-                </a>
-            </div>
+            {newsList.length > 0 && (
+                <div class="text-center">
+                    <a
+                        href="/news"
+                        class="inline-flex items-center gap-3 px-8 py-3 rounded-full border border-gray-300 text-gray-700 font-bold tracking-widest hover:border-text-dark hover:text-text-dark transition-all group duration-300"
+                    >
+                        VIEW ALL
+                        <span class="transition-transform group-hover:translate-x-1">&rarr;</span>
+                    </a>
+                </div>
+            )}
         </div>
 		</div>
 	</section>

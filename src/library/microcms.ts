@@ -15,7 +15,7 @@ export interface News {
     revisedAt: string;
     title: string;
     content: string;
-    category: {
+    category?: {
         id: string;
         name: string;
     }[];
@@ -33,93 +33,42 @@ export interface NewsResponse {
     contents: News[];
 }
 
-// Mock Data
-const mockNews: News[] = [
-    {
-        id: "1",
-        createdAt: "2026-02-02T10:00:00.000Z",
-        publishedAt: "2026-02-02T10:00:00.000Z",
-        revisedAt: "2026-02-02T10:00:00.000Z",
-        title: "Webサイトをリニューアルしました",
-        content: "<p>Voyager Tarot CreationsのWebサイトをリニューアルしました。より見やすく、使いやすいサイトを目指してまいります。<br>今後ともよろしくお願いいたします。</p>",
-        category: [{ id: "info", name: "お知らせ" }],
-    },
-    {
-        id: "2",
-        createdAt: "2026-01-20T10:00:00.000Z",
-        publishedAt: "2026-01-20T10:00:00.000Z",
-        revisedAt: "2026-01-20T10:00:00.000Z",
-        title: "【2月開催】認定リーダー講座のお知らせ",
-        content: "<p>2月の認定リーダー講座の日程が決まりました。<br>詳細・お申し込みは講座案内ページをご覧ください。</p><h3>日程</h3><ul><li>2月15日(土) 10:00 - 17:00</li><li>2月16日(日) 10:00 - 17:00</li></ul>",
-        category: [{ id: "course", name: "講座情報" }]
-    },
-    {
-        id: "3",
-        createdAt: "2026-01-10T10:00:00.000Z",
-        publishedAt: "2026-01-10T10:00:00.000Z",
-        revisedAt: "2026-01-10T10:00:00.000Z",
-        title: "新年のご挨拶",
-        content: "<p>あけましておめでとうございます。本年もVoyager Tarot Creationsをよろしくお願いいたします。</p>",
-        category: [{ id: "blog", name: "ブログ" }]
-    }
-];
-
 export const getNews = async (queries?: MicroCMSQueries): Promise<NewsResponse> => {
-    if (client) {
-        try {
-            return await client.get({
-                endpoint: "news",
-                queries,
-            });
-        } catch (error) {
-            console.error("MicroCMS fetch error:", error);
-            // Fallback to mock data on error? Or rethrow? 
-            // For now, let's fall back to mock data if API fails to avoid breaking dev
+    try {
+        if (!client) {
+            console.warn("MicroCMS client is not initialized. Using empty data fallback.");
+            return { contents: [], totalCount: 0, offset: 0, limit: 10 };
         }
+        return await client.get({
+            endpoint: "news",
+            queries,
+        });
+    } catch (error) {
+        console.error("Failed to fetch news from MicroCMS:", error);
+        return { contents: [], totalCount: 0, offset: 0, limit: 10 };
     }
-
-    // Fallback Mock Data
-    return new Promise((resolve) => {
-        setTimeout(() => {
-            resolve({
-                totalCount: mockNews.length,
-                offset: 0,
-                limit: 10,
-                contents: mockNews
-            });
-        }, 100);
-    });
 };
 
 export const getNewsDetail = async (
     contentId: string,
     queries?: MicroCMSQueries
-): Promise<News> => {
-    if (client) {
-        try {
-            return await client.get({
-                endpoint: "news",
-                contentId,
-                queries,
-            });
-        } catch (error) {
-            console.error("MicroCMS detail fetch error:", error);
+): Promise<News | null> => {
+    try {
+        if (!client) {
+            return null;
         }
+        return await client.get({
+            endpoint: "news",
+            contentId,
+            queries,
+        });
+    } catch (error) {
+        console.error(`Failed to fetch news detail (${contentId}) from MicroCMS:`, error);
+        return null;
     }
-
-    return new Promise((resolve, reject) => {
-        setTimeout(() => {
-            const news = mockNews.find(n => n.id === contentId);
-            if (news) {
-                resolve(news);
-            } else {
-                reject(new Error("Not found"));
-            }
-        }, 100);
-    });
 };
 
-// --- Members (Profile) Type Definition ---
+// --- Members (Profile) ---
 export interface Member {
     id: string;
     name: string;
@@ -130,8 +79,8 @@ export interface Member {
         height: number;
         width: number;
     };
-    introduction: string; // Rich text or simple text? Plan said textarea (simple text usually, but supports newlines)
-    qualifications?: string[]; // Simple list of strings
+    introduction: string;
+    qualifications?: string[];
 }
 
 export interface MemberResponse {
@@ -141,71 +90,26 @@ export interface MemberResponse {
     contents: Member[];
 }
 
-import { default as aokiSakuraImg } from "../assets/images/AokiSakura_1.webp";
-import { default as leader1Img } from "../assets/images/home/leader_1.webp";
-import { default as coach1Img } from "../assets/images/home/coach_1.webp";
-import { default as teacher1Img } from "../assets/images/home/teacher_1.webp";
-import { default as home1Img } from "../assets/images/home/home_1.webp";
-import { default as home2Img } from "../assets/images/home/home_2.webp";
-import { default as home3Img } from "../assets/images/home/home_3.webp";
-
-const mockMembers: Member[] = [
-    {
-        id: "sakura-aoki",
-        name: "青木 咲羅",
-        role: "Voyager Tarot Creations代表",
-        titleEn: "Sakura Aoki / Voyager Tarot Creations代表",
-        image: { url: aokiSakuraImg as any, height: 800, width: 600 },
-        introduction: `祖父・母共に占い師という家庭に生まれ、幼い頃からスピリチュアルな環境で育つ。
-保育士をしながらカウンセリング、心理療法を学び、2003年占い師、心理セラピストとして開業。
-その後、ボイジャータロットJAPANでの北海道初の認定カウンセラーとなり、2013年から認定ティーチャーとしてその普及も努める。
-
-マスターティーチャーとして長年在籍したボイジャータロットJAPANを卒業し、2025年に新たに『Voyager Tarot Creations』を設立。
-ボイジャータロットカウンセリング及びヒプノセラピーを中心に、癒しや願望実現まで、様々な心の問題に対応すると共に、新しい時代に活躍出来るリーダー、コーチ、ティーチャーの育成を目指している。
-イベント出演やセミナー、執筆なども精力的に活動中。`,
-        qualifications: [
-            "ボイジャータロット国際認定ティーチャー",
-            "米国催眠療法協会認定　ヒプノセラピスト",
-            "日本催眠学会会員",
-            "日本ビューティーヘルス協会札幌校代表　認定美容栄養学専門士",
-            "認定オーラクレンズプラクティショナー",
-            "認定カルマクリアプラクティショナー",
-            "代替療法士会会員",
-            "CAMESE認定　カラーセラピスト",
-            "認定瞑想ファシリテーター",
-        ],
-    },
-];
-
 export const getMembers = async (queries?: MicroCMSQueries): Promise<MemberResponse> => {
-    if (client) {
-        try {
-            return await client.get({
-                endpoint: "members",
-                queries,
-            });
-        } catch (error) {
-            console.error("MicroCMS members fetch error:", error);
-            // Fallback to mock
+    try {
+        if (!client) {
+            console.warn("MicroCMS client is not initialized. Using empty data fallback.");
+            return { contents: [], totalCount: 0, offset: 0, limit: 10 };
         }
+        return await client.get({
+            endpoint: "members",
+            queries,
+        });
+    } catch (error) {
+        console.error("Failed to fetch members from MicroCMS:", error);
+        return { contents: [], totalCount: 0, offset: 0, limit: 10 };
     }
-
-    return new Promise((resolve) => {
-        setTimeout(() => {
-            resolve({
-                totalCount: mockMembers.length,
-                offset: 0,
-                limit: 10,
-                contents: mockMembers
-            });
-        }, 100);
-    });
 };
 
 
-// --- Courses Type Definition ---
+// --- Courses ---
 export interface CourseStep {
-    stepNumber: number; // Changed from 'step' to 'stepNumber' for clarity in CMS
+    stepNumber: number;
     label: string;
 }
 
@@ -220,10 +124,10 @@ export interface CourseCard {
 }
 
 export interface CourseCategory {
-    id: string; // This will likely be the contentId in MicroCMS
-    title: string; // 'name' in code, 'title' in CMS
-    subTitle?: string; // 'description'/eng title
-    slug: string; // specific ID for anchor links if contentId is uuid
+    id: string;
+    title: string;
+    subTitle?: string;
+    slug: string;
     steps: CourseStep[];
     cards: CourseCard[];
 }
@@ -235,59 +139,18 @@ export interface CourseResponse {
     contents: CourseCategory[];
 }
 
-const mockCourses: CourseCategory[] = [
-    {
-        id: "tarot-course",
-        slug: "tarot",
-        title: "ボイジャータロット",
-        subTitle: "Voyager Tarot",
-        steps: [
-            { stepNumber: 1, label: "リーダー認定" },
-            { stepNumber: 2, label: "コーチ認定" },
-            { stepNumber: 3, label: "ティーチャー認定" }
-        ],
-        cards: [
-            { title: "リーダー認定講座", image: { url: leader1Img as any, height: 300, width: 400 }, url: "/course#course_1" },
-            { title: "コーチ認定講座", image: { url: coach1Img as any, height: 300, width: 400 }, url: "/course#course_2" },
-            { title: "ティーチャー認定講座", image: { url: teacher1Img as any, height: 300, width: 400 }, url: "/course2#course_1" }
-        ]
-    },
-    {
-        id: "other-course",
-        slug: "other",
-        title: "その他講座",
-        subTitle: "Other Courses",
-        steps: [],
-        cards: [
-            { title: "ボイジャータロット体験会", image: { url: home1Img as any, height: 300, width: 400 }, url: "/course#trial-course" },
-            { title: "ボイジャータロット入門講座", image: { url: leader1Img as any, height: 300, width: 400 }, url: "/course#intro-course" },
-            { title: "ビューティーボイジャーレッスン", image: { url: home2Img as any, height: 300, width: 400 }, url: "/course#beauty-voyager" },
-            { title: "ライフクリエイション講座", image: { url: home3Img as any, height: 300, width: 400 }, url: "/course#" }
-        ]
-    }
-];
-
 export const getCourses = async (queries?: MicroCMSQueries): Promise<CourseResponse> => {
-    if (client) {
-        try {
-            return await client.get({
-                endpoint: "courses",
-                queries,
-            });
-        } catch (error) {
-            console.error("MicroCMS courses fetch error:", error);
-            // Fallback
+    try {
+        if (!client) {
+            console.warn("MicroCMS client is not initialized. Using empty data fallback.");
+            return { contents: [], totalCount: 0, offset: 0, limit: 10 };
         }
+        return await client.get({
+            endpoint: "courses",
+            queries,
+        });
+    } catch (error) {
+        console.error("Failed to fetch courses from MicroCMS:", error);
+        return { contents: [], totalCount: 0, offset: 0, limit: 10 };
     }
-
-    return new Promise((resolve) => {
-        setTimeout(() => {
-            resolve({
-                totalCount: mockCourses.length,
-                offset: 0,
-                limit: 10,
-                contents: mockCourses
-            });
-        }, 100);
-    });
 };

@@ -4,7 +4,7 @@ import { getNews, getNewsDetail } from "../../library/microcms";
 import { format } from "date-fns";
 
 export async function getStaticPaths() {
-    const response = await getNews({ fields: ["id"] });
+    const response = await getNews();
     return response.contents.map((content: any) => ({
         params: {
             id: content.id,
@@ -20,76 +20,105 @@ function formatDate(dateString: string) {
 }
 ---
 
-<Layout title={news.title}>
-    <article
-        class="max-w-4xl mx-auto bg-white/80 backdrop-blur-md p-8 md:p-12 rounded-[3rem] shadow-glass border border-white relative overflow-hidden"
-    >
-        <!-- Header -->
-        <header class="mb-12 pb-8 border-b border-gray-100 relative z-10">
-            <div class="flex items-center gap-4 mb-6">
-                <time
-                    class="text-gray-600 font-bold tracking-wider"
-                    datetime={news.publishedAt}
-                >
-                    {formatDate(news.publishedAt)}
-                </time>
+<Layout title={news?.title || "お知らせ"}>
+    <div class="max-w-4xl mx-auto">
+        {news ? (
+            <article
+                class="bg-white/80 backdrop-blur-md p-8 md:p-12 rounded-[3rem] shadow-glass border border-white relative overflow-hidden"
+            >
+                <!-- Header -->
+                <header class="mb-12 pb-8 border-b border-gray-100 relative z-10">
+                    <div class="flex items-center gap-4 mb-6">
+                        <time
+                            class="text-gray-600 font-bold tracking-wider"
+                            datetime={news.publishedAt}
+                        >
+                            {formatDate(news.publishedAt)}
+                        </time>
+                        {
+                            (news.category && news.category.length > 0) ? (
+                                news.category.map((cat: any) => (
+                                    <span class="text-sm text-sakura-vivid font-bold border border-sakura-vivid/30 bg-sakura-light/10 px-3 py-1 rounded-full backdrop-blur-sm">
+                                        {cat.name}
+                                    </span>
+                                ))
+                            ) : (
+                                <span class="text-sm text-sakura-vivid font-bold border border-sakura-vivid/30 bg-sakura-light/10 px-3 py-1 rounded-full backdrop-blur-sm">
+                                    お知らせ
+                                </span>
+                            )
+                        }
+                    </div>
+                    <h1
+                        class="text-3xl md:text-5xl font-bold text-text-main leading-relaxed"
+                    >
+                        {news.title}
+                    </h1>
+                </header>
+
                 {
-                    news.category.map((cat: any) => (
-                        <span class="text-sm text-sakura-vivid font-bold border border-sakura-vivid/30 bg-sakura-light/10 px-3 py-1 rounded-full backdrop-blur-sm">
-                            {cat.name}
-                        </span>
-                    ))
+                    news.eyecatch && (
+                        <div class="mb-12 rounded-2xl overflow-hidden shadow-lg shadow-gray-200/50 relative z-10">
+                            <img
+                                src={news.eyecatch.url}
+                                alt={news.title}
+                                class="w-full h-auto object-cover"
+                            />
+                        </div>
+                    )
                 }
-            </div>
-            <h1
-                class="text-3xl md:text-5xl font-bold text-text-main leading-relaxed"
-            >
-                {news.title}
-            </h1>
-        </header>
 
-        {
-            news.eyecatch && (
-                <div class="mb-12 rounded-2xl overflow-hidden shadow-lg shadow-gray-200/50 relative z-10">
-                    <img
-                        src={news.eyecatch.url}
-                        alt={news.title}
-                        class="w-full h-auto object-cover"
-                    />
-                </div>
-            )
-        }
+                <!-- Content -->
+                <div
+                    class="prose prose-lg prose-p:text-gray-600 prose-p:leading-loose prose-headings:font-bold prose-headings:text-text-dark prose-a:text-sakura-vivid prose-a:no-underline hover:prose-a:underline prose-strong:text-text-dark max-w-none relative z-10"
+                    set:html={news.content}
+                />
 
-        <!-- Content -->
-        <div
-            class="prose prose-lg prose-p:text-gray-600 prose-p:leading-loose prose-headings:font-bold prose-headings:text-text-dark prose-a:text-sakura-vivid prose-a:no-underline hover:prose-a:underline prose-strong:text-text-dark max-w-none relative z-10"
-            set:html={news.content}
-        />
-
-        <!-- Navigation -->
-        <div
-            class="mt-16 pt-12 border-t border-gray-100 text-center relative z-10"
-        >
-            <a
-                href="/news"
-                class="inline-flex items-center px-8 py-3 rounded-full border border-gray-300 text-gray-700 font-bold tracking-widest hover:border-sakura-vivid hover:text-sakura-vivid transition-all group duration-300 bg-white/50 backdrop-blur-sm"
-            >
-                <span
-                    class="mr-2 group-hover:-translate-x-1 transition-transform"
-                    >&larr;</span
+                <!-- Navigation -->
+                <div
+                    class="mt-16 pt-12 border-t border-gray-100 text-center relative z-10"
                 >
-                BACK TO NEWS
-            </a>
-        </div>
+                    <a
+                        href="/news"
+                        class="inline-flex items-center px-8 py-3 rounded-full border border-gray-300 text-gray-700 font-bold tracking-widest hover:border-sakura-vivid hover:text-sakura-vivid transition-all group duration-300 bg-white/50 backdrop-blur-sm"
+                    >
+                        <span
+                            class="mr-2 group-hover:-translate-x-1 transition-transform"
+                            >&larr;</span
+                        >
+                        BACK TO NEWS
+                    </a>
+                </div>
 
-        <!-- Background Decoration -->
-        <div
-            class="absolute top-0 right-0 w-96 h-96 bg-gradient-to-b from-sakura-light/20 to-transparent rounded-bl-full z-0 blur-3xl opacity-50 pointer-events-none"
-        >
-        </div>
-        <div
-            class="absolute bottom-0 left-0 w-64 h-64 bg-gradient-to-t from-sky/10 to-transparent rounded-tr-full z-0 blur-3xl opacity-50 pointer-events-none"
-        >
-        </div>
-    </article>
+                <!-- Background Decoration -->
+                <div
+                    class="absolute top-0 right-0 w-96 h-96 bg-gradient-to-b from-sakura-light/20 to-transparent rounded-bl-full z-0 blur-3xl opacity-50 pointer-events-none"
+                >
+                </div>
+                <div
+                    class="absolute bottom-0 left-0 w-64 h-64 bg-gradient-to-t from-sky/10 to-transparent rounded-tr-full z-0 blur-3xl opacity-50 pointer-events-none"
+                >
+                </div>
+            </article>
+        ) : (
+            <div class="text-center py-24 bg-white/40 backdrop-blur-lg rounded-[3rem] border border-dashed border-sakura-vivid/20 max-w-2xl mx-auto shadow-sm">
+                <div class="w-20 h-20 bg-white rounded-full flex items-center justify-center mx-auto mb-8 shadow-sm text-sakura-vivid">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-10 w-10" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z" />
+                    </svg>
+                </div>
+                <h2 class="text-text-main font-bold text-2xl mb-4">お知らせが見つかりませんでした</h2>
+                <p class="text-text-main/60 mb-10 leading-relaxed px-6">
+                    お探しの記事は削除されたか、URLが変更された可能性があります。<br/>
+                    一覧に戻って他のお知らをご確認ください。
+                </p>
+                <a
+                    href="/news"
+                    class="inline-flex items-center px-8 py-3 rounded-full border border-sakura-vivid text-sakura-vivid font-bold hover:bg-sakura-vivid hover:text-white transition-all duration-300"
+                >
+                    &larr; お知らせ一覧へ戻る
+                </a>
+            </div>
+        )}
+    </div>
 </Layout>
