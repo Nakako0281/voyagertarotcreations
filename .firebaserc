@@ -1,5 +1,6 @@
 {
   "projects": {
-    "default": "voyagertarothp"
+    "default": "voyagertarothp",
+    "production": "voyager-tarot-creations"
   }
 }

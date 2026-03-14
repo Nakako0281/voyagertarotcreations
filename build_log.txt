@@ -1,24 +1,3533 @@
 
 > y@0.0.1 build
-> astro build
+> astro build --verbose
 
-[2m08:40:10[22m [34m[vite][39m Re-optimizing dependencies because lockfile has changed
-[2m08:40:10[22m [34m[content][39m Syncing content
-[2m08:40:10[22m [34m[content][39m Synced content
-[2m08:40:10[22m [34m[types][39m Generated [2m268ms[22m
-[2m08:40:10[22m [34m[build][39m output: [34m"static"[39m
-[2m08:40:10[22m [34m[build][39m mode: [34m"static"[39m
-[2m08:40:10[22m [34m[build][39m directory: [34mC:\Users\subar\Documents\Projects\voyagertarotcreations\voyagertarotcreations\dist\[39m
-[2m08:40:10[22m [34m[build][39m Collecting build info...
-[2m08:40:10[22m [34m[build][39m [32m笨・Completed in 300ms.[39m
-[2m08:40:10[22m [34m[build][39m Building static entrypoints...
-08:40:11 [ERROR] [vite] 笨・[39m Build failed in 894ms
-Expected "}" but found ":"
-  Location:
-    C:/Users/subar/Documents/Projects/voyagertarotcreations/voyagertarotcreations/src/pages/index.astro:29:38
+2026-03-14T09:54:38.829Z astro:cli --verbose flag enabled! Enabling: DEBUG="astro:*,vite:*"
+2026-03-14T09:54:38.830Z astro:cli Tip: Set the DEBUG env variable directly for more control. Example: "DEBUG=astro:*,vite:* astro build".
+2026-03-14T09:54:39.373Z astro:telemetry [notify] last notified on 1769853921199
+2026-03-14T09:54:40.167Z astro:telemetry {
+  context: {
+    isGit: true,
+    anonymousProjectId: '348a37130a239044b98db32f13526bbe34022b7a5646eb342be05969e814c649',
+    packageManager: 'npm',
+    packageManagerVersion: '10.7.0',
+    anonymousId: '0f64e8722601234d9e7ba18ea0f6c62c0482439bc5e023ca45bb74602129eca6',
+    anonymousSessionId: '97603fc8af01ee2ef99e6a96d42fec8087a2c3c58e52ff82f11f82d893c80c0b'
+  },
+  meta: {
+    nodeVersion: '20.14.0',
+    viteVersion: '6.4.1',
+    astroVersion: '5.17.1',
+    systemPlatform: 'win32',
+    systemRelease: '10.0.26200',
+    systemArchitecture: 'x64',
+    cpuCount: 22,
+    cpuModel: 'Intel(R) Core(TM) Ultra 7 155H',
+    cpuSpeed: 2995,
+    memoryInMb: 15828,
+    isDocker: false,
+    isTTY: undefined,
+    isWSL: false,
+    isCI: false,
+    ciName: null
+  }
+}
+2026-03-14T09:54:40.167Z astro:telemetry [
+  {
+    "eventName": "ASTRO_CLI_SESSION_STARTED",
+    "payload": {
+      "cliCommand": "build",
+      "config": {
+        "integrations": [
+          "@astrojs/react"
+        ],
+        "build": {},
+        "server": true,
+        "image": {},
+        "markdown": {},
+        "vite": {
+          "plugins": true
+        },
+        "experimental": {},
+        "legacy": {}
+      }
+    }
+  }
+]
+2026-03-14T09:54:40.179Z astro:build Initial setup...
+2026-03-14T09:54:40.199Z vite:env loading env files: [
+  'C:/Users/subar/Documents/Projects/voyagertarotcreations/voyagertarotcreations/.env',
+  'C:/Users/subar/Documents/Projects/voyagertarotcreations/voyagertarotcreations/.env.local',
+  'C:/Users/subar/Documents/Projects/voyagertarotcreations/voyagertarotcreations/.env.production',
+  'C:/Users/subar/Documents/Projects/voyagertarotcreations/voyagertarotcreations/.env.production.local'
+]
+2026-03-14T09:54:40.203Z vite:env env files loaded in 3.65ms
+2026-03-14T09:54:40.205Z vite:env using resolved env: {
+  MICROCMS_SERVICE_DOMAIN: 'voyager',
+  MICROCMS_API_KEY: 'ssrq1CkxyDqfDbfUnwdEtLSw249xAr29j3ke',
+  ALLUSERSPROFILE: 'C:\\ProgramData',
+  ANTIGRAVITY_AGENT: '1',
+  ANTIGRAVITY_CLI_ALIAS: 'agy',
+  APPDATA: 'C:\\Users\\subar\\AppData\\Roaming',
+  BUNDLED_DEBUGPY_PATH: 'c:\\Users\\subar\\.antigravity\\extensions\\ms-python.debugpy-2025.18.0-win32-x64\\bundled\\libs\\debugpy',
+  CHROME_CRASHPAD_PIPE_NAME: '\\\\.\\pipe\\crashpad_7352_YKZMZNBNZMJKQATG',
+  COLOR: '0',
+  COLORTERM: 'truecolor',
+  CommonProgramFiles: 'C:\\Program Files\\Common Files',
+  'CommonProgramFiles(x86)': 'C:\\Program Files (x86)\\Common Files',
+  CommonProgramW6432: 'C:\\Program Files\\Common Files',
+  COMPUTERNAME: 'NAKAKO',
+  ComSpec: 'C:\\WINDOWS\\system32\\cmd.exe',
+  DEBUG: 'astro:*,vite:*',
+  DriverData: 'C:\\Windows\\System32\\Drivers\\DriverData',
+  EDITOR: 'C:\\WINDOWS\\notepad.exe',
+  EFC_24272_1592913036: '1',
+  GIT_ASKPASS: 'c:\\Users\\subar\\AppData\\Local\\Programs\\Antigravity\\resources\\app\\extensions\\git\\dist\\askpass.sh',
+  HOME: 'C:\\Users\\subar',
+  HOMEDRIVE: 'C:',
+  HOMEPATH: '\\Users\\subar',
+  INIT_CWD: 'C:\\Users\\subar\\Documents\\Projects\\voyagertarotcreations\\voyagertarotcreations',
+  LANG: 'en_US.UTF-8',
+  LOCALAPPDATA: 'C:\\Users\\subar\\AppData\\Local',
+  LOGONSERVER: '\\\\NAKAKO',
+  NODE: 'C:\\Program Files\\nodejs\\node.exe',
+  NODE_ENV: 'production',
+  NODE_EXE: 'C:\\Program Files\\nodejs\\\\node.exe',
+  NPM_CLI_JS: 'C:\\Program Files\\nodejs\\\\node_modules\\npm\\bin\\npm-cli.js',
+  npm_command: 'run-script',
+  npm_config_cache: 'C:\\Users\\subar\\AppData\\Local\\npm-cache',
+  npm_config_globalconfig: 'C:\\Users\\subar\\AppData\\Roaming\\npm\\etc\\npmrc',
+  npm_config_global_prefix: 'C:\\Users\\subar\\AppData\\Roaming\\npm',
+  npm_config_init_module: 'C:\\Users\\subar\\.npm-init.js',
+  npm_config_local_prefix: 'C:\\Users\\subar\\Documents\\Projects\\voyagertarotcreations\\voyagertarotcreations',
+  npm_config_node_gyp: 'C:\\Program Files\\nodejs\\node_modules\\npm\\node_modules\\node-gyp\\bin\\node-gyp.js',
+  npm_config_noproxy: '',
+  npm_config_npm_version: '10.7.0',
+  npm_config_prefix: 'C:\\Users\\subar\\AppData\\Roaming\\npm',
+  npm_config_userconfig: 'C:\\Users\\subar\\.npmrc',
+  npm_config_user_agent: 'npm/10.7.0 node/v20.14.0 win32 x64 workspaces/false',
+  npm_execpath: 'C:\\Program Files\\nodejs\\node_modules\\npm\\bin\\npm-cli.js',
+  npm_lifecycle_event: 'build',
+  npm_lifecycle_script: 'astro build',
+  npm_node_execpath: 'C:\\Program Files\\nodejs\\node.exe',
+  npm_package_json: 'C:\\Users\\subar\\Documents\\Projects\\voyagertarotcreations\\voyagertarotcreations\\package.json',
+  npm_package_name: 'y',
+  npm_package_version: '0.0.1',
+  NPM_PREFIX_JS: 'C:\\Program Files\\nodejs\\\\node_modules\\npm\\bin\\npm-prefix.js',
+  NPM_PREFIX_NPM_CLI_JS: 'C:\\Users\\subar\\AppData\\Roaming\\npm\\node_modules\\npm\\bin\\npm-cli.js',
+  NUMBER_OF_PROCESSORS: '22',
+  OneDrive: 'C:\\Users\\subar\\OneDrive',
+  OneDriveConsumer: 'C:\\Users\\subar\\OneDrive',
+  OS: 'Windows_NT',
+  PAGER: 'cat',
+  Path: 'C:\\Users\\subar\\Documents\\Projects\\voyagertarotcreations\\voyagertarotcreations\\node_modules\\.bin;C:\\Users\\subar\\Documents\\Projects\\voyagertarotcreations\\node_modules\\.bin;C:\\Users\\subar\\Documents\\Projects\\node_modules\\.bin;C:\\Users\\subar\\Documents\\node_modules\\.bin;C:\\Users\\subar\\node_modules\\.bin;C:\\Users\\node_modules\\.bin;C:\\node_modules\\.bin;C:\\Program Files\\nodejs\\node_modules\\npm\\node_modules\\@npmcli\\run-script\\lib\\node-gyp-bin;C:\\Program Files\\PowerShell\\7;C:\\Program Files\\Eclipse Adoptium\\jdk-17.0.16.8-hotspot\\bin;C:\\WINDOWS\\system32;C:\\WINDOWS;C:\\WINDOWS\\System32\\Wbem;C:\\WINDOWS\\System32\\WindowsPowerShell\\v1.0\\;C:\\WINDOWS\\System32\\OpenSSH\\;C:\\Program Files\\dotnet\\;C:\\Program Files\\nodejs\\;C:\\Program Files (x86)\\Yarn\\bin;C:\\Program Files\\Git\\cmd;c:\\Users\\subar\\AppData\\Local\\Programs\\cursor\\resources\\app\\bin;C:\\Program Files\\GitHub CLI\\;C:\\Program Files\\PowerShell\\7\\;C:\\Users\\subar\\.local\\bin;C:\\Users\\subar\\AppData\\Local\\Programs\\Python\\Python310\\Scripts\\;C:\\Users\\subar\\AppData\\Local\\Programs\\Python\\Python310\\;C:\\Users\\subar\\AppData\\Local\\Microsoft\\WindowsApps;C:\\Users\\subar\\AppData\\Local\\Programs\\Microsoft VS Code\\bin;C:\\Users\\subar\\.dotnet\\tools;C:\\Users\\subar\\AppData\\Roaming\\npm;C:\\Users\\subar\\AppData\\Local\\Yarn\\bin;C:\\Users\\subar\\AppData\\Local\\Programs\\Antigravity\\bin;c:\\Users\\subar\\.antigravity\\extensions\\ms-python.debugpy-2025.18.0-win32-x64\\bundled\\scripts\\noConfigScripts',
+  PATHEXT: '.COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC;.CPL',
+  POWERSHELL_DISTRIBUTION_CHANNEL: 'MSI:Windows 10 Home',
+  PROCESSOR_ARCHITECTURE: 'AMD64',
+  PROCESSOR_IDENTIFIER: 'Intel64 Family 6 Model 170 Stepping 4, GenuineIntel',
+  PROCESSOR_LEVEL: '6',
+  PROCESSOR_REVISION: 'aa04',
+  ProgramData: 'C:\\ProgramData',
+  ProgramFiles: 'C:\\Program Files',
+  'ProgramFiles(x86)': 'C:\\Program Files (x86)',
+  ProgramW6432: 'C:\\Program Files',
+  PROMPT: '$P$G',
+  PSModulePath: 'C:\\Users\\subar\\OneDrive\\繝峨く繝･繝｡繝ｳ繝・\PowerShell\\Modules;C:\\Program Files\\PowerShell\\Modules;c:\\program files\\powershell\\7\\Modules;C:\\Program Files\\WindowsPowerShell\\Modules;C:\\WINDOWS\\system32\\WindowsPowerShell\\v1.0\\Modules',
+  PUBLIC: 'C:\\Users\\Public',
+  PYDEVD_DISABLE_FILE_VALIDATION: '1',
+  PYTHONSTARTUP: 'c:\\Users\\subar\\AppData\\Roaming\\Antigravity\\User\\workspaceStorage\\9340b71c308686fc616424059171612d\\ms-python.python\\pythonrc.py',
+  PYTHON_BASIC_REPL: '1',
+  SESSIONNAME: 'Console',
+  SystemDrive: 'C:',
+  SystemRoot: 'C:\\WINDOWS',
+  TEMP: 'C:\\Users\\subar\\AppData\\Local\\Temp',
+  TERM_PROGRAM: 'vscode',
+  TERM_PROGRAM_VERSION: '1.107.0',
+  TMP: 'C:\\Users\\subar\\AppData\\Local\\Temp',
+  USERDOMAIN: 'NAKAKO',
+  USERDOMAIN_ROAMINGPROFILE: 'NAKAKO',
+  USERNAME: 'subar',
+  USERPROFILE: 'C:\\Users\\subar',
+  VSCODE_DEBUGPY_ADAPTER_ENDPOINTS: 'c:\\Users\\subar\\.antigravity\\extensions\\ms-python.debugpy-2025.18.0-win32-x64\\.noConfigDebugAdapterEndpoints\\endpoint-faa1ae7870456ab3.txt',
+  VSCODE_GIT_ASKPASS_EXTRA_ARGS: '',
+  VSCODE_GIT_ASKPASS_MAIN: 'c:\\Users\\subar\\AppData\\Local\\Programs\\Antigravity\\resources\\app\\extensions\\git\\dist\\askpass-main.js',
+  VSCODE_GIT_ASKPASS_NODE: 'C:\\Users\\subar\\AppData\\Local\\Programs\\Antigravity\\Antigravity.exe',
+  VSCODE_GIT_IPC_HANDLE: '\\\\.\\pipe\\vscode-git-87db77eadc-sock',
+  VSCODE_INJECTION: '1',
+  VSCODE_PYTHON_AUTOACTIVATE_GUARD: '1',
+  windir: 'C:\\WINDOWS',
+  yarn: 'C:\\Users\\subar\\OneDrive\\繝峨く繝･繝｡繝ｳ繝・\code\\tournamentApp\\tournamen',
+  ZES_ENABLE_SYSMAN: '1'
+}
+2026-03-14T09:54:40.217Z vite:env loading env files: [
+  'C:/Users/subar/Documents/Projects/voyagertarotcreations/voyagertarotcreations/.env',
+  'C:/Users/subar/Documents/Projects/voyagertarotcreations/voyagertarotcreations/.env.local',
+  'C:/Users/subar/Documents/Projects/voyagertarotcreations/voyagertarotcreations/.env.production',
+  'C:/Users/subar/Documents/Projects/voyagertarotcreations/voyagertarotcreations/.env.production.local'
+]
+2026-03-14T09:54:40.217Z vite:env env files loaded in 0.49ms
+2026-03-14T09:54:40.219Z vite:env using resolved env: {
+  MICROCMS_SERVICE_DOMAIN: 'voyager',
+  MICROCMS_API_KEY: 'ssrq1CkxyDqfDbfUnwdEtLSw249xAr29j3ke',
+  ALLUSERSPROFILE: 'C:\\ProgramData',
+  ANTIGRAVITY_AGENT: '1',
+  ANTIGRAVITY_CLI_ALIAS: 'agy',
+  APPDATA: 'C:\\Users\\subar\\AppData\\Roaming',
+  BUNDLED_DEBUGPY_PATH: 'c:\\Users\\subar\\.antigravity\\extensions\\ms-python.debugpy-2025.18.0-win32-x64\\bundled\\libs\\debugpy',
+  CHROME_CRASHPAD_PIPE_NAME: '\\\\.\\pipe\\crashpad_7352_YKZMZNBNZMJKQATG',
+  COLOR: '0',
+  COLORTERM: 'truecolor',
+  CommonProgramFiles: 'C:\\Program Files\\Common Files',
+  'CommonProgramFiles(x86)': 'C:\\Program Files (x86)\\Common Files',
+  CommonProgramW6432: 'C:\\Program Files\\Common Files',
+  COMPUTERNAME: 'NAKAKO',
+  ComSpec: 'C:\\WINDOWS\\system32\\cmd.exe',
+  DEBUG: 'astro:*,vite:*',
+  DriverData: 'C:\\Windows\\System32\\Drivers\\DriverData',
+  EDITOR: 'C:\\WINDOWS\\notepad.exe',
+  EFC_24272_1592913036: '1',
+  GIT_ASKPASS: 'c:\\Users\\subar\\AppData\\Local\\Programs\\Antigravity\\resources\\app\\extensions\\git\\dist\\askpass.sh',
+  HOME: 'C:\\Users\\subar',
+  HOMEDRIVE: 'C:',
+  HOMEPATH: '\\Users\\subar',
+  INIT_CWD: 'C:\\Users\\subar\\Documents\\Projects\\voyagertarotcreations\\voyagertarotcreations',
+  LANG: 'en_US.UTF-8',
+  LOCALAPPDATA: 'C:\\Users\\subar\\AppData\\Local',
+  LOGONSERVER: '\\\\NAKAKO',
+  NODE: 'C:\\Program Files\\nodejs\\node.exe',
+  NODE_ENV: 'production',
+  NODE_EXE: 'C:\\Program Files\\nodejs\\\\node.exe',
+  NPM_CLI_JS: 'C:\\Program Files\\nodejs\\\\node_modules\\npm\\bin\\npm-cli.js',
+  npm_command: 'run-script',
+  npm_config_cache: 'C:\\Users\\subar\\AppData\\Local\\npm-cache',
+  npm_config_globalconfig: 'C:\\Users\\subar\\AppData\\Roaming\\npm\\etc\\npmrc',
+  npm_config_global_prefix: 'C:\\Users\\subar\\AppData\\Roaming\\npm',
+  npm_config_init_module: 'C:\\Users\\subar\\.npm-init.js',
+  npm_config_local_prefix: 'C:\\Users\\subar\\Documents\\Projects\\voyagertarotcreations\\voyagertarotcreations',
+  npm_config_node_gyp: 'C:\\Program Files\\nodejs\\node_modules\\npm\\node_modules\\node-gyp\\bin\\node-gyp.js',
+  npm_config_noproxy: '',
+  npm_config_npm_version: '10.7.0',
+  npm_config_prefix: 'C:\\Users\\subar\\AppData\\Roaming\\npm',
+  npm_config_userconfig: 'C:\\Users\\subar\\.npmrc',
+  npm_config_user_agent: 'npm/10.7.0 node/v20.14.0 win32 x64 workspaces/false',
+  npm_execpath: 'C:\\Program Files\\nodejs\\node_modules\\npm\\bin\\npm-cli.js',
+  npm_lifecycle_event: 'build',
+  npm_lifecycle_script: 'astro build',
+  npm_node_execpath: 'C:\\Program Files\\nodejs\\node.exe',
+  npm_package_json: 'C:\\Users\\subar\\Documents\\Projects\\voyagertarotcreations\\voyagertarotcreations\\package.json',
+  npm_package_name: 'y',
+  npm_package_version: '0.0.1',
+  NPM_PREFIX_JS: 'C:\\Program Files\\nodejs\\\\node_modules\\npm\\bin\\npm-prefix.js',
+  NPM_PREFIX_NPM_CLI_JS: 'C:\\Users\\subar\\AppData\\Roaming\\npm\\node_modules\\npm\\bin\\npm-cli.js',
+  NUMBER_OF_PROCESSORS: '22',
+  OneDrive: 'C:\\Users\\subar\\OneDrive',
+  OneDriveConsumer: 'C:\\Users\\subar\\OneDrive',
+  OS: 'Windows_NT',
+  PAGER: 'cat',
+  Path: 'C:\\Users\\subar\\Documents\\Projects\\voyagertarotcreations\\voyagertarotcreations\\node_modules\\.bin;C:\\Users\\subar\\Documents\\Projects\\voyagertarotcreations\\node_modules\\.bin;C:\\Users\\subar\\Documents\\Projects\\node_modules\\.bin;C:\\Users\\subar\\Documents\\node_modules\\.bin;C:\\Users\\subar\\node_modules\\.bin;C:\\Users\\node_modules\\.bin;C:\\node_modules\\.bin;C:\\Program Files\\nodejs\\node_modules\\npm\\node_modules\\@npmcli\\run-script\\lib\\node-gyp-bin;C:\\Program Files\\PowerShell\\7;C:\\Program Files\\Eclipse Adoptium\\jdk-17.0.16.8-hotspot\\bin;C:\\WINDOWS\\system32;C:\\WINDOWS;C:\\WINDOWS\\System32\\Wbem;C:\\WINDOWS\\System32\\WindowsPowerShell\\v1.0\\;C:\\WINDOWS\\System32\\OpenSSH\\;C:\\Program Files\\dotnet\\;C:\\Program Files\\nodejs\\;C:\\Program Files (x86)\\Yarn\\bin;C:\\Program Files\\Git\\cmd;c:\\Users\\subar\\AppData\\Local\\Programs\\cursor\\resources\\app\\bin;C:\\Program Files\\GitHub CLI\\;C:\\Program Files\\PowerShell\\7\\;C:\\Users\\subar\\.local\\bin;C:\\Users\\subar\\AppData\\Local\\Programs\\Python\\Python310\\Scripts\\;C:\\Users\\subar\\AppData\\Local\\Programs\\Python\\Python310\\;C:\\Users\\subar\\AppData\\Local\\Microsoft\\WindowsApps;C:\\Users\\subar\\AppData\\Local\\Programs\\Microsoft VS Code\\bin;C:\\Users\\subar\\.dotnet\\tools;C:\\Users\\subar\\AppData\\Roaming\\npm;C:\\Users\\subar\\AppData\\Local\\Yarn\\bin;C:\\Users\\subar\\AppData\\Local\\Programs\\Antigravity\\bin;c:\\Users\\subar\\.antigravity\\extensions\\ms-python.debugpy-2025.18.0-win32-x64\\bundled\\scripts\\noConfigScripts',
+  PATHEXT: '.COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC;.CPL',
+  POWERSHELL_DISTRIBUTION_CHANNEL: 'MSI:Windows 10 Home',
+  PROCESSOR_ARCHITECTURE: 'AMD64',
+  PROCESSOR_IDENTIFIER: 'Intel64 Family 6 Model 170 Stepping 4, GenuineIntel',
+  PROCESSOR_LEVEL: '6',
+  PROCESSOR_REVISION: 'aa04',
+  ProgramData: 'C:\\ProgramData',
+  ProgramFiles: 'C:\\Program Files',
+  'ProgramFiles(x86)': 'C:\\Program Files (x86)',
+  ProgramW6432: 'C:\\Program Files',
+  PROMPT: '$P$G',
+  PSModulePath: 'C:\\Users\\subar\\OneDrive\\繝峨く繝･繝｡繝ｳ繝・\PowerShell\\Modules;C:\\Program Files\\PowerShell\\Modules;c:\\program files\\powershell\\7\\Modules;C:\\Program Files\\WindowsPowerShell\\Modules;C:\\WINDOWS\\system32\\WindowsPowerShell\\v1.0\\Modules',
+  PUBLIC: 'C:\\Users\\Public',
+  PYDEVD_DISABLE_FILE_VALIDATION: '1',
+  PYTHONSTARTUP: 'c:\\Users\\subar\\AppData\\Roaming\\Antigravity\\User\\workspaceStorage\\9340b71c308686fc616424059171612d\\ms-python.python\\pythonrc.py',
+  PYTHON_BASIC_REPL: '1',
+  SESSIONNAME: 'Console',
+  SystemDrive: 'C:',
+  SystemRoot: 'C:\\WINDOWS',
+  TEMP: 'C:\\Users\\subar\\AppData\\Local\\Temp',
+  TERM_PROGRAM: 'vscode',
+  TERM_PROGRAM_VERSION: '1.107.0',
+  TMP: 'C:\\Users\\subar\\AppData\\Local\\Temp',
+  USERDOMAIN: 'NAKAKO',
+  USERDOMAIN_ROAMINGPROFILE: 'NAKAKO',
+  USERNAME: 'subar',
+  USERPROFILE: 'C:\\Users\\subar',
+  VSCODE_DEBUGPY_ADAPTER_ENDPOINTS: 'c:\\Users\\subar\\.antigravity\\extensions\\ms-python.debugpy-2025.18.0-win32-x64\\.noConfigDebugAdapterEndpoints\\endpoint-faa1ae7870456ab3.txt',
+  VSCODE_GIT_ASKPASS_EXTRA_ARGS: '',
+  VSCODE_GIT_ASKPASS_MAIN: 'c:\\Users\\subar\\AppData\\Local\\Programs\\Antigravity\\resources\\app\\extensions\\git\\dist\\askpass-main.js',
+  VSCODE_GIT_ASKPASS_NODE: 'C:\\Users\\subar\\AppData\\Local\\Programs\\Antigravity\\Antigravity.exe',
+  VSCODE_GIT_IPC_HANDLE: '\\\\.\\pipe\\vscode-git-87db77eadc-sock',
+  VSCODE_INJECTION: '1',
+  VSCODE_PYTHON_AUTOACTIVATE_GUARD: '1',
+  windir: 'C:\\WINDOWS',
+  yarn: 'C:\\Users\\subar\\OneDrive\\繝峨く繝･繝｡繝ｳ繝・\code\\tournamentApp\\tournamen',
+  ZES_ENABLE_SYSMAN: '1'
+}
+2026-03-14T09:54:40.223Z vite:env loading env files: [
+  'C:/Users/subar/Documents/Projects/voyagertarotcreations/voyagertarotcreations/.env',
+  'C:/Users/subar/Documents/Projects/voyagertarotcreations/voyagertarotcreations/.env.local',
+  'C:/Users/subar/Documents/Projects/voyagertarotcreations/voyagertarotcreations/.env.production',
+  'C:/Users/subar/Documents/Projects/voyagertarotcreations/voyagertarotcreations/.env.production.local'
+]
+2026-03-14T09:54:40.223Z vite:env env files loaded in 0.45ms
+2026-03-14T09:54:40.223Z vite:env using resolved env: {}
+2026-03-14T09:54:40.232Z vite:config using resolved config: {
+  configFile: undefined,
+  mode: 'production',
+  cacheDir: 'C:/Users/subar/Documents/Projects/voyagertarotcreations/voyagertarotcreations/node_modules/.vite',
+  clearScreen: false,
+  customLogger: {
+    hasWarned: false,
+    info: [Function: info],
+    warn: [Function: warn],
+    warnOnce: [Function: warnOnce],
+    error: [Function: error],
+    clearScreen: [Function: clearScreen],
+    hasErrorLogged: [Function: hasErrorLogged]
+  },
+  appType: 'custom',
+  optimizeDeps: {
+    include: [
+      '@astrojs/react/client.js',
+      'react',
+      'react-dom',
+      'react/jsx-dev-runtime',
+      'react/jsx-runtime',
+      'astro > cssesc',
+      'astro > aria-query',
+      'astro > axobject-query'
+    ],
+    exclude: [ 'astro', 'node-fetch', '@astrojs/react/server.js' ],
+    needsInterop: [],
+    extensions: [],
+    disabled: undefined,
+    holdUntilCrawlEnd: true,
+    force: false,
+    noDiscovery: true,
+    esbuildOptions: { preserveSymlinks: false, jsx: 'automatic' },
+    entries: [
+      'C:/Users/subar/Documents/Projects/voyagertarotcreations/voyagertarotcreations/src/**/*.{jsx,tsx,vue,svelte,html,astro}'
+    ]
+  },
+  plugins: [
+    'vite:optimized-deps',
+    'vite:watch-package-data',
+    'vite:pre-alias',
+    'alias',
+    'astro-manifest-plugin',
+    'astro:build',
+    'astro-env-plugin',
+    'astro:markdown',
+    'astro:head-metadata',
+    'astro-content-virtual-mod-plugin',
+    'astro:content-asset-propagation',
+    'astro:assets:esm',
+    'astro:vite-plugin-file-url',
+    'astro:i18n',
+    'astro:actions',
+    'astro:container',
+    '@tailwindcss/vite:scan',
+    'vite:react-babel',
+    'vite:react-refresh',
+    'vite:modulepreload-polyfill',
+    'vite:resolve',
+    'vite:html-inline-proxy',
+    'vite:css',
+    'vite:esbuild',
+    'vite:json',
+    'vite:wasm-helper',
+    'vite:worker',
+    'vite:asset',
+    'astro:build:normal',
+    'astro:scripts',
+    'astro:adapter-config',
+    'astro:html',
+    'astro:postprocess',
+    'astro:integration-container',
+    'astro:content-imports',
+    '@astro/plugin-middleware',
+    'astro:assets',
+    'astro:fonts:fallback',
+    'astro:prefetch',
+    'astro:transitions',
+    'astro:dev-toolbar',
+    '@astrojs/react:opts',
+    'vite:wasm-fallback',
+    'astro:vite-plugin-env',
+    'vite:define',
+    'vite:css-post',
+    'vite:worker-import-meta-url',
+    'vite:asset-import-meta-url',
+    'vite:dynamic-import-vars',
+    'vite:import-glob',
+    'astro:scripts:page-ssr',
+    'astro:scanner',
+    '@astrojs/vite-plugin-astro-ssr-manifest',
+    'astro:server-islands',
+    'astro:hmr-reload',
+    'vite:client-inject',
+    'vite:css-analysis',
+    'vite:import-analysis'
+  ],
+  publicDir: 'C:/Users/subar/Documents/Projects/voyagertarotcreations/voyagertarotcreations/public',
+  root: 'C:/Users/subar/Documents/Projects/voyagertarotcreations/voyagertarotcreations',
+  envPrefix: 'PUBLIC_',
+  define: {
+    'import.meta.env.SITE': 'undefined',
+    'import.meta.env.BASE_URL': '"/"',
+    'import.meta.env.ASSETS_PREFIX': 'undefined',
+    __ASTRO_INTERNAL_I18N_CONFIG__: '{"base":"/","format":"directory","trailingSlash":"ignore","isBuild":false}'
+  },
+  server: {
+    port: 5173,
+    strictPort: false,
+    host: undefined,
+    allowedHosts: [],
+    https: undefined,
+    open: false,
+    proxy: undefined,
+    cors: {
+      origin: /^https?:\/\/(?:(?:[^:]+\.)?localhost|127\.0\.0\.1|\[::1\])(?::\d+)?$/
+    },
+    headers: {},
+    warmup: { clientFiles: [], ssrFiles: [] },
+    middlewareMode: true,
+    fs: {
+      strict: true,
+      deny: [ '.env', '.env.*', '*.{crt,pem}', '**/.git/**' ],
+      allow: [
+        'C:/Users/subar/Documents/Projects/voyagertarotcreations/voyagertarotcreations'
+      ]
+    },
+    preTransformRequests: true,
+    perEnvironmentStartEndDuringDev: false,
+    sourcemapIgnoreList: [Function: isInNodeModules$1],
+    hmr: false,
+    watch: { ignored: [ '**' ] },
+    ws: false
+  },
+  resolve: {
+    externalConditions: [ 'node' ],
+    extensions: [
+      '.mjs',  '.js',
+      '.mts',  '.ts',
+      '.jsx',  '.tsx',
+      '.json'
+    ],
+    dedupe: [ 'astro', 'react', 'react-dom' ],
+    noExternal: [],
+    external: [],
+    preserveSymlinks: false,
+    alias: [
+      { find: 'randombytes', replacement: 'randombytes/browser' },
+      {
+        find: /^astro$/,
+        replacement: 'C:\\Users\\subar\\Documents\\Projects\\voyagertarotcreations\\voyagertarotcreations\\node_modules\\astro\\dist\\types\\public\\index.js'
+      },
+      {
+        find: 'astro:middleware',
+        replacement: 'astro/virtual-modules/middleware.js'
+      },
+      { find: 'astro:schema', replacement: 'astro/zod' },
+      { find: 'astro:components', replacement: 'astro/components' },
+      {
+        find: /^\/?@vite\/env/,
+        replacement: '/@fs/C:/Users/subar/Documents/Projects/voyagertarotcreations/voyagertarotcreations/node_modules/vite/dist/client/env.mjs'
+      },
+      {
+        find: /^\/?@vite\/client/,
+        replacement: '/@fs/C:/Users/subar/Documents/Projects/voyagertarotcreations/voyagertarotcreations/node_modules/vite/dist/client/client.mjs'
+      }
+    ],
+    mainFields: [ 'browser', 'module', 'jsnext:main', 'jsnext' ],
+    conditions: [ 'module', 'browser', 'development|production', 'astro' ],
+    builtins: []
+  },
+  ssr: {
+    target: 'node',
+    optimizeDeps: {
+      esbuildOptions: { preserveSymlinks: false },
+      include: [],
+      exclude: [],
+      needsInterop: [],
+      extensions: [],
+      holdUntilCrawlEnd: true,
+      force: false,
+      noDiscovery: true
+    },
+    noExternal: [
+      'astro',
+      'astro/components',
+      '@nanostores/preact',
+      '@fontsource/*',
+      '@astrojs/react',
+      'lucide-astro',
+      '@mui/material',
+      '@mui/base',
+      '@babel/runtime',
+      'use-immer',
+      '@material-tailwind/react'
+    ],
+    external: [],
+    resolve: {
+      conditions: [ 'module', 'node', 'development|production', 'astro' ],
+      externalConditions: [ 'node' ]
+    }
+  },
+  build: {
+    target: [ 'es2020', 'edge88', 'firefox78', 'chrome87', 'safari14' ],
+    polyfillModulePreload: true,
+    modulePreload: { polyfill: true },
+    outDir: 'dist',
+    assetsDir: '_astro',
+    assetsInlineLimit: 4096,
+    sourcemap: false,
+    terserOptions: {},
+    rollupOptions: { onwarn: [Function: onwarn] },
+    commonjsOptions: { include: [ /node_modules/ ], extensions: [ '.js', '.cjs' ] },
+    dynamicImportVarsOptions: { warnOnError: true, exclude: [ /node_modules/ ] },
+    write: true,
+    emptyOutDir: null,
+    copyPublicDir: true,
+    manifest: false,
+    lib: false,
+    ssrManifest: false,
+    ssrEmitAssets: false,
+    reportCompressedSize: true,
+    chunkSizeWarningLimit: 500,
+    watch: null,
+    cssCodeSplit: true,
+    minify: 'esbuild',
+    ssr: false,
+    emitAssets: false,
+    createEnvironment: [Function: createEnvironment],
+    cssTarget: [ 'es2020', 'edge88', 'firefox78', 'chrome87', 'safari14' ],
+    cssMinify: true
+  },
+  logLevel: 'silent',
+  esbuild: { jsxDev: false, jsx: 'automatic', jsxImportSource: undefined },
+  environments: {
+    client: {
+      define: {
+        'import.meta.env.SITE': 'undefined',
+        'import.meta.env.BASE_URL': '"/"',
+        'import.meta.env.ASSETS_PREFIX': 'undefined',
+        __ASTRO_INTERNAL_I18N_CONFIG__: '{"base":"/","format":"directory","trailingSlash":"ignore","isBuild":false}'
+      },
+      resolve: {
+        externalConditions: [ 'node' ],
+        extensions: [
+          '.mjs',  '.js',
+          '.mts',  '.ts',
+          '.jsx',  '.tsx',
+          '.json'
+        ],
+        dedupe: [ 'astro', 'react', 'react-dom' ],
+        noExternal: [],
+        external: [],
+        preserveSymlinks: false,
+        alias: [
+          { find: 'randombytes', replacement: 'randombytes/browser' },
+          {
+            find: /^astro$/,
+            replacement: 'C:\\Users\\subar\\Documents\\Projects\\voyagertarotcreations\\voyagertarotcreations\\node_modules\\astro\\dist\\types\\public\\index.js'
+          },
+          {
+            find: 'astro:middleware',
+            replacement: 'astro/virtual-modules/middleware.js'
+          },
+          { find: 'astro:schema', replacement: 'astro/zod' },
+          { find: 'astro:components', replacement: 'astro/components' },
+          {
+            find: /^\/?@vite\/env/,
+            replacement: '/@fs/C:/Users/subar/Documents/Projects/voyagertarotcreations/voyagertarotcreations/node_modules/vite/dist/client/env.mjs'
+          },
+          {
+            find: /^\/?@vite\/client/,
+            replacement: '/@fs/C:/Users/subar/Documents/Projects/voyagertarotcreations/voyagertarotcreations/node_modules/vite/dist/client/client.mjs'
+          }
+        ],
+        mainFields: [ 'browser', 'module', 'jsnext:main', 'jsnext' ],
+        conditions: [ 'module', 'browser', 'development|production', 'astro' ],
+        builtins: []
+      },
+      keepProcessEnv: false,
+      consumer: 'client',
+      optimizeDeps: {
+        include: [
+          '@astrojs/react/client.js',
+          'react',
+          'react-dom',
+          'react/jsx-dev-runtime',
+          'react/jsx-runtime',
+          'astro > cssesc',
+          'astro > aria-query',
+          'astro > axobject-query'
+        ],
+        exclude: [ 'astro', 'node-fetch', '@astrojs/react/server.js' ],
+        needsInterop: [],
+        extensions: [],
+        disabled: undefined,
+        holdUntilCrawlEnd: true,
+        force: false,
+        noDiscovery: true,
+        esbuildOptions: { preserveSymlinks: false, jsx: 'automatic' },
+        entries: [
+          'C:/Users/subar/Documents/Projects/voyagertarotcreations/voyagertarotcreations/src/**/*.{jsx,tsx,vue,svelte,html,astro}'
+        ]
+      },
+      dev: {
+        warmup: [],
+        sourcemap: { js: true },
+        sourcemapIgnoreList: [Function: isInNodeModules$1],
+        preTransformRequests: true,
+        createEnvironment: [Function: defaultCreateClientDevEnvironment],
+        recoverable: true,
+        moduleRunnerTransform: false
+      },
+      build: {
+        target: [ 'es2020', 'edge88', 'firefox78', 'chrome87', 'safari14' ],
+        polyfillModulePreload: true,
+        modulePreload: { polyfill: true },
+        outDir: 'dist',
+        assetsDir: '_astro',
+        assetsInlineLimit: 4096,
+        sourcemap: false,
+        terserOptions: {},
+        rollupOptions: { onwarn: [Function: onwarn] },
+        commonjsOptions: { include: [ /node_modules/ ], extensions: [ '.js', '.cjs' ] },
+        dynamicImportVarsOptions: { warnOnError: true, exclude: [ /node_modules/ ] },
+        write: true,
+        emptyOutDir: null,
+        copyPublicDir: true,
+        manifest: false,
+        lib: false,
+        ssrManifest: false,
+        ssrEmitAssets: false,
+        reportCompressedSize: true,
+        chunkSizeWarningLimit: 500,
+        watch: null,
+        cssCodeSplit: true,
+        minify: 'esbuild',
+        ssr: false,
+        emitAssets: true,
+        createEnvironment: [Function: createEnvironment],
+        cssTarget: [ 'es2020', 'edge88', 'firefox78', 'chrome87', 'safari14' ],
+        cssMinify: true
+      }
+    },
+    ssr: {
+      define: {
+        'import.meta.env.SITE': 'undefined',
+        'import.meta.env.BASE_URL': '"/"',
+        'import.meta.env.ASSETS_PREFIX': 'undefined',
+        __ASTRO_INTERNAL_I18N_CONFIG__: '{"base":"/","format":"directory","trailingSlash":"ignore","isBuild":false}'
+      },
+      resolve: {
+        externalConditions: [ 'node' ],
+        extensions: [
+          '.mjs',  '.js',
+          '.mts',  '.ts',
+          '.jsx',  '.tsx',
+          '.json'
+        ],
+        dedupe: [ 'astro', 'react', 'react-dom' ],
+        noExternal: [
+          'astro',
+          'astro/components',
+          '@nanostores/preact',
+          '@fontsource/*',
+          '@astrojs/react',
+          'lucide-astro',
+          '@mui/material',
+          '@mui/base',
+          '@babel/runtime',
+          'use-immer',
+          '@material-tailwind/react'
+        ],
+        external: [],
+        preserveSymlinks: false,
+        alias: [
+          { find: 'randombytes', replacement: 'randombytes/browser' },
+          {
+            find: /^astro$/,
+            replacement: 'C:\\Users\\subar\\Documents\\Projects\\voyagertarotcreations\\voyagertarotcreations\\node_modules\\astro\\dist\\types\\public\\index.js'
+          },
+          {
+            find: 'astro:middleware',
+            replacement: 'astro/virtual-modules/middleware.js'
+          },
+          { find: 'astro:schema', replacement: 'astro/zod' },
+          { find: 'astro:components', replacement: 'astro/components' },
+          {
+            find: /^\/?@vite\/env/,
+            replacement: '/@fs/C:/Users/subar/Documents/Projects/voyagertarotcreations/voyagertarotcreations/node_modules/vite/dist/client/env.mjs'
+          },
+          {
+            find: /^\/?@vite\/client/,
+            replacement: '/@fs/C:/Users/subar/Documents/Projects/voyagertarotcreations/voyagertarotcreations/node_modules/vite/dist/client/client.mjs'
+          }
+        ],
+        mainFields: [ 'module', 'jsnext:main', 'jsnext' ],
+        conditions: [ 'module', 'node', 'development|production', 'astro' ],
+        builtins: [
+          '_http_agent',         '_http_client',        '_http_common',
+          '_http_incoming',      '_http_outgoing',      '_http_server',
+          '_stream_duplex',      '_stream_passthrough', '_stream_readable',
+          '_stream_transform',   '_stream_wrap',        '_stream_writable',
+          '_tls_common',         '_tls_wrap',           'assert',
+          'assert/strict',       'async_hooks',         'buffer',
+          'child_process',       'cluster',             'console',
+          'constants',           'crypto',              'dgram',
+          'diagnostics_channel', 'dns',                 'dns/promises',
+          'domain',              'events',              'fs',
+          'fs/promises',         'http',                'http2',
+          'https',               'inspector',           'inspector/promises',
+          'module',              'net',                 'os',
+          'path',                'path/posix',          'path/win32',
+          'perf_hooks',          'process',             'punycode',
+          'querystring',         'readline',            'readline/promises',
+          'repl',                'stream',              'stream/consumers',
+          'stream/promises',     'stream/web',          'string_decoder',
+          'sys',                 'timers',              'timers/promises',
+          'tls',                 'trace_events',        'tty',
+          'url',                 'util',                'util/types',
+          'v8',                  'vm',                  'wasi',
+          'worker_threads',      'zlib',                /^node:/,
+          /^npm:/,               /^bun:/
+        ]
+      },
+      keepProcessEnv: true,
+      consumer: 'server',
+      optimizeDeps: {
+        include: [],
+        exclude: [],
+        needsInterop: [],
+        extensions: [],
+        disabled: undefined,
+        holdUntilCrawlEnd: true,
+        force: false,
+        noDiscovery: true,
+        esbuildOptions: { preserveSymlinks: false }
+      },
+      dev: {
+        warmup: [],
+        sourcemap: { js: true },
+        sourcemapIgnoreList: [Function: isInNodeModules$1],
+        preTransformRequests: false,
+        createEnvironment: [Function: defaultCreateDevEnvironment],
+        recoverable: false,
+        moduleRunnerTransform: true
+      },
+      build: {
+        target: [ 'es2020', 'edge88', 'firefox78', 'chrome87', 'safari14' ],
+        polyfillModulePreload: true,
+        modulePreload: { polyfill: true },
+        outDir: 'dist',
+        assetsDir: '_astro',
+        assetsInlineLimit: 4096,
+        sourcemap: false,
+        terserOptions: {},
+        rollupOptions: { onwarn: [Function: onwarn] },
+        commonjsOptions: { include: [ /node_modules/ ], extensions: [ '.js', '.cjs' ] },
+        dynamicImportVarsOptions: { warnOnError: true, exclude: [ /node_modules/ ] },
+        write: true,
+        emptyOutDir: null,
+        copyPublicDir: true,
+        manifest: false,
+        lib: false,
+        ssrManifest: false,
+        ssrEmitAssets: false,
+        reportCompressedSize: true,
+        chunkSizeWarningLimit: 500,
+        watch: null,
+        cssCodeSplit: true,
+        minify: false,
+        ssr: true,
+        emitAssets: false,
+        createEnvironment: [Function: createEnvironment],
+        cssTarget: [ 'es2020', 'edge88', 'firefox78', 'chrome87', 'safari14' ],
+        cssMinify: 'esbuild'
+      }
+    }
+  },
+  configFileDependencies: [],
+  inlineConfig: {
+    configFile: false,
+    mode: 'production',
+    cacheDir: 'C:\\Users\\subar\\Documents\\Projects\\voyagertarotcreations\\voyagertarotcreations\\node_modules\\.vite\\',
+    clearScreen: false,
+    customLogger: {
+      hasWarned: false,
+      info: [Function: info],
+      warn: [Function: warn],
+      warnOnce: [Function: warnOnce],
+      error: [Function: error],
+      clearScreen: [Function: clearScreen],
+      hasErrorLogged: [Function: hasErrorLogged]
+    },
+    appType: 'custom',
+    optimizeDeps: {
+      entries: [
+        'C:/Users/subar/Documents/Projects/voyagertarotcreations/voyagertarotcreations/src/**/*.{jsx,tsx,vue,svelte,html,astro}'
+      ],
+      exclude: [ 'astro', 'node-fetch', '@astrojs/react/server.js' ],
+      include: [ '@astrojs/react/client.js' ],
+      noDiscovery: true
+    },
+    plugins: [
+      {
+        enforce: 'pre',
+        name: 'astro-manifest-plugin',
+        resolveId: [Function: resolveId],
+        load: [Function: load]
+      },
+      null,
+      false,
+      [
+        {
+          name: 'astro:build',
+          enforce: 'pre',
+          configEnvironment: [AsyncFunction: configEnvironment],
+          configResolved: [Function: configResolved],
+          configureServer: [Function: configureServer],
+          buildStart: [Function: buildStart],
+          load: [AsyncFunction: load],
+          transform: [AsyncFunction: transform],
+          handleHotUpdate: [AsyncFunction: handleHotUpdate]
+        },
+        {
+          name: 'astro:build:normal',
+          resolveId: [Function: resolveId]
+        }
+      ],
+      {
+        name: 'astro:scripts',
+        config: [Function: config],
+        resolveId: [AsyncFunction: resolveId],
+        load: [AsyncFunction: load],
+        buildStart: [Function: buildStart]
+      },
+      false,
+      {
+        name: 'astro:vite-plugin-env',
+        config: [Function: config],
+        configResolved: [Function: configResolved],
+        transform: [Function: transform]
+      },
+      {
+        name: 'astro-env-plugin',
+        enforce: 'pre',
+        config: [Function: config],
+        buildStart: [Function: buildStart],
+        resolveId: [Function: resolveId],
+        load: [Function: load]
+      },
+      {
+        name: 'astro:adapter-config',
+        resolveId: [Function: resolveId],
+        load: [Function: load]
+      },
+      {
+        enforce: 'pre',
+        name: 'astro:markdown',
+        buildEnd: [Function: buildEnd],
+        resolveId: [AsyncFunction: resolveId],
+        load: [AsyncFunction: load]
+      },
+      {
+        name: 'astro:html',
+        options: [Function: options],
+        transform: [AsyncFunction: transform]
+      },
+      {
+        name: 'astro:postprocess',
+        transform: [AsyncFunction: transform]
+      },
+      {
+        name: 'astro:integration-container',
+        configureServer: [AsyncFunction: configureServer],
+        buildStart: [AsyncFunction: buildStart]
+      },
+      {
+        name: 'astro:scripts:page-ssr',
+        enforce: 'post',
+        transform: [Function: transform]
+      },
+      {
+        name: 'astro:head-metadata',
+        enforce: 'pre',
+        apply: 'serve',
+        configureServer: [Function: configureServer],
+        resolveId: [Function: resolveId],
+        transform: [Function: transform]
+      },
+      {
+        name: 'astro:scanner',
+        enforce: 'post',
+        transform: [AsyncFunction: transform],
+        handleHotUpdate: [AsyncFunction: handleHotUpdate]
+      },
+      {
+        name: 'astro-content-virtual-mod-plugin',
+        enforce: 'pre',
+        config: [Function: config],
+        buildStart: [Function: buildStart],
+        resolveId: [AsyncFunction: resolveId],
+        load: [AsyncFunction: load],
+        configureServer: [Function: configureServer]
+      },
+      [
+        {
+          name: 'astro:content-imports',
+          config: [Function: config],
+          buildStart: [AsyncFunction: buildStart],
+          transform: [AsyncFunction: transform],
+          configureServer: [Function: configureServer]
+        }
+      ],
+      {
+        name: 'astro:content-asset-propagation',
+        enforce: 'pre',
+        resolveId: [AsyncFunction: resolveId],
+        configureServer: [Function: configureServer],
+        transform: [AsyncFunction: transform]
+      },
+      {
+        name: '@astro/plugin-middleware',
+        resolveId: [AsyncFunction: resolveId],
+        load: [AsyncFunction: load]
+      },
+      {
+        name: '@astrojs/vite-plugin-astro-ssr-manifest',
+        enforce: 'post',
+        resolveId: [Function: resolveId],
+        load: [Function: load]
+      },
+      [
+        {
+          name: 'astro:assets',
+          config: [Function: config],
+          resolveId: [AsyncFunction: resolveId],
+          load: [Function: load],
+          buildStart: [Function: buildStart],
+          renderChunk: [AsyncFunction: renderChunk]
+        },
+        {
+          name: 'astro:assets:esm',
+          enforce: 'pre',
+          config: [Function: config],
+          configResolved: [Function: configResolved],
+          load: [AsyncFunction: load]
+        },
+        {
+          name: 'astro:fonts:fallback',
+          resolveId: [Function: resolveId],
+          load: [Function: load]
+        }
+      ],
+      {
+        name: 'astro:prefetch',
+        resolveId: [AsyncFunction: resolveId],
+        load: [Function: load],
+        transform: [Function: transform]
+      },
+      {
+        name: 'astro:transitions',
+        config: [Function: config],
+        resolveId: [AsyncFunction: resolveId],
+        load: [Function: load],
+        transform: [Function: transform]
+      },
+      {
+        name: 'astro:dev-toolbar',
+        config: [Function: config],
+        resolveId: [Function: resolveId],
+        configureServer: [Function: configureServer],
+        load: [AsyncFunction: load]
+      },
+      {
+        name: 'astro:vite-plugin-file-url',
+        enforce: 'pre',
+        resolveId: [Function: resolveId]
+      },
+      {
+        name: 'astro:i18n',
+        enforce: 'pre',
+        config: [Function: config],
+        resolveId: [Function: resolveId]
+      },
+      {
+        name: 'astro:actions',
+        enforce: 'pre',
+        resolveId: [AsyncFunction: resolveId],
+        configureServer: [AsyncFunction: configureServer],
+        load: [AsyncFunction: load]
+      },
+      {
+        name: 'astro:server-islands',
+        enforce: 'post',
+        config: [Function: config],
+        configureServer: [Function: configureServer],
+        resolveId: [Function: resolveId],
+        load: [Function: load],
+        transform: [Function: transform],
+        renderChunk: [Function: renderChunk]
+      },
+      {
+        name: 'astro:container',
+        enforce: 'pre',
+        resolveId: [Function: resolveId]
+      },
+      {
+        name: 'astro:hmr-reload',
+        enforce: 'post',
+        hotUpdate: { order: 'post', handler: [Function: handler] }
+      },
+      {
+        name: '@tailwindcss/vite:scan',
+        enforce: 'pre',
+        configureServer: [Function: configureServer],
+        configResolved: [AsyncFunction: configResolved]
+      },
+      {
+        name: '@tailwindcss/vite:generate:build',
+        apply: 'build',
+        enforce: 'pre',
+        transform: {
+          filter: {
+            id: {
+              exclude: [
+                /\/\.vite\//,
+                /[?&](?:worker|sharedworker|raw|url)\b/,
+                /\?commonjs-proxy/
+              ],
+              include: [
+                /\.css(?:\?.*)?$/,
+                /&lang\.css/,
+                /[?&]index\=\d+\.css$/
+              ]
+            }
+          },
+          handler: [AsyncFunction: handler]
+        }
+      },
+      {
+        name: 'vite:react-babel',
+        enforce: 'pre',
+        config: [Function: config],
+        configResolved: [Function: configResolved],
+        options: [Function: options]
+      },
+      {
+        name: 'vite:react-refresh',
+        enforce: 'pre',
+        config: [Function: config],
+        resolveId: {
+          filter: { id: /^\/@react\-refresh$/ },
+          handler: [Function: handler]
+        },
+        load: {
+          filter: { id: /^\/@react\-refresh$/ },
+          handler: [Function: handler]
+        },
+        transformIndexHtml: [Function: transformIndexHtml]
+      },
+      {
+        name: '@astrojs/react:opts',
+        resolveId: [Function: resolveId],
+        load: [Function: load]
+      }
+    ],
+    publicDir: 'C:\\Users\\subar\\Documents\\Projects\\voyagertarotcreations\\voyagertarotcreations\\public\\',
+    root: 'C:\\Users\\subar\\Documents\\Projects\\voyagertarotcreations\\voyagertarotcreations\\',
+    envPrefix: 'PUBLIC_',
+    define: {
+      'import.meta.env.SITE': 'undefined',
+      'import.meta.env.BASE_URL': '"/"',
+      'import.meta.env.ASSETS_PREFIX': 'undefined'
+    },
+    server: {
+      hmr: false,
+      watch: { ignored: [ '**' ] },
+      middlewareMode: true,
+      ws: false
+    },
+    resolve: {
+      alias: [
+        { find: 'randombytes', replacement: 'randombytes/browser' },
+        {
+          find: /^astro$/,
+          replacement: 'C:\\Users\\subar\\Documents\\Projects\\voyagertarotcreations\\voyagertarotcreations\\node_modules\\astro\\dist\\types\\public\\index.js'
+        },
+        {
+          find: 'astro:middleware',
+          replacement: 'astro/virtual-modules/middleware.js'
+        },
+        { find: 'astro:schema', replacement: 'astro/zod' },
+        { find: 'astro:components', replacement: 'astro/components' }
+      ],
+      dedupe: [ 'astro' ]
+    },
+    ssr: {
+      noExternal: [
+        'astro',
+        'astro/components',
+        '@nanostores/preact',
+        '@fontsource/*',
+        '@astrojs/react',
+        'lucide-astro',
+        '@mui/material',
+        '@mui/base',
+        '@babel/runtime',
+        'use-immer',
+        '@material-tailwind/react'
+      ],
+      external: []
+    },
+    build: { assetsDir: '_astro' },
+    logLevel: 'silent'
+  },
+  base: '/',
+  decodedBase: '/',
+  rawBase: '/',
+  command: 'serve',
+  isWorker: false,
+  mainConfig: null,
+  bundleChain: [],
+  isProduction: true,
+  css: {
+    transformer: 'postcss',
+    preprocessorMaxWorkers: 0,
+    devSourcemap: false
+  },
+  json: { namedExports: true, stringify: 'auto' },
+  builder: undefined,
+  preview: {
+    port: 4173,
+    strictPort: false,
+    host: undefined,
+    allowedHosts: [],
+    https: undefined,
+    open: false,
+    proxy: undefined,
+    cors: {
+      origin: /^https?:\/\/(?:(?:[^:]+\.)?localhost|127\.0\.0\.1|\[::1\])(?::\d+)?$/
+    },
+    headers: {}
+  },
+  envDir: 'C:/Users/subar/Documents/Projects/voyagertarotcreations/voyagertarotcreations',
+  env: { BASE_URL: '/', MODE: 'production', DEV: false, PROD: true },
+  assetsInclude: [Function: assetsInclude],
+  logger: {
+    hasWarned: false,
+    info: [Function: info],
+    warn: [Function: warn],
+    warnOnce: [Function: warnOnce],
+    error: [Function: error],
+    clearScreen: [Function: clearScreen],
+    hasErrorLogged: [Function: hasErrorLogged]
+  },
+  packageCache: Map(1) {
+    'fnpd_C:/Users/subar/Documents/Projects/voyagertarotcreations/voyagertarotcreations' => {
+      dir: 'C:/Users/subar/Documents/Projects/voyagertarotcreations/voyagertarotcreations',
+      data: {
+        name: 'y',
+        type: 'module',
+        version: '0.0.1',
+        scripts: {
+          dev: 'astro dev',
+          build: 'astro build',
+          preview: 'astro preview',
+          astro: 'astro'
+        },
+        dependencies: {
+          '@astrojs/check': '^0.9.6',
+          '@astrojs/react': '^4.4.2',
+          '@tailwindcss/vite': '^4.1.18',
+          '@types/react': '^19.2.10',
+          '@types/react-dom': '^19.2.3',
+          astro: '^5.17.1',
+          'date-fns': '^4.1.0',
+          'framer-motion': '^12.29.2',
+          'lucide-astro': '^0.556.0',
+          'microcms-js-sdk': '^3.2.0',
+          react: '^19.2.4',
+          'react-dom': '^19.2.4',
+          tailwindcss: '^4.1.18',
+          typescript: '^5.9.3'
+        },
+        devDependencies: { sharp: '^0.34.5' }
+      },
+      hasSideEffects: [Function: hasSideEffects],
+      setResolvedCache: [Function: setResolvedCache],
+      getResolvedCache: [Function: getResolvedCache]
+    },
+    set: [Function (anonymous)]
+  },
+  worker: { format: 'iife', plugins: '() => plugins', rollupOptions: {} },
+  experimental: { importGlobRestoreExtension: false, hmrPartialAccept: false },
+  future: undefined,
+  dev: {
+    warmup: [],
+    sourcemap: { js: true },
+    sourcemapIgnoreList: [Function: isInNodeModules$1],
+    preTransformRequests: false,
+    createEnvironment: [Function: defaultCreateDevEnvironment],
+    recoverable: false,
+    moduleRunnerTransform: false
+  },
+  webSocketToken: 'rkg3xktmXcgR',
+  getSortedPlugins: [Function: getSortedPlugins],
+  getSortedPluginHooks: [Function: getSortedPluginHooks],
+  createResolver: [Function: createResolver],
+  fsDenyGlob: [Function: arrayMatcher],
+  safeModulePaths: Set(0) {},
+  additionalAllowedHosts: [],
+  [Symbol(vite:resolved-config)]: true
+}
+2026-03-14T09:54:40.256Z vite:deps (client) Hash is consistent. Skipping. Use --force to override.
+[2m18:54:40[22m [34m[content][39m Syncing content
+[2m18:54:40[22m [34m[content][39m Synced content
+[2m18:54:40[22m [34m[types][39m Generated [2m55ms[22m
+[2m18:54:40[22m [34m[build][39m output: [34m"static"[39m
+[2m18:54:40[22m [34m[build][39m mode: [34m"static"[39m
+[2m18:54:40[22m [34m[build][39m directory: [34mC:\Users\subar\Documents\Projects\voyagertarotcreations\voyagertarotcreations\dist\[39m
+[2m18:54:40[22m [34m[build][39m Collecting build info...
+2026-03-14T09:54:40.266Z astro:build 笏懌楳笏 笨・[39m src/pages/contact/thanks.astro 竊・/contact/thanks/index.html
+2026-03-14T09:54:40.266Z astro:build 笏懌楳笏 笨・[39m src/pages/contact.astro 竊・/contact/index.html
+2026-03-14T09:54:40.266Z astro:build 笏懌楳笏 笨・[39m src/pages/course.astro 竊・/course/index.html
+2026-03-14T09:54:40.266Z astro:build 笏懌楳笏 笨・[39m src/pages/news/index.astro 竊・/news/index.html
+2026-03-14T09:54:40.266Z astro:build 笏懌楳笏 笨・[39m src/pages/profile.astro 竊・/profile/index.html
+2026-03-14T09:54:40.266Z astro:build 笏懌楳笏 笨・[39m src/pages/index.astro 竊・/index.html
+2026-03-14T09:54:40.267Z astro:build All pages loaded   1773482078.7s
+[2m18:54:40[22m [34m[build][39m [32m笨・Completed in 87ms.[39m
+[2m18:54:40[22m [34m[build][39m Building static entrypoints...
+2026-03-14T09:54:40.298Z vite:env loading env files: [
+  'C:/Users/subar/Documents/Projects/voyagertarotcreations/voyagertarotcreations/.env',
+  'C:/Users/subar/Documents/Projects/voyagertarotcreations/voyagertarotcreations/.env.local',
+  'C:/Users/subar/Documents/Projects/voyagertarotcreations/voyagertarotcreations/.env.production',
+  'C:/Users/subar/Documents/Projects/voyagertarotcreations/voyagertarotcreations/.env.production.local'
+]
+2026-03-14T09:54:40.298Z vite:env env files loaded in 0.47ms
+2026-03-14T09:54:40.299Z vite:env using resolved env: {}
+2026-03-14T09:54:40.306Z vite:config using resolved config: {
+  configFile: undefined,
+  mode: 'production',
+  cacheDir: 'C:/Users/subar/Documents/Projects/voyagertarotcreations/voyagertarotcreations/node_modules/.vite',
+  clearScreen: false,
+  customLogger: {
+    hasWarned: false,
+    info: [Function: info],
+    warn: [Function: warn],
+    warnOnce: [Function: warnOnce],
+    error: [Function: error],
+    clearScreen: [Function: clearScreen],
+    hasErrorLogged: [Function: hasErrorLogged]
+  },
+  appType: 'custom',
+  optimizeDeps: {
+    include: [
+      '@astrojs/react/client.js',
+      'react',
+      'react-dom',
+      'react/jsx-dev-runtime',
+      'react/jsx-runtime',
+      'astro > cssesc',
+      'astro > aria-query',
+      'astro > axobject-query'
+    ],
+    exclude: [ 'astro', 'node-fetch', '@astrojs/react/server.js' ],
+    needsInterop: [],
+    extensions: [],
+    disabled: undefined,
+    holdUntilCrawlEnd: true,
+    force: false,
+    noDiscovery: false,
+    esbuildOptions: { preserveSymlinks: false, jsx: 'automatic' },
+    entries: [
+      'C:/Users/subar/Documents/Projects/voyagertarotcreations/voyagertarotcreations/src/**/*.{jsx,tsx,vue,svelte,html,astro}'
+    ]
+  },
+  plugins: [
+    'vite:build-metadata',
+    'vite:watch-package-data',
+    'alias',
+    'astro-manifest-plugin',
+    'astro:build',
+    'astro-env-plugin',
+    'astro:markdown',
+    'astro-content-virtual-mod-plugin',
+    'astro:content-asset-propagation',
+    'astro:assets:esm',
+    'astro:vite-plugin-file-url',
+    'astro:i18n',
+    'astro:actions',
+    'astro:container',
+    '@tailwindcss/vite:scan',
+    '@tailwindcss/vite:generate:build',
+    'vite:react-babel',
+    'vite:react-refresh',
+    'vite:resolve',
+    'vite:html-inline-proxy',
+    'vite:css',
+    'vite:esbuild',
+    'vite:json',
+    'vite:wasm-helper',
+    'vite:worker',
+    'vite:asset',
+    '@astro/rollup-plugin-astro-analyzer',
+    '@astro/plugin-build-internals',
+    '@astro/plugin-renderers',
+    '@astro/plugin-middleware-build',
+    '@astro/plugin-actions-build',
+    '@astro/plugin-build-pages',
+    'astro:rollup-plugin-build-css',
+    'astro:head-metadata-build',
+    'astro:chunks',
+    'astro:build:normal',
+    'astro:scripts',
+    'astro:adapter-config',
+    'astro:html',
+    'astro:postprocess',
+    'astro:integration-container',
+    'astro:content-imports',
+    '@astro/plugin-middleware',
+    'astro:assets',
+    'astro:fonts:fallback',
+    'astro:prefetch',
+    'astro:transitions',
+    'astro:dev-toolbar',
+    '@astrojs/react:opts',
+    'vite:wasm-fallback',
+    'astro:vite-plugin-env',
+    'vite:define',
+    'vite:css-post',
+    'vite:build-html',
+    'vite:worker-import-meta-url',
+    'vite:asset-import-meta-url',
+    'vite:force-systemjs-wrap-complete',
+    'commonjs',
+    'vite:data-uri',
+    'vite:rollup-options-plugins',
+    'vite:dynamic-import-vars',
+    'vite:import-glob',
+    '@astro/plugin-build-manifest',
+    'astro:rollup-plugin-single-css',
+    'astro:rollup-plugin-inline-stylesheets',
+    '@astrojs/vite-plugin-astro-adapter',
+    'astro:scripts:page-ssr',
+    'astro:scanner',
+    '@astrojs/vite-plugin-astro-ssr-manifest',
+    'astro:server-islands',
+    'astro:hmr-reload',
+    'vite:build-import-analysis',
+    'vite:esbuild-transpile',
+    'vite:terser',
+    'vite:manifest',
+    'vite:ssr-manifest',
+    'vite:reporter',
+    'vite:load-fallback'
+  ],
+  publicDir: 'C:/Users/subar/Documents/Projects/voyagertarotcreations/voyagertarotcreations/public',
+  root: 'C:/Users/subar/Documents/Projects/voyagertarotcreations/voyagertarotcreations',
+  envPrefix: 'PUBLIC_',
+  define: {
+    'import.meta.env.SITE': 'undefined',
+    'import.meta.env.BASE_URL': '"/"',
+    'import.meta.env.ASSETS_PREFIX': 'undefined',
+    __ASTRO_INTERNAL_I18N_CONFIG__: '{"base":"/","format":"directory","trailingSlash":"ignore","isBuild":true}'
+  },
+  server: {
+    port: 5173,
+    strictPort: false,
+    host: undefined,
+    allowedHosts: [],
+    https: undefined,
+    open: false,
+    proxy: undefined,
+    cors: {
+      origin: /^https?:\/\/(?:(?:[^:]+\.)?localhost|127\.0\.0\.1|\[::1\])(?::\d+)?$/
+    },
+    headers: {},
+    warmup: { clientFiles: [], ssrFiles: [] },
+    middlewareMode: true,
+    fs: {
+      strict: true,
+      deny: [ '.env', '.env.*', '*.{crt,pem}', '**/.git/**' ],
+      allow: [
+        'C:/Users/subar/Documents/Projects/voyagertarotcreations/voyagertarotcreations'
+      ]
+    },
+    preTransformRequests: true,
+    perEnvironmentStartEndDuringDev: false,
+    sourcemapIgnoreList: [Function: isInNodeModules$1],
+    hmr: false,
+    watch: { ignored: [ '**' ] }
+  },
+  resolve: {
+    externalConditions: [ 'node' ],
+    extensions: [
+      '.mjs',  '.js',
+      '.mts',  '.ts',
+      '.jsx',  '.tsx',
+      '.json'
+    ],
+    dedupe: [ 'astro', 'react', 'react-dom' ],
+    noExternal: [],
+    external: [],
+    preserveSymlinks: false,
+    alias: [
+      { find: 'randombytes', replacement: 'randombytes/browser' },
+      {
+        find: /^astro$/,
+        replacement: 'C:\\Users\\subar\\Documents\\Projects\\voyagertarotcreations\\voyagertarotcreations\\node_modules\\astro\\dist\\types\\public\\index.js'
+      },
+      {
+        find: 'astro:middleware',
+        replacement: 'astro/virtual-modules/middleware.js'
+      },
+      { find: 'astro:schema', replacement: 'astro/zod' },
+      { find: 'astro:components', replacement: 'astro/components' },
+      {
+        find: /^\/?@vite\/env/,
+        replacement: '/@fs/C:/Users/subar/Documents/Projects/voyagertarotcreations/voyagertarotcreations/node_modules/vite/dist/client/env.mjs'
+      },
+      {
+        find: /^\/?@vite\/client/,
+        replacement: '/@fs/C:/Users/subar/Documents/Projects/voyagertarotcreations/voyagertarotcreations/node_modules/vite/dist/client/client.mjs'
+      }
+    ],
+    mainFields: [ 'browser', 'module', 'jsnext:main', 'jsnext' ],
+    conditions: [ 'module', 'browser', 'development|production', 'astro' ],
+    builtins: []
+  },
+  ssr: {
+    target: 'node',
+    optimizeDeps: {
+      esbuildOptions: { preserveSymlinks: false },
+      include: [],
+      exclude: [],
+      needsInterop: [],
+      extensions: [],
+      holdUntilCrawlEnd: true,
+      force: false,
+      noDiscovery: true
+    },
+    noExternal: [
+      'astro',
+      'astro/components',
+      '@nanostores/preact',
+      '@fontsource/*',
+      '@astrojs/react',
+      'lucide-astro',
+      '@mui/material',
+      '@mui/base',
+      '@babel/runtime',
+      'use-immer',
+      '@material-tailwind/react',
+      'astro'
+    ],
+    external: [ 'sharp' ],
+    resolve: {
+      conditions: [ 'module', 'node', 'development|production', 'astro' ],
+      externalConditions: [ 'node' ]
+    }
+  },
+  build: {
+    target: 'esnext',
+    polyfillModulePreload: true,
+    modulePreload: { polyfill: false },
+    outDir: 'C:\\Users\\subar\\Documents\\Projects\\voyagertarotcreations\\voyagertarotcreations\\dist\\',
+    assetsDir: '_astro',
+    assetsInlineLimit: 4096,
+    sourcemap: false,
+    terserOptions: {},
+    rollupOptions: {
+      preserveEntrySignatures: 'exports-only',
+      input: [],
+      output: {
+        hoistTransitiveImports: false,
+        format: 'esm',
+        minifyInternalExports: true,
+        chunkFileNames: [Function: chunkFileNames],
+        assetFileNames: '_astro/[name].[hash][extname]',
+        entryFileNames: [Function: entryFileNames]
+      },
+      onwarn: [Function: onwarn]
+    },
+    commonjsOptions: { include: [ /node_modules/ ], extensions: [ '.js', '.cjs' ] },
+    dynamicImportVarsOptions: { warnOnError: true, exclude: [ /node_modules/ ] },
+    write: true,
+    emptyOutDir: false,
+    copyPublicDir: true,
+    manifest: false,
+    lib: false,
+    ssrManifest: false,
+    ssrEmitAssets: true,
+    reportCompressedSize: false,
+    chunkSizeWarningLimit: 500,
+    watch: null,
+    cssCodeSplit: true,
+    minify: false,
+    ssr: true,
+    emitAssets: true,
+    createEnvironment: [Function: createEnvironment],
+    cssMinify: true,
+    cssTarget: 'esnext'
+  },
+  logLevel: 'error',
+  base: '/',
+  esbuild: { jsxDev: false, jsx: 'automatic', jsxImportSource: undefined },
+  environments: {
+    client: {
+      define: {
+        'import.meta.env.SITE': 'undefined',
+        'import.meta.env.BASE_URL': '"/"',
+        'import.meta.env.ASSETS_PREFIX': 'undefined',
+        __ASTRO_INTERNAL_I18N_CONFIG__: '{"base":"/","format":"directory","trailingSlash":"ignore","isBuild":true}'
+      },
+      resolve: {
+        externalConditions: [ 'node' ],
+        extensions: [
+          '.mjs',  '.js',
+          '.mts',  '.ts',
+          '.jsx',  '.tsx',
+          '.json'
+        ],
+        dedupe: [ 'astro', 'react', 'react-dom' ],
+        noExternal: [],
+        external: [],
+        preserveSymlinks: false,
+        alias: [
+          { find: 'randombytes', replacement: 'randombytes/browser' },
+          {
+            find: /^astro$/,
+            replacement: 'C:\\Users\\subar\\Documents\\Projects\\voyagertarotcreations\\voyagertarotcreations\\node_modules\\astro\\dist\\types\\public\\index.js'
+          },
+          {
+            find: 'astro:middleware',
+            replacement: 'astro/virtual-modules/middleware.js'
+          },
+          { find: 'astro:schema', replacement: 'astro/zod' },
+          { find: 'astro:components', replacement: 'astro/components' },
+          {
+            find: /^\/?@vite\/env/,
+            replacement: '/@fs/C:/Users/subar/Documents/Projects/voyagertarotcreations/voyagertarotcreations/node_modules/vite/dist/client/env.mjs'
+          },
+          {
+            find: /^\/?@vite\/client/,
+            replacement: '/@fs/C:/Users/subar/Documents/Projects/voyagertarotcreations/voyagertarotcreations/node_modules/vite/dist/client/client.mjs'
+          }
+        ],
+        mainFields: [ 'browser', 'module', 'jsnext:main', 'jsnext' ],
+        conditions: [ 'module', 'browser', 'development|production', 'astro' ],
+        builtins: []
+      },
+      keepProcessEnv: false,
+      consumer: 'client',
+      optimizeDeps: {
+        include: [
+          '@astrojs/react/client.js',
+          'react',
+          'react-dom',
+          'react/jsx-dev-runtime',
+          'react/jsx-runtime',
+          'astro > cssesc',
+          'astro > aria-query',
+          'astro > axobject-query'
+        ],
+        exclude: [ 'astro', 'node-fetch', '@astrojs/react/server.js' ],
+        needsInterop: [],
+        extensions: [],
+        disabled: undefined,
+        holdUntilCrawlEnd: true,
+        force: false,
+        noDiscovery: false,
+        esbuildOptions: { preserveSymlinks: false, jsx: 'automatic' },
+        entries: [
+          'C:/Users/subar/Documents/Projects/voyagertarotcreations/voyagertarotcreations/src/**/*.{jsx,tsx,vue,svelte,html,astro}'
+        ]
+      },
+      dev: {
+        warmup: [],
+        sourcemap: { js: true },
+        sourcemapIgnoreList: [Function: isInNodeModules$1],
+        preTransformRequests: true,
+        createEnvironment: [Function: defaultCreateClientDevEnvironment],
+        recoverable: true,
+        moduleRunnerTransform: false
+      },
+      build: {
+        target: 'esnext',
+        polyfillModulePreload: true,
+        modulePreload: { polyfill: false },
+        outDir: 'C:\\Users\\subar\\Documents\\Projects\\voyagertarotcreations\\voyagertarotcreations\\dist\\',
+        assetsDir: '_astro',
+        assetsInlineLimit: 4096,
+        sourcemap: false,
+        terserOptions: {},
+        rollupOptions: {
+          preserveEntrySignatures: 'exports-only',
+          input: [],
+          output: {
+            hoistTransitiveImports: false,
+            format: 'esm',
+            minifyInternalExports: true,
+            chunkFileNames: [Function: chunkFileNames],
+            assetFileNames: '_astro/[name].[hash][extname]',
+            entryFileNames: [Function: entryFileNames]
+          },
+          onwarn: [Function: onwarn]
+        },
+        commonjsOptions: { include: [ /node_modules/ ], extensions: [ '.js', '.cjs' ] },
+        dynamicImportVarsOptions: { warnOnError: true, exclude: [ /node_modules/ ] },
+        write: true,
+        emptyOutDir: false,
+        copyPublicDir: true,
+        manifest: false,
+        lib: false,
+        ssrManifest: false,
+        ssrEmitAssets: true,
+        reportCompressedSize: false,
+        chunkSizeWarningLimit: 500,
+        watch: null,
+        cssCodeSplit: true,
+        minify: false,
+        ssr: true,
+        emitAssets: true,
+        createEnvironment: [Function: createEnvironment],
+        cssMinify: true,
+        cssTarget: 'esnext'
+      }
+    },
+    ssr: {
+      define: {
+        'import.meta.env.SITE': 'undefined',
+        'import.meta.env.BASE_URL': '"/"',
+        'import.meta.env.ASSETS_PREFIX': 'undefined',
+        __ASTRO_INTERNAL_I18N_CONFIG__: '{"base":"/","format":"directory","trailingSlash":"ignore","isBuild":true}'
+      },
+      resolve: {
+        externalConditions: [ 'node' ],
+        extensions: [
+          '.mjs',  '.js',
+          '.mts',  '.ts',
+          '.jsx',  '.tsx',
+          '.json'
+        ],
+        dedupe: [ 'astro', 'react', 'react-dom' ],
+        noExternal: [
+          'astro',
+          'astro/components',
+          '@nanostores/preact',
+          '@fontsource/*',
+          '@astrojs/react',
+          'lucide-astro',
+          '@mui/material',
+          '@mui/base',
+          '@babel/runtime',
+          'use-immer',
+          '@material-tailwind/react',
+          'astro'
+        ],
+        external: [ 'sharp' ],
+        preserveSymlinks: false,
+        alias: [
+          { find: 'randombytes', replacement: 'randombytes/browser' },
+          {
+            find: /^astro$/,
+            replacement: 'C:\\Users\\subar\\Documents\\Projects\\voyagertarotcreations\\voyagertarotcreations\\node_modules\\astro\\dist\\types\\public\\index.js'
+          },
+          {
+            find: 'astro:middleware',
+            replacement: 'astro/virtual-modules/middleware.js'
+          },
+          { find: 'astro:schema', replacement: 'astro/zod' },
+          { find: 'astro:components', replacement: 'astro/components' },
+          {
+            find: /^\/?@vite\/env/,
+            replacement: '/@fs/C:/Users/subar/Documents/Projects/voyagertarotcreations/voyagertarotcreations/node_modules/vite/dist/client/env.mjs'
+          },
+          {
+            find: /^\/?@vite\/client/,
+            replacement: '/@fs/C:/Users/subar/Documents/Projects/voyagertarotcreations/voyagertarotcreations/node_modules/vite/dist/client/client.mjs'
+          }
+        ],
+        mainFields: [ 'module', 'jsnext:main', 'jsnext' ],
+        conditions: [ 'module', 'node', 'development|production', 'astro' ],
+        builtins: [
+          '_http_agent',         '_http_client',        '_http_common',
+          '_http_incoming',      '_http_outgoing',      '_http_server',
+          '_stream_duplex',      '_stream_passthrough', '_stream_readable',
+          '_stream_transform',   '_stream_wrap',        '_stream_writable',
+          '_tls_common',         '_tls_wrap',           'assert',
+          'assert/strict',       'async_hooks',         'buffer',
+          'child_process',       'cluster',             'console',
+          'constants',           'crypto',              'dgram',
+          'diagnostics_channel', 'dns',                 'dns/promises',
+          'domain',              'events',              'fs',
+          'fs/promises',         'http',                'http2',
+          'https',               'inspector',           'inspector/promises',
+          'module',              'net',                 'os',
+          'path',                'path/posix',          'path/win32',
+          'perf_hooks',          'process',             'punycode',
+          'querystring',         'readline',            'readline/promises',
+          'repl',                'stream',              'stream/consumers',
+          'stream/promises',     'stream/web',          'string_decoder',
+          'sys',                 'timers',              'timers/promises',
+          'tls',                 'trace_events',        'tty',
+          'url',                 'util',                'util/types',
+          'v8',                  'vm',                  'wasi',
+          'worker_threads',      'zlib',                /^node:/,
+          /^npm:/,               /^bun:/
+        ]
+      },
+      keepProcessEnv: true,
+      consumer: 'server',
+      optimizeDeps: {
+        include: [],
+        exclude: [],
+        needsInterop: [],
+        extensions: [],
+        disabled: undefined,
+        holdUntilCrawlEnd: true,
+        force: false,
+        noDiscovery: true,
+        esbuildOptions: { preserveSymlinks: false }
+      },
+      dev: {
+        warmup: [],
+        sourcemap: { js: true },
+        sourcemapIgnoreList: [Function: isInNodeModules$1],
+        preTransformRequests: false,
+        createEnvironment: [Function: defaultCreateDevEnvironment],
+        recoverable: false,
+        moduleRunnerTransform: true
+      },
+      build: {
+        target: 'esnext',
+        polyfillModulePreload: true,
+        modulePreload: { polyfill: false },
+        outDir: 'C:\\Users\\subar\\Documents\\Projects\\voyagertarotcreations\\voyagertarotcreations\\dist\\',
+        assetsDir: '_astro',
+        assetsInlineLimit: 4096,
+        sourcemap: false,
+        terserOptions: {},
+        rollupOptions: {
+          preserveEntrySignatures: 'exports-only',
+          input: [],
+          output: {
+            hoistTransitiveImports: false,
+            format: 'esm',
+            minifyInternalExports: true,
+            chunkFileNames: [Function: chunkFileNames],
+            assetFileNames: '_astro/[name].[hash][extname]',
+            entryFileNames: [Function: entryFileNames]
+          },
+          onwarn: [Function: onwarn]
+        },
+        commonjsOptions: { include: [ /node_modules/ ], extensions: [ '.js', '.cjs' ] },
+        dynamicImportVarsOptions: { warnOnError: true, exclude: [ /node_modules/ ] },
+        write: true,
+        emptyOutDir: false,
+        copyPublicDir: true,
+        manifest: false,
+        lib: false,
+        ssrManifest: false,
+        ssrEmitAssets: true,
+        reportCompressedSize: false,
+        chunkSizeWarningLimit: 500,
+        watch: null,
+        cssCodeSplit: true,
+        minify: false,
+        ssr: true,
+        emitAssets: true,
+        createEnvironment: [Function: createEnvironment],
+        cssMinify: true,
+        cssTarget: 'esnext'
+      }
+    }
+  },
+  configFileDependencies: [],
+  inlineConfig: {
+    configFile: false,
+    mode: 'production',
+    cacheDir: 'C:\\Users\\subar\\Documents\\Projects\\voyagertarotcreations\\voyagertarotcreations\\node_modules\\.vite\\',
+    clearScreen: false,
+    customLogger: {
+      hasWarned: false,
+      info: [Function: info],
+      warn: [Function: warn],
+      warnOnce: [Function: warnOnce],
+      error: [Function: error],
+      clearScreen: [Function: clearScreen],
+      hasErrorLogged: [Function: hasErrorLogged]
+    },
+    appType: 'custom',
+    optimizeDeps: {
+      entries: [
+        'C:/Users/subar/Documents/Projects/voyagertarotcreations/voyagertarotcreations/src/**/*.{jsx,tsx,vue,svelte,html,astro}'
+      ],
+      exclude: [ 'astro', 'node-fetch', '@astrojs/react/server.js' ],
+      include: [ '@astrojs/react/client.js' ]
+    },
+    plugins: [
+      {
+        name: '@astro/rollup-plugin-astro-analyzer',
+        generateBundle: [AsyncFunction: generateBundle]
+      },
+      {
+        name: '@astro/plugin-build-internals',
+        config: [Function: config],
+        generateBundle: [AsyncFunction: generateBundle]
+      },
+      {
+        name: '@astro/plugin-build-manifest',
+        enforce: 'post',
+        options: [Function: options],
+        resolveId: [Function: resolveId],
+        augmentChunkHash: [Function: augmentChunkHash],
+        load: [Function: load],
+        generateBundle: [AsyncFunction: generateBundle]
+      },
+      {
+        name: '@astro/plugin-renderers',
+        options: [Function: options],
+        resolveId: [Function: resolveId],
+        load: [AsyncFunction: load]
+      },
+      {
+        name: '@astro/plugin-middleware-build',
+        options: [Function: options],
+        writeBundle: [Function: writeBundle]
+      },
+      {
+        name: '@astro/plugin-actions-build',
+        options: [Function: options],
+        writeBundle: [Function: writeBundle]
+      },
+      {
+        name: '@astro/plugin-build-pages',
+        options: [Function: options],
+        resolveId: [Function: resolveId],
+        load: [AsyncFunction: load]
+      },
+      [
+        {
+          name: 'astro:rollup-plugin-build-css',
+          outputOptions: [Function: outputOptions],
+          generateBundle: [AsyncFunction: generateBundle]
+        },
+        {
+          name: 'astro:rollup-plugin-single-css',
+          enforce: 'post',
+          configResolved: [Function: configResolved],
+          generateBundle: [Function: generateBundle]
+        },
+        {
+          name: 'astro:rollup-plugin-inline-stylesheets',
+          enforce: 'post',
+          configResolved: [Function: configResolved],
+          generateBundle: [AsyncFunction: generateBundle]
+        }
+      ],
+      {
+        name: 'astro:head-metadata-build',
+        generateBundle: [Function: generateBundle]
+      },
+      [
+        {
+          name: '@astrojs/vite-plugin-astro-adapter',
+          enforce: 'post',
+          resolveId: [Function: resolveId],
+          load: [AsyncFunction: load]
+        }
+      ],
+      {
+        name: 'astro:chunks',
+        outputOptions: [Function: outputOptions]
+      },
+      {
+        enforce: 'pre',
+        name: 'astro-manifest-plugin',
+        resolveId: [Function: resolveId],
+        load: [Function: load]
+      },
+      null,
+      false,
+      [
+        {
+          name: 'astro:build',
+          enforce: 'pre',
+          configEnvironment: [AsyncFunction: configEnvironment],
+          configResolved: [Function: configResolved],
+          configureServer: [Function: configureServer],
+          buildStart: [Function: buildStart],
+          load: [AsyncFunction: load],
+          transform: [AsyncFunction: transform],
+          handleHotUpdate: [AsyncFunction: handleHotUpdate]
+        },
+        {
+          name: 'astro:build:normal',
+          resolveId: [Function: resolveId]
+        }
+      ],
+      {
+        name: 'astro:scripts',
+        config: [Function: config],
+        resolveId: [AsyncFunction: resolveId],
+        load: [AsyncFunction: load],
+        buildStart: [Function: buildStart]
+      },
+      false,
+      {
+        name: 'astro:vite-plugin-env',
+        config: [Function: config],
+        configResolved: [Function: configResolved],
+        transform: [Function: transform]
+      },
+      {
+        name: 'astro-env-plugin',
+        enforce: 'pre',
+        config: [Function: config],
+        buildStart: [Function: buildStart],
+        resolveId: [Function: resolveId],
+        load: [Function: load]
+      },
+      {
+        name: 'astro:adapter-config',
+        resolveId: [Function: resolveId],
+        load: [Function: load]
+      },
+      {
+        enforce: 'pre',
+        name: 'astro:markdown',
+        buildEnd: [Function: buildEnd],
+        resolveId: [AsyncFunction: resolveId],
+        load: [AsyncFunction: load]
+      },
+      {
+        name: 'astro:html',
+        options: [Function: options],
+        transform: [AsyncFunction: transform]
+      },
+      {
+        name: 'astro:postprocess',
+        transform: [AsyncFunction: transform]
+      },
+      {
+        name: 'astro:integration-container',
+        configureServer: [AsyncFunction: configureServer],
+        buildStart: [AsyncFunction: buildStart]
+      },
+      {
+        name: 'astro:scripts:page-ssr',
+        enforce: 'post',
+        transform: [Function: transform]
+      },
+      {
+        name: 'astro:head-metadata',
+        enforce: 'pre',
+        apply: 'serve',
+        configureServer: [Function: configureServer],
+        resolveId: [Function: resolveId],
+        transform: [Function: transform]
+      },
+      {
+        name: 'astro:scanner',
+        enforce: 'post',
+        transform: [AsyncFunction: transform],
+        handleHotUpdate: [AsyncFunction: handleHotUpdate]
+      },
+      {
+        name: 'astro-content-virtual-mod-plugin',
+        enforce: 'pre',
+        config: [Function: config],
+        buildStart: [Function: buildStart],
+        resolveId: [AsyncFunction: resolveId],
+        load: [AsyncFunction: load],
+        configureServer: [Function: configureServer]
+      },
+      [
+        {
+          name: 'astro:content-imports',
+          config: [Function: config],
+          buildStart: [AsyncFunction: buildStart],
+          transform: [AsyncFunction: transform],
+          configureServer: [Function: configureServer]
+        }
+      ],
+      {
+        name: 'astro:content-asset-propagation',
+        enforce: 'pre',
+        resolveId: [AsyncFunction: resolveId],
+        configureServer: [Function: configureServer],
+        transform: [AsyncFunction: transform]
+      },
+      {
+        name: '@astro/plugin-middleware',
+        resolveId: [AsyncFunction: resolveId],
+        load: [AsyncFunction: load]
+      },
+      {
+        name: '@astrojs/vite-plugin-astro-ssr-manifest',
+        enforce: 'post',
+        resolveId: [Function: resolveId],
+        load: [Function: load]
+      },
+      [
+        {
+          name: 'astro:assets',
+          config: [Function: config],
+          resolveId: [AsyncFunction: resolveId],
+          load: [Function: load],
+          buildStart: [Function: buildStart],
+          renderChunk: [AsyncFunction: renderChunk]
+        },
+        {
+          name: 'astro:assets:esm',
+          enforce: 'pre',
+          config: [Function: config],
+          configResolved: [Function: configResolved],
+          load: [AsyncFunction: load]
+        },
+        {
+          name: 'astro:fonts:fallback',
+          resolveId: [Function: resolveId],
+          load: [Function: load]
+        }
+      ],
+      {
+        name: 'astro:prefetch',
+        resolveId: [AsyncFunction: resolveId],
+        load: [Function: load],
+        transform: [Function: transform]
+      },
+      {
+        name: 'astro:transitions',
+        config: [Function: config],
+        resolveId: [AsyncFunction: resolveId],
+        load: [Function: load],
+        transform: [Function: transform]
+      },
+      {
+        name: 'astro:dev-toolbar',
+        config: [Function: config],
+        resolveId: [Function: resolveId],
+        configureServer: [Function: configureServer],
+        load: [AsyncFunction: load]
+      },
+      {
+        name: 'astro:vite-plugin-file-url',
+        enforce: 'pre',
+        resolveId: [Function: resolveId]
+      },
+      {
+        name: 'astro:i18n',
+        enforce: 'pre',
+        config: [Function: config],
+        resolveId: [Function: resolveId]
+      },
+      {
+        name: 'astro:actions',
+        enforce: 'pre',
+        resolveId: [AsyncFunction: resolveId],
+        configureServer: [AsyncFunction: configureServer],
+        load: [AsyncFunction: load]
+      },
+      {
+        name: 'astro:server-islands',
+        enforce: 'post',
+        config: [Function: config],
+        configureServer: [Function: configureServer],
+        resolveId: [Function: resolveId],
+        load: [Function: load],
+        transform: [Function: transform],
+        renderChunk: [Function: renderChunk]
+      },
+      {
+        name: 'astro:container',
+        enforce: 'pre',
+        resolveId: [Function: resolveId]
+      },
+      {
+        name: 'astro:hmr-reload',
+        enforce: 'post',
+        hotUpdate: { order: 'post', handler: [Function: handler] }
+      },
+      {
+        name: '@tailwindcss/vite:scan',
+        enforce: 'pre',
+        configureServer: [Function: configureServer],
+        configResolved: [AsyncFunction: configResolved]
+      },
+      {
+        name: '@tailwindcss/vite:generate:build',
+        apply: 'build',
+        enforce: 'pre',
+        transform: {
+          filter: {
+            id: {
+              exclude: [
+                /\/\.vite\//,
+                /[?&](?:worker|sharedworker|raw|url)\b/,
+                /\?commonjs-proxy/
+              ],
+              include: [
+                /\.css(?:\?.*)?$/,
+                /&lang\.css/,
+                /[?&]index\=\d+\.css$/
+              ]
+            }
+          },
+          handler: [AsyncFunction: handler]
+        }
+      },
+      {
+        name: 'vite:react-babel',
+        enforce: 'pre',
+        config: [Function: config],
+        configResolved: [Function: configResolved],
+        options: [Function: options]
+      },
+      {
+        name: 'vite:react-refresh',
+        enforce: 'pre',
+        config: [Function: config],
+        resolveId: {
+          filter: { id: /^\/@react\-refresh$/ },
+          handler: [Function: handler]
+        },
+        load: {
+          filter: { id: /^\/@react\-refresh$/ },
+          handler: [Function: handler]
+        },
+        transformIndexHtml: [Function: transformIndexHtml]
+      },
+      {
+        name: '@astrojs/react:opts',
+        resolveId: [Function: resolveId],
+        load: [Function: load]
+      }
+    ],
+    publicDir: 'C:\\Users\\subar\\Documents\\Projects\\voyagertarotcreations\\voyagertarotcreations\\public\\',
+    root: 'C:\\Users\\subar\\Documents\\Projects\\voyagertarotcreations\\voyagertarotcreations\\',
+    envPrefix: 'PUBLIC_',
+    define: {
+      'import.meta.env.SITE': 'undefined',
+      'import.meta.env.BASE_URL': '"/"',
+      'import.meta.env.ASSETS_PREFIX': 'undefined'
+    },
+    server: { hmr: false, watch: { ignored: [ '**' ] }, middlewareMode: true },
+    resolve: {
+      alias: [
+        { find: 'randombytes', replacement: 'randombytes/browser' },
+        {
+          find: /^astro$/,
+          replacement: 'C:\\Users\\subar\\Documents\\Projects\\voyagertarotcreations\\voyagertarotcreations\\node_modules\\astro\\dist\\types\\public\\index.js'
+        },
+        {
+          find: 'astro:middleware',
+          replacement: 'astro/virtual-modules/middleware.js'
+        },
+        { find: 'astro:schema', replacement: 'astro/zod' },
+        { find: 'astro:components', replacement: 'astro/components' }
+      ],
+      dedupe: [ 'astro' ]
+    },
+    ssr: {
+      noExternal: [
+        'astro',
+        'astro/components',
+        '@nanostores/preact',
+        '@fontsource/*',
+        '@astrojs/react',
+        'lucide-astro',
+        '@mui/material',
+        '@mui/base',
+        '@babel/runtime',
+        'use-immer',
+        '@material-tailwind/react'
+      ],
+      external: []
+    },
+    build: {
+      target: 'esnext',
+      cssMinify: true,
+      assetsDir: '_astro',
+      emptyOutDir: false,
+      manifest: false,
+      outDir: 'C:\\Users\\subar\\Documents\\Projects\\voyagertarotcreations\\voyagertarotcreations\\dist\\',
+      copyPublicDir: true,
+      rollupOptions: {
+        preserveEntrySignatures: 'exports-only',
+        input: [],
+        output: {
+          hoistTransitiveImports: false,
+          format: 'esm',
+          minifyInternalExports: true,
+          chunkFileNames: [Function: chunkFileNames],
+          assetFileNames: '_astro/[name].[hash][extname]',
+          entryFileNames: [Function: entryFileNames]
+        }
+      },
+      ssr: true,
+      ssrEmitAssets: true,
+      minify: false,
+      modulePreload: { polyfill: false },
+      reportCompressedSize: false
+    },
+    logLevel: 'error',
+    base: '/'
+  },
+  decodedBase: '/',
+  rawBase: '/',
+  command: 'build',
+  isWorker: false,
+  mainConfig: null,
+  bundleChain: [],
+  isProduction: true,
+  css: {
+    transformer: 'postcss',
+    preprocessorMaxWorkers: 0,
+    devSourcemap: false
+  },
+  json: { namedExports: true, stringify: 'auto' },
+  builder: undefined,
+  preview: {
+    port: 4173,
+    strictPort: false,
+    host: undefined,
+    allowedHosts: [],
+    https: undefined,
+    open: false,
+    proxy: undefined,
+    cors: {
+      origin: /^https?:\/\/(?:(?:[^:]+\.)?localhost|127\.0\.0\.1|\[::1\])(?::\d+)?$/
+    },
+    headers: {}
+  },
+  envDir: 'C:/Users/subar/Documents/Projects/voyagertarotcreations/voyagertarotcreations',
+  env: { BASE_URL: '/', MODE: 'production', DEV: false, PROD: true },
+  assetsInclude: [Function: assetsInclude],
+  logger: {
+    hasWarned: false,
+    info: [Function: info],
+    warn: [Function: warn],
+    warnOnce: [Function: warnOnce],
+    error: [Function: error],
+    clearScreen: [Function: clearScreen],
+    hasErrorLogged: [Function: hasErrorLogged]
+  },
+  packageCache: Map(1) {
+    'fnpd_C:/Users/subar/Documents/Projects/voyagertarotcreations/voyagertarotcreations' => {
+      dir: 'C:/Users/subar/Documents/Projects/voyagertarotcreations/voyagertarotcreations',
+      data: {
+        name: 'y',
+        type: 'module',
+        version: '0.0.1',
+        scripts: {
+          dev: 'astro dev',
+          build: 'astro build',
+          preview: 'astro preview',
+          astro: 'astro'
+        },
+        dependencies: {
+          '@astrojs/check': '^0.9.6',
+          '@astrojs/react': '^4.4.2',
+          '@tailwindcss/vite': '^4.1.18',
+          '@types/react': '^19.2.10',
+          '@types/react-dom': '^19.2.3',
+          astro: '^5.17.1',
+          'date-fns': '^4.1.0',
+          'framer-motion': '^12.29.2',
+          'lucide-astro': '^0.556.0',
+          'microcms-js-sdk': '^3.2.0',
+          react: '^19.2.4',
+          'react-dom': '^19.2.4',
+          tailwindcss: '^4.1.18',
+          typescript: '^5.9.3'
+        },
+        devDependencies: { sharp: '^0.34.5' }
+      },
+      hasSideEffects: [Function: hasSideEffects],
+      setResolvedCache: [Function: setResolvedCache],
+      getResolvedCache: [Function: getResolvedCache]
+    },
+    set: [Function (anonymous)]
+  },
+  worker: { format: 'iife', plugins: '() => plugins', rollupOptions: {} },
+  experimental: { importGlobRestoreExtension: false, hmrPartialAccept: false },
+  future: undefined,
+  dev: {
+    warmup: [],
+    sourcemap: { js: true },
+    sourcemapIgnoreList: [Function: isInNodeModules$1],
+    preTransformRequests: false,
+    createEnvironment: [Function: defaultCreateDevEnvironment],
+    recoverable: false,
+    moduleRunnerTransform: false
+  },
+  webSocketToken: 'D1KEDUgaBrK9',
+  getSortedPlugins: [Function: getSortedPlugins],
+  getSortedPluginHooks: [Function: getSortedPluginHooks],
+  createResolver: [Function: createResolver],
+  fsDenyGlob: [Function: arrayMatcher],
+  safeModulePaths: Set(0) {},
+  additionalAllowedHosts: [],
+  [Symbol(vite:resolved-config)]: true
+}
+2026-03-14T09:54:40.344Z vite:env loading env files: [
+  'C:/Users/subar/Documents/Projects/voyagertarotcreations/voyagertarotcreations/.env',
+  'C:/Users/subar/Documents/Projects/voyagertarotcreations/voyagertarotcreations/.env.local',
+  'C:/Users/subar/Documents/Projects/voyagertarotcreations/voyagertarotcreations/.env.production',
+  'C:/Users/subar/Documents/Projects/voyagertarotcreations/voyagertarotcreations/.env.production.local'
+]
+2026-03-14T09:54:40.345Z vite:env env files loaded in 0.47ms
+2026-03-14T09:54:40.346Z vite:env using resolved env: {
+  MICROCMS_SERVICE_DOMAIN: 'voyager',
+  MICROCMS_API_KEY: 'ssrq1CkxyDqfDbfUnwdEtLSw249xAr29j3ke',
+  ALLUSERSPROFILE: 'C:\\ProgramData',
+  ANTIGRAVITY_AGENT: '1',
+  ANTIGRAVITY_CLI_ALIAS: 'agy',
+  APPDATA: 'C:\\Users\\subar\\AppData\\Roaming',
+  BUNDLED_DEBUGPY_PATH: 'c:\\Users\\subar\\.antigravity\\extensions\\ms-python.debugpy-2025.18.0-win32-x64\\bundled\\libs\\debugpy',
+  CHROME_CRASHPAD_PIPE_NAME: '\\\\.\\pipe\\crashpad_7352_YKZMZNBNZMJKQATG',
+  COLOR: '0',
+  COLORTERM: 'truecolor',
+  CommonProgramFiles: 'C:\\Program Files\\Common Files',
+  'CommonProgramFiles(x86)': 'C:\\Program Files (x86)\\Common Files',
+  CommonProgramW6432: 'C:\\Program Files\\Common Files',
+  COMPUTERNAME: 'NAKAKO',
+  ComSpec: 'C:\\WINDOWS\\system32\\cmd.exe',
+  DEBUG: 'astro:*,vite:*',
+  DriverData: 'C:\\Windows\\System32\\Drivers\\DriverData',
+  EDITOR: 'C:\\WINDOWS\\notepad.exe',
+  EFC_24272_1592913036: '1',
+  GIT_ASKPASS: 'c:\\Users\\subar\\AppData\\Local\\Programs\\Antigravity\\resources\\app\\extensions\\git\\dist\\askpass.sh',
+  HOME: 'C:\\Users\\subar',
+  HOMEDRIVE: 'C:',
+  HOMEPATH: '\\Users\\subar',
+  INIT_CWD: 'C:\\Users\\subar\\Documents\\Projects\\voyagertarotcreations\\voyagertarotcreations',
+  LANG: 'en_US.UTF-8',
+  LOCALAPPDATA: 'C:\\Users\\subar\\AppData\\Local',
+  LOGONSERVER: '\\\\NAKAKO',
+  NODE: 'C:\\Program Files\\nodejs\\node.exe',
+  NODE_ENV: 'production',
+  NODE_EXE: 'C:\\Program Files\\nodejs\\\\node.exe',
+  NPM_CLI_JS: 'C:\\Program Files\\nodejs\\\\node_modules\\npm\\bin\\npm-cli.js',
+  npm_command: 'run-script',
+  npm_config_cache: 'C:\\Users\\subar\\AppData\\Local\\npm-cache',
+  npm_config_globalconfig: 'C:\\Users\\subar\\AppData\\Roaming\\npm\\etc\\npmrc',
+  npm_config_global_prefix: 'C:\\Users\\subar\\AppData\\Roaming\\npm',
+  npm_config_init_module: 'C:\\Users\\subar\\.npm-init.js',
+  npm_config_local_prefix: 'C:\\Users\\subar\\Documents\\Projects\\voyagertarotcreations\\voyagertarotcreations',
+  npm_config_node_gyp: 'C:\\Program Files\\nodejs\\node_modules\\npm\\node_modules\\node-gyp\\bin\\node-gyp.js',
+  npm_config_noproxy: '',
+  npm_config_npm_version: '10.7.0',
+  npm_config_prefix: 'C:\\Users\\subar\\AppData\\Roaming\\npm',
+  npm_config_userconfig: 'C:\\Users\\subar\\.npmrc',
+  npm_config_user_agent: 'npm/10.7.0 node/v20.14.0 win32 x64 workspaces/false',
+  npm_execpath: 'C:\\Program Files\\nodejs\\node_modules\\npm\\bin\\npm-cli.js',
+  npm_lifecycle_event: 'build',
+  npm_lifecycle_script: 'astro build',
+  npm_node_execpath: 'C:\\Program Files\\nodejs\\node.exe',
+  npm_package_json: 'C:\\Users\\subar\\Documents\\Projects\\voyagertarotcreations\\voyagertarotcreations\\package.json',
+  npm_package_name: 'y',
+  npm_package_version: '0.0.1',
+  NPM_PREFIX_JS: 'C:\\Program Files\\nodejs\\\\node_modules\\npm\\bin\\npm-prefix.js',
+  NPM_PREFIX_NPM_CLI_JS: 'C:\\Users\\subar\\AppData\\Roaming\\npm\\node_modules\\npm\\bin\\npm-cli.js',
+  NUMBER_OF_PROCESSORS: '22',
+  OneDrive: 'C:\\Users\\subar\\OneDrive',
+  OneDriveConsumer: 'C:\\Users\\subar\\OneDrive',
+  OS: 'Windows_NT',
+  PAGER: 'cat',
+  Path: 'C:\\Users\\subar\\Documents\\Projects\\voyagertarotcreations\\voyagertarotcreations\\node_modules\\.bin;C:\\Users\\subar\\Documents\\Projects\\voyagertarotcreations\\node_modules\\.bin;C:\\Users\\subar\\Documents\\Projects\\node_modules\\.bin;C:\\Users\\subar\\Documents\\node_modules\\.bin;C:\\Users\\subar\\node_modules\\.bin;C:\\Users\\node_modules\\.bin;C:\\node_modules\\.bin;C:\\Program Files\\nodejs\\node_modules\\npm\\node_modules\\@npmcli\\run-script\\lib\\node-gyp-bin;C:\\Program Files\\PowerShell\\7;C:\\Program Files\\Eclipse Adoptium\\jdk-17.0.16.8-hotspot\\bin;C:\\WINDOWS\\system32;C:\\WINDOWS;C:\\WINDOWS\\System32\\Wbem;C:\\WINDOWS\\System32\\WindowsPowerShell\\v1.0\\;C:\\WINDOWS\\System32\\OpenSSH\\;C:\\Program Files\\dotnet\\;C:\\Program Files\\nodejs\\;C:\\Program Files (x86)\\Yarn\\bin;C:\\Program Files\\Git\\cmd;c:\\Users\\subar\\AppData\\Local\\Programs\\cursor\\resources\\app\\bin;C:\\Program Files\\GitHub CLI\\;C:\\Program Files\\PowerShell\\7\\;C:\\Users\\subar\\.local\\bin;C:\\Users\\subar\\AppData\\Local\\Programs\\Python\\Python310\\Scripts\\;C:\\Users\\subar\\AppData\\Local\\Programs\\Python\\Python310\\;C:\\Users\\subar\\AppData\\Local\\Microsoft\\WindowsApps;C:\\Users\\subar\\AppData\\Local\\Programs\\Microsoft VS Code\\bin;C:\\Users\\subar\\.dotnet\\tools;C:\\Users\\subar\\AppData\\Roaming\\npm;C:\\Users\\subar\\AppData\\Local\\Yarn\\bin;C:\\Users\\subar\\AppData\\Local\\Programs\\Antigravity\\bin;c:\\Users\\subar\\.antigravity\\extensions\\ms-python.debugpy-2025.18.0-win32-x64\\bundled\\scripts\\noConfigScripts',
+  PATHEXT: '.COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC;.CPL',
+  POWERSHELL_DISTRIBUTION_CHANNEL: 'MSI:Windows 10 Home',
+  PROCESSOR_ARCHITECTURE: 'AMD64',
+  PROCESSOR_IDENTIFIER: 'Intel64 Family 6 Model 170 Stepping 4, GenuineIntel',
+  PROCESSOR_LEVEL: '6',
+  PROCESSOR_REVISION: 'aa04',
+  ProgramData: 'C:\\ProgramData',
+  ProgramFiles: 'C:\\Program Files',
+  'ProgramFiles(x86)': 'C:\\Program Files (x86)',
+  ProgramW6432: 'C:\\Program Files',
+  PROMPT: '$P$G',
+  PSModulePath: 'C:\\Users\\subar\\OneDrive\\繝峨く繝･繝｡繝ｳ繝・\PowerShell\\Modules;C:\\Program Files\\PowerShell\\Modules;c:\\program files\\powershell\\7\\Modules;C:\\Program Files\\WindowsPowerShell\\Modules;C:\\WINDOWS\\system32\\WindowsPowerShell\\v1.0\\Modules',
+  PUBLIC: 'C:\\Users\\Public',
+  PYDEVD_DISABLE_FILE_VALIDATION: '1',
+  PYTHONSTARTUP: 'c:\\Users\\subar\\AppData\\Roaming\\Antigravity\\User\\workspaceStorage\\9340b71c308686fc616424059171612d\\ms-python.python\\pythonrc.py',
+  PYTHON_BASIC_REPL: '1',
+  SESSIONNAME: 'Console',
+  SystemDrive: 'C:',
+  SystemRoot: 'C:\\WINDOWS',
+  TEMP: 'C:\\Users\\subar\\AppData\\Local\\Temp',
+  TERM_PROGRAM: 'vscode',
+  TERM_PROGRAM_VERSION: '1.107.0',
+  TMP: 'C:\\Users\\subar\\AppData\\Local\\Temp',
+  USERDOMAIN: 'NAKAKO',
+  USERDOMAIN_ROAMINGPROFILE: 'NAKAKO',
+  USERNAME: 'subar',
+  USERPROFILE: 'C:\\Users\\subar',
+  VSCODE_DEBUGPY_ADAPTER_ENDPOINTS: 'c:\\Users\\subar\\.antigravity\\extensions\\ms-python.debugpy-2025.18.0-win32-x64\\.noConfigDebugAdapterEndpoints\\endpoint-faa1ae7870456ab3.txt',
+  VSCODE_GIT_ASKPASS_EXTRA_ARGS: '',
+  VSCODE_GIT_ASKPASS_MAIN: 'c:\\Users\\subar\\AppData\\Local\\Programs\\Antigravity\\resources\\app\\extensions\\git\\dist\\askpass-main.js',
+  VSCODE_GIT_ASKPASS_NODE: 'C:\\Users\\subar\\AppData\\Local\\Programs\\Antigravity\\Antigravity.exe',
+  VSCODE_GIT_IPC_HANDLE: '\\\\.\\pipe\\vscode-git-87db77eadc-sock',
+  VSCODE_INJECTION: '1',
+  VSCODE_PYTHON_AUTOACTIVATE_GUARD: '1',
+  windir: 'C:\\WINDOWS',
+  yarn: 'C:\\Users\\subar\\OneDrive\\繝峨く繝･繝｡繝ｳ繝・\code\\tournamentApp\\tournamen',
+  ZES_ENABLE_SYSMAN: '1'
+}
+2026-03-14T09:54:41.210Z vite:resolve 0.11ms tailwindcss -> null
+[2m18:54:41[22m [34m[vite][39m [32m笨・built in 1.55s[39m
+[2m18:54:41[22m [34m[build][39m [32m笨・Completed in 1.60s.[39m
+
+[42m[30m building client (vite) [39m[49m
+2026-03-14T09:54:41.894Z vite:env loading env files: [
+  'C:/Users/subar/Documents/Projects/voyagertarotcreations/voyagertarotcreations/.env',
+  'C:/Users/subar/Documents/Projects/voyagertarotcreations/voyagertarotcreations/.env.local',
+  'C:/Users/subar/Documents/Projects/voyagertarotcreations/voyagertarotcreations/.env.production',
+  'C:/Users/subar/Documents/Projects/voyagertarotcreations/voyagertarotcreations/.env.production.local'
+]
+2026-03-14T09:54:41.895Z vite:env env files loaded in 0.63ms
+2026-03-14T09:54:41.896Z vite:env using resolved env: {}
+2026-03-14T09:54:41.900Z vite:config using resolved config: {
+  configFile: undefined,
+  mode: 'production',
+  cacheDir: 'C:/Users/subar/Documents/Projects/voyagertarotcreations/voyagertarotcreations/node_modules/.vite',
+  clearScreen: false,
+  customLogger: {
+    hasWarned: false,
+    info: [Function: info],
+    warn: [Function: warn],
+    warnOnce: [Function: warnOnce],
+    error: [Function: error],
+    clearScreen: [Function: clearScreen],
+    hasErrorLogged: [Function: hasErrorLogged]
+  },
+  appType: 'custom',
+  optimizeDeps: {
+    include: [
+      '@astrojs/react/client.js',
+      'react',
+      'react-dom',
+      'react/jsx-dev-runtime',
+      'react/jsx-runtime',
+      'astro > cssesc',
+      'astro > aria-query',
+      'astro > axobject-query'
+    ],
+    exclude: [ 'astro', 'node-fetch', '@astrojs/react/server.js' ],
+    needsInterop: [],
+    extensions: [],
+    disabled: undefined,
+    holdUntilCrawlEnd: true,
+    force: false,
+    noDiscovery: false,
+    esbuildOptions: { preserveSymlinks: false, jsx: 'automatic' },
+    entries: [
+      'C:/Users/subar/Documents/Projects/voyagertarotcreations/voyagertarotcreations/src/**/*.{jsx,tsx,vue,svelte,html,astro}'
+    ]
+  },
+  plugins: [
+    'vite:build-metadata',
+    'vite:watch-package-data',
+    'alias',
+    '@astro/plugin-component-entry',
+    'astro-manifest-plugin',
+    'astro:build',
+    'astro-env-plugin',
+    'astro:markdown',
+    'astro-content-virtual-mod-plugin',
+    'astro:content-asset-propagation',
+    'astro:assets:esm',
+    'astro:vite-plugin-file-url',
+    'astro:i18n',
+    'astro:actions',
+    'astro:container',
+    '@tailwindcss/vite:scan',
+    '@tailwindcss/vite:generate:build',
+    'vite:react-babel',
+    'vite:react-refresh',
+    'vite:modulepreload-polyfill',
+    'vite:resolve',
+    'vite:html-inline-proxy',
+    'vite:css',
+    'vite:esbuild',
+    'vite:json',
+    'vite:wasm-helper',
+    'vite:worker',
+    'vite:asset',
+    '@astro/plugin-build-internals',
+    'astro:rollup-plugin-build-css',
+    '@astro/plugin-scripts',
+    'astro:build:normal',
+    'astro:scripts',
+    'astro:adapter-config',
+    'astro:html',
+    'astro:postprocess',
+    'astro:integration-container',
+    'astro:content-imports',
+    '@astro/plugin-middleware',
+    'astro:assets',
+    'astro:fonts:fallback',
+    'astro:prefetch',
+    'astro:transitions',
+    'astro:dev-toolbar',
+    '@astrojs/react:opts',
+    'vite:wasm-fallback',
+    'astro:vite-plugin-env',
+    'vite:define',
+    'vite:css-post',
+    'vite:build-html',
+    'vite:worker-import-meta-url',
+    'vite:asset-import-meta-url',
+    'vite:force-systemjs-wrap-complete',
+    'commonjs',
+    'vite:data-uri',
+    'vite:rollup-options-plugins',
+    'vite:dynamic-import-vars',
+    'vite:import-glob',
+    'astro:rollup-plugin-single-css',
+    'astro:rollup-plugin-inline-stylesheets',
+    'astro:scripts:page-ssr',
+    'astro:scanner',
+    '@astrojs/vite-plugin-astro-ssr-manifest',
+    'astro:server-islands',
+    'astro:hmr-reload',
+    'vite:build-import-analysis',
+    'vite:esbuild-transpile',
+    'vite:terser',
+    'vite:manifest',
+    'vite:ssr-manifest',
+    'vite:reporter',
+    'vite:load-fallback'
+  ],
+  publicDir: 'C:/Users/subar/Documents/Projects/voyagertarotcreations/voyagertarotcreations/public',
+  root: 'C:/Users/subar/Documents/Projects/voyagertarotcreations/voyagertarotcreations',
+  envPrefix: 'PUBLIC_',
+  define: {
+    'import.meta.env.SITE': 'undefined',
+    'import.meta.env.BASE_URL': '"/"',
+    'import.meta.env.ASSETS_PREFIX': 'undefined',
+    __ASTRO_INTERNAL_I18N_CONFIG__: '{"base":"/","format":"directory","trailingSlash":"ignore","isBuild":true}'
+  },
+  server: {
+    port: 5173,
+    strictPort: false,
+    host: undefined,
+    allowedHosts: [],
+    https: undefined,
+    open: false,
+    proxy: undefined,
+    cors: {
+      origin: /^https?:\/\/(?:(?:[^:]+\.)?localhost|127\.0\.0\.1|\[::1\])(?::\d+)?$/
+    },
+    headers: {},
+    warmup: { clientFiles: [], ssrFiles: [] },
+    middlewareMode: true,
+    fs: {
+      strict: true,
+      deny: [ '.env', '.env.*', '*.{crt,pem}', '**/.git/**' ],
+      allow: [
+        'C:/Users/subar/Documents/Projects/voyagertarotcreations/voyagertarotcreations'
+      ]
+    },
+    preTransformRequests: true,
+    perEnvironmentStartEndDuringDev: false,
+    sourcemapIgnoreList: [Function: isInNodeModules$1],
+    hmr: false,
+    watch: { ignored: [ '**' ] }
+  },
+  resolve: {
+    externalConditions: [ 'node' ],
+    extensions: [
+      '.mjs',  '.js',
+      '.mts',  '.ts',
+      '.jsx',  '.tsx',
+      '.json'
+    ],
+    dedupe: [ 'astro', 'react', 'react-dom' ],
+    noExternal: [],
+    external: [],
+    preserveSymlinks: false,
+    alias: [
+      { find: 'randombytes', replacement: 'randombytes/browser' },
+      {
+        find: /^astro$/,
+        replacement: 'C:\\Users\\subar\\Documents\\Projects\\voyagertarotcreations\\voyagertarotcreations\\node_modules\\astro\\dist\\types\\public\\index.js'
+      },
+      {
+        find: 'astro:middleware',
+        replacement: 'astro/virtual-modules/middleware.js'
+      },
+      { find: 'astro:schema', replacement: 'astro/zod' },
+      { find: 'astro:components', replacement: 'astro/components' },
+      {
+        find: /^\/?@vite\/env/,
+        replacement: '/@fs/C:/Users/subar/Documents/Projects/voyagertarotcreations/voyagertarotcreations/node_modules/vite/dist/client/env.mjs'
+      },
+      {
+        find: /^\/?@vite\/client/,
+        replacement: '/@fs/C:/Users/subar/Documents/Projects/voyagertarotcreations/voyagertarotcreations/node_modules/vite/dist/client/client.mjs'
+      }
+    ],
+    mainFields: [ 'browser', 'module', 'jsnext:main', 'jsnext' ],
+    conditions: [ 'module', 'browser', 'development|production', 'astro' ],
+    builtins: []
+  },
+  ssr: {
+    target: 'node',
+    optimizeDeps: {
+      esbuildOptions: { preserveSymlinks: false },
+      include: [],
+      exclude: [],
+      needsInterop: [],
+      extensions: [],
+      holdUntilCrawlEnd: true,
+      force: false,
+      noDiscovery: true
+    },
+    noExternal: [
+      'astro',
+      'astro/components',
+      '@nanostores/preact',
+      '@fontsource/*',
+      '@astrojs/react',
+      'lucide-astro',
+      '@mui/material',
+      '@mui/base',
+      '@babel/runtime',
+      'use-immer',
+      '@material-tailwind/react'
+    ],
+    external: [],
+    resolve: {
+      conditions: [ 'module', 'node', 'development|production', 'astro' ],
+      externalConditions: [ 'node' ]
+    }
+  },
+  build: {
+    target: 'esnext',
+    polyfillModulePreload: true,
+    modulePreload: { polyfill: true },
+    outDir: 'C:\\Users\\subar\\Documents\\Projects\\voyagertarotcreations\\voyagertarotcreations\\dist\\',
+    assetsDir: '_astro',
+    assetsInlineLimit: 4096,
+    sourcemap: false,
+    terserOptions: {},
+    rollupOptions: {
+      input: [
+        '\x00astro-entry:C:/Users/subar/Documents/Projects/voyagertarotcreations/voyagertarotcreations/src/components/react/ProfileCarousel',
+        '\x00astro-entry:C:/Users/subar/Documents/Projects/voyagertarotcreations/voyagertarotcreations/src/components/react/TarotDraw.tsx',
+        '@astrojs/react/client.js',
+        'C:/Users/subar/Documents/Projects/voyagertarotcreations/voyagertarotcreations/src/pages/course.astro?astro&type=script&index=0&lang.ts',
+        'C:/Users/subar/Documents/Projects/voyagertarotcreations/voyagertarotcreations/src/pages/index.astro?astro&type=script&index=0&lang.ts',
+        'C:/Users/subar/Documents/Projects/voyagertarotcreations/voyagertarotcreations/src/pages/index.astro?astro&type=script&index=1&lang.ts',
+        'C:/Users/subar/Documents/Projects/voyagertarotcreations/voyagertarotcreations/src/components/VoiceSection.astro?astro&type=script&index=0&lang.ts',
+        'C:/Users/subar/Documents/Projects/voyagertarotcreations/voyagertarotcreations/src/components/Header.astro?astro&type=script&index=0&lang.ts'
+      ],
+      output: {
+        format: 'esm',
+        entryFileNames: '_astro/[name].[hash].js',
+        chunkFileNames: '_astro/[name].[hash].js',
+        assetFileNames: '_astro/[name].[hash][extname]'
+      },
+      preserveEntrySignatures: 'exports-only',
+      onwarn: [Function: onwarn]
+    },
+    commonjsOptions: { include: [ /node_modules/ ], extensions: [ '.js', '.cjs' ] },
+    dynamicImportVarsOptions: { warnOnError: true, exclude: [ /node_modules/ ] },
+    write: true,
+    emptyOutDir: false,
+    copyPublicDir: false,
+    manifest: false,
+    lib: false,
+    ssrManifest: false,
+    ssrEmitAssets: false,
+    reportCompressedSize: true,
+    chunkSizeWarningLimit: 500,
+    watch: null,
+    cssCodeSplit: true,
+    minify: 'esbuild',
+    ssr: false,
+    emitAssets: true,
+    createEnvironment: [Function: createEnvironment],
+    cssTarget: 'esnext',
+    cssMinify: true
+  },
+  base: '/',
+  esbuild: { jsxDev: false, jsx: 'automatic', jsxImportSource: undefined },
+  environments: {
+    client: {
+      define: {
+        'import.meta.env.SITE': 'undefined',
+        'import.meta.env.BASE_URL': '"/"',
+        'import.meta.env.ASSETS_PREFIX': 'undefined',
+        __ASTRO_INTERNAL_I18N_CONFIG__: '{"base":"/","format":"directory","trailingSlash":"ignore","isBuild":true}'
+      },
+      resolve: {
+        externalConditions: [ 'node' ],
+        extensions: [
+          '.mjs',  '.js',
+          '.mts',  '.ts',
+          '.jsx',  '.tsx',
+          '.json'
+        ],
+        dedupe: [ 'astro', 'react', 'react-dom' ],
+        noExternal: [],
+        external: [],
+        preserveSymlinks: false,
+        alias: [
+          { find: 'randombytes', replacement: 'randombytes/browser' },
+          {
+            find: /^astro$/,
+            replacement: 'C:\\Users\\subar\\Documents\\Projects\\voyagertarotcreations\\voyagertarotcreations\\node_modules\\astro\\dist\\types\\public\\index.js'
+          },
+          {
+            find: 'astro:middleware',
+            replacement: 'astro/virtual-modules/middleware.js'
+          },
+          { find: 'astro:schema', replacement: 'astro/zod' },
+          { find: 'astro:components', replacement: 'astro/components' },
+          {
+            find: /^\/?@vite\/env/,
+            replacement: '/@fs/C:/Users/subar/Documents/Projects/voyagertarotcreations/voyagertarotcreations/node_modules/vite/dist/client/env.mjs'
+          },
+          {
+            find: /^\/?@vite\/client/,
+            replacement: '/@fs/C:/Users/subar/Documents/Projects/voyagertarotcreations/voyagertarotcreations/node_modules/vite/dist/client/client.mjs'
+          }
+        ],
+        mainFields: [ 'browser', 'module', 'jsnext:main', 'jsnext' ],
+        conditions: [ 'module', 'browser', 'development|production', 'astro' ],
+        builtins: []
+      },
+      keepProcessEnv: false,
+      consumer: 'client',
+      optimizeDeps: {
+        include: [
+          '@astrojs/react/client.js',
+          'react',
+          'react-dom',
+          'react/jsx-dev-runtime',
+          'react/jsx-runtime',
+          'astro > cssesc',
+          'astro > aria-query',
+          'astro > axobject-query'
+        ],
+        exclude: [ 'astro', 'node-fetch', '@astrojs/react/server.js' ],
+        needsInterop: [],
+        extensions: [],
+        disabled: undefined,
+        holdUntilCrawlEnd: true,
+        force: false,
+        noDiscovery: false,
+        esbuildOptions: { preserveSymlinks: false, jsx: 'automatic' },
+        entries: [
+          'C:/Users/subar/Documents/Projects/voyagertarotcreations/voyagertarotcreations/src/**/*.{jsx,tsx,vue,svelte,html,astro}'
+        ]
+      },
+      dev: {
+        warmup: [],
+        sourcemap: { js: true },
+        sourcemapIgnoreList: [Function: isInNodeModules$1],
+        preTransformRequests: true,
+        createEnvironment: [Function: defaultCreateClientDevEnvironment],
+        recoverable: true,
+        moduleRunnerTransform: false
+      },
+      build: {
+        target: 'esnext',
+        polyfillModulePreload: true,
+        modulePreload: { polyfill: true },
+        outDir: 'C:\\Users\\subar\\Documents\\Projects\\voyagertarotcreations\\voyagertarotcreations\\dist\\',
+        assetsDir: '_astro',
+        assetsInlineLimit: 4096,
+        sourcemap: false,
+        terserOptions: {},
+        rollupOptions: {
+          input: [
+            '\x00astro-entry:C:/Users/subar/Documents/Projects/voyagertarotcreations/voyagertarotcreations/src/components/react/ProfileCarousel',
+            '\x00astro-entry:C:/Users/subar/Documents/Projects/voyagertarotcreations/voyagertarotcreations/src/components/react/TarotDraw.tsx',
+            '@astrojs/react/client.js',
+            'C:/Users/subar/Documents/Projects/voyagertarotcreations/voyagertarotcreations/src/pages/course.astro?astro&type=script&index=0&lang.ts',
+            'C:/Users/subar/Documents/Projects/voyagertarotcreations/voyagertarotcreations/src/pages/index.astro?astro&type=script&index=0&lang.ts',
+            'C:/Users/subar/Documents/Projects/voyagertarotcreations/voyagertarotcreations/src/pages/index.astro?astro&type=script&index=1&lang.ts',
+            'C:/Users/subar/Documents/Projects/voyagertarotcreations/voyagertarotcreations/src/components/VoiceSection.astro?astro&type=script&index=0&lang.ts',
+            'C:/Users/subar/Documents/Projects/voyagertarotcreations/voyagertarotcreations/src/components/Header.astro?astro&type=script&index=0&lang.ts'
+          ],
+          output: {
+            format: 'esm',
+            entryFileNames: '_astro/[name].[hash].js',
+            chunkFileNames: '_astro/[name].[hash].js',
+            assetFileNames: '_astro/[name].[hash][extname]'
+          },
+          preserveEntrySignatures: 'exports-only',
+          onwarn: [Function: onwarn]
+        },
+        commonjsOptions: { include: [ /node_modules/ ], extensions: [ '.js', '.cjs' ] },
+        dynamicImportVarsOptions: { warnOnError: true, exclude: [ /node_modules/ ] },
+        write: true,
+        emptyOutDir: false,
+        copyPublicDir: false,
+        manifest: false,
+        lib: false,
+        ssrManifest: false,
+        ssrEmitAssets: false,
+        reportCompressedSize: true,
+        chunkSizeWarningLimit: 500,
+        watch: null,
+        cssCodeSplit: true,
+        minify: 'esbuild',
+        ssr: false,
+        emitAssets: true,
+        createEnvironment: [Function: createEnvironment],
+        cssTarget: 'esnext',
+        cssMinify: true
+      }
+    },
+    ssr: {
+      define: {
+        'import.meta.env.SITE': 'undefined',
+        'import.meta.env.BASE_URL': '"/"',
+        'import.meta.env.ASSETS_PREFIX': 'undefined',
+        __ASTRO_INTERNAL_I18N_CONFIG__: '{"base":"/","format":"directory","trailingSlash":"ignore","isBuild":true}'
+      },
+      resolve: {
+        externalConditions: [ 'node' ],
+        extensions: [
+          '.mjs',  '.js',
+          '.mts',  '.ts',
+          '.jsx',  '.tsx',
+          '.json'
+        ],
+        dedupe: [ 'astro', 'react', 'react-dom' ],
+        noExternal: [
+          'astro',
+          'astro/components',
+          '@nanostores/preact',
+          '@fontsource/*',
+          '@astrojs/react',
+          'lucide-astro',
+          '@mui/material',
+          '@mui/base',
+          '@babel/runtime',
+          'use-immer',
+          '@material-tailwind/react'
+        ],
+        external: [],
+        preserveSymlinks: false,
+        alias: [
+          { find: 'randombytes', replacement: 'randombytes/browser' },
+          {
+            find: /^astro$/,
+            replacement: 'C:\\Users\\subar\\Documents\\Projects\\voyagertarotcreations\\voyagertarotcreations\\node_modules\\astro\\dist\\types\\public\\index.js'
+          },
+          {
+            find: 'astro:middleware',
+            replacement: 'astro/virtual-modules/middleware.js'
+          },
+          { find: 'astro:schema', replacement: 'astro/zod' },
+          { find: 'astro:components', replacement: 'astro/components' },
+          {
+            find: /^\/?@vite\/env/,
+            replacement: '/@fs/C:/Users/subar/Documents/Projects/voyagertarotcreations/voyagertarotcreations/node_modules/vite/dist/client/env.mjs'
+          },
+          {
+            find: /^\/?@vite\/client/,
+            replacement: '/@fs/C:/Users/subar/Documents/Projects/voyagertarotcreations/voyagertarotcreations/node_modules/vite/dist/client/client.mjs'
+          }
+        ],
+        mainFields: [ 'module', 'jsnext:main', 'jsnext' ],
+        conditions: [ 'module', 'node', 'development|production', 'astro' ],
+        builtins: [
+          '_http_agent',         '_http_client',        '_http_common',
+          '_http_incoming',      '_http_outgoing',      '_http_server',
+          '_stream_duplex',      '_stream_passthrough', '_stream_readable',
+          '_stream_transform',   '_stream_wrap',        '_stream_writable',
+          '_tls_common',         '_tls_wrap',           'assert',
+          'assert/strict',       'async_hooks',         'buffer',
+          'child_process',       'cluster',             'console',
+          'constants',           'crypto',              'dgram',
+          'diagnostics_channel', 'dns',                 'dns/promises',
+          'domain',              'events',              'fs',
+          'fs/promises',         'http',                'http2',
+          'https',               'inspector',           'inspector/promises',
+          'module',              'net',                 'os',
+          'path',                'path/posix',          'path/win32',
+          'perf_hooks',          'process',             'punycode',
+          'querystring',         'readline',            'readline/promises',
+          'repl',                'stream',              'stream/consumers',
+          'stream/promises',     'stream/web',          'string_decoder',
+          'sys',                 'timers',              'timers/promises',
+          'tls',                 'trace_events',        'tty',
+          'url',                 'util',                'util/types',
+          'v8',                  'vm',                  'wasi',
+          'worker_threads',      'zlib',                /^node:/,
+          /^npm:/,               /^bun:/
+        ]
+      },
+      keepProcessEnv: true,
+      consumer: 'server',
+      optimizeDeps: {
+        include: [],
+        exclude: [],
+        needsInterop: [],
+        extensions: [],
+        disabled: undefined,
+        holdUntilCrawlEnd: true,
+        force: false,
+        noDiscovery: true,
+        esbuildOptions: { preserveSymlinks: false }
+      },
+      dev: {
+        warmup: [],
+        sourcemap: { js: true },
+        sourcemapIgnoreList: [Function: isInNodeModules$1],
+        preTransformRequests: false,
+        createEnvironment: [Function: defaultCreateDevEnvironment],
+        recoverable: false,
+        moduleRunnerTransform: true
+      },
+      build: {
+        target: 'esnext',
+        polyfillModulePreload: true,
+        modulePreload: { polyfill: true },
+        outDir: 'C:\\Users\\subar\\Documents\\Projects\\voyagertarotcreations\\voyagertarotcreations\\dist\\',
+        assetsDir: '_astro',
+        assetsInlineLimit: 4096,
+        sourcemap: false,
+        terserOptions: {},
+        rollupOptions: {
+          input: [
+            '\x00astro-entry:C:/Users/subar/Documents/Projects/voyagertarotcreations/voyagertarotcreations/src/components/react/ProfileCarousel',
+            '\x00astro-entry:C:/Users/subar/Documents/Projects/voyagertarotcreations/voyagertarotcreations/src/components/react/TarotDraw.tsx',
+            '@astrojs/react/client.js',
+            'C:/Users/subar/Documents/Projects/voyagertarotcreations/voyagertarotcreations/src/pages/course.astro?astro&type=script&index=0&lang.ts',
+            'C:/Users/subar/Documents/Projects/voyagertarotcreations/voyagertarotcreations/src/pages/index.astro?astro&type=script&index=0&lang.ts',
+            'C:/Users/subar/Documents/Projects/voyagertarotcreations/voyagertarotcreations/src/pages/index.astro?astro&type=script&index=1&lang.ts',
+            'C:/Users/subar/Documents/Projects/voyagertarotcreations/voyagertarotcreations/src/components/VoiceSection.astro?astro&type=script&index=0&lang.ts',
+            'C:/Users/subar/Documents/Projects/voyagertarotcreations/voyagertarotcreations/src/components/Header.astro?astro&type=script&index=0&lang.ts'
+          ],
+          output: {
+            format: 'esm',
+            entryFileNames: '_astro/[name].[hash].js',
+            chunkFileNames: '_astro/[name].[hash].js',
+            assetFileNames: '_astro/[name].[hash][extname]'
+          },
+          preserveEntrySignatures: 'exports-only',
+          onwarn: [Function: onwarn]
+        },
+        commonjsOptions: { include: [ /node_modules/ ], extensions: [ '.js', '.cjs' ] },
+        dynamicImportVarsOptions: { warnOnError: true, exclude: [ /node_modules/ ] },
+        write: true,
+        emptyOutDir: false,
+        copyPublicDir: false,
+        manifest: false,
+        lib: false,
+        ssrManifest: false,
+        ssrEmitAssets: false,
+        reportCompressedSize: true,
+        chunkSizeWarningLimit: 500,
+        watch: null,
+        cssCodeSplit: true,
+        minify: false,
+        ssr: true,
+        emitAssets: true,
+        createEnvironment: [Function: createEnvironment],
+        cssTarget: 'esnext',
+        cssMinify: 'esbuild'
+      }
+    }
+  },
+  configFileDependencies: [],
+  inlineConfig: {
+    configFile: false,
+    mode: 'production',
+    cacheDir: 'C:\\Users\\subar\\Documents\\Projects\\voyagertarotcreations\\voyagertarotcreations\\node_modules\\.vite\\',
+    clearScreen: false,
+    customLogger: {
+      hasWarned: false,
+      info: [Function: info],
+      warn: [Function: warn],
+      warnOnce: [Function: warnOnce],
+      error: [Function: error],
+      clearScreen: [Function: clearScreen],
+      hasErrorLogged: [Function: hasErrorLogged]
+    },
+    appType: 'custom',
+    optimizeDeps: {
+      entries: [
+        'C:/Users/subar/Documents/Projects/voyagertarotcreations/voyagertarotcreations/src/**/*.{jsx,tsx,vue,svelte,html,astro}'
+      ],
+      exclude: [ 'astro', 'node-fetch', '@astrojs/react/server.js' ],
+      include: [ '@astrojs/react/client.js' ]
+    },
+    plugins: [
+      {
+        name: '@astro/plugin-component-entry',
+        enforce: 'pre',
+        config: [Function: config],
+        resolveId: [AsyncFunction: resolveId],
+        load: [AsyncFunction: load]
+      },
+      {
+        name: '@astro/plugin-build-internals',
+        config: [Function: config],
+        generateBundle: [AsyncFunction: generateBundle]
+      },
+      [
+        {
+          name: 'astro:rollup-plugin-build-css',
+          outputOptions: [Function: outputOptions],
+          generateBundle: [AsyncFunction: generateBundle]
+        },
+        {
+          name: 'astro:rollup-plugin-single-css',
+          enforce: 'post',
+          configResolved: [Function: configResolved],
+          generateBundle: [Function: generateBundle]
+        },
+        {
+          name: 'astro:rollup-plugin-inline-stylesheets',
+          enforce: 'post',
+          configResolved: [Function: configResolved],
+          generateBundle: [AsyncFunction: generateBundle]
+        }
+      ],
+      {
+        name: '@astro/plugin-scripts',
+        configResolved: [Function: configResolved],
+        generateBundle: [AsyncFunction: generateBundle]
+      },
+      {
+        enforce: 'pre',
+        name: 'astro-manifest-plugin',
+        resolveId: [Function: resolveId],
+        load: [Function: load]
+      },
+      null,
+      false,
+      [
+        {
+          name: 'astro:build',
+          enforce: 'pre',
+          configEnvironment: [AsyncFunction: configEnvironment],
+          configResolved: [Function: configResolved],
+          configureServer: [Function: configureServer],
+          buildStart: [Function: buildStart],
+          load: [AsyncFunction: load],
+          transform: [AsyncFunction: transform],
+          handleHotUpdate: [AsyncFunction: handleHotUpdate]
+        },
+        {
+          name: 'astro:build:normal',
+          resolveId: [Function: resolveId]
+        }
+      ],
+      {
+        name: 'astro:scripts',
+        config: [Function: config],
+        resolveId: [AsyncFunction: resolveId],
+        load: [AsyncFunction: load],
+        buildStart: [Function: buildStart]
+      },
+      false,
+      {
+        name: 'astro:vite-plugin-env',
+        config: [Function: config],
+        configResolved: [Function: configResolved],
+        transform: [Function: transform]
+      },
+      {
+        name: 'astro-env-plugin',
+        enforce: 'pre',
+        config: [Function: config],
+        buildStart: [Function: buildStart],
+        resolveId: [Function: resolveId],
+        load: [Function: load]
+      },
+      {
+        name: 'astro:adapter-config',
+        resolveId: [Function: resolveId],
+        load: [Function: load]
+      },
+      {
+        enforce: 'pre',
+        name: 'astro:markdown',
+        buildEnd: [Function: buildEnd],
+        resolveId: [AsyncFunction: resolveId],
+        load: [AsyncFunction: load]
+      },
+      {
+        name: 'astro:html',
+        options: [Function: options],
+        transform: [AsyncFunction: transform]
+      },
+      {
+        name: 'astro:postprocess',
+        transform: [AsyncFunction: transform]
+      },
+      {
+        name: 'astro:integration-container',
+        configureServer: [AsyncFunction: configureServer],
+        buildStart: [AsyncFunction: buildStart]
+      },
+      {
+        name: 'astro:scripts:page-ssr',
+        enforce: 'post',
+        transform: [Function: transform]
+      },
+      {
+        name: 'astro:head-metadata',
+        enforce: 'pre',
+        apply: 'serve',
+        configureServer: [Function: configureServer],
+        resolveId: [Function: resolveId],
+        transform: [Function: transform]
+      },
+      {
+        name: 'astro:scanner',
+        enforce: 'post',
+        transform: [AsyncFunction: transform],
+        handleHotUpdate: [AsyncFunction: handleHotUpdate]
+      },
+      {
+        name: 'astro-content-virtual-mod-plugin',
+        enforce: 'pre',
+        config: [Function: config],
+        buildStart: [Function: buildStart],
+        resolveId: [AsyncFunction: resolveId],
+        load: [AsyncFunction: load],
+        configureServer: [Function: configureServer]
+      },
+      [
+        {
+          name: 'astro:content-imports',
+          config: [Function: config],
+          buildStart: [AsyncFunction: buildStart],
+          transform: [AsyncFunction: transform],
+          configureServer: [Function: configureServer]
+        }
+      ],
+      {
+        name: 'astro:content-asset-propagation',
+        enforce: 'pre',
+        resolveId: [AsyncFunction: resolveId],
+        configureServer: [Function: configureServer],
+        transform: [AsyncFunction: transform]
+      },
+      {
+        name: '@astro/plugin-middleware',
+        resolveId: [AsyncFunction: resolveId],
+        load: [AsyncFunction: load]
+      },
+      {
+        name: '@astrojs/vite-plugin-astro-ssr-manifest',
+        enforce: 'post',
+        resolveId: [Function: resolveId],
+        load: [Function: load]
+      },
+      [
+        {
+          name: 'astro:assets',
+          config: [Function: config],
+          resolveId: [AsyncFunction: resolveId],
+          load: [Function: load],
+          buildStart: [Function: buildStart],
+          renderChunk: [AsyncFunction: renderChunk]
+        },
+        {
+          name: 'astro:assets:esm',
+          enforce: 'pre',
+          config: [Function: config],
+          configResolved: [Function: configResolved],
+          load: [AsyncFunction: load]
+        },
+        {
+          name: 'astro:fonts:fallback',
+          resolveId: [Function: resolveId],
+          load: [Function: load]
+        }
+      ],
+      {
+        name: 'astro:prefetch',
+        resolveId: [AsyncFunction: resolveId],
+        load: [Function: load],
+        transform: [Function: transform]
+      },
+      {
+        name: 'astro:transitions',
+        config: [Function: config],
+        resolveId: [AsyncFunction: resolveId],
+        load: [Function: load],
+        transform: [Function: transform]
+      },
+      {
+        name: 'astro:dev-toolbar',
+        config: [Function: config],
+        resolveId: [Function: resolveId],
+        configureServer: [Function: configureServer],
+        load: [AsyncFunction: load]
+      },
+      {
+        name: 'astro:vite-plugin-file-url',
+        enforce: 'pre',
+        resolveId: [Function: resolveId]
+      },
+      {
+        name: 'astro:i18n',
+        enforce: 'pre',
+        config: [Function: config],
+        resolveId: [Function: resolveId]
+      },
+      {
+        name: 'astro:actions',
+        enforce: 'pre',
+        resolveId: [AsyncFunction: resolveId],
+        configureServer: [AsyncFunction: configureServer],
+        load: [AsyncFunction: load]
+      },
+      {
+        name: 'astro:server-islands',
+        enforce: 'post',
+        config: [Function: config],
+        configureServer: [Function: configureServer],
+        resolveId: [Function: resolveId],
+        load: [Function: load],
+        transform: [Function: transform],
+        renderChunk: [Function: renderChunk]
+      },
+      {
+        name: 'astro:container',
+        enforce: 'pre',
+        resolveId: [Function: resolveId]
+      },
+      {
+        name: 'astro:hmr-reload',
+        enforce: 'post',
+        hotUpdate: { order: 'post', handler: [Function: handler] }
+      },
+      {
+        name: '@tailwindcss/vite:scan',
+        enforce: 'pre',
+        configureServer: [Function: configureServer],
+        configResolved: [AsyncFunction: configResolved]
+      },
+      {
+        name: '@tailwindcss/vite:generate:build',
+        apply: 'build',
+        enforce: 'pre',
+        transform: {
+          filter: {
+            id: {
+              exclude: [
+                /\/\.vite\//,
+                /[?&](?:worker|sharedworker|raw|url)\b/,
+                /\?commonjs-proxy/
+              ],
+              include: [
+                /\.css(?:\?.*)?$/,
+                /&lang\.css/,
+                /[?&]index\=\d+\.css$/
+              ]
+            }
+          },
+          handler: [AsyncFunction: handler]
+        }
+      },
+      {
+        name: 'vite:react-babel',
+        enforce: 'pre',
+        config: [Function: config],
+        configResolved: [Function: configResolved],
+        options: [Function: options]
+      },
+      {
+        name: 'vite:react-refresh',
+        enforce: 'pre',
+        config: [Function: config],
+        resolveId: {
+          filter: { id: /^\/@react\-refresh$/ },
+          handler: [Function: handler]
+        },
+        load: {
+          filter: { id: /^\/@react\-refresh$/ },
+          handler: [Function: handler]
+        },
+        transformIndexHtml: [Function: transformIndexHtml]
+      },
+      {
+        name: '@astrojs/react:opts',
+        resolveId: [Function: resolveId],
+        load: [Function: load]
+      }
+    ],
+    publicDir: 'C:\\Users\\subar\\Documents\\Projects\\voyagertarotcreations\\voyagertarotcreations\\public\\',
+    root: 'C:\\Users\\subar\\Documents\\Projects\\voyagertarotcreations\\voyagertarotcreations\\',
+    envPrefix: 'PUBLIC_',
+    define: {
+      'import.meta.env.SITE': 'undefined',
+      'import.meta.env.BASE_URL': '"/"',
+      'import.meta.env.ASSETS_PREFIX': 'undefined'
+    },
+    server: { hmr: false, watch: { ignored: [ '**' ] }, middlewareMode: true },
+    resolve: {
+      alias: [
+        { find: 'randombytes', replacement: 'randombytes/browser' },
+        {
+          find: /^astro$/,
+          replacement: 'C:\\Users\\subar\\Documents\\Projects\\voyagertarotcreations\\voyagertarotcreations\\node_modules\\astro\\dist\\types\\public\\index.js'
+        },
+        {
+          find: 'astro:middleware',
+          replacement: 'astro/virtual-modules/middleware.js'
+        },
+        { find: 'astro:schema', replacement: 'astro/zod' },
+        { find: 'astro:components', replacement: 'astro/components' }
+      ],
+      dedupe: [ 'astro' ]
+    },
+    ssr: {
+      noExternal: [
+        'astro',
+        'astro/components',
+        '@nanostores/preact',
+        '@fontsource/*',
+        '@astrojs/react',
+        'lucide-astro',
+        '@mui/material',
+        '@mui/base',
+        '@babel/runtime',
+        'use-immer',
+        '@material-tailwind/react'
+      ],
+      external: []
+    },
+    build: {
+      target: 'esnext',
+      assetsDir: '_astro',
+      emptyOutDir: false,
+      outDir: 'C:\\Users\\subar\\Documents\\Projects\\voyagertarotcreations\\voyagertarotcreations\\dist\\',
+      copyPublicDir: false,
+      rollupOptions: {
+        input: [
+          '\x00astro-entry:C:/Users/subar/Documents/Projects/voyagertarotcreations/voyagertarotcreations/src/components/react/ProfileCarousel',
+          '\x00astro-entry:C:/Users/subar/Documents/Projects/voyagertarotcreations/voyagertarotcreations/src/components/react/TarotDraw.tsx',
+          '@astrojs/react/client.js',
+          'C:/Users/subar/Documents/Projects/voyagertarotcreations/voyagertarotcreations/src/pages/course.astro?astro&type=script&index=0&lang.ts',
+          'C:/Users/subar/Documents/Projects/voyagertarotcreations/voyagertarotcreations/src/pages/index.astro?astro&type=script&index=0&lang.ts',
+          'C:/Users/subar/Documents/Projects/voyagertarotcreations/voyagertarotcreations/src/pages/index.astro?astro&type=script&index=1&lang.ts',
+          'C:/Users/subar/Documents/Projects/voyagertarotcreations/voyagertarotcreations/src/components/VoiceSection.astro?astro&type=script&index=0&lang.ts',
+          'C:/Users/subar/Documents/Projects/voyagertarotcreations/voyagertarotcreations/src/components/Header.astro?astro&type=script&index=0&lang.ts'
+        ],
+        output: {
+          format: 'esm',
+          entryFileNames: '_astro/[name].[hash].js',
+          chunkFileNames: '_astro/[name].[hash].js',
+          assetFileNames: '_astro/[name].[hash][extname]'
+        },
+        preserveEntrySignatures: 'exports-only'
+      }
+    },
+    base: '/'
+  },
+  decodedBase: '/',
+  rawBase: '/',
+  command: 'build',
+  isWorker: false,
+  mainConfig: null,
+  bundleChain: [],
+  isProduction: true,
+  css: {
+    transformer: 'postcss',
+    preprocessorMaxWorkers: 0,
+    devSourcemap: false
+  },
+  json: { namedExports: true, stringify: 'auto' },
+  builder: undefined,
+  preview: {
+    port: 4173,
+    strictPort: false,
+    host: undefined,
+    allowedHosts: [],
+    https: undefined,
+    open: false,
+    proxy: undefined,
+    cors: {
+      origin: /^https?:\/\/(?:(?:[^:]+\.)?localhost|127\.0\.0\.1|\[::1\])(?::\d+)?$/
+    },
+    headers: {}
+  },
+  envDir: 'C:/Users/subar/Documents/Projects/voyagertarotcreations/voyagertarotcreations',
+  env: { BASE_URL: '/', MODE: 'production', DEV: false, PROD: true },
+  assetsInclude: [Function: assetsInclude],
+  logger: {
+    hasWarned: false,
+    info: [Function: info],
+    warn: [Function: warn],
+    warnOnce: [Function: warnOnce],
+    error: [Function: error],
+    clearScreen: [Function: clearScreen],
+    hasErrorLogged: [Function: hasErrorLogged]
+  },
+  packageCache: Map(1) {
+    'fnpd_C:/Users/subar/Documents/Projects/voyagertarotcreations/voyagertarotcreations' => {
+      dir: 'C:/Users/subar/Documents/Projects/voyagertarotcreations/voyagertarotcreations',
+      data: {
+        name: 'y',
+        type: 'module',
+        version: '0.0.1',
+        scripts: {
+          dev: 'astro dev',
+          build: 'astro build',
+          preview: 'astro preview',
+          astro: 'astro'
+        },
+        dependencies: {
+          '@astrojs/check': '^0.9.6',
+          '@astrojs/react': '^4.4.2',
+          '@tailwindcss/vite': '^4.1.18',
+          '@types/react': '^19.2.10',
+          '@types/react-dom': '^19.2.3',
+          astro: '^5.17.1',
+          'date-fns': '^4.1.0',
+          'framer-motion': '^12.29.2',
+          'lucide-astro': '^0.556.0',
+          'microcms-js-sdk': '^3.2.0',
+          react: '^19.2.4',
+          'react-dom': '^19.2.4',
+          tailwindcss: '^4.1.18',
+          typescript: '^5.9.3'
+        },
+        devDependencies: { sharp: '^0.34.5' }
+      },
+      hasSideEffects: [Function: hasSideEffects],
+      setResolvedCache: [Function: setResolvedCache],
+      getResolvedCache: [Function: getResolvedCache]
+    },
+    set: [Function (anonymous)]
+  },
+  worker: { format: 'iife', plugins: '() => plugins', rollupOptions: {} },
+  experimental: { importGlobRestoreExtension: false, hmrPartialAccept: false },
+  future: undefined,
+  dev: {
+    warmup: [],
+    sourcemap: { js: true },
+    sourcemapIgnoreList: [Function: isInNodeModules$1],
+    preTransformRequests: false,
+    createEnvironment: [Function: defaultCreateDevEnvironment],
+    recoverable: false,
+    moduleRunnerTransform: false
+  },
+  webSocketToken: 'oM3Zj4-7ZR6r',
+  getSortedPlugins: [Function: getSortedPlugins],
+  getSortedPluginHooks: [Function: getSortedPluginHooks],
+  createResolver: [Function: createResolver],
+  fsDenyGlob: [Function: arrayMatcher],
+  safeModulePaths: Set(0) {},
+  additionalAllowedHosts: [],
+  [Symbol(vite:resolved-config)]: true
+}
+[2m18:54:41[22m [34m[vite][39m transforming...
+[2m18:54:42[22m [34m[vite][39m [32m笨・[39m 431 modules transformed.
+[2m18:54:43[22m [34m[vite][39m rendering chunks...
+[2m18:54:43[22m [34m[vite][39m computing gzip size...
+[2m18:54:43[22m [34m[vite][39m [2mdist/[22m[36m_astro/ProfileCarousel.DtoTtJ0X.js  [39m[1m[2m  5.03 kB[22m[1m[22m[2m 笏・gzip:  1.91 kB[22m
+[2m18:54:43[22m [34m[vite][39m [2mdist/[22m[36m_astro/index.DYrVU9rO.js            [39m[1m[2m  7.97 kB[22m[1m[22m[2m 笏・gzip:  3.10 kB[22m
+[2m18:54:43[22m [34m[vite][39m [2mdist/[22m[36m_astro/TarotDraw.8ORl14mc.js        [39m[1m[2m 36.23 kB[22m[1m[22m[2m 笏・gzip: 11.83 kB[22m
+[2m18:54:43[22m [34m[vite][39m [2mdist/[22m[36m_astro/proxy.BLvxmVWW.js            [39m[1m[2m119.82 kB[22m[1m[22m[2m 笏・gzip: 39.68 kB[22m
+[2m18:54:43[22m [34m[vite][39m [2mdist/[22m[36m_astro/client.dXHaCmHv.js           [39m[1m[2m186.62 kB[22m[1m[22m[2m 笏・gzip: 58.54 kB[22m
+[2m18:54:43[22m [34m[vite][39m [32m笨・built in 1.28s[39m
+
+[42m[30m generating static routes [39m[49m
+[2m18:54:43[22m [32m笆ｶ[39m src/pages/contact/thanks.astro
+2026-03-14T09:54:43.241Z astro:build Generating: /contact/thanks
+2026-03-14T09:54:43.242Z astro:build Generating: /contact/thanks
+[2m18:54:43[22m   [34m笏披楳[39m [2m/contact/thanks/index.html[22m [2m(+28ms)[22m 
+[2m18:54:43[22m [32m笆ｶ[39m src/pages/contact.astro
+2026-03-14T09:54:43.272Z astro:build Generating: /contact
+2026-03-14T09:54:43.273Z astro:build Generating: /contact
+[2m18:54:43[22m   [34m笏披楳[39m [2m/contact/index.html[22m [2m(+5ms)[22m 
+[2m18:54:43[22m [32m笆ｶ[39m src/pages/course.astro
+2026-03-14T09:54:43.285Z astro:build Generating: /course
+2026-03-14T09:54:43.285Z astro:build Generating: /course
+[2m18:54:43[22m   [34m笏披楳[39m [2m/course/index.html[22m [2m(+18ms)[22m 
+[2m18:54:43[22m [32m笆ｶ[39m src/pages/news/[id].astro
+2026-03-14T09:54:43.864Z astro:build 笏懌楳笏 竏・[39m src/pages/news/[id].astro 竊・[0 pages]
+[2m18:54:43[22m [32m笆ｶ[39m src/pages/news/index.astro
+2026-03-14T09:54:43.946Z astro:build Generating: /news
+2026-03-14T09:54:43.946Z astro:build Generating: /news
+[2m18:54:43[22m   [34m笏披楳[39m [2m/news/index.html[22m [2m(+79ms)[22m 
+[2m18:54:44[22m [32m笆ｶ[39m src/pages/profile.astro
+2026-03-14T09:54:44.438Z astro:build Generating: /profile
+2026-03-14T09:54:44.438Z astro:build Generating: /profile
+Failed to fetch members from MicroCMS: Error: fetch API response status: 404
+    at C:\Users\subar\Documents\Projects\voyagertarotcreations\voyagertarotcreations\node_modules\microcms-js-sdk\dist\microcms-js-sdk.js:1:6757
+    at s (C:\Users\subar\Documents\Projects\voyagertarotcreations\voyagertarotcreations\node_modules\microcms-js-sdk\dist\microcms-js-sdk.js:1:3786)
+    at Object.next (C:\Users\subar\Documents\Projects\voyagertarotcreations\voyagertarotcreations\node_modules\microcms-js-sdk\dist\microcms-js-sdk.js:1:3077)
+    at n (C:\Users\subar\Documents\Projects\voyagertarotcreations\voyagertarotcreations\node_modules\microcms-js-sdk\dist\microcms-js-sdk.js:1:247)
+    at a (C:\Users\subar\Documents\Projects\voyagertarotcreations\voyagertarotcreations\node_modules\microcms-js-sdk\dist\microcms-js-sdk.js:1:458)
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+TypeError: Cannot read properties of undefined (reading 'image')
+    at ProfileCarousel (file:///C:/Users/subar/Documents/Projects/voyagertarotcreations/voyagertarotcreations/dist/pages/profile.astro.mjs?time=1773482084025:74:27)
+    at renderWithHooks (C:\Users\subar\Documents\Projects\voyagertarotcreations\voyagertarotcreations\node_modules\react-dom\cjs\react-dom-server.node.production.js:4647:18)
+    at renderElement (C:\Users\subar\Documents\Projects\voyagertarotcreations\voyagertarotcreations\node_modules\react-dom\cjs\react-dom-server.node.production.js:4785:14)
+    at retryNode (C:\Users\subar\Documents\Projects\voyagertarotcreations\voyagertarotcreations\node_modules\react-dom\cjs\react-dom-server.node.production.js:5503:16)
+    at performWork (C:\Users\subar\Documents\Projects\voyagertarotcreations\voyagertarotcreations\node_modules\react-dom\cjs\react-dom-server.node.production.js:6344:13)
+    at AsyncLocalStorage.run (node:async_hooks:346:14)
+    at C:\Users\subar\Documents\Projects\voyagertarotcreations\voyagertarotcreations\node_modules\react-dom\cjs\react-dom-server.node.production.js:7021:27
+    at node:internal/process/task_queues:140:7
+    at AsyncResource.runInAsyncScope (node:async_hooks:206:9)
+    at AsyncResource.runMicrotask (node:internal/process/task_queues:137:8)
+2026-03-14T09:54:44.598Z astro:telemetry {
+  context: {
+    isGit: true,
+    anonymousProjectId: '348a37130a239044b98db32f13526bbe34022b7a5646eb342be05969e814c649',
+    packageManager: 'npm',
+    packageManagerVersion: '10.7.0',
+    anonymousId: '0f64e8722601234d9e7ba18ea0f6c62c0482439bc5e023ca45bb74602129eca6',
+    anonymousSessionId: '97603fc8af01ee2ef99e6a96d42fec8087a2c3c58e52ff82f11f82d893c80c0b'
+  },
+  meta: {
+    nodeVersion: '20.14.0',
+    viteVersion: '6.4.1',
+    astroVersion: '5.17.1',
+    systemPlatform: 'win32',
+    systemRelease: '10.0.26200',
+    systemArchitecture: 'x64',
+    cpuCount: 22,
+    cpuModel: 'Intel(R) Core(TM) Ultra 7 155H',
+    cpuSpeed: 2995,
+    memoryInMb: 15828,
+    isDocker: false,
+    isTTY: undefined,
+    isWSL: false,
+    isCI: false,
+    ciName: null
+  }
+}
+2026-03-14T09:54:44.598Z astro:telemetry [
+  {
+    "eventName": "ASTRO_CLI_ERROR",
+    "payload": {
+      "name": "TypeError",
+      "cliCommand": "build",
+      "isFatal": true,
+      "anonymousMessageHint": "Cannot read properti"
+    }
+  }
+]
+Cannot read properties of undefined (reading 'image')
   Stack trace:
-    at failureErrorWithLog (C:\Users\subar\Documents\Projects\voyagertarotcreations\voyagertarotcreations\node_modules\esbuild\lib\main.js:1467:15)
-    at responseCallbacks.<computed> (C:\Users\subar\Documents\Projects\voyagertarotcreations\voyagertarotcreations\node_modules\esbuild\lib\main.js:603:9)
-    at Socket.readFromStdout (C:\Users\subar\Documents\Projects\voyagertarotcreations\voyagertarotcreations\node_modules\esbuild\lib\main.js:581:7)
-    at addChunk (node:internal/streams/readable:559:12)
-    at Readable.push (node:internal/streams/readable:390:5)
+    at ProfileCarousel (file:///C:/Users/subar/Documents/Projects/voyagertarotcreations/voyagertarotcreations/dist/pages/profile.astro.mjs?time=1773482084025:74:27)
+    at renderElement (C:\Users\subar\Documents\Projects\voyagertarotcreations\voyagertarotcreations\node_modules\react-dom\cjs\react-dom-server.node.production.js:4785:14)
+    at performWork (C:\Users\subar\Documents\Projects\voyagertarotcreations\voyagertarotcreations\node_modules\react-dom\cjs\react-dom-server.node.production.js:6344:13)
+    at C:\Users\subar\Documents\Projects\voyagertarotcreations\voyagertarotcreations\node_modules\react-dom\cjs\react-dom-server.node.production.js:7021:27
+    at AsyncResource.runInAsyncScope (node:async_hooks:206:9)
+[2m18:54:44[22m   [34m笏披楳[39m [2m/profile/index.html[22m

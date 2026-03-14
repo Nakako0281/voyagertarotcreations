@@ -1,0 +1,65 @@
+
+> y@0.0.1 build
+> astro build
+
+[2m18:55:46[22m [34m[content][39m Syncing content
+[2m18:55:46[22m [34m[content][39m Synced content
+[2m18:55:46[22m [34m[types][39m Generated [2m52ms[22m
+[2m18:55:46[22m [34m[build][39m output: [34m"static"[39m
+[2m18:55:46[22m [34m[build][39m mode: [34m"static"[39m
+[2m18:55:46[22m [34m[build][39m directory: [34mC:\Users\subar\Documents\Projects\voyagertarotcreations\voyagertarotcreations\dist\[39m
+[2m18:55:46[22m [34m[build][39m Collecting build info...
+[2m18:55:46[22m [34m[build][39m [32m笨・Completed in 85ms.[39m
+[2m18:55:46[22m [34m[build][39m Building static entrypoints...
+[2m18:55:48[22m [34m[vite][39m [32m笨・built in 1.90s[39m
+[2m18:55:48[22m [34m[build][39m [32m笨・Completed in 1.95s.[39m
+
+[42m[30m building client (vite) [39m[49m
+[2m18:55:48[22m [34m[vite][39m transforming...
+[2m18:55:49[22m [34m[vite][39m [32m笨・[39m 431 modules transformed.
+[2m18:55:49[22m [34m[vite][39m rendering chunks...
+[2m18:55:49[22m [34m[vite][39m computing gzip size...
+[2m18:55:49[22m [34m[vite][39m [2mdist/[22m[36m_astro/ProfileCarousel.DtoTtJ0X.js  [39m[1m[2m  5.03 kB[22m[1m[22m[2m 笏・gzip:  1.91 kB[22m
+[2m18:55:49[22m [34m[vite][39m [2mdist/[22m[36m_astro/index.DYrVU9rO.js            [39m[1m[2m  7.97 kB[22m[1m[22m[2m 笏・gzip:  3.10 kB[22m
+[2m18:55:49[22m [34m[vite][39m [2mdist/[22m[36m_astro/TarotDraw.8ORl14mc.js        [39m[1m[2m 36.23 kB[22m[1m[22m[2m 笏・gzip: 11.83 kB[22m
+[2m18:55:49[22m [34m[vite][39m [2mdist/[22m[36m_astro/proxy.BLvxmVWW.js            [39m[1m[2m119.82 kB[22m[1m[22m[2m 笏・gzip: 39.68 kB[22m
+[2m18:55:49[22m [34m[vite][39m [2mdist/[22m[36m_astro/client.dXHaCmHv.js           [39m[1m[2m186.62 kB[22m[1m[22m[2m 笏・gzip: 58.54 kB[22m
+[2m18:55:49[22m [34m[vite][39m [32m笨・built in 1.31s[39m
+
+[42m[30m generating static routes [39m[49m
+[2m18:55:49[22m [32m笆ｶ[39m src/pages/contact/thanks.astro
+[2m18:55:49[22m   [34m笏披楳[39m [2m/contact/thanks/index.html[22m [2m(+16ms)[22m 
+[2m18:55:49[22m [32m笆ｶ[39m src/pages/contact.astro
+[2m18:55:49[22m   [34m笏披楳[39m [2m/contact/index.html[22m [2m(+5ms)[22m 
+[2m18:55:49[22m [32m笆ｶ[39m src/pages/course.astro
+[2m18:55:49[22m   [34m笏披楳[39m [2m/course/index.html[22m [2m(+11ms)[22m 
+[2m18:55:49[22m [32m笆ｶ[39m src/pages/news/[id].astro
+[2m18:55:49[22m [32m笆ｶ[39m src/pages/news/index.astro
+[2m18:55:49[22m   [34m笏披楳[39m [2m/news/index.html[22m [2m(+101ms)[22m 
+[2m18:55:50[22m [32m笆ｶ[39m src/pages/profile.astro
+Failed to fetch members from MicroCMS: Error: fetch API response status: 404
+    at C:\Users\subar\Documents\Projects\voyagertarotcreations\voyagertarotcreations\node_modules\microcms-js-sdk\dist\microcms-js-sdk.js:1:6757
+    at s (C:\Users\subar\Documents\Projects\voyagertarotcreations\voyagertarotcreations\node_modules\microcms-js-sdk\dist\microcms-js-sdk.js:1:3786)
+    at Object.next (C:\Users\subar\Documents\Projects\voyagertarotcreations\voyagertarotcreations\node_modules\microcms-js-sdk\dist\microcms-js-sdk.js:1:3077)
+    at n (C:\Users\subar\Documents\Projects\voyagertarotcreations\voyagertarotcreations\node_modules\microcms-js-sdk\dist\microcms-js-sdk.js:1:247)
+    at a (C:\Users\subar\Documents\Projects\voyagertarotcreations\voyagertarotcreations\node_modules\microcms-js-sdk\dist\microcms-js-sdk.js:1:458)
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+TypeError: Cannot read properties of undefined (reading 'image')
+    at ProfileCarousel (file:///C:/Users/subar/Documents/Projects/voyagertarotcreations/voyagertarotcreations/dist/pages/profile.astro.mjs?time=1773482150090:74:27)
+    at renderWithHooks (C:\Users\subar\Documents\Projects\voyagertarotcreations\voyagertarotcreations\node_modules\react-dom\cjs\react-dom-server.node.production.js:4647:18)
+    at renderElement (C:\Users\subar\Documents\Projects\voyagertarotcreations\voyagertarotcreations\node_modules\react-dom\cjs\react-dom-server.node.production.js:4785:14)
+    at retryNode (C:\Users\subar\Documents\Projects\voyagertarotcreations\voyagertarotcreations\node_modules\react-dom\cjs\react-dom-server.node.production.js:5503:16)
+    at performWork (C:\Users\subar\Documents\Projects\voyagertarotcreations\voyagertarotcreations\node_modules\react-dom\cjs\react-dom-server.node.production.js:6344:13)
+    at AsyncLocalStorage.run (node:async_hooks:346:14)
+    at C:\Users\subar\Documents\Projects\voyagertarotcreations\voyagertarotcreations\node_modules\react-dom\cjs\react-dom-server.node.production.js:7021:27
+    at node:internal/process/task_queues:140:7
+    at AsyncResource.runInAsyncScope (node:async_hooks:206:9)
+    at AsyncResource.runMicrotask (node:internal/process/task_queues:137:8)
+Cannot read properties of undefined (reading 'image')
+  Stack trace:
+    at ProfileCarousel (file:///C:/Users/subar/Documents/Projects/voyagertarotcreations/voyagertarotcreations/dist/pages/profile.astro.mjs?time=1773482150090:74:27)
+    at renderElement (C:\Users\subar\Documents\Projects\voyagertarotcreations\voyagertarotcreations\node_modules\react-dom\cjs\react-dom-server.node.production.js:4785:14)
+    at performWork (C:\Users\subar\Documents\Projects\voyagertarotcreations\voyagertarotcreations\node_modules\react-dom\cjs\react-dom-server.node.production.js:6344:13)
+    at C:\Users\subar\Documents\Projects\voyagertarotcreations\voyagertarotcreations\node_modules\react-dom\cjs\react-dom-server.node.production.js:7021:27
+    at AsyncResource.runInAsyncScope (node:async_hooks:206:9)
+[2m18:55:50[22m   [34m笏披楳[39m [2m/profile/index.html[22m

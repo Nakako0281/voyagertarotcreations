@@ -4,12 +4,18 @@ import { getNews, getNewsDetail } from "../../library/microcms";
 import { format } from "date-fns";
 
 export async function getStaticPaths() {
-    const response = await getNews();
-    return response.contents.map((content: any) => ({
-        params: {
-            id: content.id,
-        },
-    }));
+    try {
+        const response = await getNews();
+        if (!response || !response.contents) return [];
+        return response.contents.map((content: any) => ({
+            params: {
+                id: content.id,
+            },
+        }));
+    } catch (error) {
+        console.error("Error generating static paths for news:", error);
+        return [];
+    }
 }
 
 const { id } = Astro.params;
@@ -58,21 +64,69 @@ function formatDate(dateString: string) {
 
                 {
                     news.eyecatch && (
-                        <div class="mb-12 rounded-2xl overflow-hidden shadow-lg shadow-gray-200/50 relative z-10">
-                            <img
-                                src={news.eyecatch.url}
-                                alt={news.title}
-                                class="w-full h-auto object-cover"
-                            />
+                        <div class="mb-12 rounded-2xl overflow-hidden shadow-lg shadow-gray-200/50 relative z-10 max-w-2xl mx-auto">
+                            <div class="aspect-video w-full bg-white/50 backdrop-blur-sm flex items-center justify-center">
+                                <img
+                                    src={news.eyecatch.url}
+                                    alt={news.title}
+                                    class="max-w-full max-h-full object-contain"
+                                />
+                            </div>
                         </div>
                     )
                 }
 
                 <!-- Content -->
                 <div
-                    class="prose prose-lg prose-p:text-gray-600 prose-p:leading-loose prose-headings:font-bold prose-headings:text-text-dark prose-a:text-sakura-vivid prose-a:no-underline hover:prose-a:underline prose-strong:text-text-dark max-w-none relative z-10"
+                    class="news-content prose prose-lg prose-p:text-gray-600 max-w-none relative z-10"
                     set:html={news.content}
                 />
+
+                <style is:global>
+                    /* お知らせ本文専用のスタイル（他ページには影響しません） */
+                    .news-content {
+                        letter-spacing: 0.08em !important;
+                        line-height: 1.8 !important;
+                    }
+                    .news-content p {
+                        margin-bottom: 2rem !important;
+                        color: #4b5563 !important;
+                    }
+                    /* リスト表現の強制（Tailwindのリセットを上書き） */
+                    .news-content ul {
+                        list-style-type: disc !important;
+                        list-style-position: inside !important; /* 内側に配置して確実に見せる */
+                        padding-left: 0.5rem !important;
+                        margin-bottom: 2rem !important;
+                        display: block !important;
+                    }
+                    .news-content ol {
+                        list-style-type: decimal !important;
+                        list-style-position: inside !important;
+                        padding-left: 0.5rem !important;
+                        margin-bottom: 2rem !important;
+                        display: block !important;
+                    }
+                    .news-content li {
+                        margin-bottom: 0.75rem !important;
+                        display: list-item !important; /* リストとして表示を強制 */
+                    }
+                    /* 見出しの調整 */
+                    .news-content h1, 
+                    .news-content h2, 
+                    .news-content h3 {
+                        margin-top: 3rem !important;
+                        margin-bottom: 1.5rem !important;
+                        letter-spacing: 0.15em !important;
+                        font-weight: bold !important;
+                        color: #1f2937 !important;
+                    }
+                    /* リンク */
+                    .news-content a {
+                        color: #f472b6 !important; /* sakura-vivid */
+                        text-decoration: underline !important;
+                    }
+                </style>
 
                 <!-- Navigation -->
                 <div

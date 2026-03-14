@@ -39,12 +39,13 @@ export const getNews = async (queries?: MicroCMSQueries): Promise<NewsResponse> 
             console.warn("MicroCMS client is not initialized. Using empty data fallback.");
             return { contents: [], totalCount: 0, offset: 0, limit: 10 };
         }
-        return await client.get({
+        const response = await client.get({
             endpoint: "news",
             queries,
         });
+        return response || { contents: [], totalCount: 0, offset: 0, limit: 10 };
     } catch (error) {
-        console.error("Failed to fetch news from MicroCMS:", error);
+        console.warn("MicroCMS Fetch Warning (getNews): Using fallback data.", error);
         return { contents: [], totalCount: 0, offset: 0, limit: 10 };
     }
 };
@@ -57,13 +58,14 @@ export const getNewsDetail = async (
         if (!client) {
             return null;
         }
-        return await client.get({
+        const response = await client.get({
             endpoint: "news",
             contentId,
             queries,
         });
+        return response || null;
     } catch (error) {
-        console.error(`Failed to fetch news detail (${contentId}) from MicroCMS:`, error);
+        console.warn(`MicroCMS Fetch Warning (getNewsDetail ID:${contentId}): Returning null.`, error);
         return null;
     }
 };
