@@ -11,12 +11,19 @@ interface StaffMember {
 }
 
 interface ProfileCarouselProps {
-    members: StaffMember[];
+    members: (Omit<StaffMember, 'qualifications'> & { qualifications?: string | string[] })[];
 }
 
 export default function ProfileCarousel({ members }: ProfileCarouselProps) {
     const [currentIndex, setCurrentIndex] = useState(0);
     const [direction, setDirection] = useState(0);
+
+    const processedMembers = members.map(member => ({
+        ...member,
+        qualifications: typeof member.qualifications === 'string' 
+            ? member.qualifications.split('\n').filter(q => q.trim() !== '')
+            : member.qualifications
+    })) as StaffMember[];
 
     const slideVariants = {
         enter: (direction: number) => ({
@@ -46,16 +53,16 @@ export default function ProfileCarousel({ members }: ProfileCarouselProps) {
     const paginate = (newDirection: number) => {
         setDirection(newDirection);
         let nextIndex = currentIndex + newDirection;
-        if (nextIndex < 0) nextIndex = members.length - 1;
-        if (nextIndex >= members.length) nextIndex = 0;
+        if (nextIndex < 0) nextIndex = processedMembers.length - 1;
+        if (nextIndex >= processedMembers.length) nextIndex = 0;
         setCurrentIndex(nextIndex);
     };
 
-    if (!members || members.length === 0) {
+    if (!processedMembers || processedMembers.length === 0) {
         return null;
     }
 
-    const currentMember = members[currentIndex];
+    const currentMember = processedMembers[currentIndex];
 
     return (
         <div className="relative w-full max-w-6xl mx-auto px-6 md:px-12">
