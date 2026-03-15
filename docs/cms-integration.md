@@ -23,7 +23,7 @@ graph LR
 
 - **MICROCMS_SERVICE_DOMAIN**: `voyager`
 - **MICROCMS_API_KEY**: MicroCMSのAPIキー
-- **FIREBASE_SERVICE_ACCOUNT_VOYAGER_CF28D**: Firebaseのデプロイ用キー（サービスアカウントキー）
+- **FIREBASE_SERVICE_ACCOUNT_VOYAGER_TAROT_CREATIONS**: Firebaseのデプロイ用キー（サービスアカウントキー）
 
 ## 3. MicroCMSでの連携設定
 

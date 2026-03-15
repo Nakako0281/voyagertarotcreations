@@ -26,6 +26,6 @@ jobs:
         uses: FirebaseExtended/action-hosting-deploy@v0
         with:
           repoToken: '${{ secrets.GITHUB_TOKEN }}'
-          firebaseServiceAccount: '${{ secrets.FIREBASE_SERVICE_ACCOUNT_VOYAGER_CF28D }}'
+          firebaseServiceAccount: '${{ secrets.FIREBASE_SERVICE_ACCOUNT_VOYAGER_TAROT_CREATIONS }}'
           channelId: live
-          projectId: voyager-cf28d
+          projectId: voyager-tarot-creations
