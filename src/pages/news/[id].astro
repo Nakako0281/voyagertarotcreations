@@ -26,7 +26,10 @@ function formatDate(dateString: string) {
 }
 ---
 
-<Layout title={news?.title || "お知らせ"}>
+<Layout 
+    title={news?.title || "お知らせ"} 
+    description={news ? `${news.title}。ボイジャータロット クリエイションズの最新情報をお届けします。` : "ボイジャータロット クリエイションズのお知らせ詳細ページです。"}
+>
     <div class="max-w-4xl mx-auto">
         {news ? (
             <article
