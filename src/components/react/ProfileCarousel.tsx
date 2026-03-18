@@ -125,7 +125,7 @@ export default function ProfileCarousel({ members }: ProfileCarouselProps) {
                                     <h2 className="text-xl md:text-4xl text-text-dark mb-1 md:mb-2">
                                         {currentMember.name}
                                     </h2>
-                                    <p className="text-sakura-vivid font-bold tracking-widest text-[10px] md:text-base uppercase">
+                                    <p className="text-sakura-vivid font-bold tracking-widest text-[14px] md:text-base uppercase">
                                         {currentMember.titleEn || currentMember.role}
                                     </p>
                                 </div>
